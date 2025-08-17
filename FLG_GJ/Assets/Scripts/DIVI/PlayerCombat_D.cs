@@ -26,10 +26,16 @@ public class PlayerCombat_D : MonoBehaviour
 
     private Animator anim;
 
+    // ## UI Reference ##
+    private UIManager_D uiManager;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+        uiManager = FindAnyObjectByType<UIManager_D>();
+        uiManager.UpdatePlayerHealth(health, 100f);
     }
 
     void Update()
@@ -69,7 +75,7 @@ public class PlayerCombat_D : MonoBehaviour
         float damageToDeal = attackDamage;
         if (Random.value < criticalChance)
         {
-            // FIX: Was incorrectly assigning criticalChance instead of criticalDamage
+            // THE FIX: Was incorrectly assigning criticalChance instead of criticalDamage
             damageToDeal = criticalDamage;
             Debug.Log("Player Landed a Critical HIT!");
         }
@@ -96,6 +102,7 @@ public class PlayerCombat_D : MonoBehaviour
         // NEW: Trigger the hurt animation if damage is taken
         anim.SetTrigger("Hurt");
         health -= damage;
+        uiManager.UpdatePlayerHealth(health, 100f);
         Debug.Log("Player health:" + health);
 
         if (health <= 0)
@@ -112,5 +119,16 @@ public class PlayerCombat_D : MonoBehaviour
 
             // In a full game, you would call a GameManager here to show a "Game Over" screen
         }
+    }
+
+
+    // Draws a red circle in the Scene view to show the player's attackRange
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }
