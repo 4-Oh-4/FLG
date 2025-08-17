@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Camerafollow : MonoBehaviour
+public class Camerafollow_A : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Transform playerTransform;
