@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: 896b460c5e7452242be8299c9ac86aac
+AudioImporter:
+  externalObjects: {}
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  preloadAudioData: 1
+  loadInBackground: 0
+  ambisonic: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 197262
+  packageName: Retro Music - Final Punch EX
+  packageVersion: 1.0
+  assetPath: Assets/MaxStack/Final Punch EX/Audio/Music/Cutscene - What Is This Place.wav
+  uploadId: 438265
