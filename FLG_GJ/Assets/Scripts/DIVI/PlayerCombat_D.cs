@@ -1,48 +1,75 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerCombat_D : MonoBehaviour
 {
     // ## Core Stats ##
+    [Header("Stats")]
     [SerializeField] private float health = 100f;
-
-    // ## Movement ##
     [SerializeField] private float moveSpeed = 5f;
-    private Rigidbody2D rb;
     private float moveInput;
 
     // ## Combat Stats ##
+    [Header("Combat")]
     [SerializeField] private float attackDamage = 10f;
     [SerializeField] private float criticalDamage = 25f;
     [SerializeField] private float criticalChance = 0.1f; // 10% chance
     [SerializeField] private float attackRange = 0.5f;
+    [SerializeField] private float attackDuration = 0.3f;
     [SerializeField] private Transform attackPoint;
     [SerializeField] private LayerMask enemyLayers;
 
-    // ## Combat States ##
+    // ## Sound Effects ##
+    [Header("Sound Effects")]
+    [SerializeField] private AudioClip[] effortClips; // AMENDED: Corrected typo from "effortClip"
+    [SerializeField] private AudioClip[] punchImpactClips;
+    [SerializeField] private AudioClip[] hurtClips;
+    [SerializeField] private AudioClip[] blockClips;
+    [SerializeField] private AudioClip criticalHitClip;
+
+    // ## Private State & Component References ##
+    private Rigidbody2D rb;
+    private Animator anim;
+    private AudioSource audioSource;
+    private UIManager_D uiManager;
+    private EnemyAI_D enemyAI;
     private bool isBlocking = false;
     private bool isAttacking = false;
-    [SerializeField] private float attackDuration = 0.3f;
-
-    private Animator anim;
-
-    // ## UI Reference ##
-    private UIManager_D uiManager;
 
     void Start()
     {
+        // Get all necessary components attached to this GameObject
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
 
+        // Find other objects in the scene
         uiManager = FindAnyObjectByType<UIManager_D>();
-        uiManager.UpdatePlayerHealth(health, 100f);
+
+        // AMENDED: Made finding the enemy more efficient
+        EnemyAI_D foundEnemy = FindAnyObjectByType<EnemyAI_D>();
+        if (foundEnemy != null)
+        {
+            enemyAI = foundEnemy;
+        }
+
+        // Initialize the UI with starting health
+        if (uiManager != null)
+        {
+            uiManager.UpdatePlayerHealth(health, 100f);
+        }
     }
 
     void Update()
     {
+        // --- Input Handling ---
+
+        // Check for blocking input
         isBlocking = Input.GetKey(KeyCode.LeftControl);
         anim.SetBool("IsBlocking", isBlocking);
 
+        // Handle movement input only if not busy with another action
         if (!isBlocking && !isAttacking)
         {
             moveInput = Input.GetAxisRaw("Horizontal");
@@ -53,6 +80,7 @@ public class PlayerCombat_D : MonoBehaviour
         }
         anim.SetFloat("Speed", Mathf.Abs(moveInput));
 
+        // Handle attack input
         if (Input.GetKeyDown(KeyCode.Space) && !isBlocking && !isAttacking)
         {
             StartCoroutine(AttackCoroutine());
@@ -61,73 +89,109 @@ public class PlayerCombat_D : MonoBehaviour
 
     void FixedUpdate()
     {
-        // FIX: Using .linearVelocity for consistency
+        // Apply physics-based movement
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
     }
 
     private IEnumerator AttackCoroutine()
     {
-        anim.SetTrigger("Punch");
-        isAttacking = true;
-
-        Collider2D hitEnemy = Physics2D.OverlapCircle(attackPoint.position, attackRange, enemyLayers);
-
-        float damageToDeal = attackDamage;
-        if (Random.value < criticalChance)
+        // Alert the enemy that an attack is starting so it can react
+        if (enemyAI != null)
         {
-            // THE FIX: Was incorrectly assigning criticalChance instead of criticalDamage
-            damageToDeal = criticalDamage;
-            Debug.Log("Player Landed a Critical HIT!");
+            enemyAI.OnPlayerAttack();
         }
+
+        // Start the attack state
+        isAttacking = true;
+        anim.SetTrigger("Punch");
+        PlayRandomSound(effortClips); // Play attack effort sound
+
+        yield return new WaitForSeconds(0.1f); // Wait for animation to extend
+
+        // Check if the attack hit anything on the enemy layer
+        Collider2D hitEnemy = Physics2D.OverlapCircle(attackPoint.position, attackRange, enemyLayers);
 
         if (hitEnemy != null)
         {
-            Debug.Log("We hit " + hitEnemy.name);
-            hitEnemy.GetComponent<EnemyAI_D>().TakeDamage(damageToDeal);
+            // Determine if the hit is a critical
+            bool isCritical = Random.value < criticalChance;
+            float damageToDeal = isCritical ? criticalDamage : attackDamage;
+
+            if (isCritical) Debug.Log("Player Landed a CRITICAL HIT!");
+
+            // Call the enemy's TakeDamage function, passing all required info
+            hitEnemy.GetComponent<EnemyAI_D>().TakeDamage(damageToDeal, isCritical);
         }
 
-        yield return new WaitForSeconds(attackDuration);
+        // Wait for the attack animation to finish
+        yield return new WaitForSeconds(attackDuration - 0.1f);
         isAttacking = false;
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, bool isCritical)
     {
+        // This function is called by the ENEMY when it attacks US
+
         if (isBlocking)
         {
             Debug.Log("Player blocked the attack!");
-            // We could add a block animation trigger here if desired
-            return;
+            anim.SetTrigger("Block");
+            PlayRandomSound(blockClips);
+            return; // Exit, no damage taken
         }
 
-        // NEW: Trigger the hurt animation if damage is taken
+        // Play feedback for getting hit
         anim.SetTrigger("Hurt");
-        health -= damage;
-        uiManager.UpdatePlayerHealth(health, 100f);
-        Debug.Log("Player health:" + health);
+        PlayRandomSound(hurtClips);
 
+        // Play the correct impact sound (critical or normal)
+        if (isCritical)
+        {
+            if (criticalHitClip != null) audioSource.PlayOneShot(criticalHitClip);
+        }
+        else
+        {
+            PlayRandomSound(punchImpactClips);
+        }
+
+        // Apply damage and update UI
+        health -= damage;
+        if (uiManager != null) uiManager.UpdatePlayerHealth(health, 100f);
+
+        // Check for defeat
         if (health <= 0)
         {
-            Debug.Log("Player Defeated!");
-            // NEW: Trigger the death animation
-            anim.SetTrigger("Defeated");
-
-            // NEW: Disable components to stop interactions after death
-            this.enabled = false; // Disables this script (stops player input)
-            GetComponent<Collider2D>().enabled = false; // Prevents enemy from bumping into the body
-            rb.bodyType = RigidbodyType2D.Kinematic; // Stops physics from affecting the body
-            rb.linearVelocity = Vector2.zero; // Immediately stops all movement
-
-            // In a full game, you would call a GameManager here to show a "Game Over" screen
+            Die();
         }
     }
 
+    void Die()
+    {
+        Debug.Log("Player Defeated!");
+        anim.SetTrigger("Defeated");
 
-    // Draws a red circle in the Scene view to show the player's attackRange
+        // Disable all interactions
+        this.enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        rb.linearVelocity = Vector2.zero;
+    }
+
+    private void PlayRandomSound(AudioClip[] clips)
+    {
+        if (clips != null && clips.Length > 0)
+        {
+            int randomIndex = Random.Range(0, clips.Length);
+            if (clips[randomIndex] != null)
+            {
+                audioSource.PlayOneShot(clips[randomIndex]);
+            }
+        }
+    }
+
     private void OnDrawGizmosSelected()
     {
-        if (attackPoint == null)
-            return;
-
+        if (attackPoint == null) return;
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
