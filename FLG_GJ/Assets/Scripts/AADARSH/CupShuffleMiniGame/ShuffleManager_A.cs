@@ -13,6 +13,7 @@ public class ShuffleManager_A : MonoBehaviour
     private bool moveUPwards = false;
     private bool moveDOWNwards = false;
     public static bool shufflefinished = false;
+    public static bool gamefinishedCUP = false;
     void Start()
     {
         

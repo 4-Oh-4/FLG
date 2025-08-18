@@ -6,22 +6,23 @@ public class GoodCupA : MonoBehaviour
     [SerializeField] GameObject canvas;
     [SerializeField] CupShuffleA shuffler;
     public int score;
-    [SerializeField] private Transform cup;
+    [SerializeField] private Transform ball;
     [SerializeField] Vector3 initial;
     [SerializeField] Vector3 offset;
     [SerializeField] float movespeed = 0.01f;
     private bool moveUP = false;
     private bool moveDown = false;
     private void OnMouseDown() {
-        
-        if (ShuffleManager_A.shufflefinished&& canvas.active==false) {
+        if (ShuffleManager_A.shufflefinished&& canvas.activeInHierarchy==false&&!ShuffleManager_A.gamefinishedCUP) {
             score++;
             initial = transform.position;
-            cup.SetParent(null);
+            ball.SetParent(null);
             moveUP = true;
             Debug.Log("RightChoice " + score);
             if (score >= 3) {
                 Debug.Log("GameFinished");
+                ShuffleManager_A.gamefinishedCUP = true;
+                canvas.SetActive(false);
                 return;
             }
             
@@ -41,7 +42,7 @@ public class GoodCupA : MonoBehaviour
             if (Mathf.Abs(transform.position.y - initial.y) < 0.1) {
                 transform.position = initial;
                 moveDown = false;
-                if (canvas != null) {
+                if (canvas != null&&score<3) {
                     canvas.SetActive(true);
                     shuffler.IncreaseDifficulty();
                 }

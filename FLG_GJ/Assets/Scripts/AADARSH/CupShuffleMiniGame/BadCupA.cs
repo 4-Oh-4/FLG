@@ -11,7 +11,7 @@ public class BadCupA : MonoBehaviour
     private bool moveDown=false;
 
     private void OnMouseDown() {
-        if (ShuffleManager_A.shufflefinished && canvas.active == false) {
+        if (ShuffleManager_A.shufflefinished && canvas.activeInHierarchy == false && !ShuffleManager_A.gamefinishedCUP) {
             Debug.Log("wrong Choice");
             initial = transform.position;
             moveUP = true;
