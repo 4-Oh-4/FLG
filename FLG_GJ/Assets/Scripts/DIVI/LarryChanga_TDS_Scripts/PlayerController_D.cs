@@ -1,8 +1,8 @@
 using UnityEngine;
 
-// AMENDED: Added the namespace to match the other scripts.
 namespace TopDownShooter
 {
+    [RequireComponent(typeof(Rigidbody2D), typeof(Health_D))]
     public class PlayerController_D : MonoBehaviour
     {
         [Header("Movement")]
@@ -10,13 +10,14 @@ namespace TopDownShooter
 
         [Header("Combat")]
         [SerializeField] private int maxAmmo = 30;
-        private int currentAmmo;
         [SerializeField] private Transform attackPoint;
+        [SerializeField] private float attackDamage = 25f;
 
         private Rigidbody2D playerRb;
+        private Camera mainCam;
         private Vector2 moveInput;
         private Vector2 mousePos;
-        private Camera mainCam;
+        private int currentAmmo;
 
         private void Start()
         {
@@ -40,6 +41,7 @@ namespace TopDownShooter
         private void FixedUpdate()
         {
             playerRb.MovePosition(playerRb.position + moveInput.normalized * moveSpeed * Time.fixedDeltaTime);
+
             Vector2 lookDir = mousePos - playerRb.position;
             float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
             playerRb.rotation = angle;
@@ -47,27 +49,19 @@ namespace TopDownShooter
 
         void Shoot()
         {
-            if (currentAmmo > 0)
+            if (currentAmmo <= 0) return;
+
+            currentAmmo--;
+
+            RaycastHit2D hitInfo = Physics2D.Raycast(attackPoint.position, attackPoint.up);
+
+            if (hitInfo.collider != null)
             {
-                currentAmmo--;
-                Debug.Log("Ammo: " + currentAmmo);
-
-                RaycastHit2D hitInfo = Physics2D.Raycast(attackPoint.position, attackPoint.up);
-
-                if (hitInfo.collider != null)
+                Health_D targetHealth = hitInfo.collider.GetComponent<Health_D>();
+                if (targetHealth != null)
                 {
-                    Debug.Log("Hit: " + hitInfo.collider.name);
-
-                    Health_D targetHealth = hitInfo.collider.GetComponent<Health_D>();
-                    if (targetHealth != null)
-                    {
-                        targetHealth.TakeDamage(25f);
-                    }
+                    targetHealth.TakeDamage(attackDamage);
                 }
-            }
-            else
-            {
-                Debug.Log("Out of ammo !");
             }
         }
     }
