@@ -6,9 +6,9 @@ public class ShuffleManager_A : MonoBehaviour
     [SerializeField] private CupShuffleA cupshuffle;
     [SerializeField] private Transform ball;
     [SerializeField] private Transform cup;
-    [SerializeField] private Vector2 offset;
+    [SerializeField] private Vector3 offset;
     [SerializeField] private float movementSpeed = 3f;
-    [SerializeField] private Vector2 initial;
+    private Vector3 initial;
     private bool moveUPwards = false;
     private bool moveDOWNwards = false;
     void Start()
@@ -26,7 +26,7 @@ public class ShuffleManager_A : MonoBehaviour
             StartAgain();
         }
         if (moveUPwards) {
-            cup.position = Vector2.Lerp(cup.position, initial + offset, movementSpeed);
+            cup.position = Vector3.Lerp(cup.position, initial + offset, movementSpeed);
             if (Mathf.Abs(cup.position.y - initial.y - offset.y) < 0.001) {
                 cup.position = initial + offset;
                 moveUPwards = false;
@@ -34,12 +34,14 @@ public class ShuffleManager_A : MonoBehaviour
             }
         }
         if (moveDOWNwards) {
-            cup.position = Vector2.Lerp(cup.position, initial, movementSpeed);
+            cup.position = Vector3.Lerp(cup.position, initial, movementSpeed);
             if (Mathf.Abs(cup.position.y - initial.y) < 0.001) {
                 cup.position = initial;
                 moveDOWNwards = false;
+                ball.SetParent(cup);
                 cupshuffle.StartShuffle();
             }
         }
     }
+    
 }
