@@ -9,7 +9,7 @@ public class BottleSpawnerA : MonoBehaviour {
     [SerializeField] private float maxAngle = 15f;
     [SerializeField] private float waveDuration = 2f;   // total time per wave
     [SerializeField] private int totalWaves = 5;        // maximum waves allowed
-
+    [SerializeField] GameObject waveButton;
     private Collider2D spawnArea;
     private int currentWave = 0; // tracks which wave we are on
 
@@ -20,12 +20,24 @@ public class BottleSpawnerA : MonoBehaviour {
     void Update() {
         if (Input.GetKeyDown(KeyCode.R)) {
             if (currentWave < totalWaves) {
-                currentWave++;
-                StartCoroutine(SpawnWave(currentWave));
+                //currentWave++;
+               // StartCoroutine(SpawnWave(currentWave));
             }
         }
     }
-
+    public void StartSpawnWave() {
+        Debug.Log("disabling UI button");
+        waveButton.SetActive(false);
+        if (currentWave < totalWaves) {
+            currentWave++;
+            StartCoroutine(SpawnWave(currentWave));
+           
+        } else {
+            ShootingManager.ResetAll();
+            return;
+        }
+        
+    }
     private IEnumerator SpawnWave(int waveNumber) {
         int bottleCount = 2 * waveNumber + 1; // Wave 1=3, Wave 2=5, etc.
         float delayBetweenSpawns = waveDuration / bottleCount;
@@ -34,6 +46,7 @@ public class BottleSpawnerA : MonoBehaviour {
             SpawnBottle();
             yield return new WaitForSeconds(delayBetweenSpawns);
         }
+        waveButton.SetActive(true);
     }
 
     private void SpawnBottle() {
@@ -48,5 +61,9 @@ public class BottleSpawnerA : MonoBehaviour {
 
         float force = Random.Range(minForce, maxForce);
         prefab.GetComponent<Rigidbody2D>().AddForce(prefab.transform.up * force, ForceMode2D.Impulse);
+    }
+    public void GameFinished() {
+        waveButton.SetActive(false);
+        gameObject.SetActive(false);
     }
 }

@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class ShootingManager : MonoBehaviour
@@ -6,6 +7,8 @@ public class ShootingManager : MonoBehaviour
     [SerializeField]public static int score = 0;
     [SerializeField] int targetScore = 15;
     [SerializeField] BottleSpawnerA spawner;
+    [SerializeField] TextMeshProUGUI TargetScore;
+    [SerializeField] TextMeshProUGUI ScoreBoard;
     void Start()
     {
         
@@ -14,10 +17,16 @@ public class ShootingManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        TargetScore.text = "Target Score: " + targetScore.ToString();
+        ScoreBoard.text = "Score: " + score.ToString();
         if (score >= targetScore) {
             Debug.Log("Finished");
             spawner.StopAllCoroutines();
+            spawner.GameFinished();
             gameObject.SetActive(false);
         }
+    }
+    public static void ResetAll() {
+
     }
 }
