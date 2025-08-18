@@ -7,9 +7,11 @@ public class BottleSpawnerA : MonoBehaviour {
     [SerializeField] private float maxForce = 3f;
     [SerializeField] private float minAngle = -15f;
     [SerializeField] private float maxAngle = 15f;
-    [SerializeField] private float waveDuration = 2f;   // total time for each wave
-    [SerializeField] private int totalWaves = 5;        // number of waves
+    [SerializeField] private float waveDuration = 2f;   // total time per wave
+    [SerializeField] private int totalWaves = 5;        // maximum waves allowed
+
     private Collider2D spawnArea;
+    private int currentWave = 0; // tracks which wave we are on
 
     void Start() {
         spawnArea = GetComponent<Collider2D>();
@@ -17,23 +19,20 @@ public class BottleSpawnerA : MonoBehaviour {
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.R)) {
-            StopAllCoroutines();
-            StartCoroutine(SpawnWaves());
+            if (currentWave < totalWaves) {
+                currentWave++;
+                StartCoroutine(SpawnWave(currentWave));
+            }
         }
     }
-    
-    private IEnumerator SpawnWaves() {
-        for (int wave = 1; wave <= totalWaves; wave++) {
-            int bottleCount = 2 * wave + 1; // 1st wave = 3, 2nd = 5, etc.
-            float delayBetweenSpawns = waveDuration / bottleCount;
 
-            for (int i = 0; i < bottleCount; i++) {
-                SpawnBottle();
-                yield return new WaitForSeconds(delayBetweenSpawns);
-            }
+    private IEnumerator SpawnWave(int waveNumber) {
+        int bottleCount = 2 * waveNumber + 1; // Wave 1=3, Wave 2=5, etc.
+        float delayBetweenSpawns = waveDuration / bottleCount;
 
-            // optional pause between waves
-            yield return new WaitForSeconds(5f);
+        for (int i = 0; i < bottleCount; i++) {
+            SpawnBottle();
+            yield return new WaitForSeconds(delayBetweenSpawns);
         }
     }
 
