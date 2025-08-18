@@ -8,15 +8,19 @@ public class ShuffleManager_A : MonoBehaviour
     [SerializeField] private Transform cup;
     [SerializeField] private Vector3 offset;
     [SerializeField] private float movementSpeed = 3f;
+    [SerializeField] GameObject canvas;
     private Vector3 initial;
     private bool moveUPwards = false;
     private bool moveDOWNwards = false;
+    public static bool shufflefinished = false;
     void Start()
     {
-        initial = cup.position;
+        
 
     }
     public void StartAgain() {
+        initial = cup.position;
+        ball.SetParent(null);
         moveUPwards = true;
     }
     // Update is called once per frame
@@ -39,6 +43,7 @@ public class ShuffleManager_A : MonoBehaviour
                 cup.position = initial;
                 moveDOWNwards = false;
                 ball.SetParent(cup);
+                canvas.SetActive(false);
                 cupshuffle.StartShuffle();
             }
         }
