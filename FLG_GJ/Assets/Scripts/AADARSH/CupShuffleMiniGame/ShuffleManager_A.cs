@@ -19,6 +19,7 @@ public class ShuffleManager_A : MonoBehaviour
 
     }
     public void StartAgain() {
+        canvas.SetActive(false);
         initial = cup.position;
         ball.SetParent(null);
         moveUPwards = true;
@@ -43,7 +44,6 @@ public class ShuffleManager_A : MonoBehaviour
                 cup.position = initial;
                 moveDOWNwards = false;
                 ball.SetParent(cup);
-                canvas.SetActive(false);
                 cupshuffle.StartShuffle();
             }
         }
