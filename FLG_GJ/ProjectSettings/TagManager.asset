@@ -7,16 +7,17 @@ TagManager:
   - Wall
   - Ground
   - Enemy
+  - Package
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
   - Enemy
-  - 
-  - 
+  - Objects
+  - Player
   - 
   - 
   - 
@@ -43,6 +44,15 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 170564537
+    locked: 0
+  - name: Objects
+    uniqueID: 1310163425
+    locked: 0
+  - name: Players,Enemies
+    uniqueID: 433127147
     locked: 0
   m_RenderingLayers:
   - Default
