@@ -4,27 +4,23 @@ namespace TopDownShooter
 {
     public class CameraFollow_D : MonoBehaviour
     {
-        // The Object the camera will follow (our Player)
+        [Tooltip("The object the camera should follow (the Player).")]
         public Transform target;
-
-        // How smoothly the camera cathes up to its target
+        [Tooltip("How quickly the camera catches up to its target. Smaller is slower.")]
         public float smoothSpeed = 0.125f;
-
-        // An offset from the target's position
+        [Tooltip("An offset from the target's position. Keep Z at -10 for a 2D camera.")]
         public Vector3 offset;
 
+        // LateUpdate is used to ensure the camera moves *after* the player has moved in a frame.
         private void LateUpdate()
         {
-            // Ensure we have a target to follow
             if (target != null)
             {
-                // The desired position for the camera
+                // Calculate the desired position for the camera.
                 Vector3 desiredPosition = target.position + offset;
-
-                // Linearly interpolate from the current position to the desired position
+                // Smoothly interpolate from the camera's current position to the desired position.
                 Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-
-                // Apply the new position to the camera
+                // Apply the new position.
                 transform.position = smoothedPosition;
             }
         }
