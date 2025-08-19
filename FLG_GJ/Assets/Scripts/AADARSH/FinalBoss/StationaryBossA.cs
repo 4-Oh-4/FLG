@@ -123,11 +123,11 @@ public class StationaryBossA : MonoBehaviour {
         } else if (healthPercent > 0.33f) {
             // ? Medium finisher (bomb rain + faster bullets)
             RadialBurst(30, projectileSpeed * 1.5f);
-            BombRain(8,transform);
+            BombRain(5,transform);
         } else {
             // ?? Hard finisher (lots of bombs + fast bullet hell)
             RadialBurst(35, projectileSpeed * 2f);
-            BombRain(14,transform);
+            BombRain(8,transform);
         }
     }
     void RadialBurst(int count, float speed) {
@@ -145,7 +145,7 @@ public class StationaryBossA : MonoBehaviour {
     void BombRain(int count, Transform boss) {
         if (boss == null) return;
 
-        float radius = 2f; // distance from boss, tweak as needed
+        float radius = 3.5f; // distance from boss, tweak as needed
 
         for (int i = 0; i < count; i++) {
             // Evenly distribute bombs in a circle
