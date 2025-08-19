@@ -608,7 +608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08aca26a4f954a44a46b30024b693b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 5
   waveDuration: 10
   vulnerableDuration: 3
   projectilePrefab: {fileID: 4364365384200974149, guid: c03814e119744d84e85679f30b4b635a, type: 3}

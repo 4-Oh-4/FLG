@@ -45,6 +45,9 @@ public class StationaryBossA : MonoBehaviour {
             CancelInvoke(nameof(FireProjectiles));
             CancelInvoke(nameof(SpawnBomb));
             isAttacking = false;
+            DoFinisherAttack();
+
+            yield return new WaitForSeconds(1f); // short pause for effect
 
             // ?? Vulnerable phase
             isVulnerable = true;
@@ -71,17 +74,27 @@ public class StationaryBossA : MonoBehaviour {
     void SpawnBomb() {
         if (player == null) return;
 
-        float minDistance = 1.5f;  // how close the bomb can spawn to the player
-        float maxDistance = 4f;    // how far away it can spawn
+        float minDistanceFromPlayer = 0.5f; // closest to player
+        float maxDistanceFromPlayer = 2f;   // farthest from player
+        float safeDistanceFromBoss = 2f;    // keep bombs away from boss
 
-        // pick a random angle around the player
-        float angle = Random.Range(0f, Mathf.PI * 2f);
-        float distance = Random.Range(minDistance, maxDistance);
+        Vector2 spawnPos;
+        int safetyCounter = 0;
 
-        Vector2 spawnPos = (Vector2)player.position + new Vector2(
-            Mathf.Cos(angle) * distance,
-            Mathf.Sin(angle) * distance
-        );
+        do {
+            // pick a random angle around the player
+            float angle = Random.Range(0f, Mathf.PI * 2f);
+            float distance = Random.Range(minDistanceFromPlayer, maxDistanceFromPlayer);
+
+            spawnPos = (Vector2)player.position + new Vector2(
+                Mathf.Cos(angle) * distance,
+                Mathf.Sin(angle) * distance
+            );
+
+            safetyCounter++;
+            if (safetyCounter > 20) break; // prevent infinite loop
+        }
+        while (Vector2.Distance(spawnPos, transform.position) < safeDistanceFromBoss);
 
         Instantiate(bombPrefab, spawnPos, Quaternion.identity);
     }
@@ -101,4 +114,49 @@ public class StationaryBossA : MonoBehaviour {
         StopAllCoroutines();
         StartCoroutine(BossRoutine());
     }
+    void DoFinisherAttack() {
+        float healthPercent = (float)currentHealth / maxHealth;
+
+        if (healthPercent > 0.66f) {
+            // ?? Easy finisher (radial bullets)
+            RadialBurst(12, projectileSpeed);
+        } else if (healthPercent > 0.33f) {
+            // ? Medium finisher (bomb rain + faster bullets)
+            RadialBurst(16, projectileSpeed * 1.5f);
+            BombRain(4);
+        } else {
+            // ?? Hard finisher (lots of bombs + fast bullet hell)
+            RadialBurst(24, projectileSpeed * 2f);
+            BombRain(8);
+        }
+    }
+    void RadialBurst(int count, float speed) {
+        float angleStep = 360f / count;
+
+        for (int i = 0; i < count; i++) {
+            float angle = i * angleStep * Mathf.Deg2Rad;
+            Vector2 dir = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+
+            GameObject bullet = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.linearVelocity = dir * speed;
+        }
+    }
+    void BombRain(int count) {
+        if (player == null) return;
+
+        for (int i = 0; i < count; i++) {
+            float angle = Random.Range(0f, Mathf.PI * 2f);
+            float distance = Random.Range(2f, 5f);
+
+            Vector2 spawnPos = (Vector2)player.position + new Vector2(
+                Mathf.Cos(angle) * distance,
+                Mathf.Sin(angle) * distance
+            );
+
+            Instantiate(bombPrefab, spawnPos, Quaternion.identity);
+        }
+    }
+
+
 }
