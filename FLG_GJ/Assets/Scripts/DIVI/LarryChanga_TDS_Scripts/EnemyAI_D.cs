@@ -3,13 +3,14 @@ using UnityEngine;
 
 namespace TopDownShooter
 {
-    [RequireComponent(typeof(Rigidbody2D), typeof(Health_D))]
+    [RequireComponent(typeof(Rigidbody2D))]
     public class EnemyAI_D : MonoBehaviour
     {
         public enum TargetType { Player, Package }
         [SerializeField] private TargetType targetType = TargetType.Package;
 
         [Header("Stats")]
+        [SerializeField] private float maxHealth = 100f;
         [SerializeField] private float moveSpeed = 5f;
         [SerializeField] private float attackDamage = 20f;
         [SerializeField] private float attackRange = 1.2f;
@@ -17,46 +18,61 @@ namespace TopDownShooter
         [SerializeField] private float attackCoolDown = 1.5f;
         [SerializeField] private float attackDuration = 0.5f;
 
+        [Header("Loot")]
+        [SerializeField] private GameObject ammoDropPrefab;
+        [SerializeField][Range(0, 1)] private float ammoDropChance = 0.75f;
+
+        // --- Private References & State ---
+        private float currentHealth;
         private Transform target;
-        private Health_D targetHealth;
+        private PlayerController_D playerController;
+        private Package_D package;
         private Rigidbody2D enemyRb;
+        private SimpleSpawner_D spawner;
         private float lastAttackTime = -1f;
         private bool isAttacking = false;
 
+        // Called by the spawner to give this enemy a reference to it.
+        public void Initialize(SimpleSpawner_D spawnerRef)
+        {
+            spawner = spawnerRef;
+        }
+
+        // Initializes components and finds the AI's target.
         private void Start()
         {
             enemyRb = GetComponent<Rigidbody2D>();
+            currentHealth = maxHealth;
 
-
-
+            // If this is a Rusher, randomize its target.
             if (gameObject.name.Contains("Rusher_D"))
             {
                 if (Random.value < 0.5f) { targetType = TargetType.Player; }
                 else { targetType = TargetType.Package; }
             }
 
+            // Find and store a reference to the chosen target.
             if (targetType == TargetType.Player)
             {
                 GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
                 if (playerObj != null)
                 {
                     target = playerObj.transform;
-                    targetHealth = playerObj.GetComponent<Health_D>();
+                    playerController = playerObj.GetComponent<PlayerController_D>();
                 }
             }
-            else
+            else // Target is the Package
             {
                 GameObject packageObj = GameObject.Find("Package_D");
                 if (packageObj != null)
                 {
                     target = packageObj.transform;
-                    targetHealth = packageObj.GetComponent<Health_D>();
+                    package = packageObj.GetComponent<Package_D>();
                 }
             }
-
-            
         }
 
+        // Handles AI movement and attack logic at a fixed time step.
         private void FixedUpdate()
         {
             if (target == null || isAttacking)
@@ -83,6 +99,7 @@ namespace TopDownShooter
             }
         }
 
+        // Starts the attack coroutine if not on cooldown.
         void Attack()
         {
             if (Time.time >= lastAttackTime + attackCoolDown && !isAttacking)
@@ -92,33 +109,55 @@ namespace TopDownShooter
             }
         }
 
+        // Handles the timed attack sequence.
         IEnumerator AttackCoroutine()
         {
             isAttacking = true;
-
             yield return new WaitForSeconds(attackDuration);
 
+            // After the delay, check if the target is still in range and deal damage.
             if (target != null && Vector2.Distance(transform.position, target.position) <= attackRange)
             {
-                if (targetHealth != null)
+                if (targetType == TargetType.Player && playerController != null)
                 {
-                    targetHealth.TakeDamage(attackDamage);
+                    playerController.TakeDamage(attackDamage);
+                }
+                else if (targetType == TargetType.Package && package != null)
+                {
+                    package.TakeDamage(attackDamage);
                 }
             }
-
             isAttacking = false;
         }
 
-        // AMENDED: Added Gizmos for clarity.
-        private void OnDrawGizmosSelected()
+        // Called by the player's bullets to deal damage to this enemy.
+        public void TakeDamage(float damage)
         {
-            // Draw a red wire sphere to visualize the Attack Range.
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, attackRange);
+            if (currentHealth <= 0) return;
+            currentHealth -= damage;
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+        }
 
-            // Draw a blue wire sphere to visualize the Stopping Distance.
-            Gizmos.color = Color.blue;
-            Gizmos.DrawWireSphere(transform.position, stoppingDistance);
+        // Handles death logic, including loot drops.
+        void Die()
+        {
+            if (spawner != null)
+            {
+                spawner.EnemyDied();
+            }
+
+            if (Random.value <= ammoDropChance)
+            {
+                if (ammoDropPrefab != null)
+                {
+                    Instantiate(ammoDropPrefab, transform.position, Quaternion.identity);
+                }
+            }
+
+            Destroy(gameObject);
         }
     }
 }

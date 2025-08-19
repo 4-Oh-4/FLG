@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Enemy
   - Package
+  - Ammo
   - Boss
   layers:
   - Default

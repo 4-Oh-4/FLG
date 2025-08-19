@@ -303,83 +303,6 @@ MonoBehaviour:
   target: {fileID: 849926057}
   smoothSpeed: 0.125
   offset: {x: 0, y: 0, z: -10}
---- !u!1 &149782135
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 149782137}
-  - component: {fileID: 149782136}
-  m_Layer: 0
-  m_Name: EnemySpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &149782136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 149782135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30249d4b725948d4fa21c7dbe3d89af4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 835073799}
-  - {fileID: 1776398723}
-  - {fileID: 266060893}
-  - {fileID: 1181444322}
-  - {fileID: 811402333}
-  - {fileID: 14471198}
-  waves:
-  - enemiesInWave:
-    - enemyPrefab: {fileID: 4458670518924132275, guid: 5a0c6568de936b44b99864cd78178a13, type: 3}
-      count: 7
-    - enemyPrefab: {fileID: 6491340617102128017, guid: ab33d892025c2c44598452a05ae5f11e, type: 3}
-      count: 7
-    timeBetweenSpawns: 2
-    timeUntilNextWave: 45
-  - enemiesInWave:
-    - enemyPrefab: {fileID: 2198637140869196842, guid: 08099d9666e674e44be6ab289f167dd2, type: 3}
-      count: 10
-    - enemyPrefab: {fileID: 4458670518924132275, guid: 5a0c6568de936b44b99864cd78178a13, type: 3}
-      count: 10
-    - enemyPrefab: {fileID: 6491340617102128017, guid: ab33d892025c2c44598452a05ae5f11e, type: 3}
-      count: 10
-    timeBetweenSpawns: 1.25
-    timeUntilNextWave: 60
-  - enemiesInWave:
-    - enemyPrefab: {fileID: 2198637140869196842, guid: 08099d9666e674e44be6ab289f167dd2, type: 3}
-      count: 12
-    - enemyPrefab: {fileID: 4458670518924132275, guid: 5a0c6568de936b44b99864cd78178a13, type: 3}
-      count: 16
-    - enemyPrefab: {fileID: 6491340617102128017, guid: ab33d892025c2c44598452a05ae5f11e, type: 3}
-      count: 14
-    timeBetweenSpawns: 0.8
-    timeUntilNextWave: 0
---- !u!4 &149782137
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 149782135}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &194993262
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,6 +769,64 @@ Transform:
   - {fileID: 14471198}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1809751561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1809751563}
+  - component: {fileID: 1809751562}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1809751562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809751561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30249d4b725948d4fa21c7dbe3d89af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 2198637140869196842, guid: 08099d9666e674e44be6ab289f167dd2, type: 3}
+  - {fileID: 4458670518924132275, guid: 5a0c6568de936b44b99864cd78178a13, type: 3}
+  - {fileID: 6491340617102128017, guid: ab33d892025c2c44598452a05ae5f11e, type: 3}
+  spawnPoints:
+  - {fileID: 835073799}
+  - {fileID: 1776398723}
+  - {fileID: 1181444322}
+  - {fileID: 14471198}
+  - {fileID: 811402333}
+  - {fileID: 266060893}
+  enemiesPerWave: 5
+  timeBetweenWaves: 5
+  timeBetweenSpawns: 1
+--- !u!4 &1809751563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809751561}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1815917841
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,4 +1039,4 @@ SceneRoots:
   - {fileID: 974541190}
   - {fileID: 522175462}
   - {fileID: 1785525852}
-  - {fileID: 149782137}
+  - {fileID: 1809751563}

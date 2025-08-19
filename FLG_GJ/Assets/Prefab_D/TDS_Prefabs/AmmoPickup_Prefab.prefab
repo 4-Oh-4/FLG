@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8899717977180167245}
   - component: {fileID: 4871566310291210009}
   - component: {fileID: 5363995732263405957}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AmmoPickup_Prefab
-  m_TagString: Untagged
+  m_TagString: Ammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -12,9 +12,7 @@ GameObject:
   - component: {fileID: 944611092209590271}
   - component: {fileID: 8968308545614148787}
   - component: {fileID: 8886080321211166282}
-  - component: {fileID: 7921455371049210706}
   - component: {fileID: 4706034252044047466}
-  - component: {fileID: 5110760461043419120}
   m_Layer: 6
   m_Name: Rusher_D
   m_TagString: Enemy
@@ -165,34 +163,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7921455371049210706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4458670518924132275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cb60495d956a904fb65bea50dc5db9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 75
-  onDeath:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4458670518924132275}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &4706034252044047466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,24 +176,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetType: 1
+  maxHealth: 75
   moveSpeed: 6
   attackDamage: 25
   attackRange: 1.2
   stoppingDistance: 1
   attackCoolDown: 1.5
   attackDuration: 0.5
---- !u!114 &5110760461043419120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4458670518924132275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d018bb170149ba24a89cb5f138ec0a8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lootTable:
-  - itemPrefab: {fileID: 1396886347141849572, guid: 9a16934a22aead24191f704f701632d2, type: 3}
-    dropChance: 0.62
+  ammoDropPrefab: {fileID: 1396886347141849572, guid: 9a16934a22aead24191f704f701632d2, type: 3}
+  ammoDropChance: 0.75
