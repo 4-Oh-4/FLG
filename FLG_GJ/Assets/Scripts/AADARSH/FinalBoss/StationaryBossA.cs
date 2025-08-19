@@ -69,12 +69,23 @@ public class StationaryBossA : MonoBehaviour {
     }
 
     void SpawnBomb() {
-        Vector2 pos = new Vector2(
-            Random.Range(-arenaSize.x / 2, arenaSize.x / 2),
-            Random.Range(-arenaSize.y / 2, arenaSize.y / 2)
+        if (player == null) return;
+
+        float minDistance = 1.5f;  // how close the bomb can spawn to the player
+        float maxDistance = 4f;    // how far away it can spawn
+
+        // pick a random angle around the player
+        float angle = Random.Range(0f, Mathf.PI * 2f);
+        float distance = Random.Range(minDistance, maxDistance);
+
+        Vector2 spawnPos = (Vector2)player.position + new Vector2(
+            Mathf.Cos(angle) * distance,
+            Mathf.Sin(angle) * distance
         );
-        Instantiate(bombPrefab, pos, Quaternion.identity);
+
+        Instantiate(bombPrefab, spawnPos, Quaternion.identity);
     }
+
 
     public void TakeDamage(int dmg) {
         if (!isVulnerable) return; // can only damage during vulnerable phase
