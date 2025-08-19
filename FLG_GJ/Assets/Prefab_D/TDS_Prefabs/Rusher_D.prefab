@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8886080321211166282}
   - component: {fileID: 7921455371049210706}
   - component: {fileID: 4706034252044047466}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rusher_D
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &7921455371049210706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,21 +178,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 75
   onDeath:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4458670518924132275}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &4706034252044047466
@@ -210,6 +195,7 @@ MonoBehaviour:
   targetType: 1
   moveSpeed: 6
   attackDamage: 25
-  attackRange: 1
+  attackRange: 1.2
+  stoppingDistance: 1
   attackCoolDown: 1.5
-  healthBarPrefab: {fileID: 2735919621559745155, guid: 89adc712fad412842bb453c551c3ae85, type: 3}
+  attackDuration: 0.5

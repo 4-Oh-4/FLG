@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8941674032031468055}
   - component: {fileID: 303931816729072425}
   - component: {fileID: 4713167604095840382}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Saboteur_D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &303931816729072425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,21 +178,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 125
   onDeath:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6491340617102128017}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &4713167604095840382
@@ -209,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   attackDamage: 10
-  attackRange: 1
+  attackRange: 1.2
+  stoppingDistance: 1
   attackCoolDown: 2
-  healthBarPrefab: {fileID: 2735919621559745155, guid: 89adc712fad412842bb453c551c3ae85, type: 3}
+  attackDuration: 0.5

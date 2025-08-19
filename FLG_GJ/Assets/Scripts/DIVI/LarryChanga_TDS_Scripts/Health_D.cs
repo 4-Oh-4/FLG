@@ -3,12 +3,13 @@ using UnityEngine.Events;
 
 namespace TopDownShooter
 {
-    // This script now only manages health values and triggers a death event.
+    // A simple component to give any object health and a death event.
     public class Health_D : MonoBehaviour
     {
         [SerializeField] private float maxHealth = 100f;
         private float currentHealth;
 
+        // An event that fires in the Inspector when health reaches zero.
         public UnityEvent onDeath;
 
         private void Start()
