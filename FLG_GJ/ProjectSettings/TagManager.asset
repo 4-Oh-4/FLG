@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Package
   - Ammo
+  - Boss
   layers:
   - Default
   - TransparentFX
