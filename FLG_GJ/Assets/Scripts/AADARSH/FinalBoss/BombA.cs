@@ -5,6 +5,7 @@ public class BombA : MonoBehaviour {
     [SerializeField] private float radius = 2f;
     [SerializeField] private GameObject explosionEffect;
 
+
     private SpriteRenderer sr;
     private float timer;
 
@@ -30,21 +31,26 @@ public class BombA : MonoBehaviour {
         if (timer >= delay) {
             Explode();
         }
+
     }
 
     void Explode() {
         // Show explosion effect
+
         if (explosionEffect != null) {
             GameObject fx = Instantiate(explosionEffect, transform.position, Quaternion.identity);
             Destroy(fx, 1f); // cleanup after 1 sec
         }
 
+
         // Damage player if inside radius
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, radius);
         foreach (Collider2D hit in hits) {
             if (hit.CompareTag("Player")) {
+
                 // Example damage call
                 //hit.GetComponent<PlayerHealth>()?.TakeDamage(1);
+
                 Debug.Log("Player hit by bomb!");
             }
         }

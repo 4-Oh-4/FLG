@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8941674032031468055}
   - component: {fileID: 303931816729072425}
   - component: {fileID: 4713167604095840382}
+  - component: {fileID: 1051442413880308214}
   m_Layer: 6
   m_Name: Saboteur_D
   m_TagString: Untagged
@@ -179,7 +180,19 @@ MonoBehaviour:
   maxHealth: 125
   onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6491340617102128017}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4713167604095840382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,3 +211,18 @@ MonoBehaviour:
   stoppingDistance: 1
   attackCoolDown: 2
   attackDuration: 0.5
+--- !u!114 &1051442413880308214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6491340617102128017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d018bb170149ba24a89cb5f138ec0a8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootTable:
+  - itemPrefab: {fileID: 1396886347141849572, guid: 9a16934a22aead24191f704f701632d2, type: 3}
+    dropChance: 0.73

@@ -284,7 +284,9 @@ GameObject:
   - component: {fileID: 1616617049}
   - component: {fileID: 1616617048}
   - component: {fileID: 1616617052}
+
   - component: {fileID: 1616617053}
+
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -319,7 +321,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20daa0198bd20041a115fe3df7ffffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+
   movementSpeed: 6
+
 --- !u!114 &1616617049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,6 +498,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+
 --- !u!114 &1616617053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,6 +512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+
 --- !u!1 &1654861780
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,10 +524,12 @@ GameObject:
   - component: {fileID: 1654861782}
   - component: {fileID: 1654861781}
   - component: {fileID: 1654861783}
+
   - component: {fileID: 1654861784}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Boss
+
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -608,6 +616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08aca26a4f954a44a46b30024b693b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+
   maxHealth: 5
   waveDuration: 10
   vulnerableDuration: 3
@@ -663,6 +672,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.0794694, y: 1.0328826}
   m_EdgeRadius: 0
+
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ namespace TopDownShooter
         [SerializeField] private float moveSpeed = 5f;
 
         [Header("Combat")]
-        [SerializeField] private int maxAmmo = 30;
+        [SerializeField] private int maxAmmo = 60;
         [SerializeField] private float attackDamage = 25f;
         [SerializeField] private LayerMask enemyLayers;
         [SerializeField] private GameObject shotEffectPrefab;
@@ -97,6 +97,13 @@ namespace TopDownShooter
                     targetHealth.TakeDamage(attackDamage);
                 }
             }
+        }
+
+        // Sets the player's current ammo to the maximum amount.
+        public void ReplenishAmmo()
+        {
+            currentAmmo = maxAmmo;
+            Debug.Log("Ammo replenished to max! Current: " + currentAmmo);
         }
     }
 }

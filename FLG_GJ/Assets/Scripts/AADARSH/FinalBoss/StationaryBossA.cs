@@ -1,6 +1,7 @@
 using UnityEngine;
 
 public class StationaryBossA : MonoBehaviour {
+
     [Header("Boss Settings")]
     [SerializeField] private int maxHealth = 10;
     private int currentHealth;
@@ -10,6 +11,7 @@ public class StationaryBossA : MonoBehaviour {
     [SerializeField] private float waveDuration = 10f;      // attack duration
     [SerializeField] private float vulnerableDuration = 3f; // time player can attack
     private bool isAttacking = false;
+
 
     [Header("Projectiles")]
     [SerializeField] private GameObject projectilePrefab;
@@ -65,6 +67,7 @@ public class StationaryBossA : MonoBehaviour {
 
     void FireProjectiles() {
         if (player == null) return;
+
         Vector2 dir = (player.position - transform.position).normalized;
         GameObject bullet = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
@@ -163,4 +166,4 @@ public class StationaryBossA : MonoBehaviour {
 
 
 
-}
+
