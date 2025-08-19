@@ -126,11 +126,11 @@ public class StationaryBossA : MonoBehaviour {
         } else if (healthPercent > 0.33f) {
             // ? Medium finisher (bomb rain + faster bullets)
             RadialBurst(30, projectileSpeed * 1.5f);
-            BombRain(5,transform);
+            BombRain(5, transform);
         } else {
             // ?? Hard finisher (lots of bombs + fast bullet hell)
             RadialBurst(35, projectileSpeed * 2f);
-            BombRain(8,transform);
+            BombRain(8, transform);
         }
     }
     void RadialBurst(int count, float speed) {
@@ -162,6 +162,7 @@ public class StationaryBossA : MonoBehaviour {
             Instantiate(bombPrefab, spawnPos, Quaternion.identity);
         }
     }
+}
 
 
 
