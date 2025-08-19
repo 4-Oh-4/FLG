@@ -12,9 +12,7 @@ GameObject:
   - component: {fileID: 1167109554642359716}
   - component: {fileID: 6936763688441523020}
   - component: {fileID: 8605376080773092751}
-  - component: {fileID: 556091457164689738}
   - component: {fileID: 8280353434321025452}
-  - component: {fileID: 3731442159422250324}
   m_Layer: 6
   m_Name: Brute_D
   m_TagString: Enemy
@@ -165,34 +163,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &556091457164689738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2198637140869196842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cb60495d956a904fb65bea50dc5db9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 250
-  onDeath:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2198637140869196842}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &8280353434321025452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,24 +176,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetType: 1
+  maxHealth: 250
   moveSpeed: 2
   attackDamage: 15
   attackRange: 1.2
   stoppingDistance: 1
   attackCoolDown: 1.5
   attackDuration: 0.5
---- !u!114 &3731442159422250324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2198637140869196842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d018bb170149ba24a89cb5f138ec0a8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lootTable:
-  - itemPrefab: {fileID: 1396886347141849572, guid: 9a16934a22aead24191f704f701632d2, type: 3}
-    dropChance: 0.7
+  ammoDropPrefab: {fileID: 1396886347141849572, guid: 9a16934a22aead24191f704f701632d2, type: 3}
+  ammoDropChance: 0.75

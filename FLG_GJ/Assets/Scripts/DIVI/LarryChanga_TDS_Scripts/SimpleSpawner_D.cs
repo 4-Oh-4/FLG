@@ -3,94 +3,79 @@ using UnityEngine;
 
 namespace TopDownShooter
 {
-    // A simple class to define a group of enemies in a wave.
-    [System.Serializable]
-    public class EnemyGroup
-    {
-        public GameObject enemyPrefab;
-        public int count;
-    }
-
-    // A simple class to define a whole wave.
-    [System.Serializable]
-    public class Wave
-    {
-        public EnemyGroup[] enemiesInWave;
-        public float timeBetweenSpawns = 0.5f; // Time between each enemy in this wave.
-        public float timeUntilNextWave = 5f;   // Time after this wave is cleared.
-    }
-
     public class SimpleSpawner_D : MonoBehaviour
     {
         [Header("Spawning Setup")]
+        [Tooltip("A list of all possible enemies that can be spawned.")]
+        [SerializeField] private GameObject[] enemyPrefabs;
         [SerializeField] private Transform[] spawnPoints;
-        [SerializeField] private Wave[] waves;
 
-        private int enemiesAlive = 0;
-        private int currentWaveIndex = 0;
+        [Header("Wave Settings")]
+        [SerializeField] private int enemiesPerWave = 5;
+        [SerializeField] private float timeBetweenWaves = 5f;
+        [SerializeField] private float timeBetweenSpawns = 1f;
 
-        // Starts the spawning process when the game begins.
+        private int enemiesAlive;
+        private int currentWaveNumber = 1;
+
         private void Start()
         {
             StartCoroutine(SpawnLoop());
         }
 
-        // The main loop that handles wave progression.
         private IEnumerator SpawnLoop()
         {
-            // Continue as long as there are waves left to spawn.
-            while (currentWaveIndex < waves.Length)
+            while (true) // This will loop forever for endless waves.
             {
-                Wave currentWave = waves[currentWaveIndex];
+                yield return StartCoroutine(SpawnWave());
 
-                // Spawn all enemies for the current wave.
-                yield return StartCoroutine(SpawnWave(currentWave));
-
-                // Wait until all spawned enemies are defeated.
+                // Wait until all enemies from the wave are defeated.
                 while (enemiesAlive > 0)
                 {
-                    yield return null; // Wait for the next frame.
+                    yield return null;
                 }
 
-                Debug.Log("Wave " + (currentWaveIndex + 1) + " cleared!");
-                yield return new WaitForSeconds(currentWave.timeUntilNextWave);
+                Debug.Log("Wave " + currentWaveNumber + " cleared!");
+                yield return new WaitForSeconds(timeBetweenWaves);
 
-                currentWaveIndex++;
+                currentWaveNumber++;
+                // Increase difficulty for the next wave.
+                enemiesPerWave += 3;
             }
-
-            Debug.Log("All waves cleared! You win!");
-            // Here you would add your game-winning logic.
         }
 
-        // Spawns all enemies for a single wave.
-        private IEnumerator SpawnWave(Wave wave)
+        private IEnumerator SpawnWave()
         {
-            foreach (var enemyGroup in wave.enemiesInWave)
+            enemiesAlive = enemiesPerWave;
+            Debug.Log("Starting Wave " + currentWaveNumber + ". Spawning " + enemiesAlive + " enemies.");
+
+            for (int i = 0; i < enemiesAlive; i++)
             {
-                for (int i = 0; i < enemyGroup.count; i++)
+                // Pick a random enemy and a random spawn point.
+                GameObject randomEnemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
+                Transform randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+
+                // Create the enemy.
+                GameObject enemyInstance = Instantiate(randomEnemyPrefab, randomSpawnPoint.position, Quaternion.identity);
+
+                // Give the new enemy a reference to this spawner.
+                // Note: You may need to get a different component depending on the enemy type.
+                if (enemyInstance.GetComponent<EnemyAI_D>() != null)
                 {
-                    // Pick a random spawn point.
-                    Transform randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-
-                    // Create the enemy.
-                    GameObject enemyInstance = Instantiate(enemyGroup.enemyPrefab, randomSpawnPoint.position, Quaternion.identity);
-
-                    // Get the enemy's health script and tell it to notify us when it dies.
-                    Health_D enemyHealth = enemyInstance.GetComponent<Health_D>();
-                    if (enemyHealth != null)
-                    {
-                        enemiesAlive++;
-                        enemyHealth.onDeath.AddListener(() => OnEnemyDied());
-                    }
-
-                    // Wait a short time before spawning the next enemy in the wave.
-                    yield return new WaitForSeconds(wave.timeBetweenSpawns);
+                    enemyInstance.GetComponent<EnemyAI_D>().Initialize(this);
                 }
+                else if (enemyInstance.GetComponent<SaboteurAI_D>() != null)
+                {
+                    // You would need to add an Initialize function to SaboteurAI_D as well.
+                    // enemyInstance.GetComponent<SaboteurAI_D>().Initialize(this);
+                }
+
+                yield return new WaitForSeconds(timeBetweenSpawns);
             }
         }
 
-        // This function is called by the onDeath event from an enemy's Health_D script.
-        void OnEnemyDied()
+        // This function is called by an enemy right before it is destroyed.
+        public void EnemyDied()
         {
             enemiesAlive--;
         }
