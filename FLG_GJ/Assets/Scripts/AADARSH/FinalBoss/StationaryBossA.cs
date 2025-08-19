@@ -123,11 +123,11 @@ public class StationaryBossA : MonoBehaviour {
         } else if (healthPercent > 0.33f) {
             // ? Medium finisher (bomb rain + faster bullets)
             RadialBurst(30, projectileSpeed * 1.5f);
-            BombRain(8);
+            BombRain(8,transform);
         } else {
             // ?? Hard finisher (lots of bombs + fast bullet hell)
             RadialBurst(35, projectileSpeed * 2f);
-            BombRain(14);
+            BombRain(14,transform);
         }
     }
     void RadialBurst(int count, float speed) {
