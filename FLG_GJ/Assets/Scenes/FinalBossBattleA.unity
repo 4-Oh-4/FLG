@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20daa0198bd20041a115fe3df7ffffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 3
+  movementSpeed: 6
 --- !u!114 &1616617049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,8 +612,8 @@ MonoBehaviour:
   waveDuration: 10
   vulnerableDuration: 3
   projectilePrefab: {fileID: 4364365384200974149, guid: c03814e119744d84e85679f30b4b635a, type: 3}
-  projectileSpeed: 5
-  projectileInterval: 1
+  projectileSpeed: 8
+  projectileInterval: 0.5
   bombPrefab: {fileID: 6245700106885402642, guid: 733b9a37e4a1d514693362de77e636fb, type: 3}
   bombInterval: 3
   arenaSize: {x: 10, y: 10}

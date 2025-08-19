@@ -119,15 +119,15 @@ public class StationaryBossA : MonoBehaviour {
 
         if (healthPercent > 0.66f) {
             // ?? Easy finisher (radial bullets)
-            RadialBurst(12, projectileSpeed);
+            RadialBurst(20, projectileSpeed);
         } else if (healthPercent > 0.33f) {
             // ? Medium finisher (bomb rain + faster bullets)
-            RadialBurst(16, projectileSpeed * 1.5f);
-            BombRain(4);
+            RadialBurst(30, projectileSpeed * 1.5f);
+            BombRain(8);
         } else {
             // ?? Hard finisher (lots of bombs + fast bullet hell)
-            RadialBurst(24, projectileSpeed * 2f);
-            BombRain(8);
+            RadialBurst(35, projectileSpeed * 2f);
+            BombRain(14);
         }
     }
     void RadialBurst(int count, float speed) {
@@ -142,21 +142,25 @@ public class StationaryBossA : MonoBehaviour {
             rb.linearVelocity = dir * speed;
         }
     }
-    void BombRain(int count) {
-        if (player == null) return;
+    void BombRain(int count, Transform boss) {
+        if (boss == null) return;
+
+        float radius = 2f; // distance from boss, tweak as needed
 
         for (int i = 0; i < count; i++) {
-            float angle = Random.Range(0f, Mathf.PI * 2f);
-            float distance = Random.Range(2f, 5f);
+            // Evenly distribute bombs in a circle
+            float angle = i * Mathf.PI * 2f / count;
 
-            Vector2 spawnPos = (Vector2)player.position + new Vector2(
-                Mathf.Cos(angle) * distance,
-                Mathf.Sin(angle) * distance
+            Vector2 spawnPos = (Vector2)boss.position + new Vector2(
+                Mathf.Cos(angle) * radius,
+                Mathf.Sin(angle) * radius
             );
 
             Instantiate(bombPrefab, spawnPos, Quaternion.identity);
         }
     }
+
+
 
 
 }
