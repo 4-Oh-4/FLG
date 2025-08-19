@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4399483614769165245}
   - component: {fileID: 8681389282113658122}
   - component: {fileID: 1179683587172970517}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player_TD
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -33,8 +33,7 @@ Transform:
   m_LocalPosition: {x: 1.56, y: -0.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5948493532062094341}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6197452252105729707
@@ -179,8 +178,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   maxAmmo: 30
-  attackPoint: {fileID: 5948493532062094341}
-  healthBarPrefab: {fileID: 2735919621559745155, guid: 89adc712fad412842bb453c551c3ae85, type: 3}
+  attackDamage: 25
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  shotEffectPrefab: {fileID: 8939118116135000642, guid: d7fba8b34af025f489f4457feac6458e, type: 3}
 --- !u!114 &1179683587172970517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,37 +211,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnHealthChanged:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!1 &4895472783735480118
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5948493532062094341}
-  m_Layer: 0
-  m_Name: AttackPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5948493532062094341
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4895472783735480118}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.66, y: -0.07, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5337513061783263348}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
