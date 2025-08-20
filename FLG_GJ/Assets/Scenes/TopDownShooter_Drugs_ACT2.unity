@@ -778,7 +778,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1809751563}
-  - component: {fileID: 1809751562}
+  - component: {fileID: 1809751564}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -786,32 +786,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1809751562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1809751561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30249d4b725948d4fa21c7dbe3d89af4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefabs:
-  - {fileID: 2198637140869196842, guid: 08099d9666e674e44be6ab289f167dd2, type: 3}
-  - {fileID: 4458670518924132275, guid: 5a0c6568de936b44b99864cd78178a13, type: 3}
-  - {fileID: 6491340617102128017, guid: ab33d892025c2c44598452a05ae5f11e, type: 3}
-  spawnPoints:
-  - {fileID: 835073799}
-  - {fileID: 1776398723}
-  - {fileID: 1181444322}
-  - {fileID: 14471198}
-  - {fileID: 811402333}
-  - {fileID: 266060893}
-  enemiesPerWave: 5
-  timeBetweenWaves: 5
-  timeBetweenSpawns: 1
 --- !u!4 &1809751563
 Transform:
   m_ObjectHideFlags: 0
@@ -827,6 +801,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1809751564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809751561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1f2ee90a6d3d64897d42f89df31481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - {fileID: 11400000, guid: 11c9ae782aa4fb147b84a257671f53a3, type: 2}
+  - {fileID: 11400000, guid: 287b41786ea480341bb85f618065e9a1, type: 2}
+  - {fileID: 11400000, guid: 2dc795ca612f9af42b57e315f0b0dc79, type: 2}
+  spawnPoints:
+  - {fileID: 835073799}
+  - {fileID: 1776398723}
+  - {fileID: 266060893}
+  - {fileID: 1181444322}
+  - {fileID: 811402333}
+  - {fileID: 14471198}
 --- !u!1 &1815917841
 GameObject:
   m_ObjectHideFlags: 0
