@@ -28,12 +28,14 @@ namespace TopDownShooter
         private PlayerController_D playerController;
         private Package_D package;
         private Rigidbody2D enemyRb;
-        private SimpleSpawner_D spawner;
+        private WaveSpawner_D spawner;
         private float lastAttackTime = -1f;
         private bool isAttacking = false;
 
-        // Called by the spawner to give this enemy a reference to it.
-        public void Initialize(SimpleSpawner_D spawnerRef)
+
+
+        // This function is called by the spawner when this enemy is created.
+        public void Initialize(WaveSpawner_D spawnerRef)
         {
             spawner = spawnerRef;
         }
@@ -144,10 +146,14 @@ namespace TopDownShooter
         // Handles death logic, including loot drops.
         void Die()
         {
+            
+                // Tell the spawner that we have died.
             if (spawner != null)
             {
-                spawner.EnemyDied();
+                spawner.OnEnemyDied();
             }
+
+                // ... (your loot drop logic) ...
 
             if (Random.value <= ammoDropChance)
             {

@@ -24,12 +24,15 @@ namespace TopDownShooter
         private Transform playerTarget;
         private PlayerController_D playerController;
         private Rigidbody2D saboteurRb;
-        private SimpleSpawner_D spawner;
+        private WaveSpawner_D spawner;
+
         private float lastAttackTime = -1f;
         private bool isAttacking = false;
 
-        // Called by the spawner to give this enemy a reference to it.
-        public void Initialize(SimpleSpawner_D spawnerRef)
+
+
+        // This function is called by the spawner when this enemy is created.
+        public void Initialize(WaveSpawner_D spawnerRef)
         {
             spawner = spawnerRef;
         }
@@ -124,11 +127,16 @@ namespace TopDownShooter
         // Handles death logic.
         void Die()
         {
+
+
             // Tell the spawner that we have died.
             if (spawner != null)
             {
-                spawner.EnemyDied();
+                spawner.OnEnemyDied();
             }
+
+                
+            
 
             // Check if we should drop ammo.
             if (Random.value <= ammoDropChance)
