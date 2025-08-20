@@ -40,10 +40,15 @@ namespace TopDownShooter
             spawner = spawnerRef;
         }
 
-        // Initializes components and finds the AI's target.
-        private void Start()
+        private void Awake()
         {
             enemyRb = GetComponent<Rigidbody2D>();
+        }
+
+        // Initializes components and finds the AI's target.
+        private void OnEnable()
+        {
+            
             currentHealth = maxHealth;
 
             // If this is a Rusher, randomize its target.
@@ -163,7 +168,7 @@ namespace TopDownShooter
                 }
             }
 
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

@@ -4,15 +4,22 @@ namespace TopDownShooter
 {
     public class AmmoPickup_D : MonoBehaviour
     {
-        // This function is called when another collider enters this object's trigger.
+        [Tooltip("How many seconds the pickup will stay on the ground before disappearing.")]
+        [SerializeField] private float lifeTime = 5f;
+
+        private void Start()
+        {
+            // Schedule this GameObject to be destroyed after 'lifeTime' seconds.
+            Destroy(gameObject, lifeTime);
+        }
+
         private void OnTriggerEnter2D(Collider2D other)
         {
-            // Check if the object that entered has a PlayerController_D script.
             PlayerController_D player = other.GetComponent<PlayerController_D>();
             if (player != null)
             {
-                // If it is the player, call the replenish function and destroy this pickup.
                 player.ReplenishAmmo();
+                // If the player picks it up, destroy it immediately.
                 Destroy(gameObject);
             }
         }
