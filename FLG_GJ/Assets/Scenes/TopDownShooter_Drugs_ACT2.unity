@@ -702,13 +702,13 @@ MonoBehaviour:
   pools:
   - tag: Rusher_D
     prefab: {fileID: 4458670518924132275, guid: 5a0c6568de936b44b99864cd78178a13, type: 3}
-    size: 15
+    size: 20
   - tag: Brute_D
     prefab: {fileID: 2198637140869196842, guid: 08099d9666e674e44be6ab289f167dd2, type: 3}
     size: 8
   - tag: Saboteur_D
     prefab: {fileID: 6491340617102128017, guid: ab33d892025c2c44598452a05ae5f11e, type: 3}
-    size: 12
+    size: 8
 --- !u!4 &1128480627
 Transform:
   m_ObjectHideFlags: 0
