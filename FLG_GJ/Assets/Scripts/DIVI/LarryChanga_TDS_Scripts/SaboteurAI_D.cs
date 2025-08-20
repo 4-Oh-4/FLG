@@ -37,9 +37,14 @@ namespace TopDownShooter
             spawner = spawnerRef;
         }
 
-        private void Start()
+        private void Awake()
         {
             saboteurRb = GetComponent<Rigidbody2D>();
+        }
+
+        private void OnEnable()
+        {
+            
             currentHealth = maxHealth;
 
             // This AI's only goal is to find the player.
@@ -147,8 +152,7 @@ namespace TopDownShooter
                 }
             }
 
-            // Destroy this enemy GameObject.
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
