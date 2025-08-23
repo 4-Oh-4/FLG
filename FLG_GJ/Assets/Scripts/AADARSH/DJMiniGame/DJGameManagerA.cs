@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections;
 
 public class DJGameManagerA : MonoBehaviour {
     [Header("UI")]
@@ -22,7 +23,8 @@ public class DJGameManagerA : MonoBehaviour {
 
     private double nextBeatTime;
     private double beatInterval;
-
+    private int beatCounter = 0;
+    public int beatsPerWord = 4;
     void Start() {
         beatInterval = 60.0 / bpm;
         nextBeatTime = AudioSettings.dspTime + 2.0; // start after 2 sec delay
@@ -30,10 +32,18 @@ public class DJGameManagerA : MonoBehaviour {
     }
 
     void Update() {
-        // Spawn word on beat
         if (AudioSettings.dspTime >= nextBeatTime) {
-            SetNewRound();
-            nextBeatTime += beatInterval;
+            beatCounter++;
+
+            // Visual pulse every beat (optional)
+            PulseBackground();
+
+            // Only set new word every X beats
+            if (beatCounter % beatsPerWord == 0) {
+                SetNewRound();
+            }
+
+            nextBeatTime += beatInterval; // schedule next beat
         }
     }
 
@@ -73,5 +83,30 @@ public class DJGameManagerA : MonoBehaviour {
         // Update UI
         scoreText.text = "Score: " + score;
         comboText.text = "Combo: " + combo + "x";
+    }
+    void PulseBackground() {
+        StopAllCoroutines(); // stop any ongoing pulse
+        StartCoroutine(PulseRoutine());
+    }
+
+    IEnumerator PulseRoutine() {
+        Vector3 startScale = wordText.transform.localScale;
+        Vector3 bigScale = Vector3.one * 1.2f;
+
+        float t = 0;
+        while (t < 0.2f) // grow in 0.2s
+        {
+            t += Time.deltaTime;
+            wordText.transform.localScale = Vector3.Lerp(startScale, bigScale, t / 0.2f);
+            yield return null;
+        }
+
+        t = 0;
+        while (t < 0.2f) // shrink back in 0.2s
+        {
+            t += Time.deltaTime;
+            wordText.transform.localScale = Vector3.Lerp(bigScale, Vector3.one, t / 0.2f);
+            yield return null;
+        }
     }
 }
