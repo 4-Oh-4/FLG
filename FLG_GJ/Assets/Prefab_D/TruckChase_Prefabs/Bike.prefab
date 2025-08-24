@@ -175,8 +175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7865d986269b2b4a98dd7ce665be63c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 25
-  forwardSpeed: 4.5
+  maxHealth: 50
+  forwardSpeed: 3.5
   yLimit: 0.75
   timeUntilRam: 8
   ramSpeedMultiplier: 2

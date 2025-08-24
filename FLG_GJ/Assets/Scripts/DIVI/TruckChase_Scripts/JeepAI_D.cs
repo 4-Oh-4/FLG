@@ -5,12 +5,11 @@ using TruckChase;
 public class JeepAI_D : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] private float maxHealth = 60f;
+    [SerializeField] private float maxHealth = 80f;
 
     [Header("Movement")]
-    [SerializeField] private float forwardSpeed = 3f;
+    [SerializeField] private float forwardSpeed = 2.8f;
     [SerializeField] private float yLimit = 5f;
-    [SerializeField] private float xBounds = 8f;
 
     [Header("Combat")]
     [SerializeField] private GameObject rocketPrefab;
@@ -19,31 +18,35 @@ public class JeepAI_D : MonoBehaviour
     private float currentHealth;
     private float nextFireTime = 0f;
     private WaveSpawner_D spawner;
+    private Rigidbody2D rb;
 
     public void Initialize(WaveSpawner_D spawnerRef) { spawner = spawnerRef; }
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
+    }
+
+    private void FixedUpdate()
+    {
+        if (transform.position.y < yLimit)
+        {
+            rb.linearVelocity = new Vector2(0, forwardSpeed);
+        }
+        else
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
     }
 
     private void Update()
     {
-        if (transform.position.y < yLimit)
-        {
-            transform.position += Vector3.up * forwardSpeed * Time.deltaTime;
-        }
-
         if (Time.time >= nextFireTime)
         {
             Shoot();
             nextFireTime = Time.time + fireRate;
         }
-
-        // Enforce horizontal boundaries.
-        Vector3 clampedPosition = transform.position;
-        clampedPosition.x = Mathf.Clamp(clampedPosition.x, -xBounds, xBounds);
-        transform.position = clampedPosition;
     }
 
     void Shoot()
