@@ -20,9 +20,9 @@ TagManager:
   - Enemy
   - Objects
   - Player
-  - 
-  - 
-  - 
+  - Lorry
+  - Jeep
+  - Rocket
   - 
   - 
   - 
@@ -52,6 +52,9 @@ TagManager:
     locked: 0
   - name: Objects
     uniqueID: 1310163425
+    locked: 0
+  - name: Lorry
+    uniqueID: 356488819
     locked: 0
   - name: Players,Enemies
     uniqueID: 433127147
