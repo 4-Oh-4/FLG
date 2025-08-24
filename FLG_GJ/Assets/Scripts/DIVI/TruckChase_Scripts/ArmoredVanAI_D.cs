@@ -5,34 +5,34 @@ using TruckChase;
 public class ArmoredVanAI_D : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] private float maxHealth = 150f;
+    [SerializeField] private float maxHealth = 250f;
 
     [Header("Movement")]
-    [SerializeField] private float forwardSpeed = 2f;
+    [SerializeField] private float forwardSpeed = 1.5f;
     [SerializeField] private float yLimit = 4f;
-    [SerializeField] private float xBounds = 8f;
 
     private float currentHealth;
     private WaveSpawner_D spawner;
+    private Rigidbody2D rb;
 
     public void Initialize(WaveSpawner_D spawnerRef) { spawner = spawnerRef; }
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (transform.position.y < yLimit)
         {
-            transform.position += Vector3.up * forwardSpeed * Time.deltaTime;
+            rb.linearVelocity = new Vector2(0, forwardSpeed);
         }
-
-        // Enforce horizontal boundaries.
-        Vector3 clampedPosition = transform.position;
-        clampedPosition.x = Mathf.Clamp(clampedPosition.x, -xBounds, xBounds);
-        transform.position = clampedPosition;
+        else
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
     }
 
     public void TakeDamage(float damage)

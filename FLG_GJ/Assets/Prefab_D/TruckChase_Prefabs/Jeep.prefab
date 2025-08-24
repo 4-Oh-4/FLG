@@ -175,9 +175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88d9527f66a84244bbaf65457e2bb3f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 80
-  forwardSpeed: 2.8
+  maxHealth: 120
+  forwardSpeed: 2
   yLimit: 0.35
-  xBounds: 8
   rocketPrefab: {fileID: 9057219132064380255, guid: 1b5e37d45a374404980eca4f9073b179, type: 3}
   fireRate: 2

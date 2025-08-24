@@ -175,12 +175,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ce230e335dfdff42a3e8de69f00cd4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
-  approachSpeed: 3
-  ramSpeed: 10
-  retreatSpeed: 5
+  maxHealth: 100
+  approachSpeed: 2.5
+  ramSpeed: 7
+  retreatSpeed: 3.5
   yLimit: 0.5
-  xBounds: 8
   attackDistance: 5
   retreatDistance: 6
   postRamWaitTime: 4

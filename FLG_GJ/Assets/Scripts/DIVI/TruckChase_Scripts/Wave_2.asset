@@ -14,12 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyGroups:
   - enemyPrefab: {fileID: 3052525277136061986, guid: 23d8cd566116bf749a6234868c90b873, type: 3}
-    count: 10
-    spawnInterval: 1
-  - enemyPrefab: {fileID: 7890999365690074343, guid: 5e47de9be5501764f99c58f59fa568ef, type: 3}
-    count: 5
-    spawnInterval: 1.5
+    count: 4
+    spawnInterval: 3
   - enemyPrefab: {fileID: 6852576961271787646, guid: 2942e8b5918fa6d438adf381cb9737c7, type: 3}
     count: 2
-    spawnInterval: 4
+    spawnInterval: 3
   timeUntilNextWave: 8

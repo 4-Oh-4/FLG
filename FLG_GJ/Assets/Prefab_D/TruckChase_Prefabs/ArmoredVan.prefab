@@ -175,7 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ad2d4694bb017419061a01a7e66d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 250
-  forwardSpeed: 1.5
+  maxHealth: 400
+  forwardSpeed: 1
   yLimit: 0.4
-  xBounds: 8

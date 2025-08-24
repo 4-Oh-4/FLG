@@ -6,16 +6,13 @@ using TruckChase;
 public class SedanAI_D : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] private float maxHealth = 30f;
+    [SerializeField] private float maxHealth = 100f;
 
     [Header("Movement")]
-    [SerializeField] private float approachSpeed = 4f;
+    [SerializeField] private float approachSpeed = 2.5f;
     [SerializeField] private float ramSpeed = 10f;
     [SerializeField] private float retreatSpeed = 5f;
-    [Tooltip("The Y-position on screen where the enemy stops advancing.")]
     [SerializeField] private float yLimit = 4.0f;
-    [Tooltip("The horizontal limit for movement.")]
-    [SerializeField] private float xBounds = 8f;
 
     [Header("Attack Behavior")]
     [SerializeField] private float attackDistance = 5f;
@@ -26,37 +23,40 @@ public class SedanAI_D : MonoBehaviour
     private float currentHealth;
     private WaveSpawner_D spawner;
     private Transform lorryTarget;
+    private Rigidbody2D rb;
     private bool isAttacking = false;
 
     public void Initialize(WaveSpawner_D spawnerRef) { spawner = spawnerRef; }
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         lorryTarget = GameObject.Find("Lorry")?.transform;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (lorryTarget == null) return;
+        if (lorryTarget == null || isAttacking) return;
 
-        if (!isAttacking)
+        // --- Approach Logic ---
+        // AMENDED: The Sedan now tries to align horizontally with the lorry.
+        Vector2 targetPosition = new Vector2(lorryTarget.position.x, transform.position.y);
+        Vector2 newPosition = Vector2.MoveTowards(transform.position, targetPosition, approachSpeed * Time.fixedDeltaTime);
+
+        // Only move upwards if below the Y-limit.
+        if (transform.position.y < yLimit)
         {
-            if (transform.position.y < yLimit)
-            {
-                transform.position += Vector3.up * approachSpeed * Time.deltaTime;
-            }
-
-            if (Vector3.Distance(transform.position, lorryTarget.position) <= attackDistance)
-            {
-                StartCoroutine(AttackCycle());
-            }
+            newPosition.y += approachSpeed * Time.fixedDeltaTime;
         }
 
-        // Enforce horizontal boundaries.
-        Vector3 clampedPosition = transform.position;
-        clampedPosition.x = Mathf.Clamp(clampedPosition.x, -xBounds, xBounds);
-        transform.position = clampedPosition;
+        rb.MovePosition(newPosition);
+
+        // Check if we are close enough to start the attack cycle.
+        if (Vector3.Distance(transform.position, lorryTarget.position) <= attackDistance)
+        {
+            StartCoroutine(AttackCycle());
+        }
     }
 
     private IEnumerator AttackCycle()
@@ -64,13 +64,12 @@ public class SedanAI_D : MonoBehaviour
         isAttacking = true;
 
         // --- Ram Phase ---
-        Vector3 ramDirection = (lorryTarget.position - transform.position).normalized;
-        float ramDuration = 0.5f;
-        float timer = 0;
-        while (timer < ramDuration)
+        // AMENDED: Lock on to the lorry's position at the start of the ram.
+        Vector3 ramTargetPosition = lorryTarget.position;
+        while (Vector3.Distance(transform.position, ramTargetPosition) > 0.1f)
         {
-            transform.position += ramDirection * ramSpeed * Time.deltaTime;
-            timer += Time.deltaTime;
+            // Charge in a straight line towards the locked position.
+            transform.position = Vector3.MoveTowards(transform.position, ramTargetPosition, ramSpeed * Time.deltaTime);
             yield return null;
         }
 
