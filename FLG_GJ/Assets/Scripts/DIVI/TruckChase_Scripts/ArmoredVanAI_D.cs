@@ -5,10 +5,9 @@ using TruckChase;
 public class ArmoredVanAI_D : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] private float maxHealth = 250f;
-
+    [SerializeField] private float maxHealth = 300f;
     [Header("Movement")]
-    [SerializeField] private float forwardSpeed = 1.5f;
+    [SerializeField] private float forwardSpeed = 1.2f;
     [SerializeField] private float yLimit = 4f;
 
     private float currentHealth;
@@ -17,22 +16,19 @@ public class ArmoredVanAI_D : MonoBehaviour
 
     public void Initialize(WaveSpawner_D spawnerRef) { spawner = spawnerRef; }
 
-    private void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void OnEnable()
+    {
         currentHealth = maxHealth;
     }
 
     private void FixedUpdate()
     {
-        if (transform.position.y < yLimit)
-        {
-            rb.linearVelocity = new Vector2(0, forwardSpeed);
-        }
-        else
-        {
-            rb.linearVelocity = Vector2.zero;
-        }
+        rb.velocity = transform.position.y < yLimit ? new Vector2(0, forwardSpeed) : Vector2.zero;
     }
 
     public void TakeDamage(float damage)
@@ -44,9 +40,7 @@ public class ArmoredVanAI_D : MonoBehaviour
 
     void Die()
     {
-        if (!enabled) return;
         if (spawner != null) spawner.OnEnemyDied();
-        enabled = false;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

@@ -512,6 +512,69 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &524912305
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 524912307}
+  - component: {fileID: 524912306}
+  m_Layer: 0
+  m_Name: ObjectPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &524912306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524912305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dfa6ed5c38edd846a3f152d36d9309b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: Bullet_D
+    prefab: {fileID: 8613308542611575428, guid: af69e637af8704043aff52273179b10d, type: 3}
+    size: 50
+  - tag: Rocket_D
+    prefab: {fileID: 9057219132064380255, guid: 1b5e37d45a374404980eca4f9073b179, type: 3}
+    size: 15
+  - tag: Bike
+    prefab: {fileID: 3052525277136061986, guid: 23d8cd566116bf749a6234868c90b873, type: 3}
+    size: 20
+  - tag: Sedan
+    prefab: {fileID: 7890999365690074343, guid: 5e47de9be5501764f99c58f59fa568ef, type: 3}
+    size: 15
+  - tag: Jeep
+    prefab: {fileID: 6852576961271787646, guid: 2942e8b5918fa6d438adf381cb9737c7, type: 3}
+    size: 10
+  - tag: ArmoredVan
+    prefab: {fileID: 5046349217955527909, guid: cd687534ff5fe7d4da59cfb0cb1f72fd, type: 3}
+    size: 3
+--- !u!4 &524912307
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524912305}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.64235, y: -3.8076217, z: -0.20388557}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &553577655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1851,3 +1914,4 @@ SceneRoots:
   - {fileID: 1116477526}
   - {fileID: 66500716}
   - {fileID: 2013014185}
+  - {fileID: 524912307}

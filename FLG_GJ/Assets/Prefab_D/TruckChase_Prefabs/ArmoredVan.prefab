@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4768950481278763687}
   - component: {fileID: 4782938391636713276}
   - component: {fileID: 5061142677101494775}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ArmoredVan
   m_TagString: Enemy
   m_Icon: {fileID: 0}

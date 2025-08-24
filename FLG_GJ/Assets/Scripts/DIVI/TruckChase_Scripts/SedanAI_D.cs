@@ -6,14 +6,12 @@ using TruckChase;
 public class SedanAI_D : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] private float maxHealth = 100f;
-
+    [SerializeField] private float maxHealth = 75f;
     [Header("Movement")]
-    [SerializeField] private float approachSpeed = 2.5f;
+    [SerializeField] private float approachSpeed = 3.0f;
     [SerializeField] private float ramSpeed = 10f;
     [SerializeField] private float retreatSpeed = 5f;
     [SerializeField] private float yLimit = 4.0f;
-
     [Header("Attack Behavior")]
     [SerializeField] private float attackDistance = 5f;
     [SerializeField] private float retreatDistance = 5f;
@@ -25,37 +23,41 @@ public class SedanAI_D : MonoBehaviour
     private Transform lorryTarget;
     private Rigidbody2D rb;
     private bool isAttacking = false;
+    private float driftFrequency, driftMagnitude;
 
     public void Initialize(WaveSpawner_D spawnerRef) { spawner = spawnerRef; }
 
-    private void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void OnEnable()
+    {
         currentHealth = maxHealth;
+        isAttacking = false;
         lorryTarget = GameObject.Find("Lorry")?.transform;
+        driftFrequency = Random.Range(0.8f, 1.5f);
+        driftMagnitude = Random.Range(1f, 2f);
     }
 
     private void FixedUpdate()
     {
         if (lorryTarget == null || isAttacking) return;
 
-        // --- Approach Logic ---
-        // AMENDED: The Sedan now tries to align horizontally with the lorry.
-        Vector2 targetPosition = new Vector2(lorryTarget.position.x, transform.position.y);
-        Vector2 newPosition = Vector2.MoveTowards(transform.position, targetPosition, approachSpeed * Time.fixedDeltaTime);
-
-        // Only move upwards if below the Y-limit.
-        if (transform.position.y < yLimit)
-        {
-            newPosition.y += approachSpeed * Time.fixedDeltaTime;
-        }
-
-        rb.MovePosition(newPosition);
-
-        // Check if we are close enough to start the attack cycle.
         if (Vector3.Distance(transform.position, lorryTarget.position) <= attackDistance)
         {
             StartCoroutine(AttackCycle());
+        }
+        else if (transform.position.y < yLimit)
+        {
+            Vector2 velocity = new Vector2(0, approachSpeed);
+            velocity.x = Mathf.Sin(Time.time * driftFrequency) * driftMagnitude;
+            rb.velocity = velocity;
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
         }
     }
 
@@ -63,25 +65,14 @@ public class SedanAI_D : MonoBehaviour
     {
         isAttacking = true;
 
-        // --- Ram Phase ---
-        // AMENDED: Lock on to the lorry's position at the start of the ram.
-        Vector3 ramTargetPosition = lorryTarget.position;
-        while (Vector3.Distance(transform.position, ramTargetPosition) > 0.1f)
-        {
-            // Charge in a straight line towards the locked position.
-            transform.position = Vector3.MoveTowards(transform.position, ramTargetPosition, ramSpeed * Time.deltaTime);
-            yield return null;
-        }
+        Vector2 ramDirection = (lorryTarget.position - transform.position).normalized;
+        rb.velocity = ramDirection * ramSpeed;
+        yield return new WaitForSeconds(0.5f);
 
-        // --- Retreat Phase ---
-        Vector3 retreatTargetPos = transform.position + Vector3.down * retreatDistance;
-        while (Vector3.Distance(transform.position, retreatTargetPos) > 0.1f)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, retreatTargetPos, retreatSpeed * Time.deltaTime);
-            yield return null;
-        }
+        rb.velocity = Vector2.down * retreatSpeed;
+        yield return new WaitForSeconds(1.2f);
 
-        // --- Wait Phase ---
+        rb.velocity = Vector2.zero;
         yield return new WaitForSeconds(postRamWaitTime);
 
         isAttacking = false;
@@ -104,9 +95,7 @@ public class SedanAI_D : MonoBehaviour
 
     void Die()
     {
-        if (!enabled) return;
         if (spawner != null) spawner.OnEnemyDied();
-        enabled = false;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
