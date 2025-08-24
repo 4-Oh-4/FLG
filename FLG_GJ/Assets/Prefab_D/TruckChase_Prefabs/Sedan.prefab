@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3514943408082386249}
   - component: {fileID: 3104994868801412433}
   - component: {fileID: 6100447738494265484}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Sedan
   m_TagString: Enemy
   m_Icon: {fileID: 0}

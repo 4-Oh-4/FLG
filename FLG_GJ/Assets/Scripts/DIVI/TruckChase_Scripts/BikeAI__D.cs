@@ -5,20 +5,16 @@ using TruckChase;
 public class BikeAI_D : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] private float maxHealth = 25f;
-
+    [SerializeField] private float maxHealth = 40f;
     [Header("Movement")]
-    [SerializeField] private float forwardSpeed = 4.5f;
+    [SerializeField] private float forwardSpeed = 4.0f;
     [SerializeField] private float yLimit = 4.5f;
-
     [Header("Ramming Behavior")]
     [SerializeField] private float timeUntilRam = 8f;
     [SerializeField] private float ramSpeedMultiplier = 2f;
     [SerializeField] private float ramDamage = 25f;
 
-    private float zigZagFrequency;
-    private float zigZagMagnitude;
-    private float currentHealth;
+    private float zigZagFrequency, zigZagMagnitude, currentHealth;
     private WaveSpawner_D spawner;
     private Transform lorryTarget;
     private Rigidbody2D rb;
@@ -26,25 +22,31 @@ public class BikeAI_D : MonoBehaviour
 
     public void Initialize(WaveSpawner_D spawnerRef) { spawner = spawnerRef; }
 
-    private void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void OnEnable()
+    {
         currentHealth = maxHealth;
+        isRamming = false;
         lorryTarget = GameObject.Find("Lorry")?.transform;
         zigZagFrequency = Random.Range(3f, 5f);
         zigZagMagnitude = Random.Range(2.5f, 4f);
         Invoke(nameof(ActivateRamMode), timeUntilRam);
     }
 
+    private void OnDisable()
+    {
+        CancelInvoke(); // Stop the ram timer if the object is deactivated early.
+    }
+
     private void FixedUpdate()
     {
         if (isRamming)
         {
-            if (lorryTarget != null)
-            {
-                Vector2 direction = (lorryTarget.position - transform.position).normalized;
-                rb.linearVelocity = direction * forwardSpeed;
-            }
+            if (lorryTarget != null) rb.linearVelocity = ((Vector2)lorryTarget.position - rb.position).normalized * forwardSpeed;
         }
         else
         {
@@ -54,11 +56,7 @@ public class BikeAI_D : MonoBehaviour
         }
     }
 
-    void ActivateRamMode()
-    {
-        isRamming = true;
-        forwardSpeed *= ramSpeedMultiplier;
-    }
+    void ActivateRamMode() { isRamming = true; forwardSpeed *= ramSpeedMultiplier; }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -78,9 +76,7 @@ public class BikeAI_D : MonoBehaviour
 
     void Die()
     {
-        if (!enabled) return;
         if (spawner != null) spawner.OnEnemyDied();
-        enabled = false;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
