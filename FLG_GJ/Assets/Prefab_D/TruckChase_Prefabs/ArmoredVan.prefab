@@ -113,7 +113,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -175,5 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ad2d4694bb017419061a01a7e66d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 150
-  forwardSpeed: 2
+  maxHealth: 250
+  forwardSpeed: 1.5
+  yLimit: 0.4
+  xBounds: 8
