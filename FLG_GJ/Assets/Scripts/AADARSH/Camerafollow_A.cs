@@ -16,7 +16,7 @@ public class Camerafollow_A : MonoBehaviour
         
     }
     private void LateUpdate() {
-        Vector3 targetPos = new Vector3(playerTransform.position.x,transform.position.y,transform.position.z);
+        Vector3 targetPos = new Vector3(playerTransform.position.x,playerTransform.position.y,transform.position.z);
         
         //Vector3 smoothedPosition = Vector3.Lerp(transform.position, targetPos, smoothSpeed);
         transform.position = targetPos;
