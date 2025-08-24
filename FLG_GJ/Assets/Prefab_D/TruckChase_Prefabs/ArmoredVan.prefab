@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 9215555456258345425}
   - component: {fileID: 4768950481278763687}
   - component: {fileID: 4782938391636713276}
-  - component: {fileID: 9166274584978430672}
   - component: {fileID: 5061142677101494775}
   m_Layer: 0
   m_Name: ArmoredVan
@@ -164,22 +163,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &9166274584978430672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5046349217955527909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d768ab481585a2340a3c3462cd041aaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 150
-  onDeath:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &5061142677101494775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,4 +175,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ad2d4694bb017419061a01a7e66d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 150
   forwardSpeed: 2

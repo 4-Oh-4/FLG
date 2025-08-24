@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 6258186935448384505}
   - component: {fileID: 6934599611630736381}
   - component: {fileID: 1464301632022985755}
-  - component: {fileID: 8778745361703647897}
   - component: {fileID: 925273750885363703}
   m_Layer: 0
   m_Name: Jeep
@@ -196,19 +195,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8778745361703647897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6852576961271787646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d768ab481585a2340a3c3462cd041aaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 60
 --- !u!114 &925273750885363703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,6 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88d9527f66a84244bbaf65457e2bb3f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 60
   forwardSpeed: 3
   rocketPrefab: {fileID: 9057219132064380255, guid: 1b5e37d45a374404980eca4f9073b179, type: 3}
   firePoint: {fileID: 4596423248057694926}
