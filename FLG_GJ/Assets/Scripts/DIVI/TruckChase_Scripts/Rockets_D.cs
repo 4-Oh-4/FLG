@@ -34,7 +34,7 @@ public class Rocket_D : MonoBehaviour
         Vector2 direction = ((Vector2)lorryTarget.position - rb.position).normalized;
         float rotateAmount = Vector3.Cross(direction, transform.up).z;
         rb.angularVelocity = -rotateAmount * rotationSpeed;
-        rb.velocity = transform.up * speed;
+        rb.linearVelocity = transform.up * speed;
     }
 
     void OnTriggerEnter2D(Collider2D other)

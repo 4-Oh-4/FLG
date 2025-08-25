@@ -28,7 +28,7 @@ public class ArmoredVanAI_D : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = transform.position.y < yLimit ? new Vector2(0, forwardSpeed) : Vector2.zero;
+        rb.linearVelocity = transform.position.y < yLimit ? new Vector2(0, forwardSpeed) : Vector2.zero;
     }
 
     public void TakeDamage(float damage)

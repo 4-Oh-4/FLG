@@ -53,11 +53,11 @@ public class SedanAI_D : MonoBehaviour
         {
             Vector2 velocity = new Vector2(0, approachSpeed);
             velocity.x = Mathf.Sin(Time.time * driftFrequency) * driftMagnitude;
-            rb.velocity = velocity;
+            rb.linearVelocity = velocity;
         }
         else
         {
-            rb.velocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
         }
     }
 
@@ -66,13 +66,13 @@ public class SedanAI_D : MonoBehaviour
         isAttacking = true;
 
         Vector2 ramDirection = (lorryTarget.position - transform.position).normalized;
-        rb.velocity = ramDirection * ramSpeed;
+        rb.linearVelocity = ramDirection * ramSpeed;
         yield return new WaitForSeconds(0.5f);
 
-        rb.velocity = Vector2.down * retreatSpeed;
+        rb.linearVelocity = Vector2.down * retreatSpeed;
         yield return new WaitForSeconds(1.2f);
 
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         yield return new WaitForSeconds(postRamWaitTime);
 
         isAttacking = false;
