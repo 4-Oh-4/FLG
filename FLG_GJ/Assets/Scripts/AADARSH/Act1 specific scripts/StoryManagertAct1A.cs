@@ -19,6 +19,7 @@ public class StoryManagertAct1A : MonoBehaviour
         } else {
             Destroy(gameObject);
         }
+        flags["Default"] = true;
         flags["WeeksLater"] = false;
         // Initialize story flags here
         flags["Collect"] = false;
