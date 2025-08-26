@@ -20,6 +20,10 @@ public class InteractWithDialogueA : MonoBehaviour {
                 if (npc != null) {
                     npc.TriggerDialouge();
                 }
+                TrashforHomeA trashforHome = hit.collider.GetComponent<TrashforHomeA>();
+                if (trashforHome != null) {
+                    trashforHome.CollectTrash();
+                }
             }
         }
     }
