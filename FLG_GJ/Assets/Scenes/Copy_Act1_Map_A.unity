@@ -633,13 +633,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conditionalDialogues: []
-  defaultDialogues:
-  - name: Carlo
-    sentences:
-    - Starting Dialouge
-  defaultFlagToSet: Default
-  isNarator: 1
-  dialogueManager: {fileID: 1097638418}
+  defaultDialogues: []
+  defaultFlagToSet: 
+  isNarator: 0
+  dialogueManager: {fileID: 0}
 --- !u!4 &122445414
 Transform:
   m_ObjectHideFlags: 0
@@ -875,13 +872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde86f84792f91f4989544a6d4e6ef36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conditionalDialogues:
-  - requiredFlag: Default
-    dialogues:
-    - name: Silvio-Carlo 1st talk
-      sentences:
-      - inital talk
-    flagToSetOnComplete: Collect
+  conditionalDialogues: []
   defaultDialogues: []
   defaultFlagToSet: 
   isNarator: 0
