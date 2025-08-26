@@ -266,7 +266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760d841cb3af327459d0bc25f3a0ce5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameM: {fileID: 0}
 --- !u!1 &23454485
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760d841cb3af327459d0bc25f3a0ce5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameM: {fileID: 0}
 --- !u!1 &85948706
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,10 +632,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde86f84792f91f4989544a6d4e6ef36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialouge:
-    name: 
-    sentences: []
-  canTalk: 0
+  conditionalDialogues: []
+  defaultDialogues: []
+  defaultFlagToSet: 
+  isNarator: 0
+  dialogueManager: {fileID: 0}
 --- !u!4 &122445414
 Transform:
   m_ObjectHideFlags: 0
@@ -873,10 +872,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde86f84792f91f4989544a6d4e6ef36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialouge:
-    name: 
-    sentences: []
-  canTalk: 0
+  conditionalDialogues: []
+  defaultDialogues: []
+  defaultFlagToSet: 
+  isNarator: 0
+  dialogueManager: {fileID: 0}
 --- !u!212 &215277276
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2253,7 +2253,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760d841cb3af327459d0bc25f3a0ce5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameM: {fileID: 0}
 --- !u!1 &528951868
 GameObject:
   m_ObjectHideFlags: 0
@@ -2488,7 +2487,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760d841cb3af327459d0bc25f3a0ce5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameM: {fileID: 0}
 --- !u!1 &644411597
 GameObject:
   m_ObjectHideFlags: 0
@@ -42050,7 +42048,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760d841cb3af327459d0bc25f3a0ce5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameM: {fileID: 0}
 --- !u!1 &1353274334
 GameObject:
   m_ObjectHideFlags: 0
@@ -42975,8 +42972,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodPrefab: {fileID: 2990080832587107562, guid: 8e7d2695e9f61884c8501b1f4480cf1c, type: 3}
   spawnInterval: 2
-  spawnAreaCollider: {fileID: 0}
-  isSpawning: 0
 --- !u!1 &1613605354
 GameObject:
   m_ObjectHideFlags: 0
@@ -100225,7 +100220,6 @@ MonoBehaviour:
   uiPanel: {fileID: 85948706}
   trashText: {fileID: 318116007}
   foodText: {fileID: 2100749175}
-  foodSpawner: {fileID: 0}
 --- !u!1 &1662166232
 GameObject:
   m_ObjectHideFlags: 0
@@ -101244,10 +101238,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde86f84792f91f4989544a6d4e6ef36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialouge:
-    name: 
-    sentences: []
-  canTalk: 0
+  conditionalDialogues: []
+  defaultDialogues: []
+  defaultFlagToSet: 
+  isNarator: 0
+  dialogueManager: {fileID: 0}
 --- !u!212 &1931151535
 SpriteRenderer:
   m_ObjectHideFlags: 0
