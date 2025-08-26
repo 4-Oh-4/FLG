@@ -8,6 +8,7 @@ public class WindowQuestPointer_A : MonoBehaviour {
     public Vector2 screenPadding = new Vector2(50, 50);
 
     void Update() {
+        if (target == null) return;
         Vector3 screenPos = mainCamera.WorldToScreenPoint(target.position);
 
         bool isOffscreen = screenPos.z < 0
