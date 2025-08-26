@@ -43,7 +43,11 @@ public class SedanAI_D : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (lorryTarget == null || isAttacking) return;
+        if (lorryTarget == null || isAttacking)
+        {
+            if (isAttacking) rb.linearVelocity = Vector2.zero;
+            return;
+        }
 
         if (Vector3.Distance(transform.position, lorryTarget.position) <= attackDistance)
         {
@@ -64,13 +68,19 @@ public class SedanAI_D : MonoBehaviour
     private IEnumerator AttackCycle()
     {
         isAttacking = true;
+        rb.linearVelocity = Vector2.zero;
 
+        // --- Ram Phase ---
         Vector2 ramDirection = (lorryTarget.position - transform.position).normalized;
         rb.linearVelocity = ramDirection * ramSpeed;
         yield return new WaitForSeconds(0.5f);
 
+        // --- Retreat Phase (AMENDED) ---
+        // This now uses the 'retreatDistance' variable.
         rb.linearVelocity = Vector2.down * retreatSpeed;
-        yield return new WaitForSeconds(1.2f);
+        // Calculate how long it will take to retreat the desired distance.
+        float retreatDuration = retreatDistance / retreatSpeed;
+        yield return new WaitForSeconds(retreatDuration);
 
         rb.linearVelocity = Vector2.zero;
         yield return new WaitForSeconds(postRamWaitTime);
