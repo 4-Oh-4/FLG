@@ -1,0 +1,1079 @@
+fileFormatVersion: 2
+guid: f39bd93065891ed4aba7c1dae2070b6e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 34467210810583435
+    second: ACT1_0
+  - first:
+      213: -6001527996179998183
+    second: ACT1_1
+  - first:
+      213: -2418541804121743793
+    second: ACT1_2
+  - first:
+      213: 5630512062812773390
+    second: ACT1_3
+  - first:
+      213: -4587509295714822201
+    second: ACT1_4
+  - first:
+      213: 8737002331470911359
+    second: ACT1_5
+  - first:
+      213: 1540990345296005759
+    second: ACT1_6
+  - first:
+      213: 6812730939505895944
+    second: ACT1_7
+  - first:
+      213: 6320924716643938135
+    second: ACT1_8
+  - first:
+      213: -1191851244489619763
+    second: ACT1_9
+  - first:
+      213: -648008307700406155
+    second: ACT1_10
+  - first:
+      213: 6761738686949558137
+    second: ACT1_11
+  - first:
+      213: 2667373511261739191
+    second: ACT1_12
+  - first:
+      213: -8670679819676710620
+    second: ACT1_13
+  - first:
+      213: -4884820449770837939
+    second: ACT1_14
+  - first:
+      213: 4123575059154602426
+    second: ACT1_15
+  - first:
+      213: 1351082945448693841
+    second: ACT1_16
+  - first:
+      213: 8089062605448336862
+    second: ACT1_17
+  - first:
+      213: -8618487244494032669
+    second: ACT1_18
+  - first:
+      213: -3348230246310332425
+    second: ACT1_19
+  - first:
+      213: -4322738129088050843
+    second: ACT1_20
+  - first:
+      213: -3318505976521252721
+    second: ACT1_21
+  - first:
+      213: -2677042623160987540
+    second: ACT1_22
+  - first:
+      213: -4804698662219991836
+    second: ACT1_23
+  - first:
+      213: -7061475000891078580
+    second: ACT1_24
+  - first:
+      213: 3580575404850215799
+    second: ACT1_25
+  - first:
+      213: -11253821191431039
+    second: ACT1_26
+  - first:
+      213: 645688669620052485
+    second: ACT1_27
+  - first:
+      213: -2252873622264587312
+    second: ACT1_28
+  - first:
+      213: 445395523627436788
+    second: ACT1_29
+  - first:
+      213: -278360238526509483
+    second: ACT1_30
+  - first:
+      213: -2226236138209451452
+    second: ACT1_31
+  - first:
+      213: 3478286429883007628
+    second: ACT1_32
+  - first:
+      213: -3421239999421167020
+    second: ACT1_33
+  - first:
+      213: 8062016184803795318
+    second: ACT1_34
+  - first:
+      213: -4173448900231929281
+    second: ACT1_35
+  - first:
+      213: 8857655841626919728
+    second: ACT1_36
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ACT1_0
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 911
+        width: 66
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8963c0eeb37a7000800000000000000
+      internalID: 34467210810583435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 944
+        width: 65
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91a112eb51a46bca0800000000000000
+      internalID: -6001527996179998183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_2
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 959
+        width: 61
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4e14ea0b0d9f6ed0800000000000000
+      internalID: -2418541804121743793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_3
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 911
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0cd18fa3e8932e40800000000000000
+      internalID: 5630512062812773390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_4
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 905
+        width: 56
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c79d19e994e550c0800000000000000
+      internalID: -4587509295714822201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_5
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 943
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7755117451104970800000000000000
+      internalID: 8737002331470911359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_6
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 927
+        width: 50
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7acca5fd82b26510800000000000000
+      internalID: 1540990345296005759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_7
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 946
+        width: 56
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80aef8fa1beab8e50800000000000000
+      internalID: 6812730939505895944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_8
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 947
+        width: 56
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75f6c834a8f68b750800000000000000
+      internalID: 6320924716643938135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_9
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 943
+        width: 56
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc6c61b9b91b57fe0800000000000000
+      internalID: -1191851244489619763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_10
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 815
+        width: 103
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 578e300a0efc107f0800000000000000
+      internalID: -648008307700406155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_11
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 751
+        width: 36
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97705a3b28586dd50800000000000000
+      internalID: 6761738686949558137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_12
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 735
+        width: 103
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b8da0e731a640520800000000000000
+      internalID: 2667373511261739191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_13
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 847
+        width: 50
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 429850ba4ae8ba780800000000000000
+      internalID: -8670679819676710620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_14
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 847
+        width: 50
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4868db8ea1a53cb0800000000000000
+      internalID: -4884820449770837939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_15
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 887
+        width: 41
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab9029d2ba1e93930800000000000000
+      internalID: 4123575059154602426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_16
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 860
+        width: 50
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 150de81d7c200c210800000000000000
+      internalID: 1351082945448693841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_17
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 860
+        width: 50
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed5d4abf49f124070800000000000000
+      internalID: 8089062605448336862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_18
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 863
+        width: 50
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e0b2ba838bf46880800000000000000
+      internalID: -8618487244494032669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_19
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 864
+        width: 60
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f73476a452b881d0800000000000000
+      internalID: -3348230246310332425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_20
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 815
+        width: 65
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5698bae039c8204c0800000000000000
+      internalID: -4322738129088050843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_21
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 831
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f80a074856c42f1d0800000000000000
+      internalID: -3318505976521252721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_22
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 814
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c60d8e5faeb39dad0800000000000000
+      internalID: -2677042623160987540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_23
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 814
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e43599e508425db0800000000000000
+      internalID: -4804698662219991836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_24
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 814
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c48069566e9900e90800000000000000
+      internalID: -7061475000891078580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_25
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 801
+        width: 46
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77bf8992c52c0b130800000000000000
+      internalID: 3580575404850215799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_26
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 639
+        width: 116
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18cd48195b408dff0800000000000000
+      internalID: -11253821191431039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_27
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 638
+        width: 147
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 502a23c8c62f5f800800000000000000
+      internalID: 645688669620052485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_28
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 198
+        width: 360
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0db5215706f2cb0e0800000000000000
+      internalID: -2252873622264587312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_29
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 607
+        width: 103
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4facc527edc5e2600800000000000000
+      internalID: 445395523627436788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_30
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 705
+        width: 66
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55ec80f76d0132cf0800000000000000
+      internalID: -278360238526509483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_31
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 103
+        width: 433
+        height: 533
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44263e30702da11e0800000000000000
+      internalID: -2226236138209451452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_32
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 222
+        width: 114
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c820d38441b554030800000000000000
+      internalID: 3478286429883007628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_33
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 273
+        width: 50
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45ac427d8505580d0800000000000000
+      internalID: -3421239999421167020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_34
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 239
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6712ea4710902ef60800000000000000
+      internalID: 8062016184803795318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_35
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 239
+        width: 34
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f326e6d465ee416c0800000000000000
+      internalID: -4173448900231929281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACT1_36
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 99
+        width: 165
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03316dede07bcea70800000000000000
+      internalID: 8857655841626919728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ACT1_0: 34467210810583435
+      ACT1_1: -6001527996179998183
+      ACT1_10: -648008307700406155
+      ACT1_11: 6761738686949558137
+      ACT1_12: 2667373511261739191
+      ACT1_13: -8670679819676710620
+      ACT1_14: -4884820449770837939
+      ACT1_15: 4123575059154602426
+      ACT1_16: 1351082945448693841
+      ACT1_17: 8089062605448336862
+      ACT1_18: -8618487244494032669
+      ACT1_19: -3348230246310332425
+      ACT1_2: -2418541804121743793
+      ACT1_20: -4322738129088050843
+      ACT1_21: -3318505976521252721
+      ACT1_22: -2677042623160987540
+      ACT1_23: -4804698662219991836
+      ACT1_24: -7061475000891078580
+      ACT1_25: 3580575404850215799
+      ACT1_26: -11253821191431039
+      ACT1_27: 645688669620052485
+      ACT1_28: -2252873622264587312
+      ACT1_29: 445395523627436788
+      ACT1_3: 5630512062812773390
+      ACT1_30: -278360238526509483
+      ACT1_31: -2226236138209451452
+      ACT1_32: 3478286429883007628
+      ACT1_33: -3421239999421167020
+      ACT1_34: 8062016184803795318
+      ACT1_35: -4173448900231929281
+      ACT1_36: 8857655841626919728
+      ACT1_4: -4587509295714822201
+      ACT1_5: 8737002331470911359
+      ACT1_6: 1540990345296005759
+      ACT1_7: 6812730939505895944
+      ACT1_8: 6320924716643938135
+      ACT1_9: -1191851244489619763
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
