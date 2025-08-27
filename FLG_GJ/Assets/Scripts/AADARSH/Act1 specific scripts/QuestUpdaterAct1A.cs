@@ -14,6 +14,13 @@ public class QuestUpdaterAct1A : MonoBehaviour
         }
         questPointer_A.target = collectionTransform;
     }
+    public void WeeksLater() {
+        
+        if (questPointer_A.gameObject.activeInHierarchy == false) {
+            EnablePointer();
+        }
+        questPointer_A.target = GateToGoOut;
+    }
     public void disablePointer() {
         questPointer_A.gameObject.SetActive(false);
     }
