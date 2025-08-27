@@ -1,22 +1,56 @@
 using UnityEngine;
-using UnityEngine.Audio; // Required for using Audio Mixers
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-    [Tooltip("Reference to the Master Audio Mixer for the game.")]
+    [Header("Audio Mixer")]
     [SerializeField] private AudioMixer masterMixer;
 
-    // This function will be called by the music volume slider.
-    public void SetMusicVolume(float volume)
+    [Header("UI Sliders")]
+    [SerializeField] private Slider musicVolumeSlider;
+    [SerializeField] private Slider sfxVolumeSlider;
+
+    private bool isMusicMuted = false;
+    private bool isSfxMuted = false;
+
+    // AMENDED: Added a Start() method to set default volumes.
+    private void Start()
     {
-        // The mixer uses a logarithmic scale (decibels), not a linear 0-1 scale.
-        // This formula converts the slider's 0-1 value to the mixer's decibel range.
-        masterMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
+        // Set the Music slider to 70% and update the mixer.
+        musicVolumeSlider.value = 0.7f;
+        SetMusicVolume(0.7f);
+
+        // Set the SFX slider to 75% and update the mixer.
+        sfxVolumeSlider.value = 0.75f;
+        SetSFXVolume(0.75f);
     }
 
-    // This function will be called by the SFX volume slider.
+    // --- Slider Functions ---
+    public void SetMusicVolume(float volume)
+    {
+        masterMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
+        isMusicMuted = (volume <= 0.001f);
+    }
+
     public void SetSFXVolume(float volume)
     {
         masterMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20);
+        isSfxMuted = (volume <= 0.001f);
+    }
+
+    // --- Button Toggle Functions ---
+    public void ToggleMusic()
+    {
+        isMusicMuted = !isMusicMuted;
+        float newVolume = isMusicMuted ? 0f : 1f;
+        musicVolumeSlider.value = newVolume;
+    }
+
+    public void ToggleSFX()
+    {
+        isSfxMuted = !isSfxMuted;
+        float newVolume = isSfxMuted ? 0f : 1f;
+        sfxVolumeSlider.value = newVolume;
     }
 }
