@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5402815661140133792}
   - component: {fileID: 4103064273869695933}
   - component: {fileID: 2480278502532611537}
-  m_Layer: 8
+  m_Layer: 15
   m_Name: Bullet_D_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 433127147
   m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0.7540293, b: 0, a: 1}
   m_FlipX: 0
@@ -167,3 +167,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   damage: 10
+  lifeTime: 3
