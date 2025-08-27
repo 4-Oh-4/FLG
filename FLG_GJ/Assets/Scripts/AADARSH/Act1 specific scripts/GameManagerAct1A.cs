@@ -7,7 +7,8 @@ public class GameManagerAct1A : MonoBehaviour {
     [SerializeField] int foodTobeCollected = 5;
     [SerializeField] Transform trash;
     [SerializeField] WindowQuestPointer_A questPointer;
-    Vector3 pos = new Vector3(-31.7800007f, -24.8600006f, 0f);
+    [SerializeField]Vector3 pos = new Vector3(-31.7800007f, -24.8600006f, 0f);
+    [SerializeField]Vector3 posRoof = new Vector3(-31.7800007f, -24.8600006f, 0f);
     [Header("UI References")]
     [SerializeField] GameObject uiPanel;
     [SerializeField] TextMeshProUGUI trashText;
@@ -87,5 +88,8 @@ public class GameManagerAct1A : MonoBehaviour {
     }
     public void TeleportPlayer() {
         player.position = pos;
+    }
+    public void TeleportPlayerToRoof() {
+        player.position = posRoof;
     }
 }

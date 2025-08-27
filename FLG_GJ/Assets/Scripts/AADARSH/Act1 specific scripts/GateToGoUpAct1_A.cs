@@ -20,5 +20,10 @@ public class GateToGoUpAct1_A : MonoBehaviour
             StoryManagertAct1A.Instance.SetFlag("SilvioBeatenToRoof", true);
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.name == "Player") {
+            FindAnyObjectByType<GameManagerAct1A>().TeleportPlayerToRoof();
+        }
+    }
 
 }
