@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// This line ensures the GameObject will always have an AudioSource component.
+[RequireComponent(typeof(AudioSource))]
 public class PauseMenuManager : MonoBehaviour
 {
     [Header("UI Panels")]
@@ -9,7 +11,20 @@ public class PauseMenuManager : MonoBehaviour
     [Tooltip("The child panel that holds the settings UI elements.")]
     [SerializeField] private GameObject settingsPanel;
 
+    [Header("Button Sound Effects")]
+    [Tooltip("The 'compressed' sound that plays on mouse down.")]
+    [SerializeField] private AudioClip buttonPressedSound;
+    [Tooltip("The 'uncompressed' sound that plays on mouse up.")]
+    [SerializeField] private AudioClip buttonReleasedSound;
+
     private bool isPaused = false;
+    private AudioSource audioSource;
+
+    private void Awake()
+    {
+        // Get the AudioSource component so we can play sounds.
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Start()
     {
@@ -35,7 +50,8 @@ public class PauseMenuManager : MonoBehaviour
         }
     }
 
-    // Pauses the game and shows the main pause panel.
+    // --- Game State & Panel Functions ---
+
     void PauseGame()
     {
         isPaused = true;
@@ -43,9 +59,6 @@ public class PauseMenuManager : MonoBehaviour
         Time.timeScale = 0f; // Freezes game time.
     }
 
-    // --- Public Button Functions ---
-
-    // Resumes the game and hides all pause UI.
     public void ResumeGame()
     {
         isPaused = false;
@@ -54,28 +67,43 @@ public class PauseMenuManager : MonoBehaviour
         Time.timeScale = 1f; // Un-freezes game time.
     }
 
-    // Called by the "Settings" button.
     public void OpenSettings()
     {
-        // Hides the main pause panel and shows the settings panel.
         pauseMenuPanel.SetActive(false);
         settingsPanel.SetActive(true);
     }
 
-    // Called by the "Back" button in the settings panel.
     public void CloseSettings()
     {
-        // Hides the settings panel and shows the main pause panel again.
         settingsPanel.SetActive(false);
         pauseMenuPanel.SetActive(true);
     }
 
-    // Called by the "Quit" button.
     public void QuitToMainMenu()
     {
         Time.timeScale = 1f;
         // The line below is commented out to prevent errors until the scene exists.
         // SceneManager.LoadScene("MainMenu");
         Debug.Log("Quit to Main Menu button clicked!");
+    }
+
+    // --- Sound Effect Functions ---
+
+    // This function will be called by a button's "PointerDown" event.
+    public void PlayButtonPressedSound()
+    {
+        if (buttonPressedSound != null)
+        {
+            audioSource.PlayOneShot(buttonPressedSound);
+        }
+    }
+
+    // This function will be called by a button's "PointerUp" event.
+    public void PlayButtonReleasedSound()
+    {
+        if (buttonReleasedSound != null)
+        {
+            audioSource.PlayOneShot(buttonReleasedSound);
+        }
     }
 }
