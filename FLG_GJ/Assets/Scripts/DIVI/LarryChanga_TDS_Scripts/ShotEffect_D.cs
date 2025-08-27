@@ -2,7 +2,6 @@ using UnityEngine;
 
 namespace TopDownShooter
 {
-    // This script requires a LineRenderer component to be attached.
     [RequireComponent(typeof(LineRenderer))]
     public class ShotEffect_D : MonoBehaviour
     {
@@ -10,23 +9,26 @@ namespace TopDownShooter
 
         private void Awake()
         {
-            // Get the LineRenderer component attached to this object.
             lineRenderer = GetComponent<LineRenderer>();
         }
 
-        /// <summary>
-        /// Sets the start and end points of the line.
-        /// </summary>
+        // OnEnable is called every time a pooled object is activated.
+        private void OnEnable()
+        {
+            // Schedule this object to deactivate itself after a very short time.
+            Invoke(nameof(Deactivate), 0.07f);
+        }
+
         public void SetPoints(Vector3 start, Vector3 end)
         {
             lineRenderer.SetPosition(0, start);
             lineRenderer.SetPosition(1, end);
         }
 
-        private void Start()
+        // AMENDED: This now deactivates the object instead of destroying it.
+        void Deactivate()
         {
-            // Destroy this effect object after a very short time.
-            Destroy(gameObject, 0.07f);
+            gameObject.SetActive(false);
         }
     }
 }

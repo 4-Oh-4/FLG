@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic; // Required for using Lists
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace TopDownShooter
@@ -30,25 +30,16 @@ namespace TopDownShooter
                     yield return null;
                 }
 
-                Debug.Log("Wave " + (currentWaveIndex + 1) + " cleared!");
-
                 if (currentWaveIndex < waves.Length - 1)
                 {
                     yield return new WaitForSeconds(currentWave.timeUntilNextWave);
                 }
-
                 currentWaveIndex++;
             }
-
-            Debug.Log("All waves cleared! You win!");
         }
 
-        // This coroutine has been rewritten to work with the Object Pooler.
         private IEnumerator SpawnWave(WaveData_D wave)
         {
-            Debug.Log("Starting Wave " + (currentWaveIndex + 1));
-
-            // 1. Create a single list of all enemies to spawn.
             List<GameObject> enemiesToSpawn = new List<GameObject>();
             foreach (var enemyGroup in wave.enemyGroups)
             {
@@ -57,8 +48,8 @@ namespace TopDownShooter
                     enemiesToSpawn.Add(enemyGroup.enemyPrefab);
                 }
             }
+            enemiesAlive = enemiesToSpawn.Count;
 
-            // 2. Shuffle the list for a random spawn order.
             for (int i = 0; i < enemiesToSpawn.Count; i++)
             {
                 int randomIndex = Random.Range(i, enemiesToSpawn.Count);
@@ -67,34 +58,19 @@ namespace TopDownShooter
                 enemiesToSpawn[randomIndex] = temp;
             }
 
-            // 3. Spawn the enemies from the shuffled list using the pool.
             foreach (var enemyPrefab in enemiesToSpawn)
             {
                 Transform randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-
-                // AMENDED: This is the correct line. It uses 'enemyPrefab.name' as the tag.
                 GameObject enemyInstance = ObjectPooler_D.Instance.SpawnFromPool(enemyPrefab.name, randomSpawnPoint.position, Quaternion.identity);
 
                 if (enemyInstance != null)
                 {
-                    enemiesAlive++;
-
-                    // Initialize the enemy so it can report its death.
-                    if (enemyInstance.GetComponent<EnemyAI_D>() != null)
-                    {
-                        enemyInstance.GetComponent<EnemyAI_D>().Initialize(this);
-                    }
-                    else if (enemyInstance.GetComponent<SaboteurAI_D>() != null)
-                    {
-                        enemyInstance.GetComponent<SaboteurAI_D>().Initialize(this);
-                    }
+                    // AMENDED: Now correctly initializes the two enemy types.
+                    if (enemyInstance.TryGetComponent<EnemyAI_D>(out var standardEnemy)) standardEnemy.Initialize(this);
+                    else if (enemyInstance.TryGetComponent<SaboteurAI_D>(out var saboteurEnemy)) saboteurEnemy.Initialize(this);
                 }
 
-                // Use the spawn interval from the wave data.
-                if (wave.enemyGroups.Length > 0)
-                {
-                    yield return new WaitForSeconds(wave.enemyGroups[0].spawnInterval);
-                }
+                yield return new WaitForSeconds(0.75f);
             }
         }
 
