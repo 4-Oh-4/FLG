@@ -1,0 +1,1154 @@
+fileFormatVersion: 2
+guid: dfc1dfdbf77dc7f47a3a64a69b0bc9f7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7268768197299536247
+    second: Act 2 All interiors_0
+  - first:
+      213: -6153097899494877828
+    second: Act 2 All interiors_1
+  - first:
+      213: 3436309168721955227
+    second: Act 2 All interiors_2
+  - first:
+      213: 1204082353598471223
+    second: Act 2 All interiors_3
+  - first:
+      213: -3012301887667194668
+    second: Act 2 All interiors_4
+  - first:
+      213: 7978847512082190541
+    second: Act 2 All interiors_5
+  - first:
+      213: 2955138553963371528
+    second: Act 2 All interiors_6
+  - first:
+      213: 4713586584326503329
+    second: Act 2 All interiors_7
+  - first:
+      213: -8962919820658926334
+    second: Act 2 All interiors_8
+  - first:
+      213: 5116262727220956881
+    second: Act 2 All interiors_9
+  - first:
+      213: 5509607255957412505
+    second: Act 2 All interiors_10
+  - first:
+      213: 3278010011652230536
+    second: Act 2 All interiors_11
+  - first:
+      213: -8464777315123884367
+    second: Act 2 All interiors_12
+  - first:
+      213: 8734605251698391952
+    second: Act 2 All interiors_13
+  - first:
+      213: -6854059305236999649
+    second: Act 2 All interiors_14
+  - first:
+      213: -7217956090930547030
+    second: Act 2 All interiors_15
+  - first:
+      213: -4295369936517266529
+    second: Act 2 All interiors_16
+  - first:
+      213: -353193203525903252
+    second: Act 2 All interiors_17
+  - first:
+      213: -1885457331008589839
+    second: Act 2 All interiors_18
+  - first:
+      213: 4726502457233671631
+    second: Act 2 All interiors_19
+  - first:
+      213: 98603402816156905
+    second: Act 2 All interiors_20
+  - first:
+      213: 5493697524753451630
+    second: Act 2 All interiors_21
+  - first:
+      213: 3130342285917392523
+    second: Act 2 All interiors_22
+  - first:
+      213: 7572914823176358923
+    second: Act 2 All interiors_23
+  - first:
+      213: 6716959054358107449
+    second: Act 2 All interiors_24
+  - first:
+      213: -4640694202650313231
+    second: Act 2 All interiors_25
+  - first:
+      213: 9100962515620210037
+    second: Act 2 All interiors_26
+  - first:
+      213: 8951883246800993256
+    second: Act 2 All interiors_27
+  - first:
+      213: -6882689191262674497
+    second: Act 2 All interiors_28
+  - first:
+      213: -629093576706641911
+    second: Act 2 All interiors_29
+  - first:
+      213: 7663431866805166868
+    second: Act 2 All interiors_30
+  - first:
+      213: 5043637834654528073
+    second: Act 2 All interiors_31
+  - first:
+      213: -3609207765241776268
+    second: Act 2 All interiors_32
+  - first:
+      213: 7419365129032736297
+    second: Act 2 All interiors_33
+  - first:
+      213: 2370265848346820949
+    second: Act 2 All interiors_34
+  - first:
+      213: 2444458112841531756
+    second: Act 2 All interiors_35
+  - first:
+      213: -1636186782645645621
+    second: Act 2 All interiors_36
+  - first:
+      213: -8091804612369736868
+    second: Act 2 All interiors_37
+  - first:
+      213: 8259260866271238730
+    second: Act 2 All interiors_38
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Act 2 All interiors_0
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 831
+        width: 44
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77102b2f92adfd460800000000000000
+      internalID: 7268768197299536247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_1
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 545
+        width: 216
+        height: 326
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c75d7689f0ecb9aa0800000000000000
+      internalID: -6153097899494877828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_2
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 815
+        width: 98
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b99071c8bf830bf20800000000000000
+      internalID: 3436309168721955227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_3
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 781
+        width: 9
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73c9d866582c5b010800000000000000
+      internalID: 1204082353598471223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_4
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 783
+        width: 53
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d4bb5d94672236d0800000000000000
+      internalID: -3012301887667194668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_5
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 783
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc01baad98f8abe60800000000000000
+      internalID: 7978847512082190541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_6
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 815
+        width: 44
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80c5c0b9bd2c20920800000000000000
+      internalID: 2955138553963371528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_7
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 793
+        width: 49
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1abf3d856060a6140800000000000000
+      internalID: 4713586584326503329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_8
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 781
+        width: 85
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20d115329ef4d9380800000000000000
+      internalID: -8962919820658926334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_9
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 554
+        width: 108
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1de8391e7dd900740800000000000000
+      internalID: 5116262727220956881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 719
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99a914fab9e067c40800000000000000
+      internalID: 5509607255957412505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_11
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 640
+        width: 18
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88d84baecb4dd7d20800000000000000
+      internalID: 3278010011652230536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_12
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 639
+        width: 14
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be814551e1178a80800000000000000
+      internalID: -8464777315123884367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_13
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 651
+        width: 67
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09b7eb0d23d873970800000000000000
+      internalID: 8734605251698391952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_14
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 678
+        width: 52
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1253e1506d71e0a0800000000000000
+      internalID: -6854059305236999649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_15
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 687
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa6b7bb7d2ba4db90800000000000000
+      internalID: -7217956090930547030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_16
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 655
+        width: 100
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f930ff2fcc7c364c0800000000000000
+      internalID: -4295369936517266529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_17
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 639
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6c91c617a4391bf0800000000000000
+      internalID: -353193203525903252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_18
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 661
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ffa31a0c8285d5e0800000000000000
+      internalID: -1885457331008589839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_19
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 608
+        width: 56
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc58c6951f8e79140800000000000000
+      internalID: 4726502457233671631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_20
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 541
+        width: 101
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e4708eb54f4e5100800000000000000
+      internalID: 98603402816156905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_21
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 541
+        width: 104
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6a4f5abac88d3c40800000000000000
+      internalID: 5493697524753451630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_22
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 511
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8e8d7949b5317b20800000000000000
+      internalID: 3130342285917392523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_23
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 513
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0c87bd98e5681960800000000000000
+      internalID: 7572914823176358923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_24
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 502
+        width: 19
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 935dbd50cae673d50800000000000000
+      internalID: 6716959054358107449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_25
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 502
+        width: 19
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fd30dbc531f89fb0800000000000000
+      internalID: -4640694202650313231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_26
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 500
+        width: 65
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57520b1603d1d4e70800000000000000
+      internalID: 9100962515620210037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_27
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 433
+        width: 165
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ebf754426a7b3c70800000000000000
+      internalID: 8951883246800993256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_28
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 467
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb12e5785a6cb70a0800000000000000
+      internalID: -6882689191262674497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_29
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 362
+        width: 108
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 900bbed99b20547f0800000000000000
+      internalID: -629093576706641911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_30
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 351
+        width: 166
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 413a4552eaaf95a60800000000000000
+      internalID: 7663431866805166868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_31
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 271
+        width: 98
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 942bd4663e99ef540800000000000000
+      internalID: 5043637834654528073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_32
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 293
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 477be20f8a489edc0800000000000000
+      internalID: -3609207765241776268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_33
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 321
+        width: 34
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92e9aee7641e6f660800000000000000
+      internalID: 7419365129032736297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_34
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 306
+        width: 15
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 551c3f91b30e4e020800000000000000
+      internalID: 2370265848346820949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_35
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 311
+        width: 9
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c61cd3cc3b57ce120800000000000000
+      internalID: 2444458112841531756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_36
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 311
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bce87324ac81b49e0800000000000000
+      internalID: -1636186782645645621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_37
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 63
+        width: 98
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5b95d7c39224bf80800000000000000
+      internalID: -8091804612369736868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_38
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 86
+        width: 213
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4ad1699ff9ce9270800000000000000
+      internalID: 8259260866271238730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act 2 All interiors_39
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 795
+        width: 9
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c43a1c3a57d29c44b8721c32146f9fee
+      internalID: -1838637241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d483897bc0b59554f80c64a5d85203b7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Act 2 All interiors_0: 7268768197299536247
+      Act 2 All interiors_1: -6153097899494877828
+      Act 2 All interiors_10: 5509607255957412505
+      Act 2 All interiors_11: 3278010011652230536
+      Act 2 All interiors_12: -8464777315123884367
+      Act 2 All interiors_13: 8734605251698391952
+      Act 2 All interiors_14: -6854059305236999649
+      Act 2 All interiors_15: -7217956090930547030
+      Act 2 All interiors_16: -4295369936517266529
+      Act 2 All interiors_17: -353193203525903252
+      Act 2 All interiors_18: -1885457331008589839
+      Act 2 All interiors_19: 4726502457233671631
+      Act 2 All interiors_2: 3436309168721955227
+      Act 2 All interiors_20: 98603402816156905
+      Act 2 All interiors_21: 5493697524753451630
+      Act 2 All interiors_22: 3130342285917392523
+      Act 2 All interiors_23: 7572914823176358923
+      Act 2 All interiors_24: 6716959054358107449
+      Act 2 All interiors_25: -4640694202650313231
+      Act 2 All interiors_26: 9100962515620210037
+      Act 2 All interiors_27: 8951883246800993256
+      Act 2 All interiors_28: -6882689191262674497
+      Act 2 All interiors_29: -629093576706641911
+      Act 2 All interiors_3: 1204082353598471223
+      Act 2 All interiors_30: 7663431866805166868
+      Act 2 All interiors_31: 5043637834654528073
+      Act 2 All interiors_32: -3609207765241776268
+      Act 2 All interiors_33: 7419365129032736297
+      Act 2 All interiors_34: 2370265848346820949
+      Act 2 All interiors_35: 2444458112841531756
+      Act 2 All interiors_36: -1636186782645645621
+      Act 2 All interiors_37: -8091804612369736868
+      Act 2 All interiors_38: 8259260866271238730
+      Act 2 All interiors_39: -1838637241
+      Act 2 All interiors_4: -3012301887667194668
+      Act 2 All interiors_5: 7978847512082190541
+      Act 2 All interiors_6: 2955138553963371528
+      Act 2 All interiors_7: 4713586584326503329
+      Act 2 All interiors_8: -8962919820658926334
+      Act 2 All interiors_9: 5116262727220956881
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
