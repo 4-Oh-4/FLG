@@ -15,7 +15,6 @@ namespace TopDownShooter
         [SerializeField] private LayerMask enemyLayers;
         [SerializeField] private GameObject shotEffectPrefab;
 
-        // --- Private State ---
         private float currentHealth;
         private int currentAmmo;
         private Rigidbody2D playerRb;
@@ -59,44 +58,27 @@ namespace TopDownShooter
             Vector2 shotDirection = ((Vector2)mousePos - (Vector2)transform.position).normalized;
             RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, shotDirection, Mathf.Infinity, enemyLayers);
 
-            // --- Visual Effect ---
             if (shotEffectPrefab != null)
             {
                 Vector3 endPoint = hitInfo.collider != null ? (Vector3)hitInfo.point : (Vector3)transform.position + (Vector3)shotDirection * 100f;
-                GameObject shotEffect = Instantiate(shotEffectPrefab, Vector3.zero, Quaternion.identity);
+                // Use the object pooler to create the shot effect.
+                GameObject shotEffect = ObjectPooler_D.Instance.SpawnFromPool("ShotEffect", Vector3.zero, Quaternion.identity);
                 shotEffect.GetComponent<ShotEffect_D>().SetPoints(transform.position, endPoint);
             }
 
-            // --- Damage Logic ---
             if (hitInfo.collider != null)
             {
-                // Check if we hit a standard enemy (Rusher or Brute).
-                EnemyAI_D standardEnemy = hitInfo.collider.GetComponent<EnemyAI_D>();
-                if (standardEnemy != null)
-                {
-                    standardEnemy.TakeDamage(attackDamage);
-                    return; // Exit after dealing damage.
-                }
-
-                // If not, check if we hit a Saboteur.
-                SaboteurAI_D saboteurEnemy = hitInfo.collider.GetComponent<SaboteurAI_D>();
-                if (saboteurEnemy != null)
-                {
-                    saboteurEnemy.TakeDamage(attackDamage);
-                }
+                // Damage logic now checks for both enemy types.
+                if (hitInfo.collider.TryGetComponent<EnemyAI_D>(out var standardEnemy)) standardEnemy.TakeDamage(attackDamage);
+                else if (hitInfo.collider.TryGetComponent<SaboteurAI_D>(out var saboteurEnemy)) saboteurEnemy.TakeDamage(attackDamage);
             }
         }
 
-        // This is called by enemies when they attack the player.
         public void TakeDamage(float damage)
         {
             if (currentHealth <= 0) return;
             currentHealth -= damage;
-            Debug.Log("Player Health: " + currentHealth);
-            if (currentHealth <= 0)
-            {
-                Die();
-            }
+            if (currentHealth <= 0) Die();
         }
 
         public void ReplenishAmmo()
@@ -106,7 +88,6 @@ namespace TopDownShooter
 
         void Die()
         {
-            Debug.Log("Player Defeated!");
             this.enabled = false;
         }
     }

@@ -4,13 +4,11 @@ namespace TopDownShooter
 {
     public class AmmoPickup_D : MonoBehaviour
     {
-        [Tooltip("How many seconds the pickup will stay on the ground before disappearing.")]
         [SerializeField] private float lifeTime = 5f;
 
-        private void Start()
+        private void OnEnable()
         {
-            // Schedule this GameObject to be destroyed after 'lifeTime' seconds.
-            Destroy(gameObject, lifeTime);
+            Invoke(nameof(Deactivate), lifeTime);
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -19,9 +17,16 @@ namespace TopDownShooter
             if (player != null)
             {
                 player.ReplenishAmmo();
-                // If the player picks it up, destroy it immediately.
-                Destroy(gameObject);
+                Deactivate();
             }
+        }
+
+        private void Deactivate()
+        {
+            // Cancel the scheduled deactivation to prevent errors if the player picks it up first.
+            CancelInvoke();
+            // AMENDED: This now deactivates the object instead of destroying it.
+            gameObject.SetActive(false);
         }
     }
 }
