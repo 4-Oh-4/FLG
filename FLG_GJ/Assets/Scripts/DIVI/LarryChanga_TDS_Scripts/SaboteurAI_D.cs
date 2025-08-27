@@ -19,23 +19,15 @@ namespace TopDownShooter
         [SerializeField] private GameObject ammoDropPrefab;
         [SerializeField][Range(0, 1)] private float ammoDropChance = 0.75f;
 
-        // --- Private References & State ---
         private float currentHealth;
         private Transform playerTarget;
         private PlayerController_D playerController;
         private Rigidbody2D saboteurRb;
         private WaveSpawner_D spawner;
-
         private float lastAttackTime = -1f;
         private bool isAttacking = false;
 
-
-
-        // This function is called by the spawner when this enemy is created.
-        public void Initialize(WaveSpawner_D spawnerRef)
-        {
-            spawner = spawnerRef;
-        }
+        public void Initialize(WaveSpawner_D spawnerRef) { spawner = spawnerRef; }
 
         private void Awake()
         {
@@ -44,10 +36,9 @@ namespace TopDownShooter
 
         private void OnEnable()
         {
-            
             currentHealth = maxHealth;
+            isAttacking = false;
 
-            // This AI's only goal is to find the player.
             GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
             if (playerObj != null)
             {
@@ -56,7 +47,6 @@ namespace TopDownShooter
             }
             else
             {
-                // If no player is found, disable this enemy.
                 this.enabled = false;
             }
         }
@@ -71,25 +61,22 @@ namespace TopDownShooter
 
             float distanceToPlayer = Vector2.Distance(transform.position, playerTarget.position);
 
-            // Move towards the player if not in stopping range.
             if (distanceToPlayer > stoppingDistance)
             {
                 Vector2 direction = (playerTarget.position - transform.position).normalized;
-                saboteurRb.linearVelocity = direction * moveSpeed;
+                saboteurRb.linearVelocity = direction * moveSpeed; // Corrected to velocity
             }
             else
             {
-                saboteurRb.linearVelocity = Vector2.zero;
+                saboteurRb.linearVelocity = Vector2.zero; // Corrected to velocity
             }
 
-            // Attack if in attack range.
             if (distanceToPlayer <= attackRange)
             {
                 Attack();
             }
         }
 
-        // Starts the attack coroutine if not on cooldown.
         void Attack()
         {
             if (Time.time >= lastAttackTime + attackCoolDown && !isAttacking)
@@ -99,13 +86,11 @@ namespace TopDownShooter
             }
         }
 
-        // Handles the timed attack sequence.
         IEnumerator AttackCoroutine()
         {
             isAttacking = true;
             yield return new WaitForSeconds(attackDuration);
 
-            // Check if player is still in range after the attack wind-up.
             if (playerTarget != null && Vector2.Distance(transform.position, playerTarget.position) <= attackRange)
             {
                 if (playerController != null)
@@ -113,45 +98,24 @@ namespace TopDownShooter
                     playerController.TakeDamage(attackDamage);
                 }
             }
-
             isAttacking = false;
         }
 
-        // Called by the player's bullets to deal damage.
         public void TakeDamage(float damage)
         {
             if (currentHealth <= 0) return;
-
             currentHealth -= damage;
-            if (currentHealth <= 0)
-            {
-                Die();
-            }
+            if (currentHealth <= 0) Die();
         }
 
-        // Handles death logic.
         void Die()
         {
-
-
-            // Tell the spawner that we have died.
-            if (spawner != null)
+            if (spawner != null) spawner.OnEnemyDied();
+            if (Random.value <= ammoDropChance && ammoDropPrefab != null)
             {
-                spawner.OnEnemyDied();
+                // Use the object pooler to spawn loot.
+                ObjectPooler_D.Instance.SpawnFromPool(ammoDropPrefab.name, transform.position, Quaternion.identity);
             }
-
-                
-            
-
-            // Check if we should drop ammo.
-            if (Random.value <= ammoDropChance)
-            {
-                if (ammoDropPrefab != null)
-                {
-                    Instantiate(ammoDropPrefab, transform.position, Quaternion.identity);
-                }
-            }
-
             gameObject.SetActive(false);
         }
     }
