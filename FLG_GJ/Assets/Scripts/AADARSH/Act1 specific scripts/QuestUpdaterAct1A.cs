@@ -2,16 +2,13 @@ using UnityEngine;
 
 public class QuestUpdaterAct1A : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    [SerializeField] Transform SilvioTransform;
+    [SerializeField] Transform collecitonTransform;
+    [SerializeField] Transform GatetoGoOut;
+    [SerializeField] WindowQuestPointer_A questPointer_A;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public void InitialNaration() {
+
     }
-    
 }
