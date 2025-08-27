@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace TopDownShooter
 {
-    [RequireComponent(typeof(Rigidbody2D))]
+    [RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
     public class PlayerController_D : MonoBehaviour
     {
         [Header("Stats")]
@@ -15,10 +15,12 @@ namespace TopDownShooter
         [SerializeField] private LayerMask enemyLayers;
         [SerializeField] private GameObject shotEffectPrefab;
 
+        // --- Private State & Components ---
         private float currentHealth;
         private int currentAmmo;
         private Rigidbody2D playerRb;
         private Camera mainCam;
+        private Animator anim;
         private Vector2 moveInput;
         private Vector2 mousePos;
 
@@ -26,12 +28,15 @@ namespace TopDownShooter
         {
             playerRb = GetComponent<Rigidbody2D>();
             mainCam = Camera.main;
+            anim = GetComponent<Animator>();
+
             currentHealth = maxHealth;
             currentAmmo = maxAmmo;
         }
 
         private void Update()
         {
+            // --- Input Gathering ---
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxisRaw("Vertical");
             mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
@@ -40,18 +45,38 @@ namespace TopDownShooter
             {
                 Shoot();
             }
+
+            // --- Animation Logic ---
+            UpdateAnimator();
         }
 
         private void FixedUpdate()
         {
+            // Apply physics-based movement.
             playerRb.MovePosition(playerRb.position + moveInput.normalized * moveSpeed * Time.fixedDeltaTime);
-            Vector2 lookDir = mousePos - playerRb.position;
-            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-            playerRb.rotation = angle;
+
+            // AMENDED: The line that forces rotation has been removed from here.
+            // This gives full control to the animation system.
+        }
+
+        private void UpdateAnimator()
+        {
+            // Send the current speed to the Animator to switch between Idle and Run.
+            anim.SetFloat("Speed", moveInput.magnitude);
+
+            // If the player is moving, update the "LastMove" parameters.
+            if (moveInput.x != 0 || moveInput.y != 0)
+            {
+                anim.SetFloat("LastMoveX", moveInput.x);
+                anim.SetFloat("LastMoveY", moveInput.y);
+            }
         }
 
         void Shoot()
         {
+            // Your shooting logic is still perfectly accurate because it calculates
+            // the shot direction based on the mouse position, not the player's rotation.
+
             if (currentAmmo <= 0) return;
             currentAmmo--;
 
@@ -61,14 +86,12 @@ namespace TopDownShooter
             if (shotEffectPrefab != null)
             {
                 Vector3 endPoint = hitInfo.collider != null ? (Vector3)hitInfo.point : (Vector3)transform.position + (Vector3)shotDirection * 100f;
-                // Use the object pooler to create the shot effect.
                 GameObject shotEffect = ObjectPooler_D.Instance.SpawnFromPool("ShotEffect", Vector3.zero, Quaternion.identity);
                 shotEffect.GetComponent<ShotEffect_D>().SetPoints(transform.position, endPoint);
             }
 
             if (hitInfo.collider != null)
             {
-                // Damage logic now checks for both enemy types.
                 if (hitInfo.collider.TryGetComponent<EnemyAI_D>(out var standardEnemy)) standardEnemy.TakeDamage(attackDamage);
                 else if (hitInfo.collider.TryGetComponent<SaboteurAI_D>(out var saboteurEnemy)) saboteurEnemy.TakeDamage(attackDamage);
             }
