@@ -7,12 +7,12 @@ public class GameManagerAct1A : MonoBehaviour {
     [SerializeField] int foodTobeCollected = 5;
     [SerializeField] Transform trash;
     [SerializeField] WindowQuestPointer_A questPointer;
-
+    Vector3 pos = new Vector3(-31.7800007f, -24.8600006f, 0f);
     [Header("UI References")]
     [SerializeField] GameObject uiPanel;
     [SerializeField] TextMeshProUGUI trashText;
     [SerializeField] TextMeshProUGUI foodText;
-
+    [SerializeField] Transform player;
     // --- ADDED ---
     // A reference to the food spawner script.
     private FoodSpawnerAct1A foodSpawner;
@@ -84,5 +84,8 @@ public class GameManagerAct1A : MonoBehaviour {
         if (foodSpawner != null) {
             foodSpawner.StopSpawning();
         }
+    }
+    public void TeleportPlayer() {
+        player.position = pos;
     }
 }
