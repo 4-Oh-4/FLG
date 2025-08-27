@@ -7,12 +7,12 @@ public class GameManagerAct1A : MonoBehaviour {
     [SerializeField] int foodTobeCollected = 5;
     [SerializeField] Transform trash;
     [SerializeField] WindowQuestPointer_A questPointer;
-
+    Vector3 pos = new Vector3(-31.7800007f, -24.8600006f, 0f);
     [Header("UI References")]
     [SerializeField] GameObject uiPanel;
     [SerializeField] TextMeshProUGUI trashText;
     [SerializeField] TextMeshProUGUI foodText;
-
+    [SerializeField] Transform player;
     // --- ADDED ---
     // A reference to the food spawner script.
     private FoodSpawnerAct1A foodSpawner;
@@ -26,7 +26,7 @@ public class GameManagerAct1A : MonoBehaviour {
         }
         // -------------
 
-        questPointer = FindAnyObjectByType<WindowQuestPointer_A>();
+        //questPointer = FindAnyObjectByType<WindowQuestPointer_A>();
         UpdateUI();
         if (uiPanel != null)
             uiPanel.SetActive(false);
@@ -61,7 +61,7 @@ public class GameManagerAct1A : MonoBehaviour {
         if (uiPanel != null)
             uiPanel.SetActive(true);
 
-        questPointer.target = trash;
+        //questPointer.target = trash;
 
         // --- ADDED ---
         // Tell the spawner to start its work.
@@ -77,14 +77,15 @@ public class GameManagerAct1A : MonoBehaviour {
 
         // This line might cause an error if the target has been destroyed.
         // It's safer to check first.
-        if (questPointer.target != null) {
-            questPointer.gameObject.SetActive(false);
-        }
 
+        StoryManagertAct1A.Instance.SetFlag("Collect", true);
         // --- ADDED ---
         // Tell the spawner to stop its work.
         if (foodSpawner != null) {
             foodSpawner.StopSpawning();
         }
+    }
+    public void TeleportPlayer() {
+        player.position = pos;
     }
 }
