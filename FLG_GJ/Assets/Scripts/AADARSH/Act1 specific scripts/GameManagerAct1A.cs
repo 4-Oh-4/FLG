@@ -26,7 +26,7 @@ public class GameManagerAct1A : MonoBehaviour {
         }
         // -------------
 
-        questPointer = FindAnyObjectByType<WindowQuestPointer_A>();
+        //questPointer = FindAnyObjectByType<WindowQuestPointer_A>();
         UpdateUI();
         if (uiPanel != null)
             uiPanel.SetActive(false);
@@ -61,7 +61,7 @@ public class GameManagerAct1A : MonoBehaviour {
         if (uiPanel != null)
             uiPanel.SetActive(true);
 
-        questPointer.target = trash;
+        //questPointer.target = trash;
 
         // --- ADDED ---
         // Tell the spawner to start its work.
@@ -77,10 +77,8 @@ public class GameManagerAct1A : MonoBehaviour {
 
         // This line might cause an error if the target has been destroyed.
         // It's safer to check first.
-        if (questPointer.target != null) {
-            questPointer.gameObject.SetActive(false);
-        }
 
+        StoryManagertAct1A.Instance.SetFlag("Collect", true);
         // --- ADDED ---
         // Tell the spawner to stop its work.
         if (foodSpawner != null) {
