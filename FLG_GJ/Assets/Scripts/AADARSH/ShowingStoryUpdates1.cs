@@ -48,10 +48,10 @@ public class ShowingStoryUpdates1 : MonoBehaviour {
     /// A coroutine that handles the sequence: show UI, wait, and then hide UI.
     /// </summary>
     private IEnumerator ShowAndWaitRoutine(string message) {
-        yield return new WaitForSeconds(1f);
+        if(message=="")yield return new WaitForSeconds(1f);
         // 1. Set the text message.
         if (updateText != null) {
-            updateText.text = message;
+            //updateText.text = message;
         }
 
         // 2. Enable the panel GameObject to make it visible.
