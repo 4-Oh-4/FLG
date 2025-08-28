@@ -1,9 +1,11 @@
+using System.Collections;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameManager_Drug : MonoBehaviour
 {
     public static GameManager_Drug Instance { get; private set; }
     public bool HasPackage { get; private set; }
+    public GameObject canvas;
 
     void Awake()
     {
@@ -11,6 +13,7 @@ public class GameManager_Drug : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
         Time.timeScale = 1f;
+        canvas.SetActive(false);
     }
 
     public void OnPackageCollected()
@@ -23,15 +26,27 @@ public class GameManager_Drug : MonoBehaviour
     {
         if (Time.timeScale == 0f) return;
         Debug.Log("Caught! Game Over.");
-        Time.timeScale = 0f; // quick pause; replace with UI later
-    }
+        StartCoroutine(ShowAndWaitRoutine());
 
+    }
+    private IEnumerator ShowAndWaitRoutine() {
+        canvas.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        Scene currentScene = gameObject.scene;
+
+        // Reload that scene (no unload needed)
+        SceneManager.UnloadSceneAsync("DrugTheftMiniGame");
+        SceneManager.LoadSceneAsync("DrugTheftMiniGame", LoadSceneMode.Additive);
+    }
     public void TryWin()
     {
         if (HasPackage)
         {
+            FindAnyObjectByType<LoadUnloadMiniGamesPlayerA>().UnloadMiniGame();
             Debug.Log("You escaped with the package! You win.");
-            Time.timeScale = 0f;
+            SceneManager.UnloadSceneAsync("DrugTheftMiniGame");
+            
+
         }
     }
 }
