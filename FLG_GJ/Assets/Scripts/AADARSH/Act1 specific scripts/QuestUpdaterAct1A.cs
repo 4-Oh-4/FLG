@@ -8,6 +8,7 @@ public class QuestUpdaterAct1A : MonoBehaviour
     [SerializeField] Transform GateToGoOut;
     [SerializeField] Transform GettingBeaten;
     [SerializeField] Transform EvangalicMission;
+    [SerializeField] Transform thugCampFire;
     [SerializeField] WindowQuestPointer_A questPointer_A;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void InitialNaration() {
@@ -46,5 +47,11 @@ public class QuestUpdaterAct1A : MonoBehaviour
     }
     public void EnablePointer() {
         questPointer_A.gameObject.SetActive(true);
+    }
+    public void ThugCampFire() {
+        if (questPointer_A.gameObject.activeInHierarchy == false) {
+            EnablePointer();
+        }
+        questPointer_A.target = thugCampFire;
     }
 }
