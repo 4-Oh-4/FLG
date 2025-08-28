@@ -47,6 +47,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: World
+    uniqueID: 150572139
+    locked: 0
+  - name: Vision
+    uniqueID: 1678315463
+    locked: 0
   - name: Background
     uniqueID: 170564537
     locked: 0
