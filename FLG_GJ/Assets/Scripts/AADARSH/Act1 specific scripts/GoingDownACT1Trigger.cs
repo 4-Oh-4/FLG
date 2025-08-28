@@ -15,8 +15,8 @@ public class GoingDownACT1Trigger : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Player")) {
+            FindAnyObjectByType<GameManagerAct1A>().TeleportPlayer();
             StoryManagertAct1A.Instance.SetFlag("IsDown", true);
-            
         }
     }
 }

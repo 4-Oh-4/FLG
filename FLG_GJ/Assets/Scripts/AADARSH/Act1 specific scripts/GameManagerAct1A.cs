@@ -89,15 +89,15 @@ public class GameManagerAct1A : MonoBehaviour {
     }
     public void TeleportPlayer() {
         player.position = pos;
-        StoryManagertAct1A.Instance.SetFlag("OnRoof", false);
-        StoryManagertAct1A.Instance.SetFlag("IsDown", true);
+        //StoryManagertAct1A.Instance.SetFlag("OnRoof", false);
+        //StoryManagertAct1A.Instance.SetFlag("IsDown", true);
 
     }
     public void TeleportPlayerToRoof() {
         player.position = posRoof;
         blackScreen.ShowUpdate("sa");
-        StoryManagertAct1A.Instance.SetFlag("IsDown", false);
-        StoryManagertAct1A.Instance.SetFlag("OnRoof", true);
+        //StoryManagertAct1A.Instance.SetFlag("IsDown", false);
+        //StoryManagertAct1A.Instance.SetFlag("OnRoof", true);
 
     }
 }
