@@ -14,6 +14,7 @@ public class GameManagerAct1A : MonoBehaviour {
     [SerializeField] TextMeshProUGUI trashText;
     [SerializeField] TextMeshProUGUI foodText;
     [SerializeField] Transform player;
+    [SerializeField] ShowingStoryUpdates1 blackScreen;
     // --- ADDED ---
     // A reference to the food spawner script.
     private FoodSpawnerAct1A foodSpawner;
@@ -94,6 +95,7 @@ public class GameManagerAct1A : MonoBehaviour {
     }
     public void TeleportPlayerToRoof() {
         player.position = posRoof;
+        blackScreen.ShowUpdate("sa");
         StoryManagertAct1A.Instance.SetFlag("IsDown", false);
         StoryManagertAct1A.Instance.SetFlag("OnRoof", true);
 
