@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: 84ca78863943b9e4fafd0d37c5abe111
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8569461339258713186
+    second: Act2&3 Env_0
+  - first:
+      213: -3184130999535190261
+    second: Act2&3 Env_1
+  - first:
+      213: 7436155153732905903
+    second: Act2&3 Env_2
+  - first:
+      213: 1954614625259563408
+    second: Act2&3 Env_3
+  - first:
+      213: 1597904469301636003
+    second: Act2&3 Env_4
+  - first:
+      213: -5729356211907150831
+    second: Act2&3 Env_5
+  - first:
+      213: 4278756548605557240
+    second: Act2&3 Env_6
+  - first:
+      213: 3567279217692254656
+    second: Act2&3 Env_7
+  - first:
+      213: 5751161544482086566
+    second: Act2&3 Env_8
+  - first:
+      213: -187045414681933356
+    second: Act2&3 Env_9
+  - first:
+      213: 7378320041436122838
+    second: Act2&3 Env_10
+  - first:
+      213: 639024887493937009
+    second: Act2&3 Env_11
+  - first:
+      213: -522200250143970889
+    second: Act2&3 Env_12
+  - first:
+      213: 1709640878925293621
+    second: Act2&3 Env_13
+  - first:
+      213: -2260371557286903183
+    second: Act2&3 Env_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Act2&3 Env_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 363
+        width: 376
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9b8a0d9058231980800000000000000
+      internalID: -8569461339258713186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act2&3 Env_1
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 431
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0f3566e9b1bfc3d0800000000000000
+      internalID: -3184130999535190261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act2&3 Env_2
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 431
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faba0f0c6b7823760800000000000000
+      internalID: 7436155153732905903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act2&3 Env_3
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 433
+        width: 206
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 099216b45af202b10800000000000000
+      internalID: 1954614625259563408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act2&3 Env_4
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 336
+        width: 8
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ababb516a5ec2610800000000000000
+      internalID: 1597904469301636003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act2&3 Env_5
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 353
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11cb89571ec3d70b0800000000000000
+      internalID: -5729356211907150831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act2&3 Env_6
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 302
+        width: 49
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f9b2004962316b30800000000000000
+      internalID: 4278756548605557240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act2&3 Env_7
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 303
+        width: 49
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c12e295c85818130800000000000000
+      internalID: 3567279217692254656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act2&3 Env_8
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 249
+        width: 39
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aeddb824fa30df40800000000000000
+      internalID: 5751161544482086566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act2&3 Env_9
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 247
+        width: 40
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d98405bf2b776df0800000000000000
+      internalID: -187045414681933356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act2&3 Env_10
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 241
+        width: 13
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6de02f45cfe056660800000000000000
+      internalID: 7378320041436122838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act2&3 Env_11
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 301
+        width: 36
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 177c5bddfb54ed800800000000000000
+      internalID: 639024887493937009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act2&3 Env_12
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 228
+        width: 85
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b96c84a3a5c0c8f0800000000000000
+      internalID: -522200250143970889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act2&3 Env_13
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 222
+        width: 31
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53824d1425dd9b710800000000000000
+      internalID: 1709640878925293621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act2&3 Env_14
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 13
+        width: 190
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 172848b6b0c81a0e0800000000000000
+      internalID: -2260371557286903183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Act2&3 Env_0: -8569461339258713186
+      Act2&3 Env_1: -3184130999535190261
+      Act2&3 Env_10: 7378320041436122838
+      Act2&3 Env_11: 639024887493937009
+      Act2&3 Env_12: -522200250143970889
+      Act2&3 Env_13: 1709640878925293621
+      Act2&3 Env_14: -2260371557286903183
+      Act2&3 Env_2: 7436155153732905903
+      Act2&3 Env_3: 1954614625259563408
+      Act2&3 Env_4: 1597904469301636003
+      Act2&3 Env_5: -5729356211907150831
+      Act2&3 Env_6: 4278756548605557240
+      Act2&3 Env_7: 3567279217692254656
+      Act2&3 Env_8: 5751161544482086566
+      Act2&3 Env_9: -187045414681933356
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
