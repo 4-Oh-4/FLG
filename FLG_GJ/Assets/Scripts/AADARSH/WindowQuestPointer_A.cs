@@ -38,7 +38,7 @@ public class WindowQuestPointer_A : MonoBehaviour {
         }
 
         // Initially hide the pointer
-        pointerImage.gameObject.SetActive(false);
+        pointerImage.gameObject.SetActive(true);
     }
 
     void Update() {
