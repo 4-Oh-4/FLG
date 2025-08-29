@@ -42,7 +42,7 @@ public class GameManager_Drug : MonoBehaviour
     {
         if (HasPackage)
         {
-            FindAnyObjectByType<LoadUnloadMiniGamesPlayerA>().UnloadMiniGame();
+            FindAnyObjectByType<LoadUnloadMiniGamesPlayerA>().UnloadMiniGame("DrugTheft");
             Debug.Log("You escaped with the package! You win.");
             SceneManager.UnloadSceneAsync("DrugTheftMiniGame");
             
