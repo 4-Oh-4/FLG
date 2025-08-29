@@ -47,6 +47,15 @@ TextureImporter:
   - first:
       213: -2260371557286903183
     second: Act2&3 Env_14
+  - first:
+      213: 932254587963489206
+    second: Act2&3 Env_15
+  - first:
+      213: -2530745133009939479
+    second: Act2&3 Env_16
+  - first:
+      213: -7472073273775830218
+    second: Act2&3 Env_17
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -167,10 +176,10 @@ TextureImporter:
       name: Act2&3 Env_1
       rect:
         serializedVersion: 2
-        x: 363
-        y: 431
-        width: 27
-        height: 48
+        x: 500
+        y: 624
+        width: 28
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +198,10 @@ TextureImporter:
       name: Act2&3 Env_2
       rect:
         serializedVersion: 2
-        x: 398
-        y: 431
-        width: 27
-        height: 48
+        x: 532
+        y: 623
+        width: 28
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,10 +220,10 @@ TextureImporter:
       name: Act2&3 Env_3
       rect:
         serializedVersion: 2
-        x: 465
-        y: 433
-        width: 206
-        height: 161
+        x: 564
+        y: 623
+        width: 27
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,10 +242,10 @@ TextureImporter:
       name: Act2&3 Env_4
       rect:
         serializedVersion: 2
-        x: 296
-        y: 336
-        width: 8
-        height: 49
+        x: 599
+        y: 623
+        width: 27
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,10 +264,10 @@ TextureImporter:
       name: Act2&3 Env_5
       rect:
         serializedVersion: 2
-        x: 363
-        y: 353
-        width: 50
-        height: 51
+        x: 465
+        y: 433
+        width: 206
+        height: 161
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,10 +286,10 @@ TextureImporter:
       name: Act2&3 Env_6
       rect:
         serializedVersion: 2
-        x: 398
-        y: 302
-        width: 49
-        height: 51
+        x: 114
+        y: 249
+        width: 39
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,10 +308,10 @@ TextureImporter:
       name: Act2&3 Env_7
       rect:
         serializedVersion: 2
-        x: 479
-        y: 303
-        width: 49
-        height: 51
+        x: 167
+        y: 247
+        width: 40
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,10 +330,10 @@ TextureImporter:
       name: Act2&3 Env_8
       rect:
         serializedVersion: 2
-        x: 114
-        y: 249
-        width: 39
-        height: 86
+        x: 238
+        y: 241
+        width: 13
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -343,10 +352,10 @@ TextureImporter:
       name: Act2&3 Env_9
       rect:
         serializedVersion: 2
-        x: 167
-        y: 247
-        width: 40
-        height: 90
+        x: 287
+        y: 272
+        width: 8
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -365,10 +374,10 @@ TextureImporter:
       name: Act2&3 Env_10
       rect:
         serializedVersion: 2
-        x: 238
-        y: 241
-        width: 13
-        height: 93
+        x: 347
+        y: 301
+        width: 36
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -387,10 +396,10 @@ TextureImporter:
       name: Act2&3 Env_11
       rect:
         serializedVersion: 2
-        x: 347
-        y: 301
-        width: 36
-        height: 50
+        x: 398
+        y: 302
+        width: 49
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -409,10 +418,10 @@ TextureImporter:
       name: Act2&3 Env_12
       rect:
         serializedVersion: 2
-        x: 318
-        y: 228
-        width: 85
-        height: 57
+        x: 479
+        y: 303
+        width: 49
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -431,10 +440,10 @@ TextureImporter:
       name: Act2&3 Env_13
       rect:
         serializedVersion: 2
-        x: 495
-        y: 222
-        width: 31
-        height: 58
+        x: 541
+        y: 300
+        width: 50
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -453,6 +462,72 @@ TextureImporter:
       name: Act2&3 Env_14
       rect:
         serializedVersion: 2
+        x: 609
+        y: 310
+        width: 12
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 172848b6b0c81a0e0800000000000000
+      internalID: -2260371557286903183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act2&3 Env_15
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 228
+        width: 85
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bbbac3cb9800fc00800000000000000
+      internalID: 932254587963489206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act2&3 Env_16
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 222
+        width: 31
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e3d4e1c5bcf0ecd0800000000000000
+      internalID: -2530745133009939479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act2&3 Env_17
+      rect:
+        serializedVersion: 2
         x: 179
         y: 13
         width: 190
@@ -465,8 +540,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 172848b6b0c81a0e0800000000000000
-      internalID: -2260371557286903183
+      spriteID: 63bc6ec32fcdd4890800000000000000
+      internalID: -7472073273775830218
       vertices: []
       indices: 
       edges: []
@@ -492,6 +567,9 @@ TextureImporter:
       Act2&3 Env_12: -522200250143970889
       Act2&3 Env_13: 1709640878925293621
       Act2&3 Env_14: -2260371557286903183
+      Act2&3 Env_15: 932254587963489206
+      Act2&3 Env_16: -2530745133009939479
+      Act2&3 Env_17: -7472073273775830218
       Act2&3 Env_2: 7436155153732905903
       Act2&3 Env_3: 1954614625259563408
       Act2&3 Env_4: 1597904469301636003
