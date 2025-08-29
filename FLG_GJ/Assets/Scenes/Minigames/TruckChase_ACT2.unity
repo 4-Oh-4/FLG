@@ -467,9 +467,6 @@ MonoBehaviour:
   - tag: Rocket_D
     prefab: {fileID: 9057219132064380255, guid: 1b5e37d45a374404980eca4f9073b179, type: 3}
     size: 15
-  - tag: Bike
-    prefab: {fileID: 3052525277136061986, guid: 23d8cd566116bf749a6234868c90b873, type: 3}
-    size: 20
   - tag: Sedan
     prefab: {fileID: 7890999365690074343, guid: 5e47de9be5501764f99c58f59fa568ef, type: 3}
     size: 15
