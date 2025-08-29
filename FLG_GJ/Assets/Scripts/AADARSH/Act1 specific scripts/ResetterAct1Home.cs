@@ -2,40 +2,32 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ResetterAct1Home : MonoBehaviour {
-    public void UnloadEverything() {
-        // Unload all loaded scenes except the currently active one
-        for (int i = 0; i < SceneManager.sceneCount; i++) {
-            Scene scene = SceneManager.GetSceneAt(i);
-            if (scene.isLoaded) {
-                SceneManager.UnloadSceneAsync(scene);
-            }
-        }
+    [Tooltip("The name of the scene to load after the reset.")]
+    [SerializeField]
+    private string sceneToLoad = "Carlos_house";
 
-        // Destroy all DontDestroyOnLoad objects
-        DestroyDontDestroyOnLoadObjects();
-    }
+    [Tooltip("The tag assigned to all objects that persist between scenes (e.g., GameManager, AudioManager) and should be destroyed on reset.")]
+    [SerializeField]
+    private string persistentObjectTag = "GameController";
 
-    private void DestroyDontDestroyOnLoadObjects() {
-        // Create a new temporary scene
-        var temp = new GameObject("TempSceneHolder");
-        Scene tempScene = SceneManager.CreateScene("TempScene");
-
-        // Move the temp object into that scene
-        SceneManager.MoveGameObjectToScene(temp, tempScene);
-
-        // Now find ALL root objects in DontDestroyOnLoad by moving the temp object
-        Scene dontDestroyScene = temp.scene;
-        foreach (var root in dontDestroyScene.GetRootGameObjects()) {
-            Destroy(root);
-        }
-
-        // Clean up temp
-        SceneManager.UnloadSceneAsync(tempScene);
-        SceneManager.LoadScene("Carlos_house");
-    }
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Player")) {
-            UnloadEverything();
+            ResetGame();
         }
+    }
+
+    public void ResetGame() {
+        // 1. Find and destroy all persistent objects.
+        // It's much safer to find objects by a specific tag than to use complex scene-moving hacks.
+        GameObject[] persistentObjects = GameObject.FindGameObjectsWithTag(persistentObjectTag);
+
+        foreach (GameObject obj in persistentObjects) {
+            Destroy(obj);
+        }
+
+        // 2. Load the initial scene. 
+        // Using LoadSceneMode.Single automatically unloads all other scenes,
+        // which is exactly what you want.
+        SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Single);
     }
 }
