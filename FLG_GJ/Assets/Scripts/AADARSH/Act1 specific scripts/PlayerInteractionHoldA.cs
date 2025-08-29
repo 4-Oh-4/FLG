@@ -14,16 +14,22 @@ public class PlayerInteractionHoldA : MonoBehaviour {
     public float holdProgress = 0f;
     private HoldInteractableA currentTarget;
     private float requiredHold = 1.0f;
+    HoldInteractableA[] allInteractables;
 
     [Header("UI")]
     public Image progressFillImage; // UI Image (type = Filled) assigned in inspector
     public GameObject progressRoot;  // parent UI element to enable/disable
 
     void Start() {
+        allInteractables = Resources.FindObjectsOfTypeAll<HoldInteractableA>();
         if (progressRoot != null) progressRoot.SetActive(false);
     }
 
     void Update() {
+        allInteractables = Resources.FindObjectsOfTypeAll<HoldInteractableA>();
+        if (allInteractables.Length == 1) {
+            StoryManagertAct1A.Instance.SetFlag("EvangalicTask", true);
+        }
         // First, find the nearest interactable within detection radius if currentTarget is null
         if (currentTarget == null) {
             FindNearbyInteractable();
@@ -54,6 +60,8 @@ public class PlayerInteractionHoldA : MonoBehaviour {
                     // destroy
                     currentTarget.DestroyNow();
                     ResetProgress();
+                    
+                    Debug.Log(allInteractables.Length);
                 }
             } else {
                 // released early -> cancel

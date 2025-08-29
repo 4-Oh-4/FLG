@@ -6,17 +6,17 @@ public class HoldInteractableA : MonoBehaviour {
     public float destroyHoldTime = 1.5f;
 
     // Optional: call before destroy (play VFX/sound)
-    public void OnDestroyingStarted() {
+    public virtual void OnDestroyingStarted() {
         // play sound / VFX
     }
 
     // Optional: call when destroyed
-    public void OnDestroyed() {
+    public virtual void OnDestroyed() {
         // spawn debris, increment score, etc.
     }
 
     // Called by PlayerInteraction when hold completes
-    public void DestroyNow() {
+    public virtual void DestroyNow() {
         OnDestroyed();
         Destroy(gameObject);
     }
