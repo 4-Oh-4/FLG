@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: e51f3b18d8331de47b0e779a9b937001
+guid: b20a77f74e388754d9d89509dc7efd94
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7587222155180702970
-    second: Fire_side-Sheet3_0
+      213: -3403132112831290831
+    second: silvio_death_0
+  - first:
+      213: 1494062115129719419
+    second: silvio_death_1
+  - first:
+      213: -1505866874762722521
+    second: silvio_death_2
+  - first:
+      213: 5748967012478038884
+    second: silvio_death_3
+  - first:
+      213: -1726413956555200039
+    second: silvio_death_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +151,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fire_side-Sheet3_0
+      name: silvio_death_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 30
-        height: 7
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +166,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6030b7016a5c4b690800000000000000
-      internalID: -7587222155180702970
+      spriteID: 13267fabf55a5c0d0800000000000000
+      internalID: -3403132112831290831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silvio_death_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7afcace399fbb410800000000000000
+      internalID: 1494062115129719419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silvio_death_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7238dba4e061a1be0800000000000000
+      internalID: -1505866874762722521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silvio_death_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 463313cd90f68cf40800000000000000
+      internalID: 5748967012478038884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silvio_death_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d9204847ab8a08e0800000000000000
+      internalID: -1726413956555200039
       vertices: []
       indices: 
       edges: []
@@ -164,7 +264,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0cd4eec7dfe86bf4fb5e0da27ad66837
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +274,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Fire_side-Sheet3_0: -7587222155180702970
+      silvio_death_0: -3403132112831290831
+      silvio_death_1: 1494062115129719419
+      silvio_death_2: -1505866874762722521
+      silvio_death_3: 5748967012478038884
+      silvio_death_4: -1726413956555200039
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

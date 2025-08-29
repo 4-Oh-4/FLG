@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: e51f3b18d8331de47b0e779a9b937001
+guid: adc893c0a2e5fc44f9776edca9453acb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7587222155180702970
-    second: Fire_side-Sheet3_0
+      213: -2691285316327816942
+    second: silvio_beaten_0
+  - first:
+      213: 3194742178455016429
+    second: silvio_beaten_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +142,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fire_side-Sheet3_0
+      name: silvio_beaten_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 30
-        height: 7
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +157,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6030b7016a5c4b690800000000000000
-      internalID: -7587222155180702970
+      spriteID: 2114e0b8342a6aad0800000000000000
+      internalID: -2691285316327816942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silvio_beaten_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de3d4c7b511065c20800000000000000
+      internalID: 3194742178455016429
       vertices: []
       indices: 
       edges: []
@@ -164,7 +189,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8893d6558b4103c47b593982ac97b8cc
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +199,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Fire_side-Sheet3_0: -7587222155180702970
+      silvio_beaten_0: -2691285316327816942
+      silvio_beaten_1: 3194742178455016429
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

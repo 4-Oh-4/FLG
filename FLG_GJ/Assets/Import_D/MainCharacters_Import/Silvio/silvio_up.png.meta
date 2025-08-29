@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: e51f3b18d8331de47b0e779a9b937001
+guid: 6afc09ea21505384bb7ae973e54a02a2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7587222155180702970
-    second: Fire_side-Sheet3_0
+      213: -5196644898935318960
+    second: silvio_up_0
+  - first:
+      213: -6121879086451759197
+    second: silvio_up_1
+  - first:
+      213: -2658485293027622493
+    second: silvio_up_2
+  - first:
+      213: 4721385147982719132
+    second: silvio_up_3
+  - first:
+      213: 8386843546916091770
+    second: silvio_up_4
+  - first:
+      213: 2258518869987818986
+    second: silvio_up_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +154,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fire_side-Sheet3_0
+      name: silvio_up_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 30
-        height: 7
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +169,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6030b7016a5c4b690800000000000000
-      internalID: -7587222155180702970
+      spriteID: 0565d175ffec1e7b0800000000000000
+      internalID: -5196644898935318960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silvio_up_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a7662ee767ba0ba0800000000000000
+      internalID: -6121879086451759197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silvio_up_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a10d7416b92b1bd0800000000000000
+      internalID: -2658485293027622493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silvio_up_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c98a051f6cab58140800000000000000
+      internalID: 4721385147982719132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silvio_up_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a77f5b045cd046470800000000000000
+      internalID: 8386843546916091770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silvio_up_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aedf32432fed75f10800000000000000
+      internalID: 2258518869987818986
       vertices: []
       indices: 
       edges: []
@@ -164,7 +289,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1ddf6c77f0e2df54d8832b3b2cb01623
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +299,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Fire_side-Sheet3_0: -7587222155180702970
+      silvio_up_0: -5196644898935318960
+      silvio_up_1: -6121879086451759197
+      silvio_up_2: -2658485293027622493
+      silvio_up_3: 4721385147982719132
+      silvio_up_4: 8386843546916091770
+      silvio_up_5: 2258518869987818986
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
