@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3104994868801412433}
   - component: {fileID: 6100447738494265484}
   - component: {fileID: 8890543486438285463}
+  - component: {fileID: 7160036432384427101}
   m_Layer: 13
   m_Name: Sedan
   m_TagString: Enemy
@@ -31,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5577582129159074268}
@@ -126,7 +127,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.040168285, y: -0.17071497}
+  m_Offset: {x: -0.0070955753, y: -0.1459105}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -136,7 +137,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.0042074, y: 3.8720329}
+  m_Size: {x: 1.706553, y: 3.5247693}
   m_EdgeRadius: 0
 --- !u!50 &3104994868801412433
 Rigidbody2D:
@@ -208,6 +209,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7160036432384427101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7890999365690074343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e32f77285e8cce4f8979bea911242b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  avoidanceRadius: 2.5
+  avoidanceStrength: 5
 --- !u!1001 &5083839687378501348
 PrefabInstance:
   m_ObjectHideFlags: 0

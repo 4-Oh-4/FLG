@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4782938391636713276}
   - component: {fileID: 5061142677101494775}
   - component: {fileID: 8919943369220701114}
+  - component: {fileID: 5873487239760953863}
   m_Layer: 12
   m_Name: ArmoredVan
   m_TagString: Enemy
@@ -153,7 +154,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.056236148, y: -0.14058971}
+  m_Offset: {x: -0.015582442, y: -0.1575365}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -163,7 +164,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.199701, y: 5.1427174}
+  m_Size: {x: 1.8181903, y: 4.624446}
   m_EdgeRadius: 0
 --- !u!114 &5061142677101494775
 MonoBehaviour:
@@ -202,6 +203,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5873487239760953863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5046349217955527909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e32f77285e8cce4f8979bea911242b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  avoidanceRadius: 3
+  avoidanceStrength: 5
 --- !u!1001 &3611444847984190400
 PrefabInstance:
   m_ObjectHideFlags: 0

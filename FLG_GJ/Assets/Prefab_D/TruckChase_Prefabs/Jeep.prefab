@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1464301632022985755}
   - component: {fileID: 925273750885363703}
   - component: {fileID: 3317834000312658334}
+  - component: {fileID: 3853389188292607556}
   m_Layer: 10
   m_Name: Jeep
   m_TagString: Enemy
@@ -126,7 +127,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.042233527, y: -0.19596314}
+  m_Offset: {x: 0.016209066, y: -0.23770761}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -136,7 +137,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.267004, y: 2.9596324}
+  m_Size: {x: 1.7827665, y: 2.6089773}
   m_EdgeRadius: 0
 --- !u!50 &1464301632022985755
 Rigidbody2D:
@@ -204,6 +205,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3853389188292607556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6852576961271787646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e32f77285e8cce4f8979bea911242b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  avoidanceRadius: 2.4
+  avoidanceStrength: 5
 --- !u!1001 &6325788083634712572
 PrefabInstance:
   m_ObjectHideFlags: 0
