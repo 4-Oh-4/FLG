@@ -570,7 +570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conditionalDialogues:
-  - requiredFlag: FatherTalk
+  - requiredFlag: FatherTalk2
     dialogues:
     - name: Father
       sentences:
@@ -580,7 +580,7 @@ MonoBehaviour:
   - name: Father
     sentences:
     - Come here my child
-  defaultFlagToSet: FatherTalk
+  defaultFlagToSet: FatherTalk2
   isNarator: 1
   dialogueManager: {fileID: 0}
 --- !u!212 &253885209

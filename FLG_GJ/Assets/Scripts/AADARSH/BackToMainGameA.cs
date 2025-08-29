@@ -17,6 +17,8 @@ public class BackToMainGameA : MonoBehaviour {
         }
         FindAnyObjectByType<LoadUnloadMiniGamesPlayerA>().UnloadMiniGame("Church");
         //  Unload minigame scene
+       miniGameSceneName=SceneManager.GetActiveScene().name;
+        Debug.Log(miniGameSceneName);
         SceneManager.UnloadSceneAsync(miniGameSceneName);
     }
 }
