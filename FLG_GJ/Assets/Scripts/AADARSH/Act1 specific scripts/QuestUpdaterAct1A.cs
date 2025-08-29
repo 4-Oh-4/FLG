@@ -14,6 +14,7 @@ public class QuestUpdaterAct1A : MonoBehaviour
     [SerializeField] private Transform WasteToBeCleaned;
     [SerializeField] private Transform cook;
     [SerializeField] private Transform Home;
+    [SerializeField] private Transform foodCollect;
     [SerializeField] private WindowQuestPointer_A questPointer_A;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void InitialNaration() {
@@ -89,5 +90,11 @@ public class QuestUpdaterAct1A : MonoBehaviour
             EnablePointer();
         }
         questPointer_A.target = Home;
+    }
+    public virtual void GoFood() {
+        if (questPointer_A.gameObject.activeInHierarchy == false) {
+            EnablePointer();
+        }
+        questPointer_A.target = foodCollect;
     }
 }

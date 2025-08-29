@@ -54,7 +54,12 @@ public class GameManagerAct1A : MonoBehaviour {
         if (foodText != null)
             foodText.text = "Food Left: " + foodTobeCollected;
 
-        if (trashTobeCollected == 0 && foodTobeCollected == 0) HideUI();
+        if (trashTobeCollected == 0 && foodTobeCollected == 0){ HideUI();
+            return;
+        }
+        if (trashTobeCollected == 0&&!StoryManagertAct1A.Instance.GetFlag("TrashCollected")) {
+            StoryManagertAct1A.Instance.SetFlag("TrashCollected",true);
+        }
     }
 
 
@@ -67,9 +72,7 @@ public class GameManagerAct1A : MonoBehaviour {
 
         // --- ADDED ---
         // Tell the spawner to start its work.
-        if (foodSpawner != null) {
-            foodSpawner.StartSpawning();
-        }
+        
     }
 
     // --- MODIFIED HideUI Method ---
