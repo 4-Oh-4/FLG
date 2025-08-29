@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3514943408082386249}
   - component: {fileID: 3104994868801412433}
   - component: {fileID: 6100447738494265484}
+  - component: {fileID: 8890543486438285463}
   m_Layer: 13
   m_Name: Sedan
   m_TagString: Enemy
@@ -29,10 +30,11 @@ Transform:
   m_GameObject: {fileID: 7890999365690074343}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.38, y: 0.02, z: 0}
-  m_LocalScale: {x: 0.8, y: 1.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5577582129159074268}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2127193864641686983
@@ -77,10 +79,10 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 433127147
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.9245283, g: 0.43498835, b: 0, a: 1}
+  m_Sprite: {fileID: -3642430749238391888, guid: 3095592cd650dcf4e9ac6617fd425f85, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -124,17 +126,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.040168285, y: -0.17071497}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 6.25, y: 6.25}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.0042074, y: 3.8720329}
   m_EdgeRadius: 0
 --- !u!50 &3104994868801412433
 Rigidbody2D:
@@ -184,3 +186,87 @@ MonoBehaviour:
   retreatDistance: 6
   postRamWaitTime: 4
   ramDamage: 15
+--- !u!95 &8890543486438285463
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7890999365690074343}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f9130d99ca52f6542856272afcb071ec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1001 &5083839687378501348
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4171719502411202422}
+    m_Modifications:
+    - target: {fileID: 858745139477974840, guid: 0842664c997a21049ba3334e188b224d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 858745139477974840, guid: 0842664c997a21049ba3334e188b224d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 858745139477974840, guid: 0842664c997a21049ba3334e188b224d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 858745139477974840, guid: 0842664c997a21049ba3334e188b224d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 858745139477974840, guid: 0842664c997a21049ba3334e188b224d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 858745139477974840, guid: 0842664c997a21049ba3334e188b224d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 858745139477974840, guid: 0842664c997a21049ba3334e188b224d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 858745139477974840, guid: 0842664c997a21049ba3334e188b224d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 858745139477974840, guid: 0842664c997a21049ba3334e188b224d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 858745139477974840, guid: 0842664c997a21049ba3334e188b224d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429419779142307086, guid: 0842664c997a21049ba3334e188b224d, type: 3}
+      propertyPath: m_Name
+      value: Dirt_TruckChase
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0842664c997a21049ba3334e188b224d, type: 3}
+--- !u!4 &5577582129159074268 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 858745139477974840, guid: 0842664c997a21049ba3334e188b224d, type: 3}
+  m_PrefabInstance: {fileID: 5083839687378501348}
+  m_PrefabAsset: {fileID: 0}
