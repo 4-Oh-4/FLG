@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Church2.unity
     guid: 1e4bd9302fcde204aa3ade37029fabbb
+  - enabled: 1
+    path: Assets/Scenes/Act_2_Map_New.unity
+    guid: f0535a58b2182df499c4dc784d05a766
+  - enabled: 1
+    path: Assets/Scenes/Carlos_house.unity
+    guid: 2f3b1a296e5bf1748a5a8c82801f94f7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
