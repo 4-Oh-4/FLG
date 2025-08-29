@@ -48,7 +48,10 @@ public class NPC_A : MonoBehaviour {
             Debug.LogError("Dialogue Manager not found!");
             return;
         }
-
+        if (StoryManagertAct1A.Instance == null) {
+            Debug.Log("StoryManagerAct1A instance not found in the scene!");
+            return;
+        }
         // --- NEW DYNAMIC LOGIC ---
 
         // Iterate through our conditional dialogues in REVERSE order.

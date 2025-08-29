@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DrugTheftMiniGame.unity
     guid: 19c3e4ea420ced246924d5e2cae0f3c9
+  - enabled: 1
+    path: Assets/Scenes/Church.unity
+    guid: 876eaa4b66b06df47b33423acf9ea5e3
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

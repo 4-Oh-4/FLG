@@ -8,16 +8,16 @@ public class LoadUnloadMiniGamesPlayerA : MonoBehaviour {
     [SerializeField] QuestUpdaterAct1A questupdater;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void LoadMiniGame(string miniGameName) {
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         maincamera.gameObject.SetActive(false);
         player.SetActive(false);
         SceneManager.LoadScene(miniGameName,LoadSceneMode.Additive);
         Scene miniScene = SceneManager.GetSceneByName(miniGameName);
         questupdater.disablePointer();
     }
-    public void UnloadMiniGame() {
+    public void UnloadMiniGame(string name="DrugTheft") {
         Time.timeScale = 1f;
-        StoryManagertAct1A.Instance.SetFlag("DrugTheftComplete", true);
+        StoryManagertAct1A.Instance.SetFlag(name.ToString()+"Complete", true);
         questupdater.EnablePointer();
         maincamera.gameObject.SetActive(true);
         player.SetActive(true);
