@@ -13,58 +13,58 @@ public class QuestUpdaterAct2A : QuestUpdaterAct1A
 
     [SerializeField] WindowQuestPointer_A questPointer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public override void disablePointer() {
+    public void disablePointerb() {
         questPointer.gameObject.SetActive(false);
     }
-    public override void EnablePointer() {
+    public void EnablePointerb() {
         questPointer.gameObject.SetActive(true);
     }
-    public override void Church() {
+    public void GoHomeb() {
         if (questPointer.gameObject.activeInHierarchy == false) {
-            EnablePointer();
-        }
-        questPointer.target = churchb;
-    }
-    public override void GoHome() {
-        if (questPointer.gameObject.activeInHierarchy == false) {
-            EnablePointer();
+            EnablePointerb();
         }
         questPointer.target = Homeb;
     }
     public void GoMarket() {
         if (questPointer.gameObject.activeInHierarchy == false) {
-            EnablePointer();
+            EnablePointerb();
         }
         questPointer.target = Market;
     }
     public void CheckDisturbance() {
         if (questPointer.gameObject.activeInHierarchy == false) {
-            EnablePointer();
+            EnablePointerb();
         }
         questPointer.target = Disturbance;
     }
     public void MeetingArea() {
         if (questPointer.gameObject.activeInHierarchy == false) {
-            EnablePointer();
+            EnablePointerb();
         }
         questPointer.target = Meetingarea;
     }
     public void DariusIntro() {
         if (questPointer.gameObject.activeInHierarchy == false) {
-            EnablePointer();
+            EnablePointerb();
         }
         questPointer.target = darius;
     }
     public void Tunnel() {
         if (questPointer.gameObject.activeInHierarchy == false) {
-            EnablePointer();
+            EnablePointerb();
         }
         questPointer.target = tunnel;
     }
     public void Club() {
         if (questPointer.gameObject.activeInHierarchy == false) {
-            EnablePointer();
+            EnablePointerb();
         }
         questPointer.target = club;
+    }
+    public void Churchb() {
+        if (questPointer.gameObject.activeInHierarchy == false) {
+            EnablePointerb();
+        }
+        questPointer.target = churchb;
     }
 }
