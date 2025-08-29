@@ -5,10 +5,11 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System; // <-- ADDED: Required for using Action
 
+
 public class DialougeManagerA : MonoBehaviour {
     // Handles sentences inside a single dialogue
     private Queue<string> sentences;
-
+    [SerializeField] PlayerInput playerControl;
     // Handles multiple dialogues in sequence
     private Queue<DialougeA> dialogueQueue = new Queue<DialougeA>();
     private DialougeA currentDialogue;
@@ -32,7 +33,8 @@ public class DialougeManagerA : MonoBehaviour {
     }
 
     public void StartDialouge(DialougeA dialouge) {
-        animator.SetBool("isOpen", true); // Moved from StartDialogueSequence for better control
+        animator.SetBool("isOpen", true);
+        playerControl.enabled = false;// Moved from StartDialogueSequence for better control
         nameText.text = dialouge.name;
 
         sentences.Clear();
@@ -113,6 +115,7 @@ public class DialougeManagerA : MonoBehaviour {
 
     void EndDialogueSequence() {
         animator.SetBool("isOpen", false);
+        playerControl.enabled = true;
         Debug.Log("Dialogue sequence finished completely!");
 
         // --- ADDED: THE KEY LOGIC ---

@@ -89,6 +89,7 @@ public class GameManagerAct1A : MonoBehaviour {
     }
     public void TeleportPlayer() {
         player.position = pos;
+        blackScreen.ShowUpdate("sa");
         //StoryManagertAct1A.Instance.SetFlag("OnRoof", false);
         //StoryManagertAct1A.Instance.SetFlag("IsDown", true);
 
