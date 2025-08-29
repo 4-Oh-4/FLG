@@ -66,8 +66,8 @@ public class WaveSpawner_D : MonoBehaviour
 
             if (enemyInstance != null)
             {
-                if (enemyInstance.TryGetComponent<BikeAI_D>(out var bike)) bike.Initialize(this);
-                else if (enemyInstance.TryGetComponent<SedanAI_D>(out var sedan)) sedan.Initialize(this);
+                
+                if (enemyInstance.TryGetComponent<SedanAI_D>(out var sedan)) sedan.Initialize(this);
                 else if (enemyInstance.TryGetComponent<JeepAI_D>(out var jeep)) jeep.Initialize(this);
                 else if (enemyInstance.TryGetComponent<ArmoredVanAI_D>(out var van)) van.Initialize(this);
             }

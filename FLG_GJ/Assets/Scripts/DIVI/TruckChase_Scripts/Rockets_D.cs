@@ -52,10 +52,14 @@ public class Rocket_D : MonoBehaviour
     void Explode()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
+
         foreach (Collider2D hit in colliders)
         {
-            if (hit.TryGetComponent<LorryHealth_D>(out LorryHealth_D lorry)) lorry.TakeDamage(damage);
-            else if (hit.TryGetComponent<BikeAI_D>(out var bike)) bike.TakeDamage(explosionDamage);
+            if (hit.TryGetComponent<LorryHealth_D>(out LorryHealth_D lorry))
+            {
+                lorry.TakeDamage(damage);
+            }
+            
             else if (hit.TryGetComponent<SedanAI_D>(out var sedan)) sedan.TakeDamage(explosionDamage);
             else if (hit.TryGetComponent<JeepAI_D>(out var jeep)) jeep.TakeDamage(explosionDamage);
             else if (hit.TryGetComponent<ArmoredVanAI_D>(out var van)) van.TakeDamage(explosionDamage);

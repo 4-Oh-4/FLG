@@ -16,7 +16,4 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 7890999365690074343, guid: 5e47de9be5501764f99c58f59fa568ef, type: 3}
     count: 3
     spawnInterval: 6
-  - enemyPrefab: {fileID: 3052525277136061986, guid: 23d8cd566116bf749a6234868c90b873, type: 3}
-    count: 3
-    spawnInterval: 6
   timeUntilNextWave: 7
