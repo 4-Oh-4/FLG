@@ -5,6 +5,7 @@ public class HoldInteractableCookingA : HoldInteractableA {
     public override  void DestroyNow() {
         GetComponent<Renderer>().material.color = Color.yellow;
         gameObject.GetComponent<Collider2D>().enabled = false;
+        StoryManagertAct1A.Instance.SetFlag("EvangalicTask", true);
         Debug.Log("Cooking Completed");
         gameObject.GetComponent<HoldInteractableA>().enabled = false;
     }

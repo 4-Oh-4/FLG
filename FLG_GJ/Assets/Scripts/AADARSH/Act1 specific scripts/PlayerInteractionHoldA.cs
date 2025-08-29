@@ -20,6 +20,7 @@ public class PlayerInteractionHoldA : MonoBehaviour {
     public Image progressFillImage; // UI Image (type = Filled) assigned in inspector
     public GameObject progressRoot;  // parent UI element to enable/disable
 
+    private int once = 0;
     void Start() {
         allInteractables = Resources.FindObjectsOfTypeAll<HoldInteractableA>();
         if (progressRoot != null) progressRoot.SetActive(false);
@@ -28,8 +29,12 @@ public class PlayerInteractionHoldA : MonoBehaviour {
     void Update() {
         allInteractables = Resources.FindObjectsOfTypeAll<HoldInteractableA>();
         if (allInteractables.Length == 1) {
-            StoryManagertAct1A.Instance.SetFlag("EvangalicTask", true);
+            if (once == 0) {
+                StoryManagertAct1A.Instance.SetFlag("NowDoCooking", true);
+                once++;
+            }
         }
+        
         // First, find the nearest interactable within detection radius if currentTarget is null
         if (currentTarget == null) {
             FindNearbyInteractable();

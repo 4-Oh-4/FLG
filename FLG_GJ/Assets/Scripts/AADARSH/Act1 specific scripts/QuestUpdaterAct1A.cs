@@ -12,6 +12,7 @@ public class QuestUpdaterAct1A : MonoBehaviour
     [SerializeField] Transform T_Evangalic;
     [SerializeField] Transform church;
     [SerializeField] Transform WasteToBeCleaned;
+    [SerializeField] Transform cook;
     [SerializeField] WindowQuestPointer_A questPointer_A;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void InitialNaration() {
@@ -75,5 +76,11 @@ public class QuestUpdaterAct1A : MonoBehaviour
             EnablePointer();
         }
         questPointer_A.target = WasteToBeCleaned;
+    }
+    public void Cooking() {
+        if (questPointer_A.gameObject.activeInHierarchy == false) {
+            EnablePointer();
+        }
+        questPointer_A.target = cook;
     }
 }
