@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Carlos_house.unity
     guid: 2f3b1a296e5bf1748a5a8c82801f94f7
   - enabled: 1
+    path: Assets/Scenes/Minigames/TopDownShooter_Drugs_ACT2.unity
+    guid: ddfe51bd7a2967543b0d9b6c5e07f859
+  - enabled: 1
     path: Assets/Scenes/Minigames/DefendYourself_ACT2.unity
     guid: 2d424a7da7c08b5469058ad3a18d7ca9
   m_configObjects:
