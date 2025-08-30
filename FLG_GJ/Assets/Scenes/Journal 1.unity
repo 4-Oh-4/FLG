@@ -219,7 +219,6 @@ GameObject:
   - component: {fileID: 389611128}
   - component: {fileID: 389611127}
   - component: {fileID: 389611126}
-  - component: {fileID: 389611130}
   - component: {fileID: 389611131}
   m_Layer: 5
   m_Name: Canvas
@@ -314,18 +313,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &389611130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 389611125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9f3a094965472c4eb9727f21574cd3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &389611131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -631,8 +618,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7470796562843861644, guid: ab7d68868e1e152449cbf4ecac1c64a9, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: -2144514448, guid: ab7d68868e1e152449cbf4ecac1c64a9, type: 3}
+  m_Type: 1
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
@@ -835,6 +822,9 @@ MonoBehaviour:
   firstPhaseDuration: 2
   secondPhaseDuration: 0.25
   targetAlphaPhase1: 0
+  left: {fileID: 1993236046}
+  right: {fileID: 1048014813}
+  lettersPerSecond: 20
 --- !u!1 &1081689690
 GameObject:
   m_ObjectHideFlags: 0
