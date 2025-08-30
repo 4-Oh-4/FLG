@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,17 +12,15 @@ public class GameManager_SP : MonoBehaviour
 
     [Header("Refs")]
     [SerializeField] private CanSpawner_D spawner;
-    [SerializeField] private Text livesText;
-    [SerializeField] private Text roundText;
-    [SerializeField] private Text timerText;
-    [SerializeField] private GameObject winPanel;
-    [SerializeField] private GameObject losePanel;
-    [SerializeField] private Image background; // optional: set a sprite here
+    [SerializeField] private TextMeshProUGUI roundText;
+    [SerializeField] private TextMeshProUGUI remainingCansText;
+    [SerializeField] private UIManager_SP uiManager;
 
     private int currentRoundIndex;
     private int lives;
     private float roundTimer;
     private bool gameOver;
+    private int remainingCans; 
     private Coroutine roundCo;
 
     void Awake()
@@ -39,8 +38,6 @@ public class GameManager_SP : MonoBehaviour
     {
         gameOver = false;
         currentRoundIndex = 0;
-        winPanel?.SetActive(false);
-        losePanel?.SetActive(false);
 
         if (roundCo != null) StopCoroutine(roundCo);
         roundCo = StartCoroutine(RunRounds());
@@ -52,55 +49,56 @@ public class GameManager_SP : MonoBehaviour
         {
             currentRoundIndex = i;
             lives = 3; // reset lives each round
-            UpdateUI();
+            
 
             // Start round
             var rs = rounds[i];
             roundTimer = rs.duration;
-            spawner.Begin(rs);
+            remainingCans = rs.totalCans;
 
-            while (roundTimer > 0f && !gameOver)
+            spawner.Begin(rs);
+            UpdateUI();
+
+            while (roundTimer > 0f && !gameOver && remainingCans > 0)
             {
                 roundTimer -= Time.deltaTime;
-                UpdateUI();
                 yield return null;
             }
 
             spawner.End();
             if (gameOver) yield break;
 
-            // Small pause between rounds
-            yield return new WaitForSeconds(1f);
+            Debug.Log($"Round {i + 1} finished!");
+            yield return new WaitForSeconds(3f);
         }
 
-        Win();
+        
+        Debug.Log("All rounds completed!");
     }
+
 
     private void UpdateUI()
     {
-        if (livesText) livesText.text = $"Lives: {lives}";
-        if (roundText) roundText.text = $"Round: {currentRoundIndex + 1}/3";
-        if (timerText) timerText.text = $"Time: {Mathf.CeilToInt(Mathf.Max(0f, roundTimer))}s";
-    }
+        roundText.text = $"Round: {currentRoundIndex + 1}";
+        remainingCansText.text = $"Cans: {remainingCans}";
 
-    private void Win()
-    {
-        gameOver = true;
-        winPanel?.SetActive(true);
+        uiManager.UpdateHearts(lives, 3);
     }
 
     private void Lose()
     {
         gameOver = true;
-        losePanel?.SetActive(true);
+        Debug.Log("Game Over!");
     }
 
-    // Called by MissZone when a can falls
+   
     public void OnCanMissed()
     {
         if (gameOver) return;
         lives--;
+        remainingCans--;
         UpdateUI();
+
         if (lives <= 0)
         {
             spawner.End();
@@ -108,6 +106,12 @@ public class GameManager_SP : MonoBehaviour
         }
     }
 
-    // Optional score hook
-    public void OnCanShot() { /* add score if you want */ }
+   
+    public void OnCanShot()
+    {
+        if (gameOver) return;
+
+        remainingCans--; 
+        UpdateUI();
+    }
 }
