@@ -10,4 +10,7 @@ public class ChurchTimeSkip : MonoBehaviour
             StoryManagertAct1A.Instance.SetFlag("TimeSkipToEvening",true);
         }
     }
+    public void ResetOncE() {
+        once = 0;
+    }
 }
