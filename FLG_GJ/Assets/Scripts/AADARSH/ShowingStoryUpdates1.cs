@@ -64,5 +64,6 @@ public class ShowingStoryUpdates1 : MonoBehaviour {
         storyUpdatePanel.SetActive(false);
         player.canMove = true;
         StoryManagertAct1A.Instance.SetFlag("BlackScreen" + i.ToString(),true);
+        i++;
     }
 }

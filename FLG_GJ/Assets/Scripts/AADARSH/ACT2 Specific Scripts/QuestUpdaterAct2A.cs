@@ -10,6 +10,8 @@ public class QuestUpdaterAct2A : QuestUpdaterAct1A
     [SerializeField] Transform Meetingarea;
     [SerializeField] Transform tunnel;
     [SerializeField] Transform club;
+    [SerializeField] Transform larryChanga;
+    [SerializeField] Transform gateWarehouse;
 
     [SerializeField] WindowQuestPointer_A questPointer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -66,5 +68,17 @@ public class QuestUpdaterAct2A : QuestUpdaterAct1A
             EnablePointerb();
         }
         questPointer.target = churchb;
+    }
+    public void LarryChanga() {
+        if (questPointer.gameObject.activeInHierarchy == false) {
+            EnablePointerb();
+        }
+        questPointer.target = larryChanga;
+    }
+    public void GateWareHouse() {
+        if (questPointer.gameObject.activeInHierarchy == false) {
+            EnablePointerb();
+        }
+        questPointer.target = gateWarehouse;
     }
 }
