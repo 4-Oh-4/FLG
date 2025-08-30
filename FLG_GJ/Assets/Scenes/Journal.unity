@@ -835,6 +835,9 @@ MonoBehaviour:
   firstPhaseDuration: 2
   secondPhaseDuration: 0.25
   targetAlphaPhase1: 0
+  left: {fileID: 1993236046}
+  right: {fileID: 1048014813}
+  lettersPerSecond: 100
 --- !u!1 &1081689690
 GameObject:
   m_ObjectHideFlags: 0
