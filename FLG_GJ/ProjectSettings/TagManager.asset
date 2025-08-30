@@ -10,6 +10,7 @@ TagManager:
   - Package
   - Ammo
   - Boss
+  - Can
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - Bike
   - Bullet
   - HoldToDestroy
-  - 
+  - Can
   - 
   - 
   - 
