@@ -1,28 +1,47 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 public class PlayerMovement_A : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    [SerializeField] float movementSpeed = 1f;
-    Vector2 movementInput;
+    [SerializeField] float movementSpeed = 5f;
+
+    private Vector2 movementInput;
     private Rigidbody2D rb;
+    private Animator animator; // <-- ADDED: Reference for the Animator
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>(); // <-- ADDED: Get the Animator component
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-    }
-    public void movement(InputAction.CallbackContext callbackContext) {
-        //Debug.Log(callbackContext);
-        movementInput = callbackContext.ReadValue<Vector2>();
+        // --- ADDED: Animation Control Logic ---
 
+        // 1. Calculate the movement speed
+        float speed = movementInput.magnitude;
+        animator.SetFloat("Speed", speed);
+
+        // 2. If we are moving, update the direction parameters
+        if (speed > 0.01f)
+        {
+            // We send the raw input direction to the blend tree.
+            // The blend tree will automatically find the closest animation (Up, Down, Left, or Right).
+            animator.SetFloat("InputX", movementInput.x);
+            animator.SetFloat("InputY", movementInput.y);
+        }
     }
-    void FixedUpdate() {
-        // Apply movement
+
+    // I renamed this function to OnMovement for clarity with the Input System
+    public void OnMovement(InputAction.CallbackContext callbackContext)
+    {
+        movementInput = callbackContext.ReadValue<Vector2>();
+    }
+
+    void FixedUpdate()
+    {
+        // Apply physics movement
         rb.linearVelocity = movementInput * movementSpeed;
     }
 }
