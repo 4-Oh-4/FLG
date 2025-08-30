@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: 53c051b3078b7634ca8425d2ed72007f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8382813959483325456
+    second: carlos_gun and death_0
+  - first:
+      213: -8416979035285502665
+    second: carlos_gun and death_1
+  - first:
+      213: 1467544667462198163
+    second: carlos_gun and death_2
+  - first:
+      213: -5711268919238563983
+    second: carlos_gun and death_3
+  - first:
+      213: 8694040641936514380
+    second: carlos_gun and death_4
+  - first:
+      213: -2985839652029841042
+    second: carlos_gun and death_5
+  - first:
+      213: 1791719116951741043
+    second: carlos_gun and death_6
+  - first:
+      213: -2624819002058263126
+    second: carlos_gun and death_7
+  - first:
+      213: -8370990635332997325
+    second: carlos_gun and death_8
+  - first:
+      213: 5206829002180131138
+    second: carlos_gun and death_9
+  - first:
+      213: -2341557873943574148
+    second: carlos_gun and death_10
+  - first:
+      213: 1713815145567843557
+    second: carlos_gun and death_11
+  - first:
+      213: 6063156072520682785
+    second: carlos_gun and death_12
+  - first:
+      213: -6587044055403399674
+    second: carlos_gun and death_13
+  - first:
+      213: 7383844964351549911
+    second: carlos_gun and death_14
+  - first:
+      213: -1882523596611641454
+    second: carlos_gun and death_15
+  - first:
+      213: 6086362441588737456
+    second: carlos_gun and death_16
+  - first:
+      213: -9165618635459453569
+    second: carlos_gun and death_17
+  - first:
+      213: -7127519203933299418
+    second: carlos_gun and death_18
+  - first:
+      213: -4868764500363863246
+    second: carlos_gun and death_19
+  - first:
+      213: 8991324967892320545
+    second: carlos_gun and death_20
+  - first:
+      213: -1689985929679390365
+    second: carlos_gun and death_21
+  - first:
+      213: 8049166332102625287
+    second: carlos_gun and death_22
+  - first:
+      213: 7787936767113103084
+    second: carlos_gun and death_23
+  - first:
+      213: 6367667190571805394
+    second: carlos_gun and death_24
+  - first:
+      213: -3994819386589318744
+    second: carlos_gun and death_25
+  - first:
+      213: -2042663576531677011
+    second: carlos_gun and death_26
+  - first:
+      213: -1681105338878311393
+    second: carlos_gun and death_27
+  - first:
+      213: 836555825030859088
+    second: carlos_gun and death_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: carlos_gun and death_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 0
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f38fce2e134aab80800000000000000
+      internalID: -8382813959483325456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 0
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 735c5e79922e03b80800000000000000
+      internalID: -8416979035285502665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3936a148914cd5410800000000000000
+      internalID: 1467544667462198163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_3
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 0
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1776e047d2f7db0b0800000000000000
+      internalID: -5711268919238563983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_4
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 0
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4d5f6d96ef67a870800000000000000
+      internalID: 8694040641936514380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_5
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 0
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e614c78f7aa2096d0800000000000000
+      internalID: -2985839652029841042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_6
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 0
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3726f2f3b077dd810800000000000000
+      internalID: 1791719116951741043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_7
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 0
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa53f964605c29bd0800000000000000
+      internalID: -2624819002058263126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_8
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 0
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33feada5e5444db80800000000000000
+      internalID: -8370990635332997325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_9
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 0
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 249f529f36f524840800000000000000
+      internalID: 5206829002180131138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_10
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 0
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c79039e058d118fd0800000000000000
+      internalID: -2341557873943574148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_11
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 0
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e471427bc1b8c710800000000000000
+      internalID: 1713815145567843557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_12
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 1
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12d0950f258a42450800000000000000
+      internalID: 6063156072520682785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_13
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 1
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 606f4ddc45e1694a0800000000000000
+      internalID: -6587044055403399674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_14
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 0
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d12bb0bfdfa87660800000000000000
+      internalID: 7383844964351549911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_15
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29f1cae43ceefd5e0800000000000000
+      internalID: -1882523596611641454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_16
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 2
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b50d29c46a177450800000000000000
+      internalID: 6086362441588737456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_17
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 0
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7d1dbe996e2dc080800000000000000
+      internalID: -9165618635459453569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_18
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 0
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62dd7c71c07f51d90800000000000000
+      internalID: -7127519203933299418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_19
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 0
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23b97c49b7cae6cb0800000000000000
+      internalID: -4868764500363863246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_20
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 0
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12182539b6a97cc70800000000000000
+      internalID: 8991324967892320545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_21
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 0
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3693d0a30c6fb88e0800000000000000
+      internalID: -1689985929679390365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_22
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 0
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 708c20bf12264bf60800000000000000
+      internalID: 8049166332102625287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_23
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 0
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce60bf83a3f441c60800000000000000
+      internalID: 7787936767113103084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_24
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 1
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2da21fd829f7e5850800000000000000
+      internalID: 6367667190571805394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_25
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 1
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a1ff70feec8f88c0800000000000000
+      internalID: -3994819386589318744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_26
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 0
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da05335bc4007a3e0800000000000000
+      internalID: -2042663576531677011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_27
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 1
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f144526e9938ba8e0800000000000000
+      internalID: -1681105338878311393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carlos_gun and death_28
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 2
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0598fb1371b0c9b00800000000000000
+      internalID: 836555825030859088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      carlos_gun and death_0: -8382813959483325456
+      carlos_gun and death_1: -8416979035285502665
+      carlos_gun and death_10: -2341557873943574148
+      carlos_gun and death_11: 1713815145567843557
+      carlos_gun and death_12: 6063156072520682785
+      carlos_gun and death_13: -6587044055403399674
+      carlos_gun and death_14: 7383844964351549911
+      carlos_gun and death_15: -1882523596611641454
+      carlos_gun and death_16: 6086362441588737456
+      carlos_gun and death_17: -9165618635459453569
+      carlos_gun and death_18: -7127519203933299418
+      carlos_gun and death_19: -4868764500363863246
+      carlos_gun and death_2: 1467544667462198163
+      carlos_gun and death_20: 8991324967892320545
+      carlos_gun and death_21: -1689985929679390365
+      carlos_gun and death_22: 8049166332102625287
+      carlos_gun and death_23: 7787936767113103084
+      carlos_gun and death_24: 6367667190571805394
+      carlos_gun and death_25: -3994819386589318744
+      carlos_gun and death_26: -2042663576531677011
+      carlos_gun and death_27: -1681105338878311393
+      carlos_gun and death_28: 836555825030859088
+      carlos_gun and death_3: -5711268919238563983
+      carlos_gun and death_4: 8694040641936514380
+      carlos_gun and death_5: -2985839652029841042
+      carlos_gun and death_6: 1791719116951741043
+      carlos_gun and death_7: -2624819002058263126
+      carlos_gun and death_8: -8370990635332997325
+      carlos_gun and death_9: 5206829002180131138
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
