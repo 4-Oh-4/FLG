@@ -24,7 +24,7 @@ public class PlayerMovement_A : MonoBehaviour
         animator.SetFloat("Speed", speed);
 
         // 2. If we are moving, update the direction parameters
-        if (speed > 0.01f)
+        if (speed > 0.1f)
         {
             // We send the raw input direction to the blend tree.
             // The blend tree will automatically find the closest animation (Up, Down, Left, or Right).
