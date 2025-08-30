@@ -109,8 +109,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-
-
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -118,20 +116,64 @@ TextureImporter:
       name: journal_withoutbg_0
       rect:
         serializedVersion: 2
-        x: 166
-        y: 94
-        width: 362
-        height: 271
+        x: 269
+        y: 223
+        width: 19
+        height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 47d7b7aab16625890800000000000000
-      internalID: -7470796562843861644
+      spriteID: 35205d38b0e6e604385907ab9a6e1285
+      internalID: -13309974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: journal_withoutbg_1
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 109
+        width: 117
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 079cc364ae5d49b45b14ac277bd3f017
+      internalID: 190765772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: journal_withoutbg_2
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 84
+        width: 381
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 11, z: 0, w: 10}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 979e1574d6d32144990428cbd0b07d61
+      internalID: -2144514448
       vertices: []
       indices: 
       edges: []
@@ -140,7 +182,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 84164a27f23672a4e91bc733754e21ac
     internalID: 0
     vertices: []
     indices: 
@@ -150,7 +192,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      journal_withoutbg_0: -7470796562843861644
+      journal_withoutbg_0: -13309974
+      journal_withoutbg_1: 190765772
+      journal_withoutbg_2: -2144514448
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
