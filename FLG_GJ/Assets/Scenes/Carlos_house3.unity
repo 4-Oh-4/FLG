@@ -379,6 +379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1368431950}
   - component: {fileID: 1368431951}
+  - component: {fileID: 1368431952}
   m_Layer: 0
   m_Name: goOut
   m_TagString: Untagged
@@ -395,8 +396,8 @@ Transform:
   m_GameObject: {fileID: 1368431949}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 941.60004, y: 136.51, z: 0.24665046}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 941.60004, y: 138.1, z: 0.24665046}
+  m_LocalScale: {x: 1, y: 5.3014064, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -447,6 +448,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1368431952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368431949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b4fc096465cef041ad3cf83a6cd2c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1398029733
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,6 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackscreen: {fileID: 1802696855}
+  message: Next Evening
 --- !u!1 &1635214687
 GameObject:
   m_ObjectHideFlags: 0
