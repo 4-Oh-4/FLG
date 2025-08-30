@@ -8,7 +8,7 @@ public class PlayerMovement_A : MonoBehaviour
     private Vector2 movementInput;
     private Rigidbody2D rb;
     private Animator animator; // <-- ADDED: Reference for the Animator
-
+    public bool canMove = true;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -43,6 +43,8 @@ public class PlayerMovement_A : MonoBehaviour
     void FixedUpdate()
     {
         // Apply physics movement
-        rb.linearVelocity = movementInput * movementSpeed;
+        if (canMove)
+            rb.linearVelocity = movementInput * movementSpeed;
+        else rb.linearVelocity = Vector2.zero;
     }
 }
