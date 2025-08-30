@@ -12,6 +12,9 @@ public class QuestUpdaterAct2A : QuestUpdaterAct1A
     [SerializeField] Transform club;
     [SerializeField] Transform larryChanga;
     [SerializeField] Transform gateWarehouse;
+    [SerializeField] Transform BBarea;
+    [SerializeField] Transform johan;
+    [SerializeField] Transform truckGate;
 
     [SerializeField] WindowQuestPointer_A questPointer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -80,5 +83,23 @@ public class QuestUpdaterAct2A : QuestUpdaterAct1A
             EnablePointerb();
         }
         questPointer.target = gateWarehouse;
+    }
+    public void BbArea() {
+        if (questPointer.gameObject.activeInHierarchy == false) {
+            EnablePointerb();
+        }
+        questPointer.target = BBarea;
+    }
+    public void Johan() {
+        if (questPointer.gameObject.activeInHierarchy == false) {
+            EnablePointerb();
+        }
+        questPointer.target = johan;
+    }
+    public void TruckGate() {
+        if (questPointer.gameObject.activeInHierarchy == false) {
+            EnablePointerb();
+        }
+        questPointer.target = truckGate;
     }
 }
