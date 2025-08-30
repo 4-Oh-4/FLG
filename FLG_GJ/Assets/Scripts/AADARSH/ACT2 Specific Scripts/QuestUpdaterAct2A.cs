@@ -21,6 +21,7 @@ public class QuestUpdaterAct2A : QuestUpdaterAct1A
     [SerializeField] Transform clubRositta;
     [SerializeField] Transform clubNino;
     [SerializeField] Transform ninoOfficeDoor;
+    [SerializeField] Transform t1;
 
     [SerializeField] WindowQuestPointer_A questPointer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -143,5 +144,11 @@ public class QuestUpdaterAct2A : QuestUpdaterAct1A
             EnablePointerb();
         }
         questPointer.target = ninoOfficeDoor;
+    }
+    public void tempone() {
+        if (questPointer.gameObject.activeInHierarchy == false) {
+            EnablePointerb();
+        }
+        questPointer.target = t1;
     }
 }
