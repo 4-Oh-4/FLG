@@ -17,6 +17,7 @@ public class PlayerMovement_A : MonoBehaviour
 
     void Update()
     {
+        if (animator == null) return;
         // --- ADDED: Animation Control Logic ---
 
         // 1. Calculate the movement speed
