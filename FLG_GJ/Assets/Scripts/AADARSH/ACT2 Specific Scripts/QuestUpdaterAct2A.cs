@@ -15,6 +15,7 @@ public class QuestUpdaterAct2A : QuestUpdaterAct1A
     [SerializeField] Transform BBarea;
     [SerializeField] Transform johan;
     [SerializeField] Transform truckGate;
+    [SerializeField] Transform DariusChase;
 
     [SerializeField] WindowQuestPointer_A questPointer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -101,5 +102,11 @@ public class QuestUpdaterAct2A : QuestUpdaterAct1A
             EnablePointerb();
         }
         questPointer.target = truckGate;
+    }
+    public void BackFromTruckChase() {
+        if (questPointer.gameObject.activeInHierarchy == false) {
+            EnablePointerb();
+        }
+        questPointer.target = DariusChase;
     }
 }
