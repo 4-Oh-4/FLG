@@ -11,11 +11,7 @@ public class JournalController : MonoBehaviour
     void Start()
     {
         // Hook the button click to trigger FadeOut
-        //continueButton.onClick.AddListener(() => StartCoroutine(FadeOut()));
-    }
-    public void fadeout() {
-        StopAllCoroutines();
-        StartCoroutine(FadeOut());
+        continueButton.onClick.AddListener(() => StartCoroutine(FadeOut()));
     }
 
     IEnumerator FadeOut()
