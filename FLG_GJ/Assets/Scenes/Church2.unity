@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4995027d94301ea4dbe1803a24a1325b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerControl: {fileID: 0}
+  playerControl: {fileID: 1569971038}
   text: {fileID: 1319141519}
   nameText: {fileID: 1438339840}
   animator: {fileID: 509529441}
@@ -2357,6 +2357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
+  canMove: 1
 --- !u!114 &1569971038
 MonoBehaviour:
   m_ObjectHideFlags: 0
