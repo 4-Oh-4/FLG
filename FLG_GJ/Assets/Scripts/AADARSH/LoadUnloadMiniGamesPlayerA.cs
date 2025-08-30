@@ -32,7 +32,8 @@ public class LoadUnloadMiniGamesPlayerA : MonoBehaviour {
     public void UnloadMiniGame(string name="DrugTheft") {
         Time.timeScale = 1f;
         if (light != null) {
-            
+
+
             light.SetActive(state);
         }
         if (quest==1)questupdater.EnablePointer();
