@@ -575,7 +575,17 @@ MonoBehaviour:
     dialogues:
     - name: Father
       sentences:
-      - Tu abse Evangalic
+      - "Carlo Rodr\xEDguez. You were judged by this court and given a chance to
+        cleanse your name through the Trial of the Church. Many take that path\u2026
+        few return to stand here again. But you \u2014 you endured."
+      - "You served without complaint. You carried burdens not your own. You showed
+        restraint where others would have struck, and faith where others would have
+        fallen. In this, you\u2019ve proven yourself worthy."
+      - "Then it is decided. From this night forward, you walk no longer as outcast,
+        but as a man of God, a brother in faith, bound by the code, shielded by the
+        cross.\r"
+      - "But heed my words, Carlo. This promotion is no blessing, only a burden.
+        Break it, and you will fall \u2014 harder, sharper, faster."
     flagToSetOnComplete: 
   defaultDialogues:
   - name: Father
