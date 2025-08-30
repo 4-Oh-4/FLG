@@ -17,7 +17,7 @@ public class ShowingStoryUpdates1 : MonoBehaviour {
     // A variable to hold a reference to the running coroutine.
     // This allows us to stop it if a new update comes in.
     private Coroutine displayCoroutine;
-
+    int i = 0;
     // We can hide the panel at the start to ensure it's not visible.
     void Start() {
         // Safety check to prevent errors if the panel isn't assigned.
@@ -62,5 +62,6 @@ public class ShowingStoryUpdates1 : MonoBehaviour {
         StoryManagertAct1A.Instance.SetFlag("WeeksLater",true);
         // 4. After the wait is over, disable the panel GameObject to hide it.
         storyUpdatePanel.SetActive(false);
+        StoryManagertAct1A.Instance.SetFlag("BlackScreen" + i.ToString(),true);
     }
 }
