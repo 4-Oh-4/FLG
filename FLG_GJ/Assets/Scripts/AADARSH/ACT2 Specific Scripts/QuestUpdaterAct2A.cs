@@ -16,6 +16,10 @@ public class QuestUpdaterAct2A : QuestUpdaterAct1A
     [SerializeField] Transform johan;
     [SerializeField] Transform truckGate;
     [SerializeField] Transform DariusChase;
+    [SerializeField] Transform clubDarius;
+    [SerializeField] Transform clubRoxana;
+    [SerializeField] Transform clubRositta;
+    [SerializeField] Transform clubNino;
 
     [SerializeField] WindowQuestPointer_A questPointer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -108,5 +112,29 @@ public class QuestUpdaterAct2A : QuestUpdaterAct1A
             EnablePointerb();
         }
         questPointer.target = DariusChase;
+    }
+    public void ClubDarius() {
+        if (questPointer.gameObject.activeInHierarchy == false) {
+            EnablePointerb();
+        }
+        questPointer.target = clubDarius;
+    }
+    public void ClubRoxana() {
+        if (questPointer.gameObject.activeInHierarchy == false) {
+            EnablePointerb();
+        }
+        questPointer.target = clubRoxana;
+    }
+    public void ClubRositta() {
+        if (questPointer.gameObject.activeInHierarchy == false) {
+            EnablePointerb();
+        }
+        questPointer.target = clubRositta;
+    }
+    public void ClubNino() {
+        if (questPointer.gameObject.activeInHierarchy == false) {
+            EnablePointerb();
+        }
+        questPointer.target = clubNino;
     }
 }
