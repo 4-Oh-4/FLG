@@ -11,6 +11,7 @@ TagManager:
   - Ammo
   - Boss
   - Can
+  - ToBeDestroyed
   layers:
   - Default
   - TransparentFX
