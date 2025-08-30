@@ -8,6 +8,8 @@ public class TpPlayerWareHouse : MonoBehaviour
     [SerializeField] Transform tunnel;
     [SerializeField] Transform Garrage;
     [SerializeField] Transform Bb;
+    [SerializeField] Transform nightClub;
+    [SerializeField] Transform home;
     public void TPtoWareHouse() {
         FindAnyObjectByType<ShowingStoryUpdates1>().ShowUpdate("as");
         player.transform.position = warehouse.position;
@@ -23,5 +25,13 @@ public class TpPlayerWareHouse : MonoBehaviour
     public void TPtoBB() {
         FindAnyObjectByType<ShowingStoryUpdates1>().ShowUpdate("as");
         player.transform.position = Bb.position;
+    }
+    public void TPtoNightClub() {
+        FindAnyObjectByType<ShowingStoryUpdates1>().ShowUpdate("as");
+        player.transform.position = nightClub.position;
+    }
+    public void TPtoHome() {
+        FindAnyObjectByType<ShowingStoryUpdates1>().ShowUpdate("as");
+        player.transform.position = home.position;
     }
 }
