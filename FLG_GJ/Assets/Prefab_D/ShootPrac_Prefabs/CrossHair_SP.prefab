@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5660021071180055136}
   - component: {fileID: 7914461817676603222}
   - component: {fileID: 205310278663229541}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: CrossHair_SP
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 5745716869162477898}
   - component: {fileID: 2746419201208561021}
   - component: {fileID: 9177969595134059339}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Crosshair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
