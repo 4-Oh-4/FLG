@@ -49,4 +49,10 @@ public class GameManager_Drug : MonoBehaviour
 
         }
     }
+    public void Fail() {
+        StartCoroutine(ShowAndWaitRoutine());
+    }
+    public void pass() {
+        TryWin();
+    }
 }
