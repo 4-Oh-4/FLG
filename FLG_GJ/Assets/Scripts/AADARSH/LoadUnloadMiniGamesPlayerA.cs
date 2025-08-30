@@ -7,10 +7,16 @@ public class LoadUnloadMiniGamesPlayerA : MonoBehaviour {
     [SerializeField] GameObject player;
     [SerializeField] QuestUpdaterAct1A questupdater;
     [SerializeField] QuestUpdaterAct2A quesupdate;
+    [SerializeField] GameObject light;
+    bool state;
     private int quest = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void LoadMiniGame(string miniGameName) {
         //Time.timeScale = 0f;
+        if (light != null) {
+            state = light.activeInHierarchy;
+            light.SetActive(false);
+        }
         Scene miniScene = SceneManager.GetSceneByName(miniGameName);
         maincamera.gameObject.SetActive(false);
         player.SetActive(false);
@@ -25,7 +31,11 @@ public class LoadUnloadMiniGamesPlayerA : MonoBehaviour {
     }
     public void UnloadMiniGame(string name="DrugTheft") {
         Time.timeScale = 1f;
-        if(quest==1)questupdater.EnablePointer();
+        if (light != null) {
+            
+            light.SetActive(state);
+        }
+        if (quest==1)questupdater.EnablePointer();
         else {
             quesupdate.EnablePointerb();
         }
