@@ -9,7 +9,7 @@ public class ShowingStoryUpdates1 : MonoBehaviour {
 
     [Tooltip("The TextMeshPro UI element that will display the update message.")]
     [SerializeField] private TextMeshProUGUI updateText;
-
+    [SerializeField] PlayerMovement_A player;
     [Header("Configuration")]
     [Tooltip("How long the update will be displayed on screen, in seconds.")]
     [SerializeField] private float displayDuration = 4f;
@@ -17,7 +17,7 @@ public class ShowingStoryUpdates1 : MonoBehaviour {
     // A variable to hold a reference to the running coroutine.
     // This allows us to stop it if a new update comes in.
     private Coroutine displayCoroutine;
-
+    int i = 0;
     // We can hide the panel at the start to ensure it's not visible.
     void Start() {
         // Safety check to prevent errors if the panel isn't assigned.
@@ -56,11 +56,13 @@ public class ShowingStoryUpdates1 : MonoBehaviour {
 
         // 2. Enable the panel GameObject to make it visible.
         storyUpdatePanel.SetActive(true);
-
+        player.canMove = false;
         // 3. Wait for the specified duration. The 'yield' keyword pauses the function here.
         yield return new WaitForSeconds(displayDuration);
         StoryManagertAct1A.Instance.SetFlag("WeeksLater",true);
         // 4. After the wait is over, disable the panel GameObject to hide it.
         storyUpdatePanel.SetActive(false);
+        player.canMove = true;
+        StoryManagertAct1A.Instance.SetFlag("BlackScreen" + i.ToString(),true);
     }
 }
