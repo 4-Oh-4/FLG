@@ -27,6 +27,7 @@ namespace TopDownShooter
         private PlayerController_D playerController;
         private Package_D package;
         private Rigidbody2D enemyRb;
+        private Animator animator;
         private WaveSpawner_D spawner;
         private float lastAttackTime = -1f;
         private bool isAttacking = false;
@@ -36,6 +37,7 @@ namespace TopDownShooter
         private void Awake()
         {
             enemyRb = GetComponent<Rigidbody2D>();
+            animator = GetComponent<Animator>();
         }
 
         private void OnEnable()
@@ -77,17 +79,22 @@ namespace TopDownShooter
                 return;
             }
 
+            Vector2 direction = (target.position - transform.position).normalized;
             float distanceToTarget = Vector2.Distance(transform.position, target.position);
 
             if (distanceToTarget > stoppingDistance)
             {
-                Vector2 direction = (target.position - transform.position).normalized;
+                
                 enemyRb.linearVelocity = direction * moveSpeed; // Corrected to velocity
             }
             else
             {
                 enemyRb.linearVelocity = Vector2.zero; // Corrected to velocity
             }
+
+            Vector2 moveDirection = enemyRb.linearVelocity.normalized;
+            animator.SetFloat("InputX", moveDirection.x);
+            animator.SetFloat("InputY", moveDirection.y);
 
             if (distanceToTarget <= attackRange)
             {
@@ -107,6 +114,18 @@ namespace TopDownShooter
         IEnumerator AttackCoroutine()
         {
             isAttacking = true;
+
+            if (target != null)
+            {
+                // Set direction so the enemy punches towards the target
+                Vector2 directionToTarget = (target.position - transform.position).normalized;
+                animator.SetFloat("InputX", directionToTarget.x);
+                animator.SetFloat("InputY", directionToTarget.y);
+
+                // Trigger the attack animation
+                animator.SetTrigger("Attack");
+            }
+
             yield return new WaitForSeconds(attackDuration);
 
             if (target != null && Vector2.Distance(transform.position, target.position) <= attackRange)

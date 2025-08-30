@@ -23,6 +23,7 @@ namespace TopDownShooter
         private Transform playerTarget;
         private PlayerController_D playerController;
         private Rigidbody2D saboteurRb;
+        private Animator animator; // <-- ADDED
         private WaveSpawner_D spawner;
         private float lastAttackTime = -1f;
         private bool isAttacking = false;
@@ -32,6 +33,7 @@ namespace TopDownShooter
         private void Awake()
         {
             saboteurRb = GetComponent<Rigidbody2D>();
+            animator = GetComponent<Animator>(); // <-- ADDED
         }
 
         private void OnEnable()
@@ -64,12 +66,18 @@ namespace TopDownShooter
             if (distanceToPlayer > stoppingDistance)
             {
                 Vector2 direction = (playerTarget.position - transform.position).normalized;
-                saboteurRb.linearVelocity = direction * moveSpeed; // Corrected to velocity
+                saboteurRb.linearVelocity = direction * moveSpeed;
             }
             else
             {
-                saboteurRb.linearVelocity = Vector2.zero; // Corrected to velocity
+                saboteurRb.linearVelocity = Vector2.zero;
             }
+
+            // --- ADDED: Locomotion Animation ---
+            Vector2 moveDirection = saboteurRb.linearVelocity.normalized;
+            animator.SetFloat("InputX", moveDirection.x);
+            animator.SetFloat("InputY", moveDirection.y);
+            // --- END ---
 
             if (distanceToPlayer <= attackRange)
             {
@@ -89,6 +97,20 @@ namespace TopDownShooter
         IEnumerator AttackCoroutine()
         {
             isAttacking = true;
+
+            // --- ADDED: Attack Animation ---
+            if (playerTarget != null)
+            {
+                // Set direction so the enemy faces the player when attacking
+                Vector2 directionToTarget = (playerTarget.position - transform.position).normalized;
+                animator.SetFloat("InputX", directionToTarget.x);
+                animator.SetFloat("InputY", directionToTarget.y);
+
+                // Trigger the attack animation
+                animator.SetTrigger("Attack");
+            }
+            // --- END ---
+
             yield return new WaitForSeconds(attackDuration);
 
             if (playerTarget != null && Vector2.Distance(transform.position, playerTarget.position) <= attackRange)
@@ -113,7 +135,6 @@ namespace TopDownShooter
             if (spawner != null) spawner.OnEnemyDied();
             if (Random.value <= ammoDropChance && ammoDropPrefab != null)
             {
-                // Use the object pooler to spawn loot.
                 ObjectPooler_D.Instance.SpawnFromPool(ammoDropPrefab.name, transform.position, Quaternion.identity);
             }
             gameObject.SetActive(false);
