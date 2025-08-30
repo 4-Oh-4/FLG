@@ -575,7 +575,34 @@ MonoBehaviour:
     dialogues:
     - name: Father
       sentences:
-      - Suna hai ki bahut kaam kiya hai jao aur kaam karo
+      - "Carlo Rodr\xEDguez, you stand before the court of the faithful. For two
+        months you have walked this prison roof under the eyes of God, and under
+        ours. Tonight we weigh your actions, and judge your path."
+    - name: Father
+      sentences:
+      - "It is noted: you have kept discipline. You have not borrowed debts you cannot
+        repay. You have not raised your hand without cause. You\u2019ve kept up with
+        la causa on time."
+    - name: Father
+      sentences:
+      - "Yet\u2026 there remains the matter of your shame. The mark of unnatural
+        sin \u2014 whispers of what you are said to be. A brand that strips you of
+        worth, lowers you even beneath the Renegades."
+    - name: Carlo
+      sentences:
+      - "It\u2019s a lie. Every word of it. I\u2019ve done nothing to earn that brand."
+    - name: Evangelic
+      sentences:
+      - "Brothers, I\u2019ve seen this kid with my own eyes. I saw him bleed for
+        someone else when everybody else just stood by. That mark on his name? It
+        ain\u2019t truth \u2014 it\u2019s poison, spread by people who wanted to
+        see him crushed."
+    - name: Carlo
+      sentences:
+      - "If it means I can burn their lies to ash\u2026 then yes. I'll do it."
+    - name: Father
+      sentences:
+      - So it shall be. May God see your truth, and may we see your worth.
     flagToSetOnComplete: 
   defaultDialogues:
   - name: Father
