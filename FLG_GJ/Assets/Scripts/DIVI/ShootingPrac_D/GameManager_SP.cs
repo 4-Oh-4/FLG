@@ -72,7 +72,8 @@ public class GameManager_SP : MonoBehaviour
             yield return new WaitForSeconds(3f);
         }
 
-        
+        FindAnyObjectByType<GM_DJ_A>().TryWin();
+
         Debug.Log("All rounds completed!");
     }
 
@@ -88,6 +89,7 @@ public class GameManager_SP : MonoBehaviour
     private void Lose()
     {
         gameOver = true;
+        FindAnyObjectByType<GM_DJ_A>().Fail();
         Debug.Log("Game Over!");
     }
 
