@@ -16,6 +16,7 @@ public class ClubEntryColliderA : MonoBehaviour
         }
     }
     public void setI() {
+        Debug.Log("ClubOpen");
         i = 0;
     }
 }

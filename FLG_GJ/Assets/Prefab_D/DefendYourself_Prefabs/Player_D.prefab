@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 852268127315556166}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 8128907474801297790}
   - component: {fileID: 8856042092727658182}
   - component: {fileID: 2396012348443521702}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player_D
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -110,9 +110,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 433127147
+  m_SortingLayer: 6
+  m_SortingOrder: 1
   m_Sprite: {fileID: 8995760757476895760, guid: 35bc8c9bcf6d1bf45b3ae286d7a4ccef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
