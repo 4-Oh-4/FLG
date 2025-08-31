@@ -2,8 +2,12 @@ using UnityEngine;
 
 public class BathroomScriptToDespawn : MonoBehaviour
 {
-    int i = 0;
+    [SerializeField]int i = 0;
     private void OnTriggerEnter2D(Collider2D collision) {
+        if (i == 2 && collision.CompareTag("Player"))
+        {
+            StoryManagertAct1A.Instance.SetFlag("TPtoBathroom", true);
+        }
         if (collision.CompareTag("ToBeDestroyed")) {
             Destroy(collision.gameObject);
             i++;
@@ -11,8 +15,6 @@ public class BathroomScriptToDespawn : MonoBehaviour
                 StoryManagertAct1A.Instance.SetFlag("SilvioInBathroom", true);
             }
         }
-        if (i == 2 && collision.CompareTag("Player")) {
-            StoryManagertAct1A.Instance.SetFlag("TPtoBathroom", true);
-        }
+        
     }
 }
