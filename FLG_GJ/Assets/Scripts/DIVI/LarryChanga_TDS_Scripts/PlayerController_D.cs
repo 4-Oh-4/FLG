@@ -14,7 +14,7 @@ namespace TopDownShooter
         [SerializeField] private float attackDamage = 25f;
         [SerializeField] private LayerMask enemyLayers;
         [SerializeField] private GameObject shotEffectPrefab;
-
+        [SerializeField] Camera cam;
         // --- Private State & Components ---
         private float currentHealth;
         private int currentAmmo;
@@ -27,7 +27,9 @@ namespace TopDownShooter
         private void Start()
         {
             playerRb = GetComponent<Rigidbody2D>();
-            mainCam = Camera.main;
+            if (cam == null)
+                mainCam = Camera.main;
+            else mainCam = cam;
             anim = GetComponent<Animator>();
 
             currentHealth = maxHealth;
