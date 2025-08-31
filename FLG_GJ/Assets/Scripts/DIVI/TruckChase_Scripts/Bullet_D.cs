@@ -16,6 +16,7 @@ public class Bullet_D : MonoBehaviour
     {
         // Move along local X axis (red arrow)
         transform.position += transform.right * speed * Time.deltaTime;
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
