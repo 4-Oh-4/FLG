@@ -14,6 +14,8 @@ public class TpPlayerWareHouse : MonoBehaviour
     [SerializeField] Transform bathRoomSpawn;
     [SerializeField] Transform shackArea;
     [SerializeField] Transform bigShack;
+    [SerializeField] Transform finalShack;
+    [SerializeField] Transform outsideFinalShack;
     public void TPtoWareHouse() {
         FindAnyObjectByType<ShowingStoryUpdates1>().ShowUpdate("as");
         player.transform.position = warehouse.position;
@@ -35,6 +37,7 @@ public class TpPlayerWareHouse : MonoBehaviour
         player.transform.position = nightClub.position;
     }
     public void TPtoHome() {
+        Debug.Log("TPtoHome() function was called! Teleporting to Home.");
         FindAnyObjectByType<ShowingStoryUpdates1>().ShowUpdate("as");
         player.transform.position = home.position;
     }
@@ -51,7 +54,18 @@ public class TpPlayerWareHouse : MonoBehaviour
         player.transform.position = shackArea.position;
     }
     public void BigShack() {
+        Debug.Log("TPtoBigShack() function was called! Teleporting to bigshack.");
         FindAnyObjectByType<ShowingStoryUpdates1>().ShowUpdate("as");
         player.transform.position = bigShack.position;
+    }
+    public void FinalShack() {
+        Debug.Log("TPtoBigShack() function was called! Teleporting to bigshack.");
+        FindAnyObjectByType<ShowingStoryUpdates1>().ShowUpdate("as");
+        player.transform.position = finalShack.position;
+    }
+    public void OutsideFinalShack() {
+        Debug.Log("TPtoBigShack() function was called! Teleporting to bigshack.");
+        FindAnyObjectByType<ShowingStoryUpdates1>().ShowUpdate("as");
+        player.transform.position = outsideFinalShack.position;
     }
 }
