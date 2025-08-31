@@ -77,7 +77,7 @@ public class TpPlayerWareHouse : MonoBehaviour
     }
     public void OutsideFinalShack() {
         Debug.Log("TPtoBigShack() function was called! Teleporting to bigshack.");
-        FindAnyObjectByType<ShowingStoryUpdates1>().ShowUpdate("as");
+        //FindAnyObjectByType<ShowingStoryUpdates1>().ShowUpdate("as");
         player.transform.position = outsideFinalShack.position;
     }
 }

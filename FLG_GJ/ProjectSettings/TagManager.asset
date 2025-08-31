@@ -12,6 +12,7 @@ TagManager:
   - Boss
   - Can
   - ToBeDestroyed
+  - PoliceRaid
   layers:
   - Default
   - TransparentFX
