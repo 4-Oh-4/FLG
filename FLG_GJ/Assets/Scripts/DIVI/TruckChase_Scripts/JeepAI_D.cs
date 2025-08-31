@@ -12,6 +12,8 @@ public class JeepAI_D : MonoBehaviour
     [Header("Combat")]
     [SerializeField] private GameObject rocketPrefab;
     [SerializeField] private float fireRate = 2.5f;
+    // NEW: A reference to the rocket's spawn point.
+    [SerializeField] private Transform firePoint;
 
     private float currentHealth, nextFireTime = 0f;
     private WaveSpawner_D spawner;
@@ -22,6 +24,12 @@ public class JeepAI_D : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        // NEW: Safety check. If you forget to assign a fire point,
+        // it defaults to the Jeep's main transform to prevent errors.
+        if (firePoint == null)
+        {
+            firePoint = transform;
+        }
     }
 
     private void OnEnable()
@@ -47,7 +55,8 @@ public class JeepAI_D : MonoBehaviour
     {
         if (rocketPrefab != null)
         {
-            ObjectPooler_D.Instance.SpawnFromPool("Rocket_D", transform.position, Quaternion.identity);
+            // CHANGED: The rocket now spawns from the firePoint's position, not the Jeep's center.
+            ObjectPooler_D.Instance.SpawnFromPool("Rocket_D", firePoint.position, Quaternion.identity);
         }
     }
 
