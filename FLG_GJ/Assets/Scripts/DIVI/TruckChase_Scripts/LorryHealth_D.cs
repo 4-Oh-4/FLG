@@ -19,6 +19,7 @@ namespace TruckChase
             if (currentHealth <= 0)
             {
                 Die();
+
             }
         }
 
@@ -29,6 +30,8 @@ namespace TruckChase
             {
                 GameManager_D.Instance.LoseGame();
             }
+            FindAnyObjectByType<GM_DJ_A>().Fail();
+
             gameObject.SetActive(false);
         }
 

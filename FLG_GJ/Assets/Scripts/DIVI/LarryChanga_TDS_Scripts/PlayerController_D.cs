@@ -114,6 +114,8 @@ namespace TopDownShooter
         void Die()
         {
             this.enabled = false;
+            FindAnyObjectByType<GM_DJ_A>().Fail();
+
         }
     }
 }

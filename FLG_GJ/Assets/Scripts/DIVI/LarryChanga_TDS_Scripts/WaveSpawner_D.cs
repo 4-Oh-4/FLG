@@ -36,6 +36,7 @@ namespace TopDownShooter
                 }
                 currentWaveIndex++;
             }
+            FindAnyObjectByType<GM_DJ_A>().TryWin();
         }
 
         private IEnumerator SpawnWave(WaveData_D wave)

@@ -30,6 +30,7 @@ namespace TopDownShooter
             Debug.Log("Package Destroyed! Game Over!");
             // Deactivate the package to show it's been destroyed.
             gameObject.SetActive(false);
+            FindAnyObjectByType<GM_DJ_A>().Fail();
         }
     }
 }
