@@ -34,6 +34,7 @@ public class WaveSpawner_D : MonoBehaviour
             }
             currentWaveIndex++;
         }
+        FindAnyObjectByType<GM_DJ_A>().TryWin();
     }
 
     private IEnumerator SpawnWave(WaveData_D wave)

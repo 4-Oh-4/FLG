@@ -176,6 +176,7 @@ public class PlayerCombat_D : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         rb.bodyType = RigidbodyType2D.Kinematic;
         rb.linearVelocity = Vector2.zero;
+        FindAnyObjectByType<GM_DJ_A>().Fail();
     }
 
     private void PlayRandomSound(AudioClip[] clips)

@@ -149,6 +149,7 @@ public class ColorGameController_D : MonoBehaviour
         {
             // --- THIS IS YOUR WINNING CONDITION ---
             wordText.text = "YOU WIN!";
+            FindAnyObjectByType<GM_DJ_A>().TryWin();
 
             // Here, you can tell your main game manager that the minigame was won.
             // For example: GameManager.Instance.UpdateQuestProgress();
@@ -159,6 +160,8 @@ public class ColorGameController_D : MonoBehaviour
         else
         {
             wordText.text = "TIME'S UP!";
+            FindAnyObjectByType<GM_DJ_A>().Fail();
+
             restartButton.gameObject.SetActive(true);
         }
     }

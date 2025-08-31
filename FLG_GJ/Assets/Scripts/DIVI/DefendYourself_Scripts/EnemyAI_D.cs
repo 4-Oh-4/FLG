@@ -258,6 +258,7 @@ namespace DefendYourself
             rb.bodyType = RigidbodyType2D.Kinematic;
             rb.linearVelocity = Vector2.zero;
             Destroy(gameObject, 2f);
+            FindAnyObjectByType<GM_DJ_A>().TryWin();
         }
 
         private void PlayRandomSound(AudioClip[] clips)

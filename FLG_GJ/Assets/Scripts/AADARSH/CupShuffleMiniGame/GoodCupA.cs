@@ -20,6 +20,8 @@ public class GoodCupA : MonoBehaviour
             moveUP = true;
             Debug.Log("RightChoice " + score);
             if (score >= 3) {
+                FindAnyObjectByType<GM_DJ_A>().TryWin();
+
                 Debug.Log("GameFinished");
                 ShuffleManager_A.gamefinishedCUP = true;
                 canvas.SetActive(false);
