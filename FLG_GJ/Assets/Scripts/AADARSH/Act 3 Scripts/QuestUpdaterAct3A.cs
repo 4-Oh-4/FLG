@@ -13,7 +13,7 @@ public class QuestUpdaterAct3A : QuestUpdaterAct1A {
     [SerializeField] Transform middelman;
     [SerializeField] Transform smallshack;
     [SerializeField] Transform centralbb;
-
+    [SerializeField] Transform shack;
     [SerializeField] WindowQuestPointer_A questPointer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void disablePointerb() {
@@ -95,5 +95,11 @@ public class QuestUpdaterAct3A : QuestUpdaterAct1A {
             EnablePointerb();
         }
         questPointer.target = centralbb;
+    }
+    public void firstShack() {
+        if (questPointer.gameObject.activeInHierarchy == false) {
+            EnablePointerb();
+        }
+        questPointer.target = shack;
     }
 }
