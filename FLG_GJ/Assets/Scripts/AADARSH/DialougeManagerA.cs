@@ -34,7 +34,7 @@ public class DialougeManagerA : MonoBehaviour {
 
     public void StartDialouge(DialougeA dialouge) {
         animator.SetBool("isOpen", true);
-        playerControl.enabled = false;// Moved from StartDialogueSequence for better control
+        if(playerControl!=null)playerControl.enabled = false;// Moved from StartDialogueSequence for better control
         nameText.text = dialouge.name;
 
         sentences.Clear();
@@ -115,7 +115,7 @@ public class DialougeManagerA : MonoBehaviour {
 
     void EndDialogueSequence() {
         animator.SetBool("isOpen", false);
-        playerControl.enabled = true;
+        if (playerControl != null) playerControl.enabled = true;
         Debug.Log("Dialogue sequence finished completely!");
 
         // --- ADDED: THE KEY LOGIC ---

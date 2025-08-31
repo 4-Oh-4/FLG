@@ -45,10 +45,11 @@ public class CameraPanController : MonoBehaviour {
     public Animator target1Animator;
     [Tooltip("The type of parameter to use for Target 1's animation.")]
     public AnimationParameterType target1AnimationType = AnimationParameterType.Trigger;
-    [Tooltip("The name of the animation trigger or boolean for Target 1 (e.g., 'Shoot' or 'isShooting').")]
+    [Tooltip("The name of the animation boolean or trigger for Target 1 (e.g., 'isShooting' or 'Shoot').")]
     public string target1AnimationName = "Shoot";
-    [Tooltip("How long the boolean parameter stays true. Only used if Type is Bool.")]
-    public float target1BoolDuration = 1.0f;
+    // ADDED: New field for the state name
+    [Tooltip("The name of the animation STATE to wait for. Only used if Type is Bool. Must match the name in the Animator Controller.")]
+    public string target1AnimationStateName = "Shooting_Animation";
     [Tooltip("Delay in seconds from the start of the pan before playing Target 1's animation.")]
     public float target1AnimationDelay = 1.5f;
 
@@ -57,14 +58,20 @@ public class CameraPanController : MonoBehaviour {
     public Animator target2Animator;
     [Tooltip("The type of parameter to use for Target 2's animation.")]
     public AnimationParameterType target2AnimationType = AnimationParameterType.Trigger;
-    [Tooltip("The name of the animation trigger or boolean for Target 2 (e.g., 'GetHit' or 'isHit').")]
+    [Tooltip("The name of the animation boolean or trigger for Target 2 (e.g., 'isHit' or 'GetHit').")]
     public string target2AnimationName = "GetHit";
-    [Tooltip("How long the boolean parameter stays true. Only used if Type is Bool.")]
-    public float target2BoolDuration = 1.0f;
+    // ADDED: New field for the state name
+    [Tooltip("The name of the animation STATE to wait for. Only used if Type is Bool. Must match the name in the Animator Controller.")]
+    public string target2AnimationStateName = "GetHit_Animation";
     [Tooltip("Delay in seconds from the start of the pan before playing Target 2's animation.")]
     public float target2AnimationDelay = 2.0f;
 
+    // REMOVED: The old bool duration fields are no longer necessary.
+    // public float target1BoolDuration = 1.0f;
+    // public float target2BoolDuration = 1.0f;
 
+    [SerializeField] bool target1anim = false;
+    [SerializeField] bool target2anim = false;
     // Private reference to the camera component for zoom functionality
     private Camera cam;
 
@@ -140,7 +147,7 @@ public class CameraPanController : MonoBehaviour {
             // Smoothstep provides a nice ease-in and ease-out effect for motion.
             t = t * t * (3f - 2f * t);
 
-            // Interpolate the camera's X and Y position, but keep the Z-axis constant for a top-down view.
+            // Interpolate the camera's X and Y position, but keep the Z-axis constant.
             Vector3 targetPosition = new Vector3(target2.position.x, target2.position.y, startingPos.z);
             cameraTransform.position = Vector3.Lerp(startingPos, targetPosition, t);
 
@@ -170,7 +177,6 @@ public class CameraPanController : MonoBehaviour {
 
     /// <summary>
     /// A coroutine that triggers the animations on the targets with specified delays relative to the pan start.
-    /// This new logic correctly sequences the animations regardless of which one is set to play first.
     /// </summary>
     private IEnumerator TriggerAnimations() {
         // Determine which animation is scheduled to happen first.
@@ -180,49 +186,78 @@ public class CameraPanController : MonoBehaviour {
             // Wait until it's time for the first animation.
             if (target1AnimationDelay > 0)
                 yield return new WaitForSeconds(target1AnimationDelay);
-            PlayAnimation(target1Animator, target1AnimationType, target1AnimationName, target1BoolDuration);
+            // MODIFIED: Pass the state name to the PlayAnimation method
+            PlayAnimation(target1Animator, target1AnimationType, target1AnimationName, target1AnimationStateName);
 
             // Now, wait the remaining time until the second animation.
             float waitTime = target2AnimationDelay - target1AnimationDelay;
             if (waitTime > 0)
                 yield return new WaitForSeconds(waitTime);
-            PlayAnimation(target2Animator, target2AnimationType, target2AnimationName, target2BoolDuration);
+            // MODIFIED: Pass the state name to the PlayAnimation method
+            PlayAnimation(target2Animator, target2AnimationType, target2AnimationName, target2AnimationStateName);
         } else // Target 2's animation is scheduled to play first.
           {
             // Wait until it's time for the second animation.
             if (target2AnimationDelay > 0)
                 yield return new WaitForSeconds(target2AnimationDelay);
-            PlayAnimation(target2Animator, target2AnimationType, target2AnimationName, target2BoolDuration);
+            // MODIFIED: Pass the state name to the PlayAnimation method
+            PlayAnimation(target2Animator, target2AnimationType, target2AnimationName, target2AnimationStateName);
 
             // Now, wait the remaining time until the first animation.
             float waitTime = target1AnimationDelay - target2AnimationDelay;
             if (waitTime > 0)
                 yield return new WaitForSeconds(waitTime);
-            PlayAnimation(target1Animator, target1AnimationType, target1AnimationName, target1BoolDuration);
+            // MODIFIED: Pass the state name to the PlayAnimation method
+            PlayAnimation(target1Animator, target1AnimationType, target1AnimationName, target1AnimationStateName);
         }
     }
 
     /// <summary>
     /// A helper method to play an animation on a target animator.
     /// </summary>
-    private void PlayAnimation(Animator animator, AnimationParameterType type, string name, float boolDuration) {
-        if (animator != null && !string.IsNullOrEmpty(name)) {
+    // MODIFIED: Method signature changed to accept the state name
+    private void PlayAnimation(Animator animator, AnimationParameterType type, string paramName, string stateName) {
+        if (animator != null && !string.IsNullOrEmpty(paramName)) {
             if (type == AnimationParameterType.Bool) {
-                StartCoroutine(HandleBoolAnimation(animator, name, boolDuration));
+                // MODIFIED: Pass the state name to the coroutine
+                StartCoroutine(HandleBoolAnimation(animator, paramName, stateName));
             } else {
-                animator.SetTrigger(name);
+                animator.SetTrigger(paramName);
             }
         }
     }
 
     /// <summary>
-    /// Handles setting a boolean parameter to true for a duration, then back to false.
+    /// Handles setting a boolean parameter to true, waiting for the animation to finish, then setting it back to false.
     /// </summary>
-    private IEnumerator HandleBoolAnimation(Animator animator, string boolName, float duration) {
-        if (animator == null) yield break;
+    // MODIFIED: Complete rewrite of this coroutine.
+    private IEnumerator HandleBoolAnimation(Animator animator, string boolName, string stateName) {
+        if (animator == null || string.IsNullOrEmpty(stateName)) yield break;
+
+        // Set the bool to true to trigger the animation
         animator.SetBool(boolName, true);
-        yield return new WaitForSeconds(duration);
+
+        // Wait a frame to ensure the animator has transitioned to the new state
+        yield return null;
+
+        // Wait until the animator is in the specified state and the animation has finished playing
+        // We check normalizedTime >= 1 which means one full playthrough of the animation clip.
+        // We also check that we are still in the correct state in case another transition interrupted it.
+        while (animator.GetCurrentAnimatorStateInfo(0).IsName(stateName) &&
+               animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f) {
+            // Wait for the next frame
+            yield return null;
+        }
+
+        // Now that the animation is done, set the bool back to false
         animator.SetBool(boolName, false);
     }
-}
 
+    private void Update() {
+        if (target1Animator != null && !string.IsNullOrEmpty(target1AnimationName))
+            target1anim = target1Animator.GetBool(target1AnimationName);
+
+        if (target2Animator != null && !string.IsNullOrEmpty(target2AnimationName))
+            target2anim = target2Animator.GetBool(target2AnimationName);
+    }
+}
