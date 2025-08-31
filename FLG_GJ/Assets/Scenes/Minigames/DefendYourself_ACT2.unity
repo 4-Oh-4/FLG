@@ -525,7 +525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCompleted: 0
-  miniGamename: DJ_MiniGame_D
+  miniGamename: DefendYourself_ACT2
   canvas: {fileID: 1314939896}
 --- !u!114 &1029972969 stripped
 MonoBehaviour:
