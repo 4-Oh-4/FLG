@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 200834192823289199}
   - component: {fileID: 2822910130632253671}
   - component: {fileID: 9161909276706539015}
+  - component: {fileID: 9077619467626434892}
   m_Layer: 0
   m_Name: NPC_9
   m_TagString: Untagged
@@ -110,3 +111,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9077619467626434892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5368716250366577728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ced35463cff49d429aa44d77e9586ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  initialFacingDirection: {x: 0, y: -1}
+  waypoints: []
