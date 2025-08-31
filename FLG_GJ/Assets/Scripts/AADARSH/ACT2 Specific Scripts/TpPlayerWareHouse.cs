@@ -45,8 +45,20 @@ public class TpPlayerWareHouse : MonoBehaviour
         FindAnyObjectByType<ShowingStoryUpdates1>().ShowUpdate("as");
         player.transform.position = NinoOffice.position;
     }
-    public void BathRoomSpawn() {
-        FindAnyObjectByType<ShowingStoryUpdates1>().ShowUpdate("as");
+    public void BathRoomSpawna() {
+        Debug.Log("1. BathRoomSpawn() function has been called!");
+
+        ShowingStoryUpdates1 storyUpdater = FindAnyObjectByType<ShowingStoryUpdates1>();
+
+        if (storyUpdater == null) {
+            // This will tell you if the object wasn't found
+            Debug.LogError("ERROR: Could not find 'ShowingStoryUpdates1' script in the scene! Teleport cancelled.");
+            return; // Stop the function here
+        }
+
+        storyUpdater.ShowUpdate("as");
+
+        Debug.Log("2. Teleporting player to Bathroom spawn point now...");
         player.transform.position = bathRoomSpawn.position;
     }
     public void ShackArea() {

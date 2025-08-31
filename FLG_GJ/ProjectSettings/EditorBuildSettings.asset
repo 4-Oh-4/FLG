@@ -53,6 +53,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigames/FinalBossBattleA.unity
     guid: 2514e49bc415a054ca8cc62aafcb5555
+  - enabled: 1
+    path: Assets/Scenes/Act_3_Map_New 1.unity
+    guid: 6d59b9f258b4e9342849f281e8e961bf
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
