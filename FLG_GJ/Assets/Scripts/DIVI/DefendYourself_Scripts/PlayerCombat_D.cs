@@ -79,7 +79,7 @@ public class PlayerCombat_D : MonoBehaviour
         {
             moveInput = 0;
         }
-        anim.SetFloat("Speed", Mathf.Abs(moveInput));
+        anim.SetFloat("Speed", moveInput);
 
         // Handle attack input
         if (Input.GetKeyDown(KeyCode.Space) && !isBlocking && !isAttacking)

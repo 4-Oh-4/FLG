@@ -50,14 +50,12 @@ namespace DefendYourself
 
         private void Start()
         {
-            // Get all necessary components attached to this GameObject
             rb = GetComponent<Rigidbody2D>();
             initialScale = transform.localScale;
             anim = GetComponent<Animator>();
             audioSource = GetComponent<AudioSource>();
             uiManager = FindAnyObjectByType<UIManager_D>();
 
-            // Find the player and get a reference to their script
             GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
             if (playerObject != null)
             {
@@ -70,7 +68,6 @@ namespace DefendYourself
                 this.enabled = false;
             }
 
-            // Initialize the UI with starting health
             if (uiManager != null)
             {
                 uiManager.UpdateEnemyHealth(health, 100f);
@@ -79,16 +76,12 @@ namespace DefendYourself
 
         private void Update()
         {
-            if (player == null || isAttacking) return; // Stop AI logic if there's no player or we are in mid-attack
+            if (player == null || isAttacking) return;
 
-            // Always face the player
             FacePlayer();
-
             distanceToPlayer = Vector2.Distance(transform.position, player.position);
             decisionTimer -= Time.deltaTime;
 
-            // --- AI Movement Logic ---
-            // Do not move if currently retreating or blocking
             if (!isRetreating && !isBlocking)
             {
                 if (distanceToPlayer > stoppingDistance)
@@ -101,35 +94,26 @@ namespace DefendYourself
                 }
             }
 
-            // --- AI Combat Logic ---
-            // Decide on an action if the player is in range and the AI is ready
             if (distanceToPlayer <= attackRange && decisionTimer <= 0 && !isBlocking && !isRetreating)
             {
                 MakeCombatDecision();
                 decisionTimer = decisionCooldown;
             }
 
-            // Update the animator with the current speed
-            anim.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
+            // AMENDED: Removed the old SetFloat call from Update.
+            // Our movement functions will now handle this directly for more control.
         }
 
         public void OnPlayerAttack()
         {
-            // This function is called by the PLAYER when they start an attack
-
-            // Don't react if already busy
             if (isAttacking || isBlocking || isRetreating)
             {
                 return;
             }
-
-            // Check if the player's attack is a "spam"
             bool isSpam = (Time.time - lastPlayerAttackTime) < spamThreshold;
             lastPlayerAttackTime = Time.time;
-
             if (isSpam)
             {
-                // If it's a spam, there's a high chance to block
                 if (Random.value < spamBlockChance)
                 {
                     Debug.Log("AI: Detected spam, blocking!");
@@ -138,7 +122,6 @@ namespace DefendYourself
             }
             else
             {
-                // If it's a sudden attack, there's a chance to back away
                 if (Random.value < retreatChance)
                 {
                     Debug.Log("AI: Sudden attack, backing off!");
@@ -149,7 +132,6 @@ namespace DefendYourself
 
         void MakeCombatDecision()
         {
-            // Choose a random action based on percentages
             float randomChance = Random.value;
             if (randomChance <= 0.50f) { StartCoroutine(BackAwayCoroutine()); }
             else if (randomChance <= 0.75f) { AttackPlayer(); }
@@ -161,11 +143,15 @@ namespace DefendYourself
         {
             Vector2 direction = (player.position - transform.position).normalized;
             rb.linearVelocity = new Vector2(direction.x * moveSpeed, rb.linearVelocity.y);
+            // AMENDED: Tell the animator we are walking forward.
+            anim.SetFloat("Speed", 1f);
         }
 
         void StopMovement()
         {
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+            // AMENDED: Tell the animator we are idle.
+            anim.SetFloat("Speed", 0f);
         }
 
         void FacePlayer()
@@ -189,7 +175,7 @@ namespace DefendYourself
         IEnumerator AttackCoroutine()
         {
             isAttacking = true;
-            StopMovement(); // Stop moving to play the attack animation
+            StopMovement();
             anim.SetTrigger("Punch");
             PlayRandomSound(effortClips);
 
@@ -223,18 +209,21 @@ namespace DefendYourself
             isRetreating = true;
             float direction = (transform.position.x > player.position.x) ? 1 : -1;
             rb.linearVelocity = new Vector2(direction * moveSpeed, rb.linearVelocity.y);
+            // AMENDED: Tell the animator we are walking backward.
+            anim.SetFloat("Speed", -1f);
             yield return new WaitForSeconds(0.4f);
+            StopMovement(); // AMENDED: Stop moving after retreating.
             isRetreating = false;
         }
 
         public void TakeDamage(float damage, bool isCritical)
         {
-            // This function is called by the PLAYER when they attack US
-
             if (isBlocking)
             {
                 Debug.Log("Enemy blocked the attack!");
-                anim.SetTrigger("Block");
+                // AMENDED: This trigger is for a one-shot block *impact* animation.
+                // Since we only have a blocking stance, this can be safely removed.
+                // anim.SetTrigger("Block"); 
                 PlayRandomSound(blockClips);
                 return;
             }
