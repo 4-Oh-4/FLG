@@ -17,9 +17,9 @@ public class GM_DJ_A : MonoBehaviour
     public void TryWin() {
         if (true) {
             
-            FindAnyObjectByType<LoadUnloadMiniGamesPlayerA>().UnloadMiniGame("DJMiniGameA");
+            FindAnyObjectByType<LoadUnloadMiniGamesPlayerA>().UnloadMiniGame("DJ_MiniGame_D");
             Debug.Log("You escaped with the package! You win.");
-            SceneManager.UnloadSceneAsync("DJMiniGameA");
+            SceneManager.UnloadSceneAsync("DJ_MiniGame_D");
 
 
         }
