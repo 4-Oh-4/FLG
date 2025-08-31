@@ -8,6 +8,8 @@ public class QuestUpdaterAct3A : QuestUpdaterAct1A {
     [SerializeField] Transform club;
     [SerializeField] Transform clubNino;
     [SerializeField] Transform ninoOfficeDoor;
+    [SerializeField] Transform EmilioShack;
+    [SerializeField] Transform Bigshack;
 
     [SerializeField] WindowQuestPointer_A questPointer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -60,5 +62,17 @@ public class QuestUpdaterAct3A : QuestUpdaterAct1A {
             EnablePointerb();
         }
         questPointer.target = ninoOfficeDoor;
+    }
+    public void Emilioshack() {
+        if (questPointer.gameObject.activeInHierarchy == false) {
+            EnablePointerb();
+        }
+        questPointer.target = EmilioShack;
+    }
+    public void BigShack() {
+        if (questPointer.gameObject.activeInHierarchy == false) {
+            EnablePointerb();
+        }
+        questPointer.target = Bigshack;
     }
 }
