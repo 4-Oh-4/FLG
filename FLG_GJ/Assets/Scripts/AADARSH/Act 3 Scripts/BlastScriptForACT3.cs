@@ -1,62 +1,87 @@
 using UnityEngine;
 using System.Collections; // Required for using Coroutines
 
-public class BlastScriptForACT3 : MonoBehaviour {
-    // --- Private Variables ---
-    // A private reference to the Animator component on this GameObject.
-    private Animator animator;
-    [SerializeField] GameObject fences;
-    [SerializeField] Sprite sprite;
-    // --- Initialization ---
-    // Awake is called when the script instance is being loaded.
-    void Awake() {
-        sprite = gameObject.GetComponent<SpriteRenderer>().sprite;
-        // Get the Animator component attached to this same GameObject.
-        animator = GetComponent<Animator>();
+public class BlastScriptForACT3 : MonoBehaviour
+{
+    // --- NEW ---
+    [Header("Animation Settings")]
+    [Tooltip("The total length of your 'BlastAct3' animation clip in seconds.")]
+    [SerializeField] private float blastAnimationLength = 1.0f; // Set this in the Inspector!
 
-        // Check if an Animator component was actually found. This is important for debugging.
-        if (animator == null) {
-            Debug.LogError("BlastScriptForACT3 requires an Animator component on the same GameObject, but none was found!", this.gameObject);
-            return; // Stop if no animator is present to prevent further errors.
+    [Header("Game Object References")]
+    [SerializeField] GameObject fences;
+
+    // --- Private Variables ---
+    private Animator animator;
+    private SpriteRenderer spriteRenderer; // Store a reference to the SpriteRenderer
+
+    // --- Initialization ---
+    void Awake()
+    {
+        // Get the components attached to this GameObject.
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (animator == null)
+        {
+            Debug.LogError("BlastScriptForACT3 requires an Animator component, but none was found!", this.gameObject);
+            return;
         }
 
         // IMPORTANT: Ensure the animator is disabled by default.
-        // It will be enabled only when the blast is triggered.
         animator.enabled = false;
     }
 
     // --- Public Function to be called by Unity Events ---
-    /// <summary>
-    /// This function can be called by a Unity Event. It starts the timed blast sequence.
-    /// </summary>
-    public void TriggerBlast() {
-        // Make sure we have a valid animator before starting the coroutine.
-        if (animator != null) {
-            // Start the coroutine that handles the delay.
+    public void TriggerBlast()
+    {
+        if (animator != null)
+        {
             StartCoroutine(BlastCoroutine());
-        } else {
+        }
+        else
+        {
             Debug.LogWarning("TriggerBlast was called, but no Animator is available.", this.gameObject);
         }
     }
 
     // --- Coroutine for the Timed Blast ---
-    /// <summary>
-    /// This coroutine waits for a specified time and then enables the animator.
-    /// </summary>
-    private IEnumerator BlastCoroutine() {
+    private IEnumerator BlastCoroutine()
+    {
+        // 1. Wait for the initial 2-second delay.
         yield return new WaitForSeconds(2f);
 
-        // 1. Wait for 1 second. The code pauses here.
+        // 2. Start the blast sequence.
         fences.SetActive(false);
-        // 2. After 1 second, enable the animator.
-        // The animation clip set as the default state in the Animator will start playing.
         Debug.Log("Enabling blast animation on " + gameObject.name);
-        animator.enabled = true;
+        animator.enabled = true; // The animation will now start playing.
+
+        // 3. Set a flag shortly after the blast begins.
         yield return new WaitForSeconds(0.3f);
-        StoryManagertAct1A.Instance.SetFlag("PoliceComing",true);
-        gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
+        StoryManagertAct1A.Instance.SetFlag("PoliceComing", true);
+
+        // 4. --- MODIFIED ---
+        //    Wait for the remainder of the animation to finish playing.
+        float remainingAnimationTime = blastAnimationLength - 0.3f;
+        if (remainingAnimationTime > 0)
+        {
+            yield return new WaitForSeconds(remainingAnimationTime);
+        }
+
+        // The animation is now complete.
+        Debug.Log("Blast animation finished.");
+
+        // NOTE: I have removed the line that was setting the sprite manually.
+        // `gameObject.GetComponent<SpriteRenderer>().sprite = sprite;`
+        // This line conflicts with the Animator, which controls the sprite during the animation. Removing it ensures the animation plays fully.
+
+        // 5. Set the final flag after a brief delay.
         yield return new WaitForSeconds(1f);
         StoryManagertAct1A.Instance.SetFlag("RunToCentralBB", true);
+
+        // 6. --- NEW ---
+        //    Finally, disable the entire GameObject.
+        Debug.Log("Disabling blast object: " + gameObject.name);
+        gameObject.SetActive(false);
     }
 }
-
