@@ -55,6 +55,8 @@ public class BlastScriptForACT3 : MonoBehaviour {
         yield return new WaitForSeconds(0.3f);
         StoryManagertAct1A.Instance.SetFlag("PoliceComing",true);
         gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
+        yield return new WaitForSeconds(1f);
+        StoryManagertAct1A.Instance.SetFlag("RunToCentralBB", true);
     }
 }
 
