@@ -11,5 +11,8 @@ public class BathroomScriptToDespawn : MonoBehaviour
                 StoryManagertAct1A.Instance.SetFlag("SilvioInBathroom", true);
             }
         }
+        if (i == 2 && collision.CompareTag("Player")) {
+            StoryManagertAct1A.Instance.SetFlag("TPtoBathroom", true);
+        }
     }
 }

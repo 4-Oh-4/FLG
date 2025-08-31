@@ -11,6 +11,7 @@ public class TpPlayerWareHouse : MonoBehaviour
     [SerializeField] Transform nightClub;
     [SerializeField] Transform home;
     [SerializeField] Transform NinoOffice;
+    [SerializeField] Transform bathRoomSpawn;
     public void TPtoWareHouse() {
         FindAnyObjectByType<ShowingStoryUpdates1>().ShowUpdate("as");
         player.transform.position = warehouse.position;
@@ -39,5 +40,8 @@ public class TpPlayerWareHouse : MonoBehaviour
         FindAnyObjectByType<ShowingStoryUpdates1>().ShowUpdate("as");
         player.transform.position = NinoOffice.position;
     }
-    
+    public void BathRoomSpawn() {
+        FindAnyObjectByType<ShowingStoryUpdates1>().ShowUpdate("as");
+        player.transform.position = bathRoomSpawn.position;
+    }
 }
