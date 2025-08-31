@@ -3,110 +3,124 @@ using TMPro;
 using UnityEngine.UI;
 using System.Collections;
 
-public class DJGameManagerA : MonoBehaviour {
-    [Header("UI")]
-    public Button[] colorButtons;
+public class SimpleColorGame : MonoBehaviour
+{
+    [Header("UI Elements")]
     public TextMeshProUGUI wordText;
     public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI comboText;
+    public TextMeshProUGUI timerText;
+    public Button[] colorButtons;
+    public GameObject gamePanel; // The entire UI panel for the game
 
     [Header("Game Settings")]
-    public AudioSource musicSource;
-    public int bpm = 120;
+    public int targetScore = 1500;
+    public float timeLimit = 60f; // 60 seconds
 
-    private string[] colorNames = { "RED", "GREEN", "BLUE", "YELLOW", "PURPLE" };
-    private Color[] colors = { Color.red, Color.green, Color.blue, Color.yellow, new Color(0.5f, 0, 0.5f) };
+    // --- Private Game State Variables ---
+    private string[] colorNames = { "RED", "BLUE", "GREEN" };
+    private Color[] colors = { Color.red, Color.blue, Color.green };
 
     private int correctIndex;
-    private int score = 0;
-    private int combo = 0;
+    private int currentScore = 0;
+    private float currentTime;
 
-    private double nextBeatTime;
-    private double beatInterval;
-    private int beatCounter = 0;
-    public int beatsPerWord = 4;
-    void Start() {
-        beatInterval = 60.0 / bpm;
-        nextBeatTime = AudioSettings.dspTime + 2.0; // start after 2 sec delay
-        musicSource.Play();
-    }
-
-    void Update() {
-        if (AudioSettings.dspTime >= nextBeatTime) {
-            beatCounter++;
-
-            // Visual pulse every beat (optional)
-            PulseBackground();
-
-            // Only set new word every X beats
-            if (beatCounter % beatsPerWord == 0) {
-                SetNewRound();
-            }
-
-            nextBeatTime += beatInterval; // schedule next beat
+    void Start()
+    {
+        // Setup button listeners once
+        for (int i = 0; i < colorButtons.Length; i++)
+        {
+            int buttonIndex = i;
+            colorButtons[i].onClick.AddListener(() => OnColorButtonClick(buttonIndex));
         }
+
+        StartGame();
     }
 
-    void SetNewRound() {
-        correctIndex = Random.Range(0, 3); // Start with 3 colors, expand later
-        wordText.text = colorNames[correctIndex];
-        wordText.color = colors[Random.Range(0, colors.Length)];
-
-        // Assign button listeners
-        for (int i = 0; i < colorButtons.Length; i++) {
-            int index = i;
-            colorButtons[i].GetComponent<Image>().color = colors[i];
-            colorButtons[i].onClick.RemoveAllListeners();
-            colorButtons[i].onClick.AddListener(() => CheckAnswer(index));
-        }
+    public void StartGame()
+    {
+        currentScore = 0;
+        currentTime = timeLimit;
+        gamePanel.SetActive(true);
+        UpdateScoreText();
+        SetNewRound();
     }
 
-    void CheckAnswer(int chosenIndex) {
-        double currentTime = AudioSettings.dspTime;
-        double timeDiff = Mathf.Abs((float)(currentTime - nextBeatTime + beatInterval));
+    void Update()
+    {
+        if (currentTime > 0)
+        {
+            currentTime -= Time.deltaTime;
+            timerText.text = "Time: " + Mathf.CeilToInt(currentTime);
 
-        if (chosenIndex == correctIndex) {
-            if (timeDiff < 0.2f) // near beat = perfect
+            if (currentTime <= 0)
             {
-                score += 100 * (combo + 1);
-                combo++;
-            } else // slightly off
-              {
-                score += 50;
-                combo = 0;
+                EndGame(false); // Player lost
             }
-        } else {
-            score -= 50;
-            combo = 0;
         }
-
-        // Update UI
-        scoreText.text = "Score: " + score;
-        comboText.text = "Combo: " + combo + "x";
-    }
-    void PulseBackground() {
-        StopAllCoroutines(); // stop any ongoing pulse
-        StartCoroutine(PulseRoutine());
     }
 
-    IEnumerator PulseRoutine() {
-        Vector3 startScale = wordText.transform.localScale;
-        Vector3 bigScale = Vector3.one * 1.2f;
+    void SetNewRound()
+    {
+        // The index of the correct word and button
+        correctIndex = Random.Range(0, colorNames.Length);
 
-        float t = 0;
-        while (t < 0.2f) // grow in 0.2s
+        // The index of the color the word will be displayed in
+        int displayColorIndex = Random.Range(0, colors.Length);
+
+        // To make it tricky, ensure the display color isn't the same as the word
+        if (displayColorIndex == correctIndex)
         {
-            t += Time.deltaTime;
-            wordText.transform.localScale = Vector3.Lerp(startScale, bigScale, t / 0.2f);
-            yield return null;
+            displayColorIndex = (correctIndex + 1) % colors.Length;
         }
 
-        t = 0;
-        while (t < 0.2f) // shrink back in 0.2s
+        wordText.text = colorNames[correctIndex];
+        wordText.color = colors[displayColorIndex];
+    }
+
+    void OnColorButtonClick(int chosenIndex)
+    {
+        if (chosenIndex == correctIndex)
         {
-            t += Time.deltaTime;
-            wordText.transform.localScale = Vector3.Lerp(bigScale, Vector3.one, t / 0.2f);
-            yield return null;
+            // Correct Answer
+            currentScore += 100;
         }
+        else
+        {
+            // Incorrect Answer
+            currentScore -= 50;
+            if (currentScore < 0) currentScore = 0; // Prevent score from going below zero
+        }
+
+        UpdateScoreText();
+
+        if (currentScore >= targetScore)
+        {
+            EndGame(true); // Player won
+        }
+        else
+        {
+            SetNewRound(); // Present the next challenge
+        }
+    }
+
+    void UpdateScoreText()
+    {
+        scoreText.text = $"Score: {currentScore} / {targetScore}";
+    }
+
+    void EndGame(bool didWin)
+    {
+        currentTime = 0; // Stop the timer
+        wordText.text = didWin ? "YOU WIN!" : "TIME'S UP!";
+
+        // Here you would add logic to close the overlay and notify the main game
+        // For now, we'll just disable the buttons
+        foreach (var button in colorButtons)
+        {
+            button.interactable = false;
+        }
+
+        // Example: Hide the overlay after 2 seconds
+        // StartCoroutine(HideOverlayAfterDelay(2f));
     }
 }
