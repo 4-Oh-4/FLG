@@ -9,6 +9,7 @@ public class SimpleFadeIn_K : MonoBehaviour {
     public float targetAlphaPhase1 = 0.1f; // how transparent after first fade
     public TextMeshProUGUI left;
     public TextMeshProUGUI right;
+    public PlayerMovement_A playerMovement;
     string l;
     string r;
     // --- NEW VARIABLE ---
@@ -27,6 +28,7 @@ public class SimpleFadeIn_K : MonoBehaviour {
     private IEnumerator FadeSequence() {
         // ----- FADE IN LOGIC (Unchanged) -----
         // Start fully black
+        playerMovement.canMove = false;
         fadeGroup.alpha = 1f;
 
         // Phase 1: 1 → targetAlphaPhase1
