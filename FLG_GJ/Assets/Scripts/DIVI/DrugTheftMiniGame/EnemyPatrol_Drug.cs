@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class EnemyPatrol_Drug : MonoBehaviour
 {
     [Header("Patrol Settings")]
@@ -8,8 +9,31 @@ public class EnemyPatrol_Drug : MonoBehaviour
     public float speed = 2f;
     public float waypointTolerance = 0.2f;
 
+    // Public property to share the current facing direction with other scripts.
+    public Vector2 FacingDirection { get; private set; }
+
+    private Animator anim;
     private int currentIndex = 0;
-    private int direction = 1; // 1 = forward, -1 = backward
+    private int direction = 1;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+        // Initialize facing direction to down by default.
+        FacingDirection = Vector2.down;
+
+        if (waypoints.Length > 0)
+        {
+            anim.SetBool("IsMoving", true);
+        }
+        else
+        {
+            anim.SetBool("IsMoving", false);
+            // If not moving, set the initial idle direction for the animator.
+            anim.SetFloat("MoveX", FacingDirection.x);
+            anim.SetFloat("MoveY", FacingDirection.y);
+        }
+    }
 
     void Update()
     {
@@ -21,22 +45,28 @@ public class EnemyPatrol_Drug : MonoBehaviour
         if (waypoints.Length == 0) return;
 
         Transform target = waypoints[currentIndex];
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
-        // Rotate enemy to face movement direction
-        Vector2 dir = target.position - transform.position;
-        if (dir != Vector2.zero)
+        Vector2 moveDirection = (target.position - transform.position).normalized;
+
+        // Update the public FacingDirection property if the enemy is moving.
+        if (moveDirection != Vector2.zero)
         {
-            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle - 90f); // adjust offset for your sprite
+            FacingDirection = moveDirection;
         }
 
-        // Check if close to waypoint
+        // Update the Animator's directional parameters.
+        anim.SetFloat("MoveX", FacingDirection.x);
+        anim.SetFloat("MoveY", FacingDirection.y);
+
+        // Move the character.
+        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+
+        // Check if close enough to the waypoint to switch to the next one.
         if (Vector2.Distance(transform.position, target.position) < waypointTolerance)
         {
             currentIndex += direction;
 
-            // Reverse direction at ends
+            // Reverse direction at the ends of the patrol path.
             if (currentIndex >= waypoints.Length)
             {
                 currentIndex = waypoints.Length - 2;
@@ -50,7 +80,6 @@ public class EnemyPatrol_Drug : MonoBehaviour
         }
     }
 
-    // Draw only patrol path
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
