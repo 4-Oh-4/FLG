@@ -22,6 +22,8 @@ public class QuestUpdaterAct2A : QuestUpdaterAct1A
     [SerializeField] Transform clubNino;
     [SerializeField] Transform ninoOfficeDoor;
     [SerializeField] Transform t1;
+    [SerializeField] Transform t12;
+    [SerializeField] Transform bathroom;
 
     [SerializeField] WindowQuestPointer_A questPointer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -150,5 +152,17 @@ public class QuestUpdaterAct2A : QuestUpdaterAct1A
             EnablePointerb();
         }
         questPointer.target = t1;
+    }
+    public void tempSilvio() {
+        if (questPointer.gameObject.activeInHierarchy == false) {
+            EnablePointerb();
+        }
+        questPointer.target = t12;
+    }
+    public void Bathroom() {
+        if (questPointer.gameObject.activeInHierarchy == false) {
+            EnablePointerb();
+        }
+        questPointer.target = bathroom;
     }
 }
