@@ -1534,6 +1534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8613308542611575428, guid: af69e637af8704043aff52273179b10d, type: 3}
   fireRate: 10
+  cam: {fileID: 1763290710}
 --- !u!212 &1963274763
 SpriteRenderer:
   m_ObjectHideFlags: 0

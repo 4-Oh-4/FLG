@@ -5,13 +5,15 @@ public class LorryShooter_D : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float fireRate = 10f;
-
+    [SerializeField] Camera cam;
     private Camera mainCam;
     private float nextFireTime = 0f;
 
     void Start()
     {
-        mainCam = Camera.main;
+        if (cam == null)
+            mainCam = Camera.main;
+        else mainCam = cam;
     }
 
     void Update()
