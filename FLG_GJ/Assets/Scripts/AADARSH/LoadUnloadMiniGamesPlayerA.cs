@@ -7,6 +7,7 @@ public class LoadUnloadMiniGamesPlayerA : MonoBehaviour {
     [SerializeField] GameObject player;
     [SerializeField] QuestUpdaterAct1A questupdater;
     [SerializeField] QuestUpdaterAct2A quesupdate;
+    [SerializeField] QuestUpdaterAct3A quesupdater3;
     [SerializeField] GameObject light;
     [SerializeField] GameObject mainGameEvent;
     bool state;
@@ -25,8 +26,13 @@ public class LoadUnloadMiniGamesPlayerA : MonoBehaviour {
         player.SetActive(false);
         SceneManager.LoadScene(miniGameName,LoadSceneMode.Additive);
         if (quesupdate == null) {
-            questupdater.disablePointer();
-            quest = 1;
+            if (questupdater == null) {
+                quesupdater3.disablePointerb();
+                quest = 3;
+            } else {
+                questupdater.disablePointer();
+                quest = 1;
+            }
         } else {
             quesupdate.disablePointerb();
             quest = 2;
@@ -40,7 +46,8 @@ public class LoadUnloadMiniGamesPlayerA : MonoBehaviour {
 
             light.SetActive(state);
         }
-        if (quest==1)questupdater.EnablePointer();
+        if (quest == 1) questupdater.EnablePointer();
+        else if (quest == 3) quesupdater3.EnablePointerb();
         else {
             quesupdate.EnablePointerb();
         }

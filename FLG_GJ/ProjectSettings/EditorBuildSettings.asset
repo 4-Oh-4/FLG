@@ -44,6 +44,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigames/DefendYourself_ACT2.unity
     guid: 2d424a7da7c08b5469058ad3a18d7ca9
+  - enabled: 1
+    path: Assets/Scenes/Minigames/CupsShuflingA.unity
+    guid: e490fe1a507192341b1e21918ee3d607
+  - enabled: 1
+    path: Assets/Scenes/Minigames/ShootingPractice_D.unity
+    guid: 8e046ec021578d0498197a3ffaf926ae
+  - enabled: 1
+    path: Assets/Scenes/Minigames/FinalBossBattleA.unity
+    guid: 2514e49bc415a054ca8cc62aafcb5555
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
