@@ -51,6 +51,18 @@ EditorBuildSettings:
     path: Assets/Scenes/AboutToDieScene.unity
     guid: b37edda5dca70554a89506a3ea0d2b4f
   - enabled: 1
+    path: Assets/Scenes/Visual1.unity
+    guid: 05faea6d9bce40a4ca5cb5dbfc4e5020
+  - enabled: 1
+    path: Assets/Scenes/Visual2.unity
+    guid: 5083742efaf1e0940b91277616dec9f0
+  - enabled: 1
+    path: Assets/Scenes/Visual3.unity
+    guid: cb59dcc3e33e86248b679e7421d17a49
+  - enabled: 1
+    path: Assets/Scenes/Visual4.unity
+    guid: 2662927effeb1104482d9370d80f9f01
+  - enabled: 1
     path: Assets/Scenes/CarlosShotScene.unity
     guid: 6d42e602f69cecc4d988e5a929396fc2
   - enabled: 1
