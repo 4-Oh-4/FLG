@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Visual1.unity
+    guid: 05faea6d9bce40a4ca5cb5dbfc4e5020
+  - enabled: 1
     path: Assets/Scenes/Act_1_Map_K.unity
     guid: 0aab299f8a8aa8e46887b819a3bf2609
   - enabled: 1
@@ -50,9 +53,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AboutToDieScene.unity
     guid: b37edda5dca70554a89506a3ea0d2b4f
-  - enabled: 1
-    path: Assets/Scenes/Visual1.unity
-    guid: 05faea6d9bce40a4ca5cb5dbfc4e5020
   - enabled: 1
     path: Assets/Scenes/Visual2.unity
     guid: 5083742efaf1e0940b91277616dec9f0
