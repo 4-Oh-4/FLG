@@ -19,7 +19,10 @@ public class GM_DJ_A : MonoBehaviour
     }
     public void TryWin() {
         if (true) {
-            
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
             FindAnyObjectByType<LoadUnloadMiniGamesPlayerA>().UnloadMiniGame(miniGamename);
             Debug.Log(miniGamename);
             SceneManager.UnloadSceneAsync(miniGamename.ToString());
