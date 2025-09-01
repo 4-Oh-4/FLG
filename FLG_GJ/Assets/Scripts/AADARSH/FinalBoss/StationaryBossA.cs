@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic; // --- NEW --- Needed for using Lists
 using TMPro;
+using UnityEngine.UI; // --- NEW --- Needed for UI components like Image
 
 public class StationaryBossA : MonoBehaviour
 {
@@ -9,7 +11,6 @@ public class StationaryBossA : MonoBehaviour
     private int currentHealth;
     private bool isVulnerable = false;
 
-    // --- NEW --- Settings for the hit flash effect
     [SerializeField] private Color hitColor = Color.red;
     [SerializeField] private float hitFlashDuration = 0.15f;
 
@@ -37,10 +38,18 @@ public class StationaryBossA : MonoBehaviour
     [Tooltip("How fast the UI indicator flashes (in seconds).")]
     [SerializeField] private float flashInterval = 0.25f;
 
+    // --- NEW --- Variables for the health bar UI
+    [Header("Health UI")]
+    [SerializeField] private Sprite fullHeartSprite;
+    [SerializeField] private Sprite emptyHeartSprite;
+    [SerializeField] private GameObject heartPrefab; // The HeartIcon prefab we created
+    [SerializeField] private Transform healthBarParent; // The BossHealthBar object
+    private List<Image> heartIcons = new List<Image>();
+
+
     private TextMeshProUGUI attackIndicatorText;
     private Coroutine flashingCoroutine;
 
-    // --- NEW --- Variables to handle the sprite and colors
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     private Coroutine hitFlashCoroutine;
@@ -52,7 +61,6 @@ public class StationaryBossA : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         currentHealth = maxHealth;
 
-        // --- NEW --- Get the SpriteRenderer and store its original color
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
         {
@@ -78,34 +86,49 @@ public class StationaryBossA : MonoBehaviour
             attackIndicatorUI.SetActive(false);
         }
 
+        // --- NEW --- Call the function to create the health bar on start
+        SetupHealthBar();
+
         StartCoroutine(BossRoutine());
+    }
+
+    // --- NEW --- This function creates the heart icons at the start of the fight
+    void SetupHealthBar()
+    {
+        // Clear any existing hearts (useful for restarts)
+        foreach (Transform child in healthBarParent)
+        {
+            Destroy(child.gameObject);
+        }
+        heartIcons.Clear();
+
+        // Create a new heart icon for each point of max health
+        for (int i = 0; i < maxHealth; i++)
+        {
+            GameObject newHeart = Instantiate(heartPrefab, healthBarParent);
+            Image heartImage = newHeart.GetComponent<Image>();
+            heartImage.sprite = fullHeartSprite;
+            heartIcons.Add(heartImage);
+        }
+    }
+
+    // --- NEW --- This function updates the hearts when the boss takes damage
+    void UpdateHealthBar()
+    {
+        // The currentHealth value corresponds to the index of the heart to empty.
+        // For example, if health is 9, we empty the heart at index 9 (the 10th heart).
+        if (currentHealth >= 0 && currentHealth < heartIcons.Count)
+        {
+            heartIcons[currentHealth].sprite = emptyHeartSprite;
+        }
     }
 
     void Update()
     {
         // No changes in Update()
-        if (player != null && isAttacking)
-        {
-            Vector2 direction = (player.position - transform.position).normalized;
-            if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
-            {
-                anim.SetFloat("AimX", Mathf.Sign(direction.x));
-                anim.SetFloat("AimY", 0);
-            }
-            else
-            {
-                anim.SetFloat("AimX", 0);
-                anim.SetFloat("AimY", Mathf.Sign(direction.y));
-            }
-        }
-        else if (!isAttacking)
-        {
-            anim.SetFloat("AimX", 0);
-            anim.SetFloat("AimY", 0);
-        }
     }
 
-    // --- MODIFIED --- This function now triggers the hit flash effect
+    // --- MODIFIED --- Now calls UpdateHealthBar()
     public void TakeDamage(int dmg)
     {
         if (!isVulnerable || currentHealth <= 0) return;
@@ -113,7 +136,9 @@ public class StationaryBossA : MonoBehaviour
         currentHealth -= dmg;
         Debug.Log("Boss HP: " + currentHealth);
 
-        // --- NEW --- Stop any previous hit flash and start a new one
+        // --- NEW --- Update the health bar UI
+        UpdateHealthBar();
+
         if (spriteRenderer != null)
         {
             if (hitFlashCoroutine != null)
@@ -122,7 +147,6 @@ public class StationaryBossA : MonoBehaviour
             }
             hitFlashCoroutine = StartCoroutine(HitFlash());
         }
-
 
         if (currentHealth <= 0)
         {
@@ -136,28 +160,18 @@ public class StationaryBossA : MonoBehaviour
         }
     }
 
-    // --- NEW --- Coroutine to handle the hit flash visual effect
     private IEnumerator HitFlash()
     {
-        // Change color to the hit color
         spriteRenderer.color = hitColor;
-
-        // Wait for the specified duration
         yield return new WaitForSeconds(hitFlashDuration);
-
-        // Revert to the original color
         spriteRenderer.color = originalColor;
-
-        // Set the coroutine reference to null once it's finished
         hitFlashCoroutine = null;
     }
-
 
     private IEnumerator BossRoutine()
     {
         while (currentHealth > 0)
         {
-            // Attack phase
             isVulnerable = false;
             if (flashingCoroutine != null)
             {
@@ -166,32 +180,29 @@ public class StationaryBossA : MonoBehaviour
             }
             if (attackIndicatorUI != null)
             {
+                if (attackIndicatorText != null)
+                {
+                    attackIndicatorText.enabled = true;
+                }
                 attackIndicatorUI.SetActive(false);
             }
-
             isAttacking = true;
             anim.SetBool("IsShooting", true);
             InvokeRepeating(nameof(FireProjectiles), 0f, projectileInterval);
             InvokeRepeating(nameof(SpawnBomb), 1f, bombInterval);
-
             yield return new WaitForSeconds(waveDuration);
-
             CancelInvoke(nameof(FireProjectiles));
             CancelInvoke(nameof(SpawnBomb));
             isAttacking = false;
             anim.SetBool("IsShooting", false);
             DoFinisherAttack();
-
             yield return new WaitForSeconds(1f);
-
-            // Vulnerable phase
             isVulnerable = true;
             if (attackIndicatorUI != null)
             {
                 attackIndicatorUI.SetActive(true);
                 flashingCoroutine = StartCoroutine(FlashIndicator());
             }
-
             Debug.Log("Boss is vulnerable!");
             yield return new WaitForSeconds(vulnerableDuration);
         }
@@ -201,13 +212,16 @@ public class StationaryBossA : MonoBehaviour
     {
         while (true)
         {
-            attackIndicatorText.enabled = !attackIndicatorText.enabled;
+            if (attackIndicatorText != null)
+            {
+                attackIndicatorText.enabled = !attackIndicatorText.enabled;
+            }
             yield return new WaitForSeconds(flashInterval);
         }
     }
 
+    // No changes to any attack methods below
     #region Attack Methods
-    // No changes to any of the attack methods
     void FireProjectiles()
     {
         if (player == null) return;
