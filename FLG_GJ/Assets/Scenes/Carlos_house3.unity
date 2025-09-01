@@ -320,9 +320,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "I have to play it real smart in order to survive. Firstly, i need a shelter
-    over my head and after that\u2026 I gotta put an end to Martin\u2019s little
-    story till then i must lay low."
+  m_text: "I used to hate it, used to pray I could escape it. Now I see it from the
+    other side, from the top looking down.\n\r\nAnd you know what? It feels\u2026
+    different. Like the world can\u2019t touch me anymore. Like I\u2019m untouchable.
+    It\u2019s a dangerous feeling, quite new for me, it's the kind of feeling that
+    makes people look down when you walk by. I guess this is what they call power.\n\r\nCarlo
+    Rodr\xEDguez ENTRY #77"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1577,6 +1580,135 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1768800214}
   m_CullTransparentMesh: 1
+--- !u!1 &1787282993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1787282995}
+  - component: {fileID: 1787282994}
+  m_Layer: 0
+  m_Name: _AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1787282994
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787282993}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0ff6936f633109746a6826f7f7ef8598, type: 3}
+  m_Resource: {fileID: 8300000, guid: 0ff6936f633109746a6826f7f7ef8598, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.25
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1787282995
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787282993}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1859.79, y: 85.70513, z: -2.2104707}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1795650543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1848,14 +1980,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Been a week since I landed in this prison. Out of all the filth I could\u2019ve
-    crossed paths with, I ran into Martin. To him, I\u2019m the one face he maybe
-    hates more than his own father. He knows this place inside out. He could\u2019ve
-    put me down himself, easy. But nah\u2026 he went for something worse.\r\n\r\nHe
-    ran his mouth. Said I was getting too close to some guys. And in here, that kind
-    of talk is poison. Nobody wants to be called a fag in Tocor\xF3n. One rumor\u2019s
-    enough to get you tossed to the roof with the rest of the dead men walking. That\u2019s
-    how I ended up here.\r\n\r\n"
+  m_text: "It\u2019s been years since I first got thrown into this pit, though some
+    days it still feels like yesterday. Back then, I wore the robes of an Evangelic,
+    tried to believe in codes and redemption. But that life\u2026 it faded, slow
+    and quiet, these last few months as I sank deeper into Hector\u2019s world.\n\r\nDrugs,
+    guns, smuggling \u2014 I\u2019ve run it all. Watched TDA boys shake down inmates
+    for the causa, that same cursed tax that once bled me dry every month."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2486,3 +2616,4 @@ SceneRoots:
   - {fileID: 1936484987}
   - {fileID: 808451377}
   - {fileID: 685715180}
+  - {fileID: 1787282995}
