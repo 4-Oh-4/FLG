@@ -2090,9 +2090,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "I have to play it real smart in order to survive. Firstly, i need a shelter
-    over my head and after that\u2026 I gotta put an end to Martin\u2019s little
-    story till then i must lay low."
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2228,14 +2226,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Been a week since I landed in this prison. Out of all the filth I could\u2019ve
-    crossed paths with, I ran into Martin. To him, I\u2019m the one face he maybe
-    hates more than his own father. He knows this place inside out. He could\u2019ve
-    put me down himself, easy. But nah\u2026 he went for something worse.\r\n\r\nHe
-    ran his mouth. Said I was getting too close to some guys. And in here, that kind
-    of talk is poison. Nobody wants to be called a fag in Tocor\xF3n. One rumor\u2019s
-    enough to get you tossed to the roof with the rest of the dead men walking. That\u2019s
-    how I ended up here.\r\n\r\n"
+  m_text: "It's been a more than a month since that night, i did say Darius a couple
+    of times but he ignored me and so did i. I just hope things to be this way. I
+    much more trusted amongst the church men on top of that Martin's issue also got
+    solved. everything seems good other than Darius. Although he did kept his words
+    and didnt told anyone about what i did to Martin. As always hope for best prepare
+    for the worst.\n\r\nCarlo Rodr\xEDguez ENTRY #36"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
