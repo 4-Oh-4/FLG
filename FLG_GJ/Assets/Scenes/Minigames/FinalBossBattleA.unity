@@ -188,8 +188,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -210, y: -115}
-  m_SizeDelta: {x: 300, y: 50}
+  m_AnchoredPosition: {x: -250, y: -115}
+  m_SizeDelta: {x: 320, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &198564348
 MonoBehaviour:
@@ -213,8 +213,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: VULNERABLE !
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cb6da8879f4d2444c84bb0a5451b589a, type: 2}
-  m_sharedMaterial: {fileID: 2167539041529670828, guid: cb6da8879f4d2444c84bb0a5451b589a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 582943b5f6d2f1f4ca2683c477dc1283, type: 2}
+  m_sharedMaterial: {fileID: 6435087500552805731, guid: 582943b5f6d2f1f4ca2683c477dc1283, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1164,6 +1164,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
+  hitColor: {r: 1, g: 0, b: 0, a: 1}
+  hitFlashDuration: 0.15
   waveDuration: 4
   vulnerableDuration: 3
   projectilePrefab: {fileID: 4364365384200974149, guid: c03814e119744d84e85679f30b4b635a, type: 3}
