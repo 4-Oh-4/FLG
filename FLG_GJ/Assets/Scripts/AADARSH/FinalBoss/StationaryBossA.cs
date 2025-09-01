@@ -156,6 +156,7 @@ public class StationaryBossA : MonoBehaviour
                 attackIndicatorUI.SetActive(false);
             }
             StopAllCoroutines();
+            FindAnyObjectByType<ResetterAct2Home>().ResetGame();
             Destroy(gameObject);
         }
     }
