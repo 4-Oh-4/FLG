@@ -25,7 +25,7 @@ public class GM_DJ_A : MonoBehaviour
 
             FindAnyObjectByType<LoadUnloadMiniGamesPlayerA>().UnloadMiniGame(miniGamename);
             Debug.Log(miniGamename);
-            SceneManager.UnloadSceneAsync(miniGamename.ToString());
+            SceneManager.UnloadSceneAsync(miniGamename);
 
 
         }
@@ -33,7 +33,7 @@ public class GM_DJ_A : MonoBehaviour
     private IEnumerator ShowAndWaitRoutine() {
         canvas.SetActive(true);
         yield return new WaitForSeconds(3f);
-        Scene currentScene = gameObject.scene;
+        //Scene currentScene = gameObject.scene;
 
         // Reload that scene (no unload needed)
         SceneManager.UnloadSceneAsync(miniGamename);
