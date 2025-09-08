@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using TopDownShooter;
 public class GM_DJ_A : MonoBehaviour
 {
     [SerializeField] private bool isCompleted = false;
@@ -41,7 +41,23 @@ public class GM_DJ_A : MonoBehaviour
     }
     
     public void Fail() {
+        DeleteAllEnemies();
         StopAllCoroutines();
         StartCoroutine(ShowAndWaitRoutine());
+    }
+    // In your GM_DJ_A.cs script
+    // No other changes are needed to other scripts or prefabs.
+
+    private void DeleteAllEnemies() {
+        // Find all objects with the EnemyIdentifier component, including inactive ones.
+        // Added FindObjectsSortMode.None to match the updated Unity API.
+        EnemyIdentifier[] allEnemies = FindObjectsByType<EnemyIdentifier>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+
+        foreach (EnemyIdentifier enemy in allEnemies) {
+            // Destroy the GameObject that the component is attached to.
+            Destroy(enemy.gameObject);
+        }
+
+        Debug.Log($"Deleted {allEnemies.Length} enemies.");
     }
 }
