@@ -47,7 +47,7 @@ public class GM_DJ_AC : MonoBehaviour {
     public void Fail() {
         DeleteAllEnemies();
         StopAllCoroutines();
-        StartCoroutine(ShowAndWaitRoutine());
+        StartCoroutine(FailRoutine());
     }
     // In your GM_DJ_A.cs script
     // No other changes are needed to other scripts or prefabs.
@@ -63,5 +63,19 @@ public class GM_DJ_AC : MonoBehaviour {
         }
 
         Debug.Log($"Deleted {allEnemies.Length} enemies.");
+    }
+    private IEnumerator FailRoutine() {
+        // 1. Show the "You Failed" screen or any other feedback
+        if (canvas != null) {
+            canvas.SetActive(true);
+        }
+
+        // 2. Wait for a few seconds
+        yield return new WaitForSeconds(3f);
+
+        // 3. Tell the persistent scene loader to handle the reload.
+
+        FindAnyObjectByType<LoadUnloadMiniGamesPlayerA>().ReloadMiniGame(miniGamename);
+
     }
 }

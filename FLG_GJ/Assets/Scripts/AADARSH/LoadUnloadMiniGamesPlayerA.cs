@@ -96,4 +96,22 @@ public class LoadUnloadMiniGamesPlayerA : MonoBehaviour {
         if (mainGameEvent != null)
             mainGameEvent.SetActive(true);
     }
+    public void ReloadMiniGame(string miniGameName) {
+        StartCoroutine(ReloadMiniGameRoutine(miniGameName));
+    }
+
+    private IEnumerator ReloadMiniGameRoutine(string miniGameName) {
+        // 1. Unload the current instance of the mini-game scene.
+        if (SceneManager.GetSceneByName(miniGameName).isLoaded) {
+            AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(miniGameName);
+            yield return new WaitUntil(() => asyncUnload.isDone);
+        }
+
+        // 2. Load a fresh instance of the mini-game scene.
+        // We don't need to disable the player/camera again because they are already disabled.
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(miniGameName, LoadSceneMode.Additive);
+        yield return new WaitUntil(() => asyncLoad.isDone);
+
+        Debug.Log($"Scene '{miniGameName}' has been reloaded.");
+    }
 }
