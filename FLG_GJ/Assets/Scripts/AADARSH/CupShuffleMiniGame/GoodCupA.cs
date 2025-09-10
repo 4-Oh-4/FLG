@@ -24,7 +24,7 @@ public class GoodCupA : MonoBehaviour
                 Debug.Log("GameFinished");
                 ShuffleManager_A.gamefinishedCUP = true;
                 canvas.SetActive(false);
-                FindAnyObjectByType<GM_DJ_A>().TryWin();
+                FindAnyObjectByType<GM_DJ_AC>().TryWin();
                 return;
             }
             

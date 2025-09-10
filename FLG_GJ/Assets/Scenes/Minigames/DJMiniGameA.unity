@@ -1303,6 +1303,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCompleted: 0
+  miniGamename: DJMiniGameA
+  canvas: {fileID: 0}
 --- !u!1 &1391624390
 GameObject:
   m_ObjectHideFlags: 0
@@ -2012,16 +2014,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 288356ccee7793e4cb5189b6e62b0041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wordText: {fileID: 1391624392}
+  scoreText: {fileID: 1643700790}
+  timerText: {fileID: 0}
   colorButtons:
   - {fileID: 159035113}
   - {fileID: 1629555122}
   - {fileID: 1183768517}
-  wordText: {fileID: 1391624392}
-  scoreText: {fileID: 1643700790}
-  comboText: {fileID: 79737911}
-  musicSource: {fileID: 1108237246}
-  bpm: 120
-  beatsPerWord: 2
+  gamePanel: {fileID: 0}
+  targetScore: 1500
+  timeLimit: 60
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

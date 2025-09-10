@@ -6,7 +6,7 @@ using TopDownShooter;
 public class GM_DJ_A : MonoBehaviour
 {
     [SerializeField] private bool isCompleted = false;
-    [SerializeField] string miniGamename= "DJ_MiniGame_D";
+    [SerializeField] string miniGamename;
     [SerializeField] GameObject canvas;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
@@ -36,7 +36,12 @@ public class GM_DJ_A : MonoBehaviour
         //Scene currentScene = gameObject.scene;
 
         // Reload that scene (no unload needed)
-        SceneManager.UnloadSceneAsync(miniGamename);
+        if (SceneManager.GetSceneByName(miniGamename).isLoaded) {
+            AsyncOperation unloadOp = SceneManager.UnloadSceneAsync(miniGamename);
+            yield return new WaitUntil(() => unloadOp.isDone);
+        }
+
+        // ...and then load a new instance of it.
         SceneManager.LoadSceneAsync(miniGamename, LoadSceneMode.Additive);
     }
     

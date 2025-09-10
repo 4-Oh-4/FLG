@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -15,16 +16,53 @@ public class LoadUnloadMiniGamesPlayerA : MonoBehaviour {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void LoadMiniGame(string miniGameName) {
         //Time.timeScale = 0f;
-        if(mainGameEvent!=null)
-        mainGameEvent.SetActive(false);
+        if (SceneManager.GetSceneByName(miniGameName).isLoaded) {
+            Debug.LogWarning($"Attempted to load scene '{miniGameName}', but it is already loaded.");
+            return;
+        }
+        StartCoroutine(LoadMiniGameRoutine(miniGameName));
+        //if (mainGameEvent!=null)
+        //mainGameEvent.SetActive(false);
+        //if (light != null) {
+        //    state = light.activeInHierarchy;
+        //    light.SetActive(false);
+        //}
+        //Scene miniScene = SceneManager.GetSceneByName(miniGameName);
+        //maincamera.gameObject.SetActive(false);
+        //player.SetActive(false);
+        //SceneManager.LoadScene(miniGameName,LoadSceneMode.Additive);
+        //if (quesupdate == null) {
+        //    if (questupdater == null) {
+        //        quesupdater3.disablePointerb();
+        //        quest = 3;
+        //    } else {
+        //        questupdater.disablePointer();
+        //        quest = 1;
+        //    }
+        //} else {
+        //    quesupdate.disablePointerb();
+        //    quest = 2;
+        //}
+    }
+    private IEnumerator LoadMiniGameRoutine(string miniGameName) {
+        // 1. Disable main scene objects first. This happens instantly.
+        if (mainGameEvent != null)
+            mainGameEvent.SetActive(false);
         if (light != null) {
             state = light.activeInHierarchy;
             light.SetActive(false);
         }
-        Scene miniScene = SceneManager.GetSceneByName(miniGameName);
         maincamera.gameObject.SetActive(false);
         player.SetActive(false);
-        SceneManager.LoadScene(miniGameName,LoadSceneMode.Additive);
+
+        // 2. Begin loading the minigame scene in the background.
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(miniGameName, LoadSceneMode.Additive);
+
+        // 3. Wait here until the scene is fully loaded. This prevents any further code
+        // from running until the new scene is ready.
+        yield return new WaitUntil(() => asyncLoad.isDone);
+
+        // 4. Now that the new scene is loaded, handle the quest logic.
         if (quesupdate == null) {
             if (questupdater == null) {
                 quesupdater3.disablePointerb();
