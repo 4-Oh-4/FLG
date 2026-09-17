@@ -10075,7 +10075,8 @@ Transform:
   m_LocalPosition: {x: -38.19, y: -6.59, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 1655334740}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &409127044
@@ -71733,6 +71734,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1770692687}
+  - {fileID: 1226177073}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -71753,6 +71755,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questtext: {fileID: 1770692688}
+  animationDuration: 0.3
+  slideDistance: 30
 --- !u!1 &934918937
 GameObject:
   m_ObjectHideFlags: 0
@@ -77408,6 +77412,7 @@ MonoBehaviour:
   Home: {fileID: 411475054}
   foodCollect: {fileID: 102152826}
   questPointer_A: {fileID: 634006048}
+  questText: {fileID: 930161230}
 --- !u!1 &1168709108
 GameObject:
   m_ObjectHideFlags: 0
@@ -78284,6 +78289,78 @@ Transform:
   m_Children: []
   m_Father: {fileID: 247707937}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1226177072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1226177073}
+  - component: {fileID: 1226177075}
+  - component: {fileID: 1226177074}
+  m_Layer: 5
+  m_Name: RawImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1226177073
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226177072}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 930161229}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 55.539978, y: -53.74}
+  m_SizeDelta: {x: 200, y: 200}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &1226177074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226177072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 8400000, guid: 583f5acdf0c884744abb186a1324197e, type: 2}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1226177075
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226177072}
+  m_CullTransparentMesh: 1
 --- !u!1 &1234650074
 GameObject:
   m_ObjectHideFlags: 0
@@ -94955,1056 +95032,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1541689033
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1541689035}
-  - component: {fileID: 1541689034}
-  m_Layer: 0
-  m_Name: StoryManager
-  m_TagString: GameController
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1541689034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1541689033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd61ffb6392323848830a9d0c085080d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inspectorFlagEvents:
-  - flagName: JournalDone
-    OnSetTrue:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1167397509}
-          m_TargetAssemblyTypeName: QuestUpdaterAct1A, Assembly-CSharp
-          m_MethodName: EvangalicTalkDone
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 930161230}
-          m_TargetAssemblyTypeName: QuestTextA, Assembly-CSharp
-          m_MethodName: setQuest
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 'Objective: Talk To Other Renegades. ''E'' to interact'
-            m_BoolArgument: 0
-          m_CallState: 2
-    OnSetFalse:
-      m_PersistentCalls:
-        m_Calls: []
-  - flagName: InitialNaration
-    OnSetTrue:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 812562003}
-          m_TargetAssemblyTypeName: GameManagerAct1A, Assembly-CSharp
-          m_MethodName: ShowUI
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1167397509}
-          m_TargetAssemblyTypeName: QuestUpdaterAct1A, Assembly-CSharp
-          m_MethodName: InitialNaration
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1576484652}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 102152825}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 930161230}
-          m_TargetAssemblyTypeName: QuestTextA, Assembly-CSharp
-          m_MethodName: setQuest
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 'Objective: Collect items to build your house. (E to
-              interact)'
-            m_BoolArgument: 1
-          m_CallState: 2
-    OnSetFalse:
-      m_PersistentCalls:
-        m_Calls: []
-  - flagName: TrashCollected
-    OnSetTrue:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 102152827}
-          m_TargetAssemblyTypeName: FoodSpawnerAct1A, Assembly-CSharp
-          m_MethodName: StartSpawning
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1167397509}
-          m_TargetAssemblyTypeName: QuestUpdaterAct1A, Assembly-CSharp
-          m_MethodName: GoFood
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 930161230}
-          m_TargetAssemblyTypeName: QuestTextA, Assembly-CSharp
-          m_MethodName: setQuest
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 'Objective: Collect food.'
-            m_BoolArgument: 0
-          m_CallState: 2
-    OnSetFalse:
-      m_PersistentCalls:
-        m_Calls: []
-  - flagName: Collect
-    OnSetTrue:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1167397509}
-          m_TargetAssemblyTypeName: QuestUpdaterAct1A, Assembly-CSharp
-          m_MethodName: disablePointer
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1134305864}
-          m_TargetAssemblyTypeName: NPC_A, Assembly-CSharp
-          m_MethodName: TriggerDialouge
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 728962841}
-          m_TargetAssemblyTypeName: ShowingStoryUpdates1, Assembly-CSharp
-          m_MethodName: ShowUpdate
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: asd
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 2084254549}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 1165667369}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 930161230}
-          m_TargetAssemblyTypeName: QuestTextA, Assembly-CSharp
-          m_MethodName: setQuest
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-    OnSetFalse:
-      m_PersistentCalls:
-        m_Calls: []
-  - flagName: WeeksLater
-    OnSetTrue:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1134305864}
-          m_TargetAssemblyTypeName: NPC_A, Assembly-CSharp
-          m_MethodName: TriggerDialouge
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 561989600}
-          m_TargetAssemblyTypeName: UnityEngine.Collider2D, UnityEngine
-          m_MethodName: set_isTrigger
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 1167397509}
-          m_TargetAssemblyTypeName: QuestUpdaterAct1A, Assembly-CSharp
-          m_MethodName: WeeksLater
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 930161230}
-          m_TargetAssemblyTypeName: QuestTextA, Assembly-CSharp
-          m_MethodName: setQuest
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 'Objective: Explore the source of the noise'
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1863418153}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 'Objective: Explore the source of the noise'
-            m_BoolArgument: 0
-          m_CallState: 2
-    OnSetFalse:
-      m_PersistentCalls:
-        m_Calls: []
-  - flagName: IsDown
-    OnSetTrue:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 728962841}
-          m_TargetAssemblyTypeName: ShowingStoryUpdates1, Assembly-CSharp
-          m_MethodName: ShowUpdate
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: asd
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 812562003}
-          m_TargetAssemblyTypeName: GameManagerAct1A, Assembly-CSharp
-          m_MethodName: TeleportPlayer
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1167397509}
-          m_TargetAssemblyTypeName: QuestUpdaterAct1A, Assembly-CSharp
-          m_MethodName: IsDown
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 930161230}
-          m_TargetAssemblyTypeName: QuestTextA, Assembly-CSharp
-          m_MethodName: setQuest
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 'Objective: Save Silvio'
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1863418153}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 'Objective: Safe Silvio'
-            m_BoolArgument: 0
-          m_CallState: 2
-    OnSetFalse:
-      m_PersistentCalls:
-        m_Calls: []
-  - flagName: GetBeaten
-    OnSetTrue:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 728962841}
-          m_TargetAssemblyTypeName: ShowingStoryUpdates1, Assembly-CSharp
-          m_MethodName: ShowUpdate
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: asd
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 2042089644}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1297685397}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 930161230}
-          m_TargetAssemblyTypeName: QuestTextA, Assembly-CSharp
-          m_MethodName: setQuest
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 'Objective: Check on Silvio'
-            m_BoolArgument: 0
-          m_CallState: 2
-    OnSetFalse:
-      m_PersistentCalls:
-        m_Calls: []
-  - flagName: SilvioBeatenToRoof
-    OnSetTrue:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1863418153}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 930161230}
-          m_TargetAssemblyTypeName: QuestTextA, Assembly-CSharp
-          m_MethodName: setQuest
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 'Objective: Follow Silvio'
-            m_BoolArgument: 1
-          m_CallState: 2
-    OnSetFalse:
-      m_PersistentCalls:
-        m_Calls: []
-  - flagName: StartTalkWithEvangalic
-    OnSetTrue:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1167397509}
-          m_TargetAssemblyTypeName: QuestUpdaterAct1A, Assembly-CSharp
-          m_MethodName: EvangalicTalk
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 930161230}
-          m_TargetAssemblyTypeName: QuestTextA, Assembly-CSharp
-          m_MethodName: setQuest
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 'Objective: Talk to the Evangelic'
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1863418153}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 'Objective: Talk to the Evangelic'
-            m_BoolArgument: 1
-          m_CallState: 2
-    OnSetFalse:
-      m_PersistentCalls:
-        m_Calls: []
-  - flagName: TalkedWithEvangalic
-    OnSetTrue:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1167397509}
-          m_TargetAssemblyTypeName: QuestUpdaterAct1A, Assembly-CSharp
-          m_MethodName: EvangalicTalkDone
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1654902938}
-          m_TargetAssemblyTypeName: UnityEngine.Collider2D, UnityEngine
-          m_MethodName: set_isTrigger
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 930161230}
-          m_TargetAssemblyTypeName: QuestTextA, Assembly-CSharp
-          m_MethodName: setQuest
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 'Objective: Talk to Silvio on Roof'
-            m_BoolArgument: 0
-          m_CallState: 2
-    OnSetFalse:
-      m_PersistentCalls:
-        m_Calls: []
-  - flagName: SilivioAngry
-    OnSetTrue:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1167397509}
-          m_TargetAssemblyTypeName: QuestUpdaterAct1A, Assembly-CSharp
-          m_MethodName: EvangalicTalk
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 2104086158}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 728962841}
-          m_TargetAssemblyTypeName: ShowingStoryUpdates1, Assembly-CSharp
-          m_MethodName: ShowUpdate
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: as
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 930161230}
-          m_TargetAssemblyTypeName: QuestTextA, Assembly-CSharp
-          m_MethodName: setQuest
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 'Objective: Talk to Evangelic'
-            m_BoolArgument: 1
-          m_CallState: 2
-    OnSetFalse:
-      m_PersistentCalls:
-        m_Calls: []
-  - flagName: ToThugCamp
-    OnSetTrue:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1167397509}
-          m_TargetAssemblyTypeName: QuestUpdaterAct1A, Assembly-CSharp
-          m_MethodName: ThugCampFire
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 930161230}
-          m_TargetAssemblyTypeName: QuestTextA, Assembly-CSharp
-          m_MethodName: setQuest
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 'Objective: Retrieve the stash from the thugs.'
-            m_BoolArgument: 0
-          m_CallState: 2
-    OnSetFalse:
-      m_PersistentCalls:
-        m_Calls: []
-  - flagName: DrugTheftComplete
-    OnSetTrue:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1167397509}
-          m_TargetAssemblyTypeName: QuestUpdaterAct1A, Assembly-CSharp
-          m_MethodName: GiveDrug
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 517395989}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 1620032076}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 930161230}
-          m_TargetAssemblyTypeName: QuestTextA, Assembly-CSharp
-          m_MethodName: setQuest
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 'Objective: Meet the Evangelic near the garbage area.'
-            m_BoolArgument: 0
-          m_CallState: 2
-    OnSetFalse:
-      m_PersistentCalls:
-        m_Calls: []
-  - flagName: MeetAfterAWeek
-    OnSetTrue:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1167397509}
-          m_TargetAssemblyTypeName: QuestUpdaterAct1A, Assembly-CSharp
-          m_MethodName: EvangalicTalkDone
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 930161230}
-          m_TargetAssemblyTypeName: QuestTextA, Assembly-CSharp
-          m_MethodName: setQuest
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 'Objective: Talk to Silvio on Roof'
-            m_BoolArgument: 0
-          m_CallState: 2
-    OnSetFalse:
-      m_PersistentCalls:
-        m_Calls: []
-  - flagName: WeekComplete
-    OnSetTrue:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 728962841}
-          m_TargetAssemblyTypeName: ShowingStoryUpdates1, Assembly-CSharp
-          m_MethodName: ShowUpdate
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: asd
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1167397509}
-          m_TargetAssemblyTypeName: QuestUpdaterAct1A, Assembly-CSharp
-          m_MethodName: Church
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 2048815960}
-          m_TargetAssemblyTypeName: UnityEngine.Collider2D, UnityEngine
-          m_MethodName: set_isTrigger
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 517395989}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 2104086158}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 930161230}
-          m_TargetAssemblyTypeName: QuestTextA, Assembly-CSharp
-          m_MethodName: setQuest
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 'Objective: Go to the church'
-            m_BoolArgument: 0
-          m_CallState: 2
-    OnSetFalse:
-      m_PersistentCalls:
-        m_Calls: []
-  - flagName: ChurchComplete
-    OnSetTrue:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1167397509}
-          m_TargetAssemblyTypeName: QuestUpdaterAct1A, Assembly-CSharp
-          m_MethodName: Cleaning
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1796761036}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 930161230}
-          m_TargetAssemblyTypeName: QuestTextA, Assembly-CSharp
-          m_MethodName: setQuest
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 'Objective: Clean the waste. (Hold E)'
-            m_BoolArgument: 1
-          m_CallState: 2
-    OnSetFalse:
-      m_PersistentCalls:
-        m_Calls: []
-  - flagName: NowDoCooking
-    OnSetTrue:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1167397509}
-          m_TargetAssemblyTypeName: QuestUpdaterAct1A, Assembly-CSharp
-          m_MethodName: Cooking
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 2077661879}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 930161230}
-          m_TargetAssemblyTypeName: QuestTextA, Assembly-CSharp
-          m_MethodName: setQuest
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 'Objective: Cook food. (Hold E)'
-            m_BoolArgument: 1
-          m_CallState: 2
-    OnSetFalse:
-      m_PersistentCalls:
-        m_Calls: []
-  - flagName: EvangalicTask
-    OnSetTrue:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1167397509}
-          m_TargetAssemblyTypeName: QuestUpdaterAct1A, Assembly-CSharp
-          m_MethodName: EvangalicTalkDone
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 930161230}
-          m_TargetAssemblyTypeName: QuestTextA, Assembly-CSharp
-          m_MethodName: setQuest
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 'Objective: Talk to Silvio on Roof'
-            m_BoolArgument: 0
-          m_CallState: 2
-    OnSetFalse:
-      m_PersistentCalls:
-        m_Calls: []
-  - flagName: GoingToBeEvangalic
-    OnSetTrue:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 728962841}
-          m_TargetAssemblyTypeName: ShowingStoryUpdates1, Assembly-CSharp
-          m_MethodName: ShowUpdate
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1167397509}
-          m_TargetAssemblyTypeName: QuestUpdaterAct1A, Assembly-CSharp
-          m_MethodName: Church
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 2048815961}
-          m_TargetAssemblyTypeName: LoadMiniGameA, Assembly-CSharp
-          m_MethodName: SetOnce
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 411475053}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 930161230}
-          m_TargetAssemblyTypeName: QuestTextA, Assembly-CSharp
-          m_MethodName: setQuest
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 'Objective: Go to the church.'
-            m_BoolArgument: 1
-          m_CallState: 2
-    OnSetFalse:
-      m_PersistentCalls:
-        m_Calls: []
-  - flagName: Church2Complete
-    OnSetTrue:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1167397509}
-          m_TargetAssemblyTypeName: QuestUpdaterAct1A, Assembly-CSharp
-          m_MethodName: GoHome
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1863418153}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 930161230}
-          m_TargetAssemblyTypeName: QuestTextA, Assembly-CSharp
-          m_MethodName: setQuest
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 'Objective: Go to your new home.'
-            m_BoolArgument: 0
-          m_CallState: 2
-    OnSetFalse:
-      m_PersistentCalls:
-        m_Calls: []
---- !u!4 &1541689035
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1541689033}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.910774, y: -6.0008965, z: -0.07536713}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1543252773
 GameObject:
   m_ObjectHideFlags: 0
@@ -234861,6 +233888,152 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c39423183008b546a38205e5db0ada8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1655334735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1655334740}
+  - component: {fileID: 1655334739}
+  - component: {fileID: 1655334737}
+  - component: {fileID: 1655334736}
+  m_Layer: 0
+  m_Name: MiniMapCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1655334736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655334735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4cb039c3b3d3414ab2d3b7a0a5d8ed8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 409127043}
+  zoomLevel: 20
+  minZoom: 10
+  maxZoom: 40
+  playerIcon: {fileID: 4364365384200974149, guid: c03814e119744d84e85679f30b4b635a, type: 3}
+--- !u!114 &1655334737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655334735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: 0
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+--- !u!20 &1655334739
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655334735}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 1
+  orthographic size: 20
+  m_Depth: -2
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 8400000, guid: 583f5acdf0c884744abb186a1324197e, type: 2}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &1655334740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655334735}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -12.685001, y: -34.157005, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 409127043}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1658389322
 GameObject:
   m_ObjectHideFlags: 0
@@ -235329,6 +234502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 409127043}
+  smoothSpeed: 8
 --- !u!114 &1689386630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247670,6 +246844,436 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1777319365}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &45926673162384423
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 94519732740768998, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 94519732740768998, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 202601187906358199, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 662645687592541985, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1453094146896243808, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_Name
+      value: StoryManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1570904336995222233, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667161427560902204, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843403378118560488, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843403378118560488, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988732331242898652, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -36.910774
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988732331242898652, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.0008965
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988732331242898652, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.07536713
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988732331242898652, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988732331242898652, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988732331242898652, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988732331242898652, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988732331242898652, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988732331242898652, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988732331242898652, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539441052989271475, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998925332661969464, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4074560020458017152, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044977953715359353, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044977953715359353, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6359967173227416592, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6359967173227416592, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729337195337666813, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729337195337666813, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8432502231818320459, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8432502231818320459, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[0].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1167397509}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[0].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 930161230}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[1].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 812562003}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[1].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1167397509}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[1].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1576484652}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[1].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 102152825}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[1].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 930161230}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[2].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 102152827}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[2].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1167397509}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[2].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 930161230}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[3].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1167397509}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[3].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1134305864}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[3].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 728962841}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[3].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 2084254549}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[3].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 1165667369}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[3].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 930161230}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[4].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1134305864}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[4].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 561989600}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[4].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1167397509}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[4].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 930161230}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[4].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 1863418153}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[5].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 728962841}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[5].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 812562003}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[5].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1167397509}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[5].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 930161230}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[5].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 1863418153}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[6].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 728962841}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[6].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2042089644}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[6].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1297685397}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[6].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 930161230}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[7].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1863418153}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[7].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 930161230}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[8].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1167397509}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[8].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 930161230}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[8].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1863418153}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[9].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1167397509}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[9].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1654902938}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[9].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 930161230}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[10].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1167397509}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[10].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2104086158}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[10].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 728962841}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[10].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 930161230}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[11].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1167397509}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[11].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 930161230}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[12].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1167397509}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[12].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 517395989}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[12].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1620032076}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[12].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 930161230}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[13].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1167397509}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[13].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 930161230}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[14].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 728962841}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[14].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1167397509}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[14].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2048815960}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[14].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 517395989}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[14].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 2104086158}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[14].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 930161230}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[15].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1167397509}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[15].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1796761036}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[15].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 930161230}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[16].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1167397509}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[16].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2077661879}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[16].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 930161230}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[17].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1167397509}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[17].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 930161230}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[18].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 728962841}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[18].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1167397509}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[18].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2048815961}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[18].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 411475053}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[18].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 930161230}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[19].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1167397509}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[19].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1863418153}
+    - target: {fileID: 8833554578996503560, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: inspectorFlagEvents.Array.data[19].OnSetTrue.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 930161230}
+    - target: {fileID: 9201173399292500805, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 6673505555694171730, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+    - {fileID: 9081795961290463499, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+    - {fileID: 4990013578631403410, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+    - {fileID: 6573425712877982808, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+    - {fileID: 4143515108243424677, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6a994c55652def64f9dc312a6605ebb1, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -247679,7 +247283,7 @@ SceneRoots:
   - {fileID: 2104086159}
   - {fileID: 411475054}
   - {fileID: 930161229}
-  - {fileID: 1541689035}
+  - {fileID: 45926673162384423}
   - {fileID: 517395994}
   - {fileID: 1355561560}
   - {fileID: 1863418158}

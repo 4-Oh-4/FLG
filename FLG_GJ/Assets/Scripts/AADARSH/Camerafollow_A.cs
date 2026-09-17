@@ -2,23 +2,16 @@ using UnityEngine;
 
 public class Camerafollow_A : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Transform playerTransform;
-    //[SerializeField]float smoothSpeed = 0;
-    void Start()
-    {
-        
-    }
+    [SerializeField] float smoothSpeed = 8f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void LateUpdate() {
-        Vector3 targetPos = new Vector3(playerTransform.position.x,playerTransform.position.y,transform.position.z);
+        if (playerTransform == null) return;
+
+        Vector3 targetPos = new Vector3(playerTransform.position.x, playerTransform.position.y, transform.position.z);
         
-        //Vector3 smoothedPosition = Vector3.Lerp(transform.position, targetPos, smoothSpeed);
-        transform.position = targetPos;
+        // Smooth follow using Lerp — feels polished instead of snapping
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, targetPos, smoothSpeed * Time.deltaTime);
+        transform.position = smoothedPosition;
     }
 }

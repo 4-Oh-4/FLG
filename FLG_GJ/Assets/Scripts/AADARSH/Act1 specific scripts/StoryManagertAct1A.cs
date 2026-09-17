@@ -118,6 +118,37 @@ public class StoryManagertAct1A : MonoBehaviour {
         return flags.ContainsKey(key) && flags[key];
     }
 
+    /// <summary>
+    /// Returns a copy of all current flags. Used by the SaveManager to serialize game state.
+    /// </summary>
+    public Dictionary<string, bool> GetAllFlags() {
+        return new Dictionary<string, bool>(flags);
+    }
+
+    /// <summary>
+    /// Restores flags from saved data. Used by the SaveManager when loading a save file.
+    /// Fires events for all flags that are set to true so that dependent systems 
+    /// (NPC positions, quest pointers, etc.) re-initialize correctly.
+    /// </summary>
+    public void LoadFlags(List<FlagEntry> savedFlags) {
+        flags.Clear();
+
+        foreach (var entry in savedFlags) {
+            flags[entry.key] = entry.value;
+        }
+
+        // Fire events for all true flags so that flag-dependent systems initialize correctly.
+        // This ensures NPCs move to correct positions, quest pointers update, etc.
+        foreach (var entry in savedFlags) {
+            if (entry.value) {
+                OnFlagChanged?.Invoke(entry.key, true);
+                TriggerInspectorEvent(entry.key, true);
+            }
+        }
+
+        Debug.Log($"[StoryManager] Loaded {savedFlags.Count} flags from save data.");
+    }
+
     #endregion
 
     #region Private Helpers

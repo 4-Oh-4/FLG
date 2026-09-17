@@ -21,18 +21,20 @@ public class PlayerInteractionHoldA : MonoBehaviour {
     public GameObject progressRoot;  // parent UI element to enable/disable
 
     private int once = 0;
+    private int remainingInteractables = 0;
+
     void Start() {
+        // Cache the list once at startup — never call FindObjectsOfTypeAll in Update.
         allInteractables = Resources.FindObjectsOfTypeAll<HoldInteractableA>();
+        remainingInteractables = allInteractables.Length;
         if (progressRoot != null) progressRoot.SetActive(false);
     }
 
     void Update() {
-        allInteractables = Resources.FindObjectsOfTypeAll<HoldInteractableA>();
-        if (allInteractables.Length == 1) {
-            if (once == 0) {
-                StoryManagertAct1A.Instance.SetFlag("NowDoCooking", true);
-                once++;
-            }
+        // Check if we should trigger the cooking flag (only 1 interactable left = the cooking one).
+        if (remainingInteractables == 1 && once == 0) {
+            StoryManagertAct1A.Instance.SetFlag("NowDoCooking", true);
+            once++;
         }
         
         // First, find the nearest interactable within detection radius if currentTarget is null
@@ -64,9 +66,8 @@ public class PlayerInteractionHoldA : MonoBehaviour {
                 if (holdProgress >= requiredHold) {
                     // destroy
                     currentTarget.DestroyNow();
+                    remainingInteractables--; // Track the count instead of re-scanning
                     ResetProgress();
-                    
-                    Debug.Log(allInteractables.Length);
                 }
             } else {
                 // released early -> cancel

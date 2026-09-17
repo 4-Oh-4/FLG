@@ -1,7 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
-// This line ensures the GameObject will always have an AudioSource component.
+/// <summary>
+/// Manages the pause menu. Works globally across all scenes via DontDestroyOnLoad.
+/// Supports pausing during dialogue, exit to desktop, and quit to main menu.
+/// </summary>
 [RequireComponent(typeof(AudioSource))]
 public class PauseMenuManager : MonoBehaviour
 {
@@ -17,27 +21,37 @@ public class PauseMenuManager : MonoBehaviour
     [Tooltip("The 'uncompressed' sound that plays on mouse up.")]
     [SerializeField] private AudioClip buttonReleasedSound;
 
+    [Header("Settings")]
+    [Tooltip("The name of the main menu scene to load when quitting.")]
+    [SerializeField] private string mainMenuSceneName = "MainMenu";
+
     private bool isPaused = false;
     private AudioSource audioSource;
 
+    /// <summary>
+    /// True when the game is paused. Other scripts can check this to know the pause state.
+    /// </summary>
+    public static bool IsGamePaused { get; private set; }
+
     private void Awake()
     {
-        // Get the AudioSource component so we can play sounds.
         audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
     {
         // Ensure both panels are hidden at the start and the game is running.
-        pauseMenuPanel.SetActive(false);
-        settingsPanel.SetActive(false);
+        if (pauseMenuPanel != null) pauseMenuPanel.SetActive(false);
+        if (settingsPanel != null) settingsPanel.SetActive(false);
         Time.timeScale = 1f;
+        IsGamePaused = false;
     }
 
     private void Update()
     {
-        // Listen for the Escape key to toggle the pause menu.
-        if (Input.GetKeyDown(KeyCode.Escape))
+        // Listen for the Escape key using the New Input System.
+        // This works even during dialogue since we don't block it.
+        if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             if (isPaused)
             {
@@ -55,36 +69,54 @@ public class PauseMenuManager : MonoBehaviour
     void PauseGame()
     {
         isPaused = true;
-        pauseMenuPanel.SetActive(true);
+        IsGamePaused = true;
+        if (pauseMenuPanel != null) pauseMenuPanel.SetActive(true);
         Time.timeScale = 0f; // Freezes game time.
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void ResumeGame()
     {
         isPaused = false;
-        pauseMenuPanel.SetActive(false);
-        settingsPanel.SetActive(false); // Also hide settings panel on resume.
+        IsGamePaused = false;
+        if (pauseMenuPanel != null) pauseMenuPanel.SetActive(false);
+        if (settingsPanel != null) settingsPanel.SetActive(false);
         Time.timeScale = 1f; // Un-freezes game time.
     }
 
     public void OpenSettings()
     {
-        pauseMenuPanel.SetActive(false);
-        settingsPanel.SetActive(true);
+        if (pauseMenuPanel != null) pauseMenuPanel.SetActive(false);
+        if (settingsPanel != null) settingsPanel.SetActive(true);
     }
 
     public void CloseSettings()
     {
-        settingsPanel.SetActive(false);
-        pauseMenuPanel.SetActive(true);
+        if (settingsPanel != null) settingsPanel.SetActive(false);
+        if (pauseMenuPanel != null) pauseMenuPanel.SetActive(true);
     }
 
     public void QuitToMainMenu()
     {
+        // Restore time before loading a new scene.
         Time.timeScale = 1f;
-        // The line below is commented out to prevent errors until the scene exists.
-        // SceneManager.LoadScene("MainMenu");
-        Debug.Log("Quit to Main Menu button clicked!");
+        isPaused = false;
+        IsGamePaused = false;
+        SceneManager.LoadScene(mainMenuSceneName);
+    }
+
+    /// <summary>
+    /// Quits the application entirely. Works in builds; stops play mode in Editor.
+    /// </summary>
+    public void ExitToDesktop()
+    {
+        Debug.Log("Exit to Desktop requested.");
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 
     // --- Sound Effect Functions ---
@@ -92,7 +124,7 @@ public class PauseMenuManager : MonoBehaviour
     // This function will be called by a button's "PointerDown" event.
     public void PlayButtonPressedSound()
     {
-        if (buttonPressedSound != null)
+        if (buttonPressedSound != null && audioSource != null)
         {
             audioSource.PlayOneShot(buttonPressedSound);
         }
@@ -101,9 +133,9 @@ public class PauseMenuManager : MonoBehaviour
     // This function will be called by a button's "PointerUp" event.
     public void PlayButtonReleasedSound()
     {
-        if (buttonReleasedSound != null)
+        if (buttonReleasedSound != null && audioSource != null)
         {
             audioSource.PlayOneShot(buttonReleasedSound);
         }
     }
-}
+}

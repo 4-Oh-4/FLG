@@ -129,7 +129,7 @@ public class UIFader : MonoBehaviour {
         // Loop until the fade duration is reached.
         while (currentTime < fadeDuration) {
             // Increment time.
-            currentTime += Time.deltaTime;
+            currentTime += Time.unscaledDeltaTime;
 
             // Calculate the new alpha value using Lerp for a smooth transition.
             float newAlpha = Mathf.Lerp(startAlpha, targetAlpha, currentTime / fadeDuration);
