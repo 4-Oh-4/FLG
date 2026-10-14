@@ -96,7 +96,7 @@ public class MinimapA : MonoBehaviour {
     private void UpdateTargetMarker(Vector3 playerPos) {
         Transform target = null;
         foreach (WindowQuestPointer_A pointer in FindObjectsByType<WindowQuestPointer_A>(FindObjectsSortMode.None)) {
-            if (pointer.isActiveAndEnabled && pointer.target != null) { target = pointer.target; break; }
+            if (pointer.isActiveAndEnabled && pointer.target != null) { target = WaypointRouterA.Resolve(pointer.target); break; }
         }
         if (target == null) {
             targetMarker.gameObject.SetActive(false);

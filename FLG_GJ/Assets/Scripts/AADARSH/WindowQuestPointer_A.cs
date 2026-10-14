@@ -50,7 +50,8 @@ public class WindowQuestPointer_A : MonoBehaviour {
             return;
         }
 
-        Vector3 screenPos = mainCamera.WorldToScreenPoint(target.position);
+        // Point at the exit first if the objective is on a level the player can't walk to (Act 1 roof/ground).
+        Vector3 screenPos = mainCamera.WorldToScreenPoint(WaypointRouterA.Resolve(target).position);
 
         // Check if the target is behind the camera (screenPos.z < 0)
         // or outside the padded screen area.
