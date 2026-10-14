@@ -6,6 +6,7 @@ public class InteractWithDialogueA : MonoBehaviour {
     public LayerMask npcLayer;          // filter to only hit NPCs
 
     void Update() {
+        if (PauseMenuManager.IsPaused) return; // ignore gameplay input while paused
         if (Input.GetKeyDown(KeyCode.E)) {
             TryInteract();
         }

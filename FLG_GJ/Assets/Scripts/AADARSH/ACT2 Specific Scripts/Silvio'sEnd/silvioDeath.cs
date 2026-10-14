@@ -28,6 +28,8 @@ public class silvioDeath : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (PauseMenuManager.IsPaused) return; // ignore gameplay input while paused
+
         // Cast a circle to see if the player is within range.
         Collider2D detectedCollider = Physics2D.OverlapCircle(transform.position, detectionRadius, playerLayer);
 

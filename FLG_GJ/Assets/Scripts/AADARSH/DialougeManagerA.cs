@@ -89,6 +89,7 @@ public class DialougeManagerA : MonoBehaviour {
 
     public void DisplayNext(InputAction.CallbackContext context) {
         if (!context.performed || !animator.GetBool("isOpen")) return;
+        if (PauseMenuManager.IsPaused) return; // don't advance dialogue behind the pause menu
 
         if (isTyping) {
             StopCoroutine(typingCoroutine);

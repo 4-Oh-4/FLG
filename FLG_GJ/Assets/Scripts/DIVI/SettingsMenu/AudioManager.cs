@@ -14,29 +14,40 @@ public class AudioManager : MonoBehaviour
     private bool isMusicMuted = false;
     private bool isSfxMuted = false;
 
-    // AMENDED: Added a Start() method to set default volumes.
+    // Saved between sessions. Defaults to full volume so the game sounds the same as before routing.
+    private const string MusicPrefKey = "MusicVolume";
+    private const string SfxPrefKey = "SFXVolume";
+
     private void Start()
     {
-        // Set the Music slider to 70% and update the mixer.
-        musicVolumeSlider.value = 0.7f;
-        SetMusicVolume(0.7f);
+        float music = PlayerPrefs.GetFloat(MusicPrefKey, 1f);
+        musicVolumeSlider.value = music;
+        SetMusicVolume(music);
 
-        // Set the SFX slider to 75% and update the mixer.
-        sfxVolumeSlider.value = 0.75f;
-        SetSFXVolume(0.75f);
+        float sfx = PlayerPrefs.GetFloat(SfxPrefKey, 1f);
+        sfxVolumeSlider.value = sfx;
+        SetSFXVolume(sfx);
     }
 
     // --- Slider Functions ---
     public void SetMusicVolume(float volume)
     {
-        masterMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
+        masterMixer.SetFloat("MusicVolume", ToDecibels(volume));
         isMusicMuted = (volume <= 0.001f);
+        PlayerPrefs.SetFloat(MusicPrefKey, volume);
     }
 
     public void SetSFXVolume(float volume)
     {
-        masterMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20);
+        masterMixer.SetFloat("SFXVolume", ToDecibels(volume));
         isSfxMuted = (volume <= 0.001f);
+        PlayerPrefs.SetFloat(SfxPrefKey, volume);
+    }
+
+    // Log10(0) is -infinity, so treat 0 as silence (-80 dB, the mixer's minimum).
+    private static float ToDecibels(float volume)
+    {
+        return volume <= 0.0001f ? -80f : Mathf.Log10(volume) * 20f;
     }
 
     // --- Button Toggle Functions ---

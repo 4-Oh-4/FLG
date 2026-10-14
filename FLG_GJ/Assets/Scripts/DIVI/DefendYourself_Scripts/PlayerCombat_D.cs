@@ -64,6 +64,8 @@ public class PlayerCombat_D : MonoBehaviour
 
     void Update()
     {
+        if (PauseMenuManager.IsPaused) return; // ignore gameplay input while paused
+
         // --- Input Handling ---
 
         // Check for blocking input

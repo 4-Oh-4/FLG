@@ -38,6 +38,8 @@ namespace TopDownShooter
 
         private void Update()
         {
+            if (PauseMenuManager.IsPaused) return; // ignore gameplay input while paused
+
             // --- Input Gathering ---
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxisRaw("Vertical");

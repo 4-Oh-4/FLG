@@ -30,6 +30,7 @@ public class PlayerAttackA : MonoBehaviour
 
     void Update()
     {
+        if (PauseMenuManager.IsPaused) return; // ignore gameplay input while paused
         HandleAttackInput();
 
         if (isAttacking)

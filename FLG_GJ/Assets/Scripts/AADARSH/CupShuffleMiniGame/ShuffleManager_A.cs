@@ -28,6 +28,7 @@ public class ShuffleManager_A : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseMenuManager.IsPaused) return; // cups move per frame, so freeze them while paused
         if (Input.GetKeyDown(KeyCode.T)) {
             StartAgain();
         }

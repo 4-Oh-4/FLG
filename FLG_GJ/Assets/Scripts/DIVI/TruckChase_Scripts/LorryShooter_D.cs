@@ -29,6 +29,8 @@ public class LorryShooter_D : MonoBehaviour
 
     void Update()
     {
+        if (PauseMenuManager.IsPaused) return; // ignore gameplay input while paused
+
         // This aiming logic is already perfect and needs no changes.
         Vector2 mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
         Vector2 lookDir = mousePos - (Vector2)transform.position;

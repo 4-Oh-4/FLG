@@ -17,6 +17,8 @@ public class Crosshair_Can_D : MonoBehaviour
 
     private void Update()
     {
+        if (PauseMenuManager.IsPaused) return; // ignore gameplay input while paused
+
         // Move crosshair in UI space (Canvas overlay mode)
         Vector3 mousePos = Input.mousePosition;
         mousePos.x = Mathf.Clamp(mousePos.x, 0, Screen.width);
