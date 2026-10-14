@@ -44,13 +44,14 @@ public static class DialogueRewritesA {
         return result.ToArray();
     }
 
-    /// <summary>Rewritten version of a single line of text (used for objectives).</summary>
+    /// <summary>Rewritten version of a block of text (objectives, journal pages). Several "=" lines become separate lines.</summary>
     public static string ApplyLine(string text) {
         if (string.IsNullOrEmpty(text)) return text;
         Load();
         if (lines.TryGetValue(Normalize(text), out List<Line> replacement)) {
-            foreach (Line line in replacement) if (line.text != null) return line.text;
-            return "";
+            var kept = new List<string>();
+            foreach (Line line in replacement) if (line.text != null) kept.Add(line.text);
+            return string.Join("\n", kept);
         }
         return Clean(text);
     }

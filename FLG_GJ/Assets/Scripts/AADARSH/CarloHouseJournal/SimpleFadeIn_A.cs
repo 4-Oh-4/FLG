@@ -19,9 +19,9 @@ public class SimpleFadeIn_A : MonoBehaviour {
     public float lettersPerSecond = 20f;
 
     private void Start() {
-        l = left.text;
+        l = DialogueRewritesA.ApplyLine(left.text); // rewritten page text (Resources/DialogueRewrites.txt)
         left.text = "";
-        r = right.text;
+        r = DialogueRewritesA.ApplyLine(right.text);
         right.text = "";
         journal.SetActive(false);
     }
