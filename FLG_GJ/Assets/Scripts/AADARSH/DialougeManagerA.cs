@@ -122,13 +122,11 @@ public class DialougeManagerA : MonoBehaviour {
         if (playerControl != null) playerControl.enabled = true;
         Debug.Log("Dialogue sequence finished completely!");
 
-        // --- ADDED: THE KEY LOGIC ---
-        // If a callback was provided, invoke it now.
-        // The '?.' is a null-check to prevent errors if no callback was given.
-        onSequenceComplete?.Invoke();
-
-        // It's good practice to clear the callback after it's been used.
+        // Clear the callback before invoking it: the callback may start the next dialogue
+        // (e.g. a flag event that makes another NPC talk), which sets its own callback.
+        Action callback = onSequenceComplete;
         onSequenceComplete = null;
+        callback?.Invoke();
     }
 
     IEnumerator TypeSentence(string sentence) {

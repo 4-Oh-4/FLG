@@ -13,6 +13,7 @@ public class BlastScriptForACT3 : MonoBehaviour
 
     // --- Private Variables ---
     private Animator animator;
+    private bool blastStarted;
     private SpriteRenderer spriteRenderer; // Store a reference to the SpriteRenderer
 
     // --- Initialization ---
@@ -35,6 +36,9 @@ public class BlastScriptForACT3 : MonoBehaviour
     // --- Public Function to be called by Unity Events ---
     public void TriggerBlast()
     {
+        // Two story events trigger the blast; only the first one should run it.
+        if (blastStarted || !gameObject.activeInHierarchy) return;
+        blastStarted = true;
         if (animator != null)
         {
             StartCoroutine(BlastCoroutine());
