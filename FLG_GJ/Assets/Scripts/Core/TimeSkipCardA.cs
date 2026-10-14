@@ -109,6 +109,35 @@ public class TimeSkipCardA : MonoBehaviour {
         group.alpha = 0f;
         caption.alpha = 0f;
         group.blocksRaycasts = false;
+        RestoreDialogueCanvas();
+    }
+
+    // Narration can play during a black screen ("A month on this roof..."); keep the dialogue box above the card.
+    private Canvas liftedCanvas;
+    private bool liftedOverride;
+    private int liftedOrder;
+
+    private void LateUpdate() {
+        if (group.alpha <= 0f) return;
+        foreach (DialougeManagerA dm in FindObjectsByType<DialougeManagerA>(FindObjectsSortMode.None)) {
+            if (!dm.IsOpen || dm.text == null) continue;
+            Canvas root = dm.text.canvas != null ? dm.text.canvas.rootCanvas : null;
+            if (root == null || root == liftedCanvas) return;
+            RestoreDialogueCanvas();
+            liftedCanvas = root;
+            liftedOverride = root.overrideSorting;
+            liftedOrder = root.sortingOrder;
+            root.sortingOrder = GetComponent<Canvas>().sortingOrder + 10;
+            return;
+        }
+    }
+
+    private void RestoreDialogueCanvas() {
+        if (liftedCanvas != null) {
+            liftedCanvas.sortingOrder = liftedOrder;
+            liftedCanvas.overrideSorting = liftedOverride;
+        }
+        liftedCanvas = null;
     }
 
     // Black immediately (the caller may teleport the player this same frame), caption fades in,

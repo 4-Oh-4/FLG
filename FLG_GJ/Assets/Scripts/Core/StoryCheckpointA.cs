@@ -65,6 +65,9 @@ public class StoryCheckpointA : MonoBehaviour {
     /// <summary>True while a checkpoint is being replayed. Presentation code checks this and does nothing.</summary>
     public static bool IsRestoring { get; private set; }
 
+    /// <summary>True from pressing Continue until the checkpoint has been fully restored (covers the scene load too).</summary>
+    public static bool ContinuingFromCheckpoint { get; private set; }
+
     private static StoryCheckpointA instance;
     private static string SavePath => Path.Combine(Application.persistentDataPath, "checkpoint.json");
 
@@ -122,6 +125,7 @@ public class StoryCheckpointA : MonoBehaviour {
         if (!Application.CanStreamedLevelBeLoaded(data.scene)) return false;
         EnsureInstance();
         instance.pendingRestore = data;
+        ContinuingFromCheckpoint = true;
         instance.ShowLoadingCover(true);
         SceneManager.LoadScene(data.scene);
         return true;
@@ -171,6 +175,7 @@ public class StoryCheckpointA : MonoBehaviour {
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void Init() {
         IsRestoring = false;
+        ContinuingFromCheckpoint = false;
         StoryManagertAct1A.OnFlagChanged -= OnFlagChangedStatic;
         StoryManagertAct1A.OnFlagChanged += OnFlagChangedStatic;
         SceneManager.sceneLoaded -= OnSceneLoadedStatic;
@@ -218,6 +223,7 @@ public class StoryCheckpointA : MonoBehaviour {
 
         if (!IsSupported(scene.name)) {
             pendingRestore = null;
+            ContinuingFromCheckpoint = false;
             ShowLoadingCover(false);
             // A different chapter started: the old mid-chapter checkpoint no longer applies.
             if (IsChapterScene(scene.name)) DeleteCheckpoint();
@@ -234,6 +240,7 @@ public class StoryCheckpointA : MonoBehaviour {
             StartCoroutine(RestoreRoutine(data));
         } else {
             // Fresh start of this chapter (new game or arriving from the previous chapter).
+            ContinuingFromCheckpoint = false;
             DeleteCheckpoint();
             ShowLoadingCover(false);
         }
@@ -389,6 +396,7 @@ public class StoryCheckpointA : MonoBehaviour {
 
         yield return null;
         ShowLoadingCover(false);
+        ContinuingFromCheckpoint = false;
     }
 
     private void ApplyObjects(CheckpointData data) {
