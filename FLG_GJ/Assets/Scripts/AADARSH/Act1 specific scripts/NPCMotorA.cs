@@ -54,6 +54,7 @@ public class NpcMotorA : MonoBehaviour
     /// </summary>
     public void MoveTo(Vector3 newPosition)
     {
+        if (StoryCheckpointA.IsRestoring) return; // replaying a save: position is restored directly
         targetPosition = newPosition;
         isMoving = true;
 

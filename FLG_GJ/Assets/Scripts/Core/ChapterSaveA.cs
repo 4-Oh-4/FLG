@@ -37,6 +37,12 @@ public static class ChapterSaveA {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
+    // sceneLoaded is not raised for the scene the game starts in (e.g. pressing Play in Act 1 in the editor).
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    private static void HandleStartingScene() {
+        OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
+    }
+
     private static void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
         if (mode != LoadSceneMode.Single) return; // minigames and house interiors load additively
         if (Array.IndexOf(chapterScenes, scene.name) < 0) return;

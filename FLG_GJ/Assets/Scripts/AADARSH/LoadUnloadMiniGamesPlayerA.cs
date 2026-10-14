@@ -15,6 +15,7 @@ public class LoadUnloadMiniGamesPlayerA : MonoBehaviour {
     private int quest = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void LoadMiniGame(string miniGameName) {
+        if (StoryCheckpointA.IsRestoring) return; // replaying a save: the minigame was already played
         //Time.timeScale = 0f;
         if (SceneManager.GetSceneByName(miniGameName).isLoaded) {
             Debug.LogWarning($"Attempted to load scene '{miniGameName}', but it is already loaded.");

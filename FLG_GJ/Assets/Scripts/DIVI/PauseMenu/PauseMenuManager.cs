@@ -196,6 +196,7 @@ public class PauseMenuManager : MonoBehaviour
     {
         if (isPaused) ResumeGame();
         Time.timeScale = 1f;
+        StoryCheckpointA.SaveNowIfPossible(true); // keep the exact spot the player quit from
 
         if (Application.CanStreamedLevelBeLoaded(mainMenuSceneName))
         {

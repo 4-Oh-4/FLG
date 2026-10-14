@@ -44,6 +44,7 @@ public class NPC_A : MonoBehaviour {
     }
 
     public void TriggerDialouge() {
+        if (StoryCheckpointA.IsRestoring) return; // replaying a save: dialogue already happened (its flags are replayed)
         if (dialogueManager == null) {
             Debug.LogError("Dialogue Manager not found!");
             return;

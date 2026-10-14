@@ -34,6 +34,7 @@ public class ShowingStoryUpdates1 : MonoBehaviour {
     /// </summary>
     /// <param name="message">The text you want to display in the update.</param>
     public void ShowUpdate(string message) {
+        if (StoryCheckpointA.IsRestoring) return; // replaying a save: no black screens (its flags are replayed too)
         // If an update is already being shown, stop that one first.
         // This ensures the new update gets the full display time.
         if (displayCoroutine != null) {

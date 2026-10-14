@@ -118,6 +118,13 @@ public class StoryManagertAct1A : MonoBehaviour {
         return flags.ContainsKey(key) && flags[key];
     }
 
+    /// <summary>
+    /// A copy of all current flags (read-only use, e.g. checkpoint testing).
+    /// </summary>
+    public Dictionary<string, bool> GetAllFlagsCopy() {
+        return new Dictionary<string, bool>(flags);
+    }
+
     #endregion
 
     #region Private Helpers
