@@ -59,6 +59,8 @@ public class DialougeManagerA : MonoBehaviour {
         this.onSequenceComplete = onCompleteCallback;
         // -------------
 
+        dialogues = DialogueRewritesA.Apply(dialogues); // rewritten text (Resources/DialogueRewrites.txt); same conversation, same callback
+
         foreach (var d in dialogues) {
             dialogueQueue.Enqueue(d);
         }

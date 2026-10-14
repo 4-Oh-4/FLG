@@ -1,0 +1,655 @@
+# El Tren - dialogue and objective rewrites.
+#
+# The original lines stay untouched in the scenes. When a line is about to be shown, it is looked up
+# here by its exact original text (spacing/line breaks ignored) and replaced. Flags, triggers and the
+# order of conversations are unaffected: they fire when a whole conversation ends, not per line.
+#
+#   @ original line          the line exactly as written in the scene
+#   = new line               replacement, same speaker
+#   = [Name] new line        replacement, spoken by Name (splits the speaker box)
+#   = -                      drop the line
+#   name Old => New          rename a speaker everywhere
+#
+# Lines not listed here are shown as they are.
+
+name Evangalic => Evangelic
+name T => Evangelic
+name Roxena => Roxana
+name darius => Darius
+name Poolice => Guard
+name Phone Ring.... => Phone
+name Phone rings => Phone
+name Market => Shopkeeper
+name None =>
+
+# =====================================================================
+# ACT 1 - the roof
+# =====================================================================
+
+# --- Silvio, first meeting
+@ So… you’re the new one they tossed up here. Pathetic sight for a kid your age. Word is, you’ve been a little too friendly with the other… guys
+= So you're the new one they tossed up here. Word is you got a little too friendly with the other... guys.
+@ All that's a lie !!! I've done no such thing..!! Martin will pay for what he did....
+= That's a lie! I never did anything. Martin will pay for this.
+@ Woah, woah… we’ve got a feisty one. Careful, kid. Best keep that barking low.
+= Easy, kid. Keep that barking low.
+@ Oh yeah? And if I don’t?
+= Or what?
+@ Then don’t be surprised if your last bark comes sooner than you think
+= Or your last bark comes sooner than you think.
+@ What’s that supposed to mean?
+= -
+@ It means this place runs on rules, carved in blood. Ignore them, and you won’t live to see another sunrise. So listen close kid cause you'll be needing this.
+= This place runs on rules. Break them and you don't see the next sunrise. So listen close.
+@ First thing, up here, you’re a Renegade. That means you’re lower than dirt. You don’t get respect, you don’t get friends — you take what you can and keep your head down.
+= Up here you're a Renegade. Lower than dirt. No respect, no friends. You take what you can and keep your head down.
+@ Don’t go borrowing what you can’t pay back. Don’t mouth off to the wrong people. And whatever you do… don’t look desperate. Desperation? That’s blood in the water.
+= Don't borrow what you can't pay back. Don't mouth off to the wrong people. And never look desperate. Desperation is blood in the water.
+@ Now, it ain’t all bad. You find a crew, even a small one, you stand a chance. You find shelter, you stand a chance.
+= Find a crew, even a small one, and you stand a chance. Find shelter, and you stand a chance.
+@ But remember this above all else: nothing in Tocorón is free. Every favor’s a chain. Every smile’s a blade. Even breathing here comes with a price — they call it la causa, the prison tax. You pay, or you bleed. Simple as that.
+= Nothing in Tocorón is free. Every favor is a chain. Even breathing costs you. They call it la causa, the prison tax. You pay, or you bleed.
+@ You wanna live long enough to climb off this roof? Learn who owns the shadows… and who you can never cross, like the Martin guy you were cursing a few moment ago,he’s no small-time punk. He’s a thug with teeth. If you don’t watch your tongue, kid, you’ll find out fast just how sharp those teeth can cut.
+= And Martin, the one you were cursing? He's no small-time punk. He's a thug with teeth. Watch your tongue around him.
+
+# --- Narrator (Carlo)
+@ Its been a month since i came here and life has been hard everyday, the tax, struggle for food, even shelter.
+= A month on this roof. The tax, the hunger, fighting for a place to sleep. Every day is harder than the last.
+@ Someone is getting beaten down there
+= Someone's getting beaten down there.
+
+# --- Thug_2
+@ Who are you to get between us..
+= Who the hell are you?
+@ Let him go...!!
+= Let him go!
+@ Get him
+= Get him.
+
+# --- Silvio2, after the beating
+@ You’re a damn fool, kid. I told you — don’t jump into storms that ain’t yours.
+= You damn fool. I told you not to jump into storms that aren't yours.
+@ Yes. That’s exactly what you were supposed to do. In here… you stick your nose where it don’t belong, you pay the price. Now look at you. Bleeding for nothing.
+= Yes. That's exactly what you do. In here, you stick your nose in, you pay for it. Now look at you. Bleeding for nothing.
+@ Bleeding for nothing? Then why the hell were they beating you in the first place? You looked ready to die out there!
+= For nothing? Then why were they beating you? You looked ready to die out there!
+@ Why the f#%k do you care, huh?
+= Why the hell do you care?
+@ What do you mean, why do I care? You’re the one who told me to build a crew, to stand a chance! That’s what we’ve been grinding at for the last damn month. And now you turn around and ask me why I give a damn?
+= You told me to build a crew. To stand a chance. That's what we've been doing for a month. And now you ask why I care?
+@ They beat me because of the obvious… I tried to escape last night.
+= I tried to escape last night.
+@ Escape? Out of nowhere, just like that?
+= Escape? Just like that?
+@ Out of nowhere? Kid, you’ve been here a month. I’ve been rotting on this roof for two years. I’ve seen things you couldn’t even wrap your head around. To them, you, me, every Renegade up here… we’re worth less than half a pound of crack.
+= You've been here a month, kid. I've been rotting on this roof for two years. To them, every Renegade up here is worth less than half a pound of crack.
+@ I’m tired, Carlo. Tired of this life. Tired of being treated like dirt. Every damn day it’s the same — fight, scrape, bleed… for what? Another sunrise in this cage?
+= I'm tired, Carlo. Fight, scrape, bleed. For what? Another sunrise in this cage?
+@ *Sigh...* I'll take some rest now, i'll suggest you do the same.
+= I need to rest. You should too.
+@ Yea you should take some rest. I have to take care of dinner today. I'll catch up with you at night.
+= [Carlo] Get some rest. I'll handle dinner tonight. I'll find you later.
+
+# --- Evangelic, first approach
+@ Strange thing… seeing a boy bleed for someone else up here.
+= Strange thing, seeing a boy bleed for someone else up here.
+@ I did what had to be done...
+= I did what I had to.
+@ Spirit like that… rare on this roof. You step in for a man you’ve barely known a month — that’s not weakness, boy. That’s strength. In the eyes of God, helping another is the noblest act of all.
+= Spirit like that is rare on this roof. You stood up for a man you've known a month. That's not weakness, boy. That's strength.
+@ What are you getting at?
+= What are you getting at?
+@ Let’s just say… there’s a way to walk a better path. Not alone, though. That old man you keep around? Bring him in. If you two can pull this off, I’ll make sure the church looks at you differently.
+= There's a better path. Not one you walk alone, though. Bring the old man. If you two can pull this off, the church will look at you differently.
+@ What kind of task are we talking here ?
+= What kind of task?
+@ Later... first i'll suggest you ask your old friend about the offer, i'll be right here.
+= Later. Ask your friend first. I'll be right here.
+
+# --- Silvio, the offer
+@ Hey… how you holding up ?
+= Hey. How are you holding up?
+@ I’ll live. Been through worse. What’s with that look, kid? Something happen?
+= I'll live. What's that look, kid?
+@ I just talked to one of the evangelics. He’s offering me a way off this roof. A real shot. But I need your help.
+= One of the Evangelics offered me a way off this roof. A real shot. But I need you.
+@ A shot? Or a noose? Whatever they’re asking, it’s never free, kid. You know that.
+= A shot, or a noose? Whatever they want, it isn't free.
+@ Nothing here is free. But staying up here, waiting to get picked off one day—that’s certain death. This… this is a chance.
+= Nothing here is free. But staying up here, waiting to get picked off? That's certain death. This is a chance.
+@ And what? You think you can bargain with those holy men? They’ll use you, same as everyone else. The second you slip, you’re done.
+= You think you can bargain with holy men? They'll use you like everyone else. The second you slip, you're done.
+@ Then I’ll do it alone.
+= Then I'll do it alone.
+@ I figured you’d say that. And I can’t stop you. But listen—guys who chase hope too hard in this place? They don’t make it far. They end up dead… or worse.
+= I figured. I can't stop you. But men who chase hope too hard in here end up dead. Or worse.
+@ I respect you, Silvio. I really do. That’s why I want you with me. My father used to tell me, ‘If you never try, you’ll never fly.’ Just a little courage, Silvio—that’s all it takes. Come on.
+= My father used to say, "If you never try, you'll never fly." A little courage, Silvio. That's all it takes.
+@ You’ve got more courage than most grown men I’ve met, Carlo. But this place… it stole mine a long time ago. I’m sorry, kid. I can’t help you.
+= You've got more courage than most men I've met. This place stole mine a long time ago. I'm sorry, kid.
+@ Alright. I leave tonight. Wish me luck.
+= Then I go tonight. Wish me luck.
+@ You have my wishes, kid. You’ll need every bit of it.
+= You'll need every bit of it.
+
+# --- Evangelic, the task
+@ Glad your're back, so what do you say ?
+= You're back. Well?
+@ Silvio won’t come. He’s not well. So… tell me. What’s the task?
+= Silvio won't come. He's not well. Tell me the task.
+@ Poor Silvio... God can only help those who atleast try to help themselves... Anyway, you see there is a small issue that i want resolved i hope you can manage on your own.
+= Poor Silvio. God helps those who help themselves. Very well. There's a small problem I need solved. Alone will do.
+@ Depends on the issue. Tell me everything atleast, want to make sure i'm not walking into my own death.
+= Tell me everything. I'm not walking into my own grave.
+@ There’s a man we call “Issac.” Respected in the church. Some gang rats thought it wise to steal from him. The church avoids conflict, but you… you’re not bound by our code. Retrieve what was taken, and I’ll vouch for you in the court of the faithful. I’ll see that stain on your name — that “fag tag” — erased.
+= A man we call Isaac, respected in the church. Gang rats stole from him. The church can't touch gang business, but you aren't bound by our code.
+= Bring back what they took and I'll vouch for you before the court of the faithful. That stain on your name, that "fag tag"? Erased.
+@ So that’s it. You don’t want to dirty your own hands in gang business… so you send me instead?
+= So you won't dirty your own hands. You send me instead.
+@ Careful, boy. Don’t mistake wisdom for cowardice. Do this, and the church doors will open for you. Refuse… and the roof is all you’ll ever have. That’s your choice.
+= Careful, boy. Don't mistake wisdom for cowardice. Do this and the church opens its doors. Refuse, and the roof is all you'll ever have.
+@ You’ll find the thief near the camp at night. Look for a red stash. And remember — if you get caught, keep your mouth shut. The fewer enemies you make in this place, the longer you live.
+= The thieves camp near the fire at night. Look for a red stash. If you get caught, you never met me.
+@ Meet me near the garbage dump area, i'll be waiting...
+= Bring it to me by the garbage dump. I'll be waiting.
+
+# --- Evangelic, after the theft
+@ You actually did it... haha.. great work.
+= You actually did it. Good work.
+@ Now it's your turn to hold your end of bargain.
+= Now hold up your end of the bargain.
+@ Oh.. I sure am good at that.
+= I always do.
+@ Just stay quiet about what you did and i'll see to clear your tarnished image in front of the church's men.
+= Keep quiet about tonight, and I'll clear your name before the church's men.
+@ Go now ! someone might see us...I'll meet you later.
+= Go. Someone might see us.
+
+# --- Silvio, a week later (last line belongs to Carlo)
+@ Are you alright ?
+= You came back in one piece. Anyone see you?
+@ Yes I was sent to this place because of theft..remember ?
+= [Carlo] I got sent here for stealing, remember? No one saw me.
+@ I hope things don't fold in your wrong turn.
+= -
+@ No one saw me, i'll be fine. All i hope for now is...that church man keeps his words true.
+= Now the church man just has to keep his word.
+@ Deception is the biggest sport here Carlo. Who might look kind from the front might be your doom. Beware !
+= [Silvio] Careful, kid. In here, the friendliest face is usually the one holding the knife.
+@ I'll keep that in mind, let's see what the future holds...
+= [Carlo] I'll keep that in mind.
+
+# --- Silvio, later small talk
+@ It's getting hard to pay the 'causa'.
+= La causa is getting harder to pay.
+@ You are right... This tax is a real nightmare specially when others don't even want to talk to you.
+= Harder still when nobody will even look at you.
+
+# =====================================================================
+# CHURCH - the court of the faithful
+# =====================================================================
+@ Come here my child
+= Come forward, my son.
+@ Carlo Rodríguez, you stand before the court of the faithful. For two months you have walked this prison roof under the eyes of God, and under ours. Tonight we weigh your actions, and judge your path.
+= Carlo Rodríguez, you stand before the court of the faithful. Two months you have walked that roof under the eyes of God, and ours. Tonight we judge your path.
+@ It is noted: you have kept discipline. You have not borrowed debts you cannot repay. You have not raised your hand without cause. You’ve kept up with la causa on time.
+= You have kept discipline. You have borrowed nothing you cannot repay. You have not raised your hand without cause. You have paid la causa on time.
+@ Yet… there remains the matter of your shame. The mark of unnatural sin — whispers of what you are said to be. A brand that strips you of worth, lowers you even beneath the Renegades.
+= Yet there remains the matter of your shame. The whispers of what you are said to be. A brand that puts you beneath even the Renegades.
+@ It’s a lie. Every word of it. I’ve done nothing to earn that brand.
+= It's a lie. Every word of it.
+@ Brothers, I’ve seen this kid with my own eyes. I saw him bleed for someone else when everybody else just stood by. That mark on his name? It ain’t truth — it’s poison, spread by people who wanted to see him crushed.
+= Brothers, I saw this boy bleed for another man while everyone else stood by. That mark on his name isn't truth. It's poison, spread by men who wanted him crushed.
+= [Father] Words cost nothing here. If you would clear your name, earn it. The Trial of the Church: humble work, done in silence. Will you accept?
+@ If it means I can burn their lies to ash… then yes. I'll do it.
+= If it burns their lies to ash, then yes. I accept.
+@ So it shall be. May God see your truth, and may we see your worth.
+= So it shall be. May God see your truth, and may we see your worth.
+
+# --- Church2 - promotion
+@ Carlo Rodríguez. You were judged by this court and given a chance to cleanse your name through the Trial of the Church. Many take that path… few return to stand here again. But you — you endured.
+= Carlo Rodríguez. This court gave you the Trial of the Church. Many take that path. Few return to stand here. You endured.
+@ You served without complaint. You carried burdens not your own. You showed restraint where others would have struck, and faith where others would have fallen. In this, you’ve proven yourself worthy.
+= You served without complaint. You showed restraint where others would have struck. You have proven yourself worthy.
+@ Then it is decided. From this night forward, you walk no longer as outcast, but as a man of God, a brother in faith, bound by the code, shielded by the cross.
+= From this night, you walk no longer as an outcast, but as an Evangelic. A brother in faith, bound by the code, shielded by the cross.
+@ But heed my words, Carlo. This promotion is no blessing, only a burden. Break it, and you will fall — harder, sharper, faster.
+= But heed me, Carlo. This is no blessing. It is a burden. Break the code, and you will fall harder than any man on that roof.
+
+# =====================================================================
+# ACT 2 - the evangelic
+# =====================================================================
+@ I should head to the church and i also need some stuff so i should head to market in evening
+= Church first. Then the market this evening for supplies.
+
+# --- Market
+@ What do you need?
+= What do you need?
+@ Carlo ! what bring bring you at this time of the day.
+= Carlo! What brings you here this late?
+@ you know, the usual supplies. Can you give me everything on this list.
+= The usual. Everything on this list.
+@ Let me see.... Yea i have everthing you need. Here you go ?
+= Let's see... yes, I've got all of it. Here.
+@ Whats with the noise over there?
+= What's that noise?
+@ Not sure but i guess there is some sort of a fight.
+= A fight, sounds like.
+@ Oh, That's too bad i think i'll check once make sure nobody is hurt.
+= I'd better make sure nobody gets hurt.
+@ I won't advice that but its you're call...
+= I wouldn't. But it's your call.
+@ It's part of the church's code to help people in destress. Maybe the reason i am here and not of that damn roof is because of this code so i'll check once. Thanks for the supplies.
+= The code says we help those in trouble. That code got me off the roof. Thanks for the supplies.
+
+# --- The fight with Martin
+@ What's the matter ? What's up with fight ?
+= What's going on here?
+@ Who are you to muddle in our business ?
+= Who asked you?
+@ Easy... I know this one...Looks like things are going a little too well for you Carlo, good enough that you have forgotten your own place.
+= Easy. I know this one. Things are going a little too well for you, Carlo. You've forgotten your place.
+@ But it's my lucky day i guess. I will remind you that, what happen to people like you when they cross the line.
+= Lucky me. Let me remind you what happens to people like you.
+
+# --- Darius, after the fight
+@ ......................
+= ...
+@ Well, well… look at you. The holy man with blood on his hands. I thought you church boys preached peace, not pound faces into the floor. But damn… the way you laid into Martin? Didn’t know an Evangelic could hit like that.
+= Well, well. The holy man with blood on his hands. I thought you church boys preached peace. Didn't know an Evangelic could hit like that.
+@ I didn’t want it to happen. I was trying to stop the fight… he pushed me. I had no choice, had to defend myself.
+= I was trying to stop the fight. He came at me. I had no choice.
+@ Defence? No, you found it. You’ve been waiting to smash him since quite some time, and when he came at you, you finally got your chance. Don’t lie to yourself — that wasn’t just the heat of the moment.
+= No choice? You've wanted to smash Martin for years. He gave you the excuse. Don't lie to yourself.
+@ Think whatever you want. It’s done.
+= Think what you want. It's done.
+@ Oh, it’s not done. See, I saw what you did… and if I saw it, others will talk. The church won’t look kindly on their golden boy breaking the code. Might just kick you back up to the roof… maybe drag your friend down with you. Be a shame after all that praying you do.
+= It's not done. I saw it, so others will talk. The church won't like its golden boy breaking the code. Back up to the roof you go. Maybe your friend with you.
+@ …What do you want?
+= What do you want?
+@ Nothing much just a small favour: ever heard of Gus Alvarez ? Used to run with us, now handles product outside. Sent a shipment in — got snatched by a small-time gang. I know where it is, but I need someone lend me a helpful hand
+= A small favor. Gus Alvarez used to run with us. Now he moves product outside. He sent a shipment in and a small-time gang snatched it. I know where it is. I need a hand.
+@ And if I say no?
+= And if I say no?
+@ Then I take a little walk to the church and share what I saw. And you? You’ll be back where you started, bleeding on that roof. Like the Americans say — it’s my way or the highway. Everyone’s got a choice, Carlo. Make yours. Midnight. By the pool
+= Then I take a walk to the church and tell them what I saw, and you're back on that roof. Your choice, Carlo. Midnight. By the pool.
+
+# --- Darius, the meeting point
+@ Glad you are good at making right choices. This place need more like you.
+= Good. You make the right choices. This place needs more men like you.
+@ One task, that’s all. And you’ll keep your word? Stay silent about what happened in the market?
+= One task. Then you keep quiet about the market.
+@ Sure, you have my word. Now come on, no time to waste — we gotta move.
+= You have my word. Now move.
+@ Move ? Where ?
+= Where?
+@ To the village, dumbass. Where else? If it was inside here, don’t you think I’d have grabbed it myself?
+= The village, genius. If it was inside, I'd have grabbed it myself.
+@ The village is outside these walls… how the f** are we supposed to get out?
+= The village is outside the walls. How the hell do we get out?
+@ These walls are nothing but the ELA’s desperate attempt to keep us penned in. But there are leaks.
+= These walls are the state's way of keeping us penned in. But walls leak.
+@ There are passages outside? Then why the hell are you guys still in here?
+= There's a way out? Then why are you still in here?
+@ Cause this is our base. We operate from here. Why would we leave? Plus, we’ve got allies outside these walls.
+= Because this is our base. Why would we leave? We've got friends outside, too.
+@ Telling all this to some nobody like me… doesn’t seem wise.
+= Telling all this to a nobody like me doesn't seem wise.
+@ The fact you said that guarantees it’s fine. And it ain’t exactly some big secret. How do you think we got all these supplies, restaurants, clubs… without outside contact? Enough chit-chat. Get moving.
+= That you'd say so tells me it's fine. Besides, how do you think we get restaurants and clubs in a prison? Enough talk. Move.
+
+# --- Warehouse
+@ Ok, we are here there shouldn't be anyone inside the warehouse. You will find the package inside somewhere. I will look outside for any trouble, you go inside and grab the stuff and come out.. easy..quick and simple.
+= This is it. The warehouse should be empty. The package is inside. I'll watch the door, you grab it. Quick and simple.
+@ How about you go inside and i watch for trouble?
+= How about you go in and I watch the door?
+@ Listen closely you f$%k ! You dont make the rules here, I do. Less argue and more work will be appreciated.
+= Listen, you little f$%k. I make the rules. Less talk, more work.
+@ Fine... Let me know if anyone try to enter
+= Fine. Warn me if anyone comes.
+@ Sure I got you...
+= I got you.
+@ Man !!! That was amazing, you were fire !!!
+= Man! That was amazing! You were on fire!
+@ The f$%k was that, i almost died there...you a$$%ole !!
+= What the f$%k was that? I almost died in there, you a$$hole!
+@ Easy boy. You are crossing some heavy line there...The result is the job is done and you did great. Come let go !
+= Easy, boy. Watch your mouth. The job's done and you did great. Let's go.
+@ No... I am not going it's enough... I'm leaving right here right now.
+= No. I'm done. I'm leaving, right here, right now.
+@ and here i thought you were good at making decisions...
+= And here I thought you made good decisions.
+@ Try to stop me if you can !!
+= Try and stop me.
+@ Why would i do that ?? Go ahead run... but where exactly will you go..?
+= Why would I? Go on, run. Where exactly will you go?
+@ Anywhere but not here...!!!
+= Anywhere but here!
+@ You murdered like a dozen men of the other gang...I don't think you will be even completing the night outside...
+= You just killed a dozen of their men. You won't last the night out there.
+@ ....
+= ...
+@ There is a curse in the prison. "**Desperation**" That’s blood in the water. I thought Silvio must have told you that. I can let you die here but that would be such a waste of potential.
+= Desperation is blood in the water. Didn't Silvio teach you that? I could let you die out here. What a waste that would be.
+@ Trust me Carlo after what you have done, your good days are about to start. Come to prison and you will see. As always you have a choice and you have been good at making the right one count.
+= After tonight, your good days start. Come back inside and see. You always have a choice, Carlo, and you always make the right one.
+@ Back we are...Again nice job Carlo... As a gift here...take this phone this will keep us in touch if you need any help let me know. See you soon.
+= Back home. Nice work, Carlo. Here, take this phone. We'll keep in touch. See you soon.
+
+# --- Phone call
+@ Bzz.... Bzz......
+= *Bzzz... bzzz...*
+@ Hey... Carlo, been a while... Hope you are doing great.
+= [Darius] Carlo. Been a while. Hope you're doing well.
+@ I was until now.
+= I was, until now.
+@ Well i have a something that will make you even better.
+= Then this will make it even better.
+@ Another favour ?
+= Another favor?
+@ Favour ?? Haha... no Carlo not a favour. A Task, there's a difference between the two. I'm thought you out of all people understand that well. Anyway meet me at the Basketball Court midnight and don't be late.
+= A favor? No, Carlo. A task. You of all people know the difference. Basketball court, midnight. Don't be late.
+@ Bastard...
+= Bastard.
+
+# --- Darius, basketball court
+@ I'm here... what is it Darius ?
+= I'm here. What is it, Darius?
+@ Glad you came...do you know **Jonathan**?
+= You know Jonathan?
+@ I guess, heared he left the prison a while ago. What about him ?
+= Heard he got out a while ago. What about him?
+@ Yes he did left prison and went straight for the jackpot. "The Gold mines of Brazil and Guyana". Though he still help in our cause, recently he sent a whole shipment of arms but we have suspision that ELA might have an eye for it. So we just have to make sure things so according to us. It's a lot easy than your last adventure.
+= He went straight for the jackpot: the gold mines of Brazil and Guyana. He still helps the cause. He just sent us a shipment of arms, and we think the ELN has eyes on it. We make sure it arrives. Easier than last time.
+@ Darius i really don't want to get into this mess. I did what you wanted and you said you would keep quiet about my act. We are squared.
+= I don't want this, Darius. I did what you asked. You keep quiet. We're square.
+@ Oh you are already in this deep. You had a chance to run away from this prision remember ? you chose this Carlo, now there is only way forward, take any step back and you might burn, do this task with me and i would show the heart of Tocoron.
+= You're already in deep. You had your chance to run, remember? You chose this. There's only forward now. Do this with me, and I'll show you the heart of Tocorón.
+@ Come on, Its time.
+= Come on. It's time.
+
+# --- Garage
+@ The shipment is still here. Now just need to make sure it reaches the passage safely, others will take care from there. Hop On Carlo !
+= The shipment's still here. We get it to the passage and others take it from there. Hop on, Carlo!
+@ This arms shipment will go a long way — strengthen our grip, expand our reach, and tighten control over the prison.
+= These guns will go a long way. A tighter grip on the prison, and a longer reach outside it.
+
+# --- Back from the chase
+@ Told you were a natural. As i promised tomorrow you might just have the best day since you came here. Tomorrow meet me at the night club
+= Told you you were a natural. Tomorrow might be the best day you've had in here. Meet me at the club.
+@ Night Club ? Only so called higher ups are allowed there. I'm not one of them.
+= The club? Only the higher-ups get in there.
+@ Well... you are now and yea dress well.
+= You're one now. And dress well.
+
+# --- Nightclub
+@ There you are... Rosita this is the guy i was telling you about.
+= There you are. Rosita, this is the guy I told you about.
+@ I am very surprised there is someone who could tolerate Darius.
+= Someone who can stand Darius? I'm impressed.
+@ I'm managing
+= I'm managing.
+@ Haha.. quick with words. I hope you are that quick with your feets aswell.
+= Quick with words. Let's see if you're quick on your feet.
+@ What do you mean ??
+= Meaning?
+@ You are in Tokio night club damn it. It's time to Dance !
+= You're in Tokio, honey. Dance!
+
+# --- Roxana
+@ Well, well… who’s this? Haven’t seen you in here before.
+= Well, who's this? Haven't seen you in here before.
+@ Not my scene. Darius dragged me in, I’ll be out before long.
+= Not my scene. Darius dragged me in. I won't stay long.
+@ Mmm… most men trip over themselves just to earn a glance from me. You, though… you carry yourself like you’re already two steps ahead.
+= Most men trip over themselves for a glance from me. You act like you're already two steps ahead.
+@ I’m not here to chase attention. I’ve learned it usually comes with a price.
+= Attention comes with a price. I've learned that.
+@ Smart boy. Still… you walk into Tokio, you’re already playing the game, whether you know it or not. This place doesn’t forgive the clueless.
+= Smart boy. But walk into Tokio and you're already playing the game. This place doesn't forgive the clueless.
+@ Never thought a prison could have a place like this.
+= I never thought a prison could have a place like this.
+@ Tokio isn’t a place, Carlo. It’s a mirage. Out there, beyond those walls, it’s hell — sweat, blood, fear. But in here? You drink, you dance, you forget you’re a prisoner… if you’ve got the right hands behind you.
+= Tokio isn't a place, Carlo. It's a mirage. You drink, you dance, you forget you're a prisoner. If the right people have your back.
+@ And you? You live here like it’s a party. Don’t you ever think about… leaving?
+= And you? Don't you ever think about leaving?
+@ Leaving? I already did — left my husband, my daughter, my old life. For Power. Respect. For the first time, people looked at me and didn’t see just another housewife. They saw someone untouchable.
+= I already left. My husband, my daughter, my old life. For power. For the first time, people didn't see a housewife. They saw someone untouchable.
+@ In here, I bathed in money, liquor, chocolate. Massages in the morning, champagne at night. They treated me like a queen — as long as I remembered whose crown I wore.
+= Money, liquor, massages in the morning, champagne at night. A queen, as long as I remember whose crown I wear.
+@ Sounds… beautiful. And terrible.
+= Sounds beautiful. And terrible.
+@ That’s Tocorón, cariño. It’s both. There’s order here, more than out there in the streets. But that order? It’s written in blood. Respect is borrowed, not given. One mistake, one wrong look, and all that ‘paradise’ turns to ashes. I’ve seen it. Lived it. Still… for some of us, this life feels better than being invisible.
+= That's Tocorón, cariño. It's both. There's more order here than on the streets, but it's written in blood. One wrong look and paradise turns to ash. Still, it beats being invisible.
+@ Is it worth it? All the danger… just to feel seen?
+= Is it worth it? Just to be seen?
+@ Ask yourself this, Carlo — would you rather be a ghost nobody remembers, or a name they whisper long after you’re gone? That’s the choice this place gives you. Me? I already chose.
+= Would you rather be a ghost nobody remembers, or a name they whisper long after you're gone? I already chose.
+@ Speak of kings and crowns. Hector’s back.
+= Speaking of crowns. Hector's back.
+
+# --- Hector, first meeting
+@ You’re new. And yet… people are talking. That’s rare up here. Name?
+= You're new, and people are already talking. That's rare. Name?
+@ Carlo. I didn’t think my name was worth whispers.
+= Carlo. I didn't know my name was worth whispers.
+@ Names are currency. Earn enough of them, and they buy you life… or death. Depends how you spend it.
+= Names are currency in here. They buy you life or death, depending how you spend them.
+@ Guess I’ll have to spend wisely, then.
+= Then I'll spend wisely.
+@ Wise men don’t bleed for others. I heard about what you did on the roof. That kind of loyalty… dangerous trait in this place.
+= Wise men don't bleed for others. I heard about the roof. Loyalty like that is dangerous in here.
+@ Maybe it seems reckless, but I owed him that much.
+= I owed him that much.
+@ Around here, debt’ll eat you alive if you don’t mind who you owe. But for now its fine, i have a little job for you by the way...meet me after the party let see what you got.
+= Debt eats you alive if you don't watch who you owe. Anyway, I have a little job for you. Find me after the party.
+@ Actually i can't continue this. i have a oath toward the church, the code and can't continue this.
+= I can't. I swore an oath to the church. To the code.
+@ In less a month you are only a few kills short to me and you say you are a man of god ? Don't play me Carlo, that church life you had it ended the day you went to bring Gus's supplies back.
+= Not a month with Darius and you've got more blood on you than half my men, and you call yourself a man of God? Your church life ended the night you went for Gus's shipment.
+@ I know Darius he must have gave you a choice and still here you are so don't act innocent as you are not. It will be good if you remove that falses mask of your or someone else will "the hard way".
+= Darius gave you a choice, and here you are. So drop the mask, Carlo. Or someone will take it off the hard way.
+
+# --- Hector's call and office
+@ Carlo...It's me Hector. I want you to meet me at my place.
+= [Hector] Carlo. It's Hector. Come to my place.
+@ Carlo. You’ve been busy these past months. Done well, too.
+= Carlo. You've been busy these past months. And you've done well.
+@ I just do what’s asked, Niño. Nothing more.
+= I do what's asked, Niño. Nothing more.
+@ And that’s why you’re still breathing. Most boys with your fire burn out quick.But tonight, I need more than errands. We’ve got a rat inside.
+= That's why you're still breathing. Tonight I need more than errands. We've got a rat.
+@ A mole? Someone talking to the guards?
+= Someone talking to the guards?
+@ Worse. Feeding scraps to our enemies outside. Word travels fast in this place — too fast. Someone’s selling us.
+= Worse. Feeding our enemies outside. Someone's selling us.
+@ You know who it is?
+= You know who?
+@ Unfortunately no, but some of our men found his daily route. You need to find him and silence him for good.
+= No. But my men found his route. Find him. Silence him for good.
+@ You trust me with this?
+= You trust me with this?
+@ Trust? No. But I know you don’t waste words, and you don’t fail. You’ve proven that. Besides, you’re not some roof rat anymore. Time you see what loyalty really costs.
+= Trust? No. But you don't fail. You're not a roof rat anymore. Time you learn what loyalty really costs.
+@ I'll see to it then.
+= Consider it done.
+
+# --- Silvio's end
+@ Hey, who is there...
+= Hey! Who's there?
+@ …Carlo? You?
+= Carlo? You?
+@ Silvio?! God—no…I didn’t know… I swear I didn’t know it was you. They said there was a mole— why didn’t you tell me?
+= Silvio?! No... I didn't know it was you, I swear. They said there was a mole. Why didn't you tell me?
+@ What else was I supposed to do? I just wanted out… to be better, like you. I tried, kid… but life doesn’t always let you win.
+= I just wanted out. To be better, like you. I tried, kid. Life doesn't always let you win.
+@ I… I was supposed to save you. Get you off this damn place.
+= I was supposed to save you. Get you out of this place.
+@ And you did, Carlo. One way or another… I’m free now.
+= You did, Carlo. One way or another, I'm free now.
+@ Don’t let this place turn you hollow. You still got a heart… don’t lose it like I did.
+= Don't let this place hollow you out. You still have a heart. Don't lose it like I did.
+@ No no... What have i done... I’m sorry… I’m so damn sorry.
+= [Carlo] No... no. What have I done? Silvio, I'm sorry. I'm so damn sorry.
+@ Live, kid… make it mean somethin
+= [Silvio] Live, kid. Make it mean something.
+
+# =====================================================================
+# ACT 3 - the thug
+# =====================================================================
+
+# --- Emilio
+@ “Emilio Vargas. Hope you remember me—it’s been a long time. I pulled your crew out of a real mess back when TDA was ready to gut you. You owe me. Time to pay that debt.
+= Emilio Vargas. It's been a long time.
+@ Ofcourse, Carlo. What bring you here today.
+= Carlo. What brings you to my corner?
+@ Nothing much, i remeber you said the last time you own me... Well, time to pay that debt.
+= When TDA was ready to gut your crew, I pulled you out. You said you owed me. I'm collecting.
+@ What kind of score are we talking here ?
+= What kind of score?
+@ A big one! you see there are some necessary changes that are required in tocoron, I'm just trying those to be implemented that all.
+= A big one. Tocorón needs a change at the top.
+@ Like what exactly ?
+= Meaning what?
+@ Hector
+= Hector.
+@ I own you a dept doesn’t mean I’m stupid. What you’re asking? Taking a swing at Nino? That’s not a favor, Carlo. That’s suicide with extra steps.
+= I owe you, I'm not stupid. A swing at Niño isn't a favor, Carlo. It's suicide with extra steps.
+@ Then die sitting down. But don’t pretend you don’t dream of seeing him bleed. Everyone does. The difference is, I’m not afraid to do something about it.
+= Then die sitting down. Everyone dreams of seeing him bleed. I'm the one doing something about it.
+@ You talk bold for a man who’s only breathing ’cause you’ve been lucky. You’re fast, sure. Cunning. But that luck? It runs out. Always does.
+= Bold talk for a man who's only breathing because he's lucky. Luck runs out.
+@ Luck? No, Emilio. While you’ve been hiding, I’ve been sharpening my blades. You owe me and I don’t ask twice.
+= It isn't luck. While you hid, I learned. You owe me, and I don't ask twice.
+@ And what if I say no?
+= And if I say no?
+@ Then we settle it right here. No more whispers, no more talk. I'm less in the mood of bloodshed today so how about a little game, your rules, my stakes. If I win, you'll do as i say. If you win… you’re dept is paid.
+= Then we settle it here. No blood today. A game: your rules, my stakes. I win, you're with me. You win, your debt is paid.
+@ Alright, Carlo let see how fast you really are... Let’s play...
+= Alright, Carlo. Let's see how fast you really are.
+@ There you go, i hope you are satisfied.
+= There. Satisfied?
+@ Fair and square, guess i have no choice. I'll help you.
+= Fair and square. I'm in.
+@ Good choice Emilio. You are a part of a major change.
+= Good. You're part of something big now, Emilio.
+
+# --- Salazar
+@ Well, well… look who crawled out of Nino’s pocket. The loyal lapdog. You got balls showing your face here.
+= Look who crawled out of Niño's pocket. The loyal lapdog. You've got balls showing your face here.
+@ I’m no man’s lapdog. I came to talk about something that might interest you…
+= I'm no man's lapdog. I came with something you'll want to hear.
+@ Hah! Spare me the speeches. You’ve been kissing Nino’s ring for years while he painted this place in blood — including your own friend’s. Everyone knows what happened to Silvio. And you still worked for the bastard. You sold your soul to that prick long ago.
+= Spare me. You've kissed Niño's ring for years while he painted this place in blood. Your own friend's too. Everyone knows about Silvio. And you kept working for him.
+@ I don’t forget, Salazar. Silvio’s ghost walks with me. Every step with Nino was a lesson — how he lives, where he breathes. I believe it is high time that things change around here.
+= I haven't forgotten Silvio. Not for a day. Every year beside Niño, I learned how he lives and where he sleeps.
+@ What the f$%k are you proposing? Talk simple.
+= What the f$%k are you proposing? Talk simple.
+@ Simple. I want Hector dead. You’ve got history with him, same as me. I know you hate him. We work together — we both get what we want.
+= Simple. I want Hector dead. You hate him as much as I do. We work together, we both get what we want.
+@ Bloody hell… Hah! After all these years kissing his boots, now you decide to grow a spine? You clueless bastard, you have any idea how big he’s gotten? TDA owns this place — the drugs, the guns, the guards — all of it.
+= Now you grow a spine? Do you know how big he's gotten? TDA owns this place. The drugs, the guns, the guards. All of it.
+@ And you? You’re one of the bastards who helped him build that throne. Now you show up talking redemption? Wanna play the saint? Do us all a favor and crawl back to that precious little church club of yours...
+= And you helped him build that throne. Now you want to play the saint? Crawl back to your little church.
+@ Good barking you did there, but I didn’t come here for redemption, Rafael. Revenge will be my salvation. I’ve spent years learning how Nino moves, who he trusts. You think I helped him grow? Maybe. But that just means I know exactly where to cut when it’s time to watch him fall. I’m not here to beg for help — I’m offering you a seat at the table when it happens.
+= I'm not here for redemption, Rafael. Revenge will be my salvation. I helped him grow, so I know exactly where to cut. I'm not begging. I'm offering you a seat when he falls.
+@ You expect me to trust you? How do I know you’re not feeding him my name by sunrise?
+= And how do I know you won't give him my name by sunrise?
+@ Because if I wanted you dead, you’d already be bleeding, and you know that. On top of that, I guess I’m the only one who actually knows where Nino’s real hideout is. I can tell you where that is… how’s that?
+= If I wanted you dead, you'd already be bleeding. And I'm the only one who knows where Niño really hides.
+@ Sweet info, that sounds. But how about I just beat you to a pulp and take that info anyway… how’s that?
+= Sweet. What if I beat it out of you instead?
+@ No wonder why you’re in this sh*tty shack — you got a brain the size of a walnut. If you attack Nino by yourself, he’ll sniff you a mile away, and you’ll be eating dirt long before you know it.
+= No wonder you're stuck in this shack. Go at Niño alone and he'll smell you a mile off. You'll be eating dirt before you know it.
+@ An inside job, huh? I’ll admit, that’s music to my ears.. I’ve started to see why that silver tongue of yours got a reputation, but I’ve never seen you pull a trigger. All talk and no show…
+= An inside job. Music to my ears. But I've only ever heard that silver tongue. Never seen you pull a trigger.
+@ I thought you, of all people, knew who I am. You still need proof about me?
+= You still need proof?
+@ I know about your cunning and that little fox head of yours, but never actually saw how you hold yourself with a real gun. I hope you don’t think of using me just to pull the trigger so you can play king afterwards.
+= I won't be the one pulling the trigger so you can play king afterwards.
+@ I don’t care about thrones or crowns, Rafael. My target’s Hector Niño Guerrero — nothing more. As for my trigger hand, it’s no shock you haven’t heard stories… dead men tell no tales. I don’t reach for the gun often, but when I do, I’m always the one pulling first.
+= I don't want a crown, Rafael. I want Hector Niño Guerrero. And you haven't heard stories about my trigger hand because dead men don't tell them.
+@ Alright, Rodríguez. It’s time you talk less and shoot more. There’s an old bottle stand by the fence. Five shots. You miss one, you walk out of here alive, but alone.
+= Then talk less and shoot more, Rodríguez. Bottles by the fence. Five shots. Miss one, and you walk out alone.
+@ Line them up !
+= Line them up.
+@ You really are something Carlo...
+= You really are something, Carlo.
+@ I hope there won't be any bad feeling between us anymore, atleast until we deal with Hector.
+= No bad blood between us. Not until Hector is dealt with.
+@ Yes, I will help you getting rid of him. You have my words.
+= You have my word. We bury him together.
+
+# --- Final shack and the raid
+@ Everyone is here !!!
+= Everyone's here.
+@ Yes it is time we end Hector's reign.
+= Then it's time. We end Hector tonight.
+@ Rally up men !
+= Rally up, men!
+@ Carlo !!!... It's time you show your face... COME ON OUT !!
+= CARLO! I know you're in there! COME ON OUT!
+@ teri mkc
+= You really thought Hector wouldn't hear about your little meeting? Light it up!
+@ HU
+= Guardia Nacional! Everybody on the ground!
+@ poilcei
+= *Sirens tear across the prison.*
+
+# --- Carlos shot
+@ Arg...
+= Agh...
+@ This is it Carlo. This is the end of the line for you.
+= This is the end of the line, Carlo.
+@ I won't go down without a fight, Darius. You... you know that better than anyone.
+= Then you know I won't go down without a fight.
+
+# =====================================================================
+# OBJECTIVES
+# =====================================================================
+@ Objective: Talk To Other Renegades. 'E' to interact
+= Objective: Talk to the other Renegades. (E to interact)
+@ Objective: Talk to Silvio on Roof
+= Objective: Talk to Silvio on the roof.
+@ Objective: Talk to Evangelic
+= Objective: Talk to the Evangelic.
+@ Objective: Talk to the Evangelic
+= Objective: Talk to the Evangelic.
+@ Objective: Explore the source of the noise
+= Objective: Find the source of the noise.
+@ Objective: Save Silvio
+= Objective: Save Silvio.
+@ Objective: Check on Silvio
+= Objective: Check on Silvio.
+@ Objective: Follow Silvio
+= Objective: Follow Silvio.
+@ Objective: Go to the church
+= Objective: Go to the church.
+@ Object: Go to the market.
+= Objective: Go to the market.
+@ Objective: Go to Church
+= Objective: Go to the church.
+@ Objective: Go to church.
+= Objective: Go to the church.
+@ Objective: Kill the traitor. E to kill
+= Objective: Kill the traitor. (E)
+@ Objective: Leave the club
+= Objective: Leave the club.
+@ Objective: Talk to Darius
+= Objective: Talk to Darius.
+@ Objective: Talk to Hector
+= Objective: Talk to Hector.
+@ Objective: Plan the overthrow
+= Objective: Plan the overthrow.
+@ Objective: Run to the central Basket Ball court
+= Objective: Run to the central basketball court.
+@ Objective: Talk to Emilio
+= Objective: Talk to Emilio.
+@ Go Talk to rival Gang members
+= Objective: Talk to the rival gang members.
+@ Plan The OverThrow
+= Objective: Plan the overthrow.
+@ Run the Police is here
+= Objective: Run! The Guardia is here.
+@ Run to the central Basket Ball court
+= Objective: Run to the central basketball court.
