@@ -16,6 +16,10 @@ public class ShuffleManager_A : MonoBehaviour
     public static bool gamefinishedCUP = false;
     void Start()
     {
+        // These are static, so they outlive the scene: a finished game (or one quit half-way) would
+        // otherwise leave the cups unclickable the next time this minigame loads.
+        shufflefinished = false;
+        gamefinishedCUP = false;
         
 
     }
