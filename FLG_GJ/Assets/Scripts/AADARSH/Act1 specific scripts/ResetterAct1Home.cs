@@ -11,6 +11,7 @@ public class ResetterAct1Home : MonoBehaviour {
     private string persistentObjectTag = "GameController";
 
     private void OnTriggerEnter2D(Collider2D collision) {
+        if (!PressToEnterA.Allows(this, collision)) return; // building entrance: needs E (see PressToEnterA)
         if (collision.CompareTag("Player")) {
             ResetGame();
         }

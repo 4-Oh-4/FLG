@@ -4,6 +4,7 @@ public class ClubEntryColliderA : MonoBehaviour
 {
     [SerializeField] private int i = 20;
     private void OnTriggerEnter2D(Collider2D collision) {
+        if (!PressToEnterA.Allows(this, collision)) return; // building entrance: needs E (see PressToEnterA)
         if (collision.CompareTag("Player")) {
             if (i == 1) {
                 StoryManagertAct1A.Instance.SetFlag("ClubEntryAgain", true);

@@ -7,6 +7,7 @@ public class InteractWithDialogueA : MonoBehaviour {
 
     void Update() {
         if (PauseMenuManager.IsPaused) return; // ignore gameplay input while paused
+        if (PressToEnterA.PromptVisible) return; // standing in a doorway: E enters the building
         if (Input.GetKeyDown(KeyCode.E)) {
             TryInteract();
         }

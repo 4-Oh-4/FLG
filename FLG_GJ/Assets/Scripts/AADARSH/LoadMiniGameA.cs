@@ -7,6 +7,7 @@ public class LoadMiniGameA : MonoBehaviour
     [SerializeField] GameObject gameManager;
     [SerializeField] ShowingStoryUpdates1 blackScreen;
     private void OnTriggerEnter2D(Collider2D collision) {
+        if (!PressToEnterA.Allows(this, collision)) return; // building entrance: needs E (see PressToEnterA)
         if (collision.CompareTag("Player")&&once==0) {
             once = 1;
             blackScreen.ShowUpdate("sd");

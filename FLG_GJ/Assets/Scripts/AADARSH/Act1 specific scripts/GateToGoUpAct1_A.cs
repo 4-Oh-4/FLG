@@ -22,8 +22,14 @@ public class GateToGoUpAct1_A : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.name == "Player") {
-            FindAnyObjectByType<GameManagerAct1A>().TeleportPlayerToRoof();
+            if (!PressToEnterA.Allows(this, collision.collider)) return; // building entrance: needs E (see PressToEnterA)
+            GoUp();
         }
+    }
+
+    // Take the player up to the roof (also used by PressToEnterA when E is pressed at the gate).
+    public void GoUp() {
+        FindAnyObjectByType<GameManagerAct1A>().TeleportPlayerToRoof();
     }
 
 }

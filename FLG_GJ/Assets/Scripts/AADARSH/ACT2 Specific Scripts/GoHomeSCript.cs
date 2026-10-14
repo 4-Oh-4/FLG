@@ -5,6 +5,7 @@ public class GoHomeSCript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField]private int once = 2;
     private void OnTriggerEnter2D(Collider2D collision) {
+        if (!PressToEnterA.Allows(this, collision)) return; // building entrance: needs E (see PressToEnterA)
         if (collision.CompareTag("Player")) {
             if (once == 90) {
                 FindAnyObjectByType<LoadUnloadMiniGamesPlayerA>().LoadMiniGame("Carlos_house3");

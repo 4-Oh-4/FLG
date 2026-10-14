@@ -320,7 +320,7 @@ public class StoryCheckpointA : MonoBehaviour {
             if (TracksPosition(go) && (go.transform.position - p.position).sqrMagnitude > 0.0001f) {
                 state.hasPosition = true; state.position = go.transform.position; changed = true;
             }
-            Component[] comps = go.GetComponents<Component>();
+            Component[] comps = SavedComponents(go);
             if (comps.Length == p.componentCount) {
                 for (int i = 0; i < comps.Length; i++) {
                     var cs = new ComponentState { index = i };
@@ -403,7 +403,7 @@ public class StoryCheckpointA : MonoBehaviour {
                 Rigidbody2D rb = go.GetComponent<Rigidbody2D>();
                 if (rb != null) rb.position = o.position;
             }
-            Component[] comps = go.GetComponents<Component>();
+            Component[] comps = SavedComponents(go);
             foreach (ComponentState c in o.components) {
                 if (c.index < 0 || c.index >= comps.Length) continue;
                 WriteComponent(comps[c.index], c);
@@ -483,7 +483,7 @@ public class StoryCheckpointA : MonoBehaviour {
 
     private void AddRecursive(Transform t) {
         GameObject go = t.gameObject;
-        Component[] comps = go.GetComponents<Component>();
+        Component[] comps = SavedComponents(go);
         var p = new ObjectPristine {
             active = go.activeSelf,
             position = t.position,
@@ -500,6 +500,19 @@ public class StoryCheckpointA : MonoBehaviour {
         objects.Add(go);
         pristine.Add(p);
         for (int i = 0; i < t.childCount; i++) AddRecursive(t.GetChild(i));
+    }
+
+    // Components in a stable order for saving. PressToEnterA is added to doors at runtime, so it is
+    // left out to keep component indexes identical whether or not it has been attached yet.
+    private static Component[] SavedComponents(GameObject go) {
+        Component[] all = go.GetComponents<Component>();
+        int keep = 0;
+        foreach (Component c in all) if (!(c is PressToEnterA)) keep++;
+        if (keep == all.Length) return all;
+        var result = new Component[keep];
+        int i = 0;
+        foreach (Component c in all) if (!(c is PressToEnterA)) result[i++] = c;
+        return result;
     }
 
     // Only things that walk around get their position saved (the player is saved separately).
