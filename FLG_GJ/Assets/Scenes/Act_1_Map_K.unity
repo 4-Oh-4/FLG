@@ -233580,7 +233580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conditionalDialogues:
-  - requiredFlag: GetBeaten
+  - requiredFlag: IsDown
     dialogues:
     - name: Carlo
       sentences:
@@ -233631,7 +233631,7 @@ MonoBehaviour:
         catch up with you at night.
 
 '
-    flagToSetOnComplete: EvTalkMovement
+    flagToSetOnComplete: GetBeaten
   defaultDialogues: []
   defaultFlagToSet: 
   isNarator: 0

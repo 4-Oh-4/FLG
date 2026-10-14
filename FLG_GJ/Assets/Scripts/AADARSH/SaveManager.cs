@@ -49,6 +49,12 @@ public class SaveManager : MonoBehaviour {
     /// <param name="checkpointId">A human-readable name for this checkpoint (e.g., "After collecting trash").</param>
     /// <param name="actNumber">The current act number (1, 2, or 3).</param>
     public void SaveCheckpoint(string checkpointId, int actNumber = 1) {
+        // Prevent saving if the main player is disabled during an additive minigame load
+        if (LoadUnloadMiniGamesPlayerA.IsMinigameActive) {
+            Debug.LogWarning($"[SaveManager] Blocked save '{checkpointId}' because a minigame is currently active. Main player coordinates are invalid.");
+            return;
+        }
+
         SaveData data = new SaveData();
 
         // 1. Save all story flags

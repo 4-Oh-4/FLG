@@ -13,6 +13,13 @@ public class LoadUnloadMiniGamesPlayerA : MonoBehaviour {
     [SerializeField] GameObject mainGameEvent;
     bool state;
     private int quest = 1;
+
+    /// <summary>
+    /// Tracks if a minigame is currently additively loaded.
+    /// Used by SaveManager to block saving while the main player is disabled.
+    /// </summary>
+    public static bool IsMinigameActive { get; private set; }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void LoadMiniGame(string miniGameName) {
         //Time.timeScale = 0f;
@@ -21,29 +28,8 @@ public class LoadUnloadMiniGamesPlayerA : MonoBehaviour {
             return;
         }
         StartCoroutine(LoadMiniGameRoutine(miniGameName));
-        //if (mainGameEvent!=null)
-        //mainGameEvent.SetActive(false);
-        //if (light != null) {
-        //    state = light.activeInHierarchy;
-        //    light.SetActive(false);
-        //}
-        //Scene miniScene = SceneManager.GetSceneByName(miniGameName);
-        //maincamera.gameObject.SetActive(false);
-        //player.SetActive(false);
-        //SceneManager.LoadScene(miniGameName,LoadSceneMode.Additive);
-        //if (quesupdate == null) {
-        //    if (questupdater == null) {
-        //        quesupdater3.disablePointerb();
-        //        quest = 3;
-        //    } else {
-        //        questupdater.disablePointer();
-        //        quest = 1;
-        //    }
-        //} else {
-        //    quesupdate.disablePointerb();
-        //    quest = 2;
-        //}
     }
+
     private IEnumerator LoadMiniGameRoutine(string miniGameName) {
         // 1. Disable main scene objects first. This happens instantly.
         if (mainGameEvent != null)
@@ -54,6 +40,8 @@ public class LoadUnloadMiniGamesPlayerA : MonoBehaviour {
         }
         maincamera.gameObject.SetActive(false);
         player.SetActive(false);
+        
+        IsMinigameActive = true;
 
         // 2. Begin loading the minigame scene in the background.
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(miniGameName, LoadSceneMode.Additive);
@@ -77,11 +65,11 @@ public class LoadUnloadMiniGamesPlayerA : MonoBehaviour {
         }
     }
     public void UnloadMiniGame(string name="DrugTheft") {
+        
+        IsMinigameActive = false;
 
         Time.timeScale = 1f;
         if (light != null) {
-
-
             light.SetActive(state);
         }
         if (quest == 1) questupdater.EnablePointer();
