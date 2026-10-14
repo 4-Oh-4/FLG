@@ -74,6 +74,26 @@ public class NPC_A : MonoBehaviour {
         PlayDialogueSequence(defaultDialogues, defaultFlagToSet);
     }
 
+    /// <summary>
+    /// True if TriggerDialouge() would do something right now (play lines or set a flag).
+    /// Mirrors the selection logic in TriggerDialouge() without changing it.
+    /// </summary>
+    public bool HasInteraction() {
+        if (StoryManagertAct1A.Instance == null) return false;
+        for (int i = conditionalDialogues.Count - 1; i >= 0; i--) {
+            var condition = conditionalDialogues[i];
+            if (!string.IsNullOrEmpty(condition.requiredFlag) && StoryManagertAct1A.Instance.GetFlag(condition.requiredFlag)) {
+                return (condition.dialogues != null && condition.dialogues.Length > 0) || !string.IsNullOrEmpty(condition.flagToSetOnComplete);
+            }
+        }
+        return (defaultDialogues != null && defaultDialogues.Length > 0) || !string.IsNullOrEmpty(defaultFlagToSet);
+    }
+
+    /// <summary>True while this NPC's dialogue box is open.</summary>
+    public bool IsDialogueOpen() {
+        return dialogueManager != null && dialogueManager.IsOpen;
+    }
+
     // Helper function to reduce code duplication
     private void PlayDialogueSequence(DialougeA[] dialoguesToPlay, string flagToSet) {
         Action onCompleteAction = () => {

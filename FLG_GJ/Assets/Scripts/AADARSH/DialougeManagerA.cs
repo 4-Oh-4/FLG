@@ -28,6 +28,9 @@ public class DialougeManagerA : MonoBehaviour {
     private string currentSentence = "";
     private Coroutine typingCoroutine;
 
+    // True while the dialogue box is open.
+    public bool IsOpen => animator != null && animator.isActiveAndEnabled && animator.GetBool("isOpen");
+
     void Start() {
         sentences = new Queue<string>();
     }
