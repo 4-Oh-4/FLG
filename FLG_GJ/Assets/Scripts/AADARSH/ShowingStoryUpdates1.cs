@@ -43,6 +43,7 @@ public class ShowingStoryUpdates1 : MonoBehaviour {
 
         // Start the new coroutine and store a reference to it.
         displayCoroutine = StartCoroutine(ShowAndWaitRoutine(message));
+        TimeSkipCardA.OnBlackScreen(storyUpdatePanel); // caption + fade drawn over the panel (see TimeSkipCardA)
     }
 
     /// <summary>
