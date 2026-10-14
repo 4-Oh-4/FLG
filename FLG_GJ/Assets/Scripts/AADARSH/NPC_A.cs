@@ -45,6 +45,8 @@ public class NPC_A : MonoBehaviour {
 
     public void TriggerDialouge() {
         if (StoryCheckpointA.IsRestoring) return; // replaying a save: dialogue already happened (its flags are replayed)
+        // An NPC that has never been active (Act 3's police group) hasn't run Start() yet: find the manager now.
+        if (dialogueManager == null) dialogueManager = FindAnyObjectByType<DialougeManagerA>();
         if (dialogueManager == null) {
             Debug.LogError("Dialogue Manager not found!");
             return;
