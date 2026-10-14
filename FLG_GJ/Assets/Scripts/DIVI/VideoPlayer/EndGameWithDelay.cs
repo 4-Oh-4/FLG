@@ -22,6 +22,12 @@ public class EndGameWithDelay : MonoBehaviour
     {
         // Wait for the specified number of seconds
         yield return new WaitForSeconds(delayInSeconds);
+        // Back to the title screen if it exists, otherwise quit as before.
+        if (Application.CanStreamedLevelBeLoaded(nextSceneName))
+        {
+            SceneManager.LoadScene(nextSceneName);
+            yield break;
+        }
         Application.Quit();
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;

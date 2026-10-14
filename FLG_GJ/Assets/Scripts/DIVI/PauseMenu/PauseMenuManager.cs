@@ -37,6 +37,7 @@ public class PauseMenuManager : MonoBehaviour
     public static bool IsPaused { get; private set; }
 
     private bool isPaused = false;
+    private bool settingsOpenedFromMenu = false;
     private AudioSource audioSource;
     private float timeScaleBeforePause = 1f;
     private bool cursorVisibleBeforePause;
@@ -90,7 +91,11 @@ public class PauseMenuManager : MonoBehaviour
         // Listen for the Escape key to toggle the pause menu.
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused)
+            if (settingsOpenedFromMenu)
+            {
+                CloseSettings();
+            }
+            else if (isPaused)
             {
                 ResumeGame();
             }
@@ -168,7 +173,23 @@ public class PauseMenuManager : MonoBehaviour
     public void CloseSettings()
     {
         settingsPanel.SetActive(false);
+        if (settingsOpenedFromMenu)
+        {
+            // Opened from the main menu: there is no pause panel to go back to.
+            settingsOpenedFromMenu = false;
+            if (backdrop != null) backdrop.SetActive(false);
+            return;
+        }
         pauseMenuPanel.SetActive(true);
+    }
+
+    /// <summary>Shows the settings panel on its own (used by the main menu, where the game is not paused).</summary>
+    public void OpenSettingsFromMenu()
+    {
+        if (isPaused) return;
+        settingsOpenedFromMenu = true;
+        if (backdrop != null) backdrop.SetActive(true);
+        settingsPanel.SetActive(true);
     }
 
     public void QuitToMainMenu()
