@@ -38,6 +38,7 @@ public class MainMenuManagerA : MonoBehaviour {
 
     public void ContinueGame() {
         if (!ChapterSaveA.HasSave) return;
+        ContinueRecapA.Request(ChapterSaveA.SavedChapterLabel); // "where you left off" banner once the chapter is back
         // Mid-chapter checkpoint if there is one for this chapter, otherwise the start of the chapter.
         if (StoryCheckpointA.TryContinue()) return;
         SceneManager.LoadScene(ChapterSaveA.SavedScene);
