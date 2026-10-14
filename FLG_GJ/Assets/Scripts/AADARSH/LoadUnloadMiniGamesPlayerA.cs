@@ -13,6 +13,7 @@ public class LoadUnloadMiniGamesPlayerA : MonoBehaviour {
     [SerializeField] GameObject mainGameEvent;
     bool state;
     private int quest = 1;
+    private string loadedMiniGameScene; // so the light can wait for this scene to finish unloading
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void LoadMiniGame(string miniGameName) {
         if (StoryCheckpointA.IsRestoring) return; // replaying a save: the minigame was already played
@@ -57,6 +58,7 @@ public class LoadUnloadMiniGamesPlayerA : MonoBehaviour {
         player.SetActive(false);
 
         // 2. Begin loading the minigame scene in the background.
+        loadedMiniGameScene = miniGameName;
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(miniGameName, LoadSceneMode.Additive);
 
         // 3. Wait here until the scene is fully loaded. This prevents any further code
@@ -81,8 +83,9 @@ public class LoadUnloadMiniGamesPlayerA : MonoBehaviour {
 
         Time.timeScale = 1f;
         if (light != null) {
-
-
+            // The minigame scene is still unloading; switch off its global light first so URP
+            // never sees two global lights at once ("More than one global light" error).
+            DisableGlobalLightsIn(loadedMiniGameScene);
             light.SetActive(state);
         }
         if (quest == 1) questupdater.EnablePointer();
@@ -97,6 +100,17 @@ public class LoadUnloadMiniGamesPlayerA : MonoBehaviour {
         if (mainGameEvent != null)
             mainGameEvent.SetActive(true);
     }
+    private static void DisableGlobalLightsIn(string sceneName) {
+        if (string.IsNullOrEmpty(sceneName)) return;
+        Scene scene = SceneManager.GetSceneByName(sceneName);
+        if (!scene.IsValid() || !scene.isLoaded) return;
+        foreach (GameObject root in scene.GetRootGameObjects()) {
+            foreach (var l in root.GetComponentsInChildren<UnityEngine.Rendering.Universal.Light2D>()) {
+                if (l.lightType == UnityEngine.Rendering.Universal.Light2D.LightType.Global) l.enabled = false;
+            }
+        }
+    }
+
     public void ReloadMiniGame(string miniGameName) {
         StartCoroutine(ReloadMiniGameRoutine(miniGameName));
     }
