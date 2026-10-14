@@ -9,7 +9,9 @@ public class GameManager_Drug : MonoBehaviour
 
     void Awake()
     {
-        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
+        // A freshly loaded attempt replaces the manager from the previous attempt: that one survived
+        // the reload (DontDestroyOnLoad) but still has the old HasPackage and the old scene's canvas.
+        if (Instance != null && Instance != this) Destroy(Instance.gameObject);
         Instance = this;
         DontDestroyOnLoad(gameObject);
         Time.timeScale = 1f;
@@ -19,7 +21,7 @@ public class GameManager_Drug : MonoBehaviour
     public void OnPackageCollected()
     {
         HasPackage = true;
-        Debug.Log("Package collected – get to extraction!");
+        Debug.Log("Package collected ï¿½ get to extraction!");
     }
 
     public void OnPlayerCaught()
