@@ -12,7 +12,7 @@ public class ProjectileA : MonoBehaviour {
         if (collision.gameObject.CompareTag("Player")) {
             // Example damage function (you must add this to your player script)
             Debug.Log("Player hit by projectile!");
-            // collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
+            BossPlayerHealthA.Hit(collision.gameObject, damage); // Carlo's hearts (see BossPlayerHealthA)
         }
 
         // Destroy projectile on any collision
@@ -22,7 +22,7 @@ public class ProjectileA : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             Debug.Log("Player hit by projectile!");
-            // other.GetComponent<PlayerHealth>().TakeDamage(damage);
+            BossPlayerHealthA.Hit(other.gameObject, damage);
             Destroy(gameObject);
         } else if (other.CompareTag("Wall")) {
             Destroy(gameObject);

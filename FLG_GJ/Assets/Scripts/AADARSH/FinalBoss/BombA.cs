@@ -49,7 +49,7 @@ public class BombA : MonoBehaviour {
             if (hit.CompareTag("Player")) {
 
                 // Example damage call
-                //hit.GetComponent<PlayerHealth>()?.TakeDamage(1);
+                BossPlayerHealthA.Hit(hit.gameObject, 1); // Carlo's hearts (see BossPlayerHealthA)
 
                 Debug.Log("Player hit by bomb!");
             }
