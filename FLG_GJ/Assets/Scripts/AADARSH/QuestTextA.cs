@@ -7,5 +7,6 @@ public class QuestTextA : MonoBehaviour
     [SerializeField] TextMeshProUGUI questtext;
     public void setQuest(string text) {
         questtext.text = DialogueRewritesA.ApplyLine(text); // rewritten text (Resources/DialogueRewrites.txt)
+        ObjectiveTrackerA.OnObjectiveSet(questtext); // highlight + pause-menu objectives log
     }
 }
