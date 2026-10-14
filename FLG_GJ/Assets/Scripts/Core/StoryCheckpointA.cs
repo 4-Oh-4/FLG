@@ -23,7 +23,7 @@ using UnityEngine.UI;
 /// </summary>
 public class StoryCheckpointA : MonoBehaviour {
     // Chapters whose restore has been verified. Others still get chapter-start saves only.
-    private static readonly string[] supportedScenes = { "Act_1_Map_K" };
+    private static readonly string[] supportedScenes = { "Act_1_Map_K", "Act_2_Map_New", "Act_3_Map_New 1" };
 
     // Script fields that hold story progress outside the flags: type name -> field names.
     private static readonly Dictionary<string, string[]> trackedFields = new Dictionary<string, string[]> {
@@ -35,6 +35,27 @@ public class StoryCheckpointA : MonoBehaviour {
         { "GameManagerAct1A", new[] { "trashTobeCollected", "foodTobeCollected" } },
         { "NpcMotorA", new[] { "isMoving", "targetPosition" } },
         { "FoodSpawnerAct1A", new[] { "isSpawning" } },
+        // Auto-narrators fire once; one switched on during the replay must not narrate again.
+        { "NPC_A", new[] { "isNarator" } },
+        // Act 2 one-shot / staged triggers
+        { "ChurchTimeSkip", new[] { "once" } },
+        { "ClubEntryColliderA", new[] { "i" } },
+        { "DariusIntroMarketAct2", new[] { "once" } },
+        { "DoorToNinoDoor", new[] { "i" } },
+        { "GateColliderInWareHouse", new[] { "once" } },
+        { "GoHomeSCript", new[] { "once" } },
+        { "NarratorCallA", new[] { "once" } },
+        { "TunnelScriptAct2", new[] { "count" } },
+        { "TruckDoorA", new[] { "once" } },
+        { "BathroomScriptToDespawn", new[] { "i" } },
+        { "Narator_3Colider", new[] { "i" } },
+        { "RoxanaTalkCollider", new[] { "i" } },
+        { "NinoTriggerOffice", new[] { "i" } },
+        // Act 3 staged triggers
+        { "BBscriptAct3", new[] { "i" } },
+        { "BigShackCollider", new[] { "b" } },
+        { "FinalShackColldier", new[] { "h" } },
+        { "ShackCollider", new[] { "a" } },
     };
 
     private const int SaveVersion = 1;
@@ -131,8 +152,9 @@ public class StoryCheckpointA : MonoBehaviour {
             foreach (ComponentState c in o.components) lines.Add("obj " + name + " comp#" + c.index + " en=" + c.enabled + " trig=" + c.isTrigger + " a=" + c.alpha.ToString("F2", CultureInfo.InvariantCulture));
         }
         foreach (FieldState f in data.fields) lines.Add("field " + instance.Describe(f.id) + " " + f.type + "." + f.field + "=" + f.value);
-        WindowQuestPointer_A pointer = FindAnyObjectByType<WindowQuestPointer_A>(FindObjectsInactive.Include);
-        if (pointer != null) lines.Add("questPointer active=" + pointer.gameObject.activeInHierarchy + " target=" + (pointer.target != null ? pointer.target.name : "none"));
+        foreach (WindowQuestPointer_A pointer in FindObjectsByType<WindowQuestPointer_A>(FindObjectsInactive.Include, FindObjectsSortMode.None)) {
+            lines.Add("questPointer " + pointer.name + " active=" + pointer.gameObject.activeInHierarchy + " target=" + (pointer.target != null ? pointer.target.name : "none"));
+        }
         foreach (QuestTextA q in FindObjectsByType<QuestTextA>(FindObjectsInactive.Include, FindObjectsSortMode.None)) {
             TMPro.TMP_Text t = q.GetComponentInChildren<TMPro.TMP_Text>(true);
             lines.Add("questText " + (t != null ? t.text : "?"));
@@ -432,6 +454,14 @@ public class StoryCheckpointA : MonoBehaviour {
         foreach (GameManagerAct1A gm in FindObjectsByType<GameManagerAct1A>(FindObjectsSortMode.None)) {
             MethodInfo updateUI = typeof(GameManagerAct1A).GetMethod("UpdateUI", FieldFlags);
             if (updateUI != null) updateUI.Invoke(gm, null);
+        }
+
+        // Silvio's death (Act 2) is an animation; once it has happened the script disables itself.
+        foreach (silvioDeath death in FindObjectsByType<silvioDeath>(FindObjectsInactive.Include, FindObjectsSortMode.None)) {
+            if (!death.enabled && StoryManagertAct1A.Instance != null && StoryManagertAct1A.Instance.GetFlag("DeathTalk")) {
+                Animator anim = death.GetComponent<Animator>();
+                if (anim != null && anim.isActiveAndEnabled) anim.SetTrigger("Die");
+            }
         }
 
         // Finished cooking station turns yellow instead of disappearing.
