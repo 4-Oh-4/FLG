@@ -570,9 +570,9 @@ name None =>
 @ I don’t care about thrones or crowns, Rafael. My target’s Hector Niño Guerrero — nothing more. As for my trigger hand, it’s no shock you haven’t heard stories… dead men tell no tales. I don’t reach for the gun often, but when I do, I’m always the one pulling first.
 = I don't want a crown, Rafael. I want Hector Niño Guerrero. And you haven't heard stories about my trigger hand because dead men don't tell them.
 @ Alright, Rodríguez. It’s time you talk less and shoot more. There’s an old bottle stand by the fence. Five shots. You miss one, you walk out of here alive, but alone.
-= Then talk less and shoot more, Rodríguez. Bottles by the fence. Five shots. Miss one, and you walk out alone.
+= Then talk less and shoot more, Rodríguez. My boys will toss cans. Let three hit the dirt, and you walk out alone.
 @ Line them up !
-= Line them up.
+= Start tossing.
 @ You really are something Carlo...
 = You really are something, Carlo.
 @ I hope there won't be any bad feeling between us anymore, atleast until we deal with Hector.
