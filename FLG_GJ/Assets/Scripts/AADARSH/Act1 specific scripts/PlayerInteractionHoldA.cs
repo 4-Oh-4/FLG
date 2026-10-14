@@ -21,13 +21,19 @@ public class PlayerInteractionHoldA : MonoBehaviour {
     public GameObject progressRoot;  // parent UI element to enable/disable
 
     private int once = 0;
+    // FindObjectsOfTypeAll is expensive, so recount a few times a second instead of every frame.
+    private const float rescanInterval = 0.25f;
+    private float nextRescanTime = 0f;
     void Start() {
         allInteractables = Resources.FindObjectsOfTypeAll<HoldInteractableA>();
         if (progressRoot != null) progressRoot.SetActive(false);
     }
 
     void Update() {
-        allInteractables = Resources.FindObjectsOfTypeAll<HoldInteractableA>();
+        if (Time.time >= nextRescanTime) {
+            allInteractables = Resources.FindObjectsOfTypeAll<HoldInteractableA>();
+            nextRescanTime = Time.time + rescanInterval;
+        }
         if (allInteractables.Length == 1) {
             if (once == 0) {
                 StoryManagertAct1A.Instance.SetFlag("NowDoCooking", true);
